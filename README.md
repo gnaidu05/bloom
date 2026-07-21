@@ -36,6 +36,22 @@ One-time setup (repo **Settings → Secrets and variables → Actions**):
 | `MAIL_APP_PASSWORD` | A Gmail **App Password** (Google Account → Security → 2-Step Verification → App passwords) |
 | `SUBSCRIBERS` | Recipient emails, separated by commas or newlines |
 
-Subscribers are BCC'd. Subscription requests arrive by email (the site's Subscribe form opens a
-pre-filled email); add each new address to the `SUBSCRIBERS` secret. Until the secrets are set,
+Subscribers are BCC'd. The recipient list is the union of the `SUBSCRIBERS` secret (manual) and
+the live web-signup list (automatic, see below), de-duplicated. Until the mail secrets are set,
 the workflow exits green with a notice and sends nothing.
+
+### Auto-updating subscriber list (optional)
+
+`newsletter/subscribe.gs` is a Google Apps Script that turns a Google Sheet into the live list:
+the site's Subscribe form POSTs each new email to the script (a row is appended, deduped), and
+the send workflow fetches the list back (token-protected) each morning. Setup steps are in the
+header comment of `newsletter/subscribe.gs`. After deploying it, add two more Actions secrets:
+
+| Secret | Value |
+|---|---|
+| `SUBSCRIBE_ENDPOINT` | The Apps Script **Web app URL** |
+| `SUBSCRIBE_TOKEN` | The same `TOKEN` string set inside the script |
+
+Then set `SUBSCRIBE_ENDPOINT` (the same URL) as the `SUBSCRIBE_ENDPOINT` constant in the site's
+inline script so the form auto-submits instead of opening an email. Web signups then flow into the
+Sheet with no manual step; open the Sheet anytime to see the count and every subscriber.

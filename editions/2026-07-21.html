@@ -170,10 +170,11 @@
       <form class="sub-form" id="sub-form">
         <label class="visually-hidden" for="sub-email">Email address</label>
         <input id="sub-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+        <input class="visually-hidden" type="text" name="company" id="sub-company" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button type="submit">Subscribe</button>
       </form>
-      <p class="sub-fine">Subscribing opens a pre-filled email to the publisher — send it, and editions start arriving once you're added to the list.</p>
-      <p class="sub-thanks" id="sub-thanks" hidden>Thanks — now just press Send in the email that opened.</p>
+      <p class="sub-fine">Free — one email each morning. Unsubscribe anytime.</p>
+      <p class="sub-thanks" id="sub-thanks" hidden>Thanks — you're subscribed!</p>
     </div>
   </header>
 
@@ -447,18 +448,34 @@
 
 </div>
 <script>
+  // Subscribe endpoint: paste the Google Apps Script web-app URL between the quotes
+  // to enable one-click auto-signup. While empty, the form falls back to opening a
+  // pre-filled email to the publisher.
+  var SUBSCRIBE_ENDPOINT = '';
   (function(){
     var form = document.getElementById('sub-form');
     if (form){
       form.addEventListener('submit', function(ev){
         ev.preventDefault();
         var email = document.getElementById('sub-email').value.trim();
-        var subject = encodeURIComponent('Subscribe — The Morning Bloom');
-        var body = encodeURIComponent('Please add me to The Morning Bloom daily email.\n\nMy email: ' + email);
-        var to = ['gnaidu05', 'gmail.com'].join(String.fromCharCode(64));
-        window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+        var company = (document.getElementById('sub-company') || {}).value || '';
         var t = document.getElementById('sub-thanks');
-        if (t) t.removeAttribute('hidden');
+        if (SUBSCRIBE_ENDPOINT){
+          fetch(SUBSCRIBE_ENDPOINT, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            body: 'email=' + encodeURIComponent(email) + '&company=' + encodeURIComponent(company)
+          }).catch(function(){});
+          if (t) t.removeAttribute('hidden');
+          form.reset();
+        } else {
+          var subject = encodeURIComponent('Subscribe — The Morning Bloom');
+          var body = encodeURIComponent('Please add me to The Morning Bloom daily email.\n\nMy email: ' + email);
+          var to = ['gnaidu05', 'gmail.com'].join(String.fromCharCode(64));
+          window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+          if (t) t.removeAttribute('hidden');
+        }
       });
     }
     var els = document.querySelectorAll('.reveal');

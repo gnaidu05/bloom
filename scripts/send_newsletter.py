@@ -8,14 +8,21 @@ style-only re-publishes of an old edition never re-mail anyone.
 Requires repo Actions secrets:
   MAIL_USERNAME      Gmail address to send from
   MAIL_APP_PASSWORD  Gmail App Password (Google Account -> Security -> App passwords)
-  SUBSCRIBERS        Recipient emails, separated by commas/spaces/newlines
 
-If secrets are missing, exits 0 with a notice so CI stays green.
+Subscriber list — either or both of:
+  SUBSCRIBERS        Recipient emails, separated by commas/spaces/newlines (manual)
+  SUBSCRIBE_ENDPOINT + SUBSCRIBE_TOKEN
+                     Google Apps Script web-app URL + token; the live list of
+                     web signups is fetched from it and merged with SUBSCRIBERS.
+
+If mail creds or all subscriber sources are missing, exits 0 with a notice.
 """
 import os
 import re
 import smtplib
 import sys
+import urllib.parse
+import urllib.request
 from datetime import datetime, timedelta, timezone
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -26,18 +33,45 @@ SITE = "https://gnaidu05.github.io/bloom"
 IST = timezone(timedelta(hours=5, minutes=30))
 
 
+def endpoint_subscribers() -> list:
+    """Fetch the live signup list from the Apps Script web app (if configured)."""
+    endpoint = os.environ.get("SUBSCRIBE_ENDPOINT", "").strip()
+    token = os.environ.get("SUBSCRIBE_TOKEN", "").strip()
+    if not (endpoint and token):
+        return []
+    sep = "&" if "?" in endpoint else "?"
+    url = endpoint + sep + urllib.parse.urlencode({"token": token})
+    try:
+        with urllib.request.urlopen(url, timeout=30) as resp:
+            body = resp.read().decode("utf-8", "replace")
+    except Exception as ex:  # network/deploy hiccup shouldn't break the send
+        print(f"NOTICE: could not read subscribe endpoint ({ex}); using SUBSCRIBERS secret only.")
+        return []
+    if body.strip().lower() in ("forbidden", "invalid", "error"):
+        print("NOTICE: subscribe endpoint rejected the request; using SUBSCRIBERS secret only.")
+        return []
+    return [s for s in re.split(r"[,\s;]+", body) if "@" in s]
+
+
 def main() -> None:
     user = os.environ.get("MAIL_USERNAME", "").strip()
     # Google displays App Passwords with spaces ("xxxx xxxx xxxx xxxx"); strip them.
     password = re.sub(r"\s+", "", os.environ.get("MAIL_APP_PASSWORD", ""))
-    raw_subs = os.environ.get("SUBSCRIBERS", "").strip()
-    if not (user and password and raw_subs):
-        print("NOTICE: MAIL_USERNAME / MAIL_APP_PASSWORD / SUBSCRIBERS secrets not all set; skipping send.")
+    if not (user and password):
+        print("NOTICE: MAIL_USERNAME / MAIL_APP_PASSWORD not set; skipping send.")
         return
 
-    subscribers = [s for s in re.split(r"[,\s;]+", raw_subs) if "@" in s]
+    raw_subs = os.environ.get("SUBSCRIBERS", "").strip()
+    manual = [s for s in re.split(r"[,\s;]+", raw_subs) if "@" in s]
+    # Merge manual list + live web signups, de-duplicated case-insensitively.
+    seen, subscribers = set(), []
+    for addr in manual + endpoint_subscribers():
+        key = addr.lower()
+        if key not in seen:
+            seen.add(key)
+            subscribers.append(addr)
     if not subscribers:
-        print("NOTICE: SUBSCRIBERS contains no addresses; skipping send.")
+        print("NOTICE: no subscribers (SUBSCRIBERS secret empty and endpoint returned none); skipping send.")
         return
 
     editions = sorted((ROOT / "editions").glob("????-??-??.html"), reverse=True)
