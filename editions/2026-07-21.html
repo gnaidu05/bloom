@@ -167,17 +167,13 @@
     <div class="subscribe" id="subscribe">
       <div class="sub-title">Get each edition in your inbox</div>
       <p class="sub-note">One email each morning with the day's briefing — free, unsubscribe anytime.</p>
-      <form class="sub-form" action="https://formsubmit.co/gnaidu05@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="New subscriber — The Morning Bloom">
-        <input type="hidden" name="_next" value="https://gnaidu05.github.io/bloom/index.html?subscribed=1">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <form class="sub-form" id="sub-form">
         <label class="visually-hidden" for="sub-email">Email address</label>
         <input id="sub-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
         <button type="submit">Subscribe</button>
       </form>
-      <p class="sub-fine">Your request goes to the publisher's inbox; editions start arriving once you're added to the list.</p>
-      <p class="sub-thanks" id="sub-thanks" hidden>Thanks — your subscription request has been sent!</p>
+      <p class="sub-fine">Subscribing opens a pre-filled email to the publisher — send it, and editions start arriving once you're added to the list.</p>
+      <p class="sub-thanks" id="sub-thanks" hidden>Thanks — now just press Send in the email that opened.</p>
     </div>
   </header>
 
@@ -452,9 +448,17 @@
 </div>
 <script>
   (function(){
-    if (new URLSearchParams(location.search).has('subscribed')){
-      var t = document.getElementById('sub-thanks');
-      if (t){ t.removeAttribute('hidden'); t.scrollIntoView({block:'center'}); }
+    var form = document.getElementById('sub-form');
+    if (form){
+      form.addEventListener('submit', function(ev){
+        ev.preventDefault();
+        var email = document.getElementById('sub-email').value.trim();
+        var subject = encodeURIComponent('Subscribe — The Morning Bloom');
+        var body = encodeURIComponent('Please add me to The Morning Bloom daily email.\n\nMy email: ' + email);
+        window.location.href = 'mailto:gnaidu05@gmail.com?subject=' + subject + '&body=' + body;
+        var t = document.getElementById('sub-thanks');
+        if (t) t.removeAttribute('hidden');
+      });
     }
     var els = document.querySelectorAll('.reveal');
     if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){

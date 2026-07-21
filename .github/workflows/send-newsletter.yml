@@ -1,0 +1,22 @@
+name: Send newsletter email
+
+on:
+  push:
+    branches: [main]
+    paths: ["editions/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Send today's edition to subscribers
+        env:
+          MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
+          MAIL_APP_PASSWORD: ${{ secrets.MAIL_APP_PASSWORD }}
+          SUBSCRIBERS: ${{ secrets.SUBSCRIBERS }}
+        run: python3 scripts/send_newsletter.py
