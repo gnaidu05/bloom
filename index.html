@@ -6,124 +6,170 @@
 <title>The Morning Bloom — July 21, 2026 — Pune Edition</title>
 <style>
   :root{
-    --paper:#f8f5ec; --ink:#141210; --rule:#141210; --muted:#5f584a;
-    --accent:#7a1f2b; --link:#274060;
+    --bg:#f2f5f7; --card:#ffffff; --ink:#1c2733; --muted:#5b6b7a;
+    --teal:#0e7490; --teal-soft:#e3f1f5;
+    --rose:#c2456b; --rose-soft:#f9e9ee;
+    --amber:#d97706; --amber-soft:#fdf1e0;
+    --navy:#1e3a5f; --navy-soft:#e8edf4;
+    --radius:16px; --shadow:0 4px 14px rgba(30,42,56,.08);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
-    background:var(--paper); color:var(--ink);
-    font-family:Georgia,'Times New Roman',Times,serif;
-    line-height:1.55; padding:1.6rem 1rem 3rem; font-size:16px;
+    background:var(--bg); color:var(--ink);
+    font-family:'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+    line-height:1.6; padding:1.6rem 1rem 3rem; font-size:15.5px;
   }
-  .sheet{max-width:1000px; margin:0 auto;}
-  a{color:var(--link);}
+  .sheet{max-width:1040px; margin:0 auto; display:flex; flex-direction:column; gap:1.2rem;}
+  a{color:var(--teal);}
 
-  /* ── Masthead ─────────────────────────────── */
-  .topbar{display:flex; justify-content:space-between; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:.3rem .2rem; font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted);}
-  .masthead{text-align:center; padding:1.2rem 0 .9rem;}
-  .masthead h1{font-size:clamp(2.6rem,8vw,4.8rem); font-weight:900; letter-spacing:.01em; line-height:1;}
-  .masthead h1 .bloom{color:var(--accent);}
-  .masthead .tagline{font-style:italic; color:var(--muted); font-size:.92rem; margin-top:.45rem;}
-  .dateline{display:flex; justify-content:space-between; align-items:center; border-top:2.5px solid var(--rule); border-bottom:1px solid var(--rule); padding:.4rem .2rem; font-size:.74rem; letter-spacing:.14em; text-transform:uppercase;}
-  .dateline .ed{color:var(--accent); font-weight:700;}
-  .dateline a{color:var(--link); text-decoration:none; border-bottom:1px solid var(--link);}
+  .card{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;}
 
-  /* ── Editor's note ────────────────────────── */
-  .ednote{border:1px solid var(--rule); padding:.7rem 1rem; font-size:.82rem; font-style:italic; color:var(--muted); margin:1.4rem 0 2rem;}
-  .ednote strong{color:var(--ink); font-style:normal; text-transform:uppercase; font-size:.68rem; letter-spacing:.14em;}
+  /* ── Header ─────────────────────────────── */
+  .masthead{padding:1.8rem 2rem 1.6rem; position:relative;}
+  .masthead::before{content:""; position:absolute; inset:0 0 auto 0; height:8px; background:linear-gradient(90deg,var(--teal) 0 34%,var(--rose) 34% 67%,var(--amber) 67% 100%);}
+  .brandrow{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.6rem; margin-bottom:1rem;}
+  .brandrow .mini{display:flex; align-items:center; gap:.5rem; font-weight:700; font-size:.85rem; color:var(--navy); letter-spacing:.06em;}
+  .brandrow .mini .dot{width:14px; height:14px; border-radius:50%; background:var(--rose); display:inline-block; box-shadow:4px 0 0 -2px var(--amber), 8px 0 0 -4px var(--teal);}
+  .pill{display:inline-block; background:var(--teal); color:#fff; font-size:.68rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; padding:.35rem .9rem; border-radius:999px;}
+  .masthead h1{font-size:clamp(2.4rem,7vw,4rem); font-weight:800; line-height:1.02; letter-spacing:-.02em; margin:.7rem 0 .3rem; text-transform:uppercase;}
+  .masthead h1 .bloom{color:var(--rose);}
+  .masthead .tagline{color:var(--muted); font-size:.95rem;}
+  .meta{display:flex; flex-wrap:wrap; gap:.55rem; margin-top:1.1rem;}
+  .chip{font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:.35rem .85rem; border-radius:999px;}
+  .chip.date{background:var(--navy-soft); color:var(--navy);}
+  .chip.ed{background:var(--rose-soft); color:var(--rose);}
+  .chip.arch{background:var(--amber-soft);}
+  .chip.arch a{color:var(--amber); text-decoration:none;}
 
-  /* ── Stories ──────────────────────────────── */
-  article{padding:1.6rem 0 1.9rem; border-bottom:4px double var(--rule);}
-  article:last-of-type{border-bottom:none;}
-  .kicker{display:block; font-size:.7rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin-bottom:.5rem;}
-  .kicker::after{content:""; display:block; width:44px; border-bottom:2px solid var(--accent); margin-top:.3rem;}
-  h2{font-size:clamp(1.6rem,4.4vw,2.5rem); line-height:1.12; font-weight:900; margin-bottom:.5rem; letter-spacing:-.01em;}
-  .deck{font-size:1.02rem; font-style:italic; color:var(--muted); margin-bottom:1.1rem; max-width:52rem;}
+  /* ── Top row: inside + note ─────────────── */
+  .toprow{display:grid; grid-template-columns:1fr 1.4fr; gap:1.2rem;}
+  @media(max-width:760px){.toprow{grid-template-columns:1fr;}}
+  .boxhead{display:flex; align-items:center; gap:.6rem; font-size:.78rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; margin-bottom:.8rem;}
+  .boxhead .ico{width:26px; height:26px; border-radius:8px; display:grid; place-items:center; color:#fff; font-size:.8rem;}
+  .inside{background:var(--amber-soft); padding:1.3rem 1.5rem; border-radius:var(--radius); box-shadow:var(--shadow);}
+  .inside .boxhead{color:var(--amber);} .inside .ico{background:var(--amber);}
+  .inside ol{list-style:none; counter-reset:n;}
+  .inside ol li{counter-increment:n; display:flex; gap:.7rem; align-items:baseline; padding:.4rem 0; border-bottom:1px dashed #e8cfa5; font-size:.86rem; font-weight:600;}
+  .inside ol li:last-child{border-bottom:none;}
+  .inside ol li::before{content:"0" counter(n); font-weight:800; color:var(--amber); font-size:.8rem;}
+  .ednote{background:var(--teal-soft); padding:1.3rem 1.5rem; border-radius:var(--radius); box-shadow:var(--shadow); font-size:.86rem; color:#28505e;}
+  .ednote .boxhead{color:var(--teal);} .ednote .ico{background:var(--teal);}
 
-  .story-grid{display:grid; grid-template-columns:250px 1fr; gap:1.7rem; align-items:start;}
-  .story-grid.flip{grid-template-columns:1fr 250px;}
-  .story-grid.flip figure{order:2;}
-  @media(max-width:700px){.story-grid,.story-grid.flip{grid-template-columns:1fr;} .story-grid.flip figure{order:0;}}
-
-  figure{border:1px solid var(--rule); padding:.4rem; background:#fdfbf5;}
+  /* ── Story grid ─────────────────────────── */
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:1.2rem;}
+  @media(max-width:820px){.grid{grid-template-columns:1fr;}}
+  article.card{display:flex; flex-direction:column;}
+  article.lead{grid-column:1 / -1;}
+  .storyhead{display:flex; align-items:center; gap:.75rem; padding:1.1rem 1.5rem; color:#fff;}
+  .t-teal .storyhead{background:var(--teal);} .t-rose .storyhead{background:var(--rose);} .t-amber .storyhead{background:var(--amber);} .t-navy .storyhead{background:var(--navy);}
+  .num{width:34px; height:34px; border-radius:10px; background:rgba(255,255,255,.22); display:grid; place-items:center; font-weight:800; font-size:.9rem; flex:none;}
+  .cat{font-size:.7rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; opacity:.95;}
+  .storybody{padding:1.4rem 1.5rem 1.5rem; display:flex; flex-direction:column; gap:.9rem;}
+  h2{font-size:1.35rem; line-height:1.25; font-weight:800; letter-spacing:-.01em;}
+  article.lead h2{font-size:clamp(1.5rem,3.4vw,2rem);}
+  .deck{font-size:.92rem; color:var(--muted); font-style:italic; margin-top:-.3rem;}
+  figure{border-radius:12px; overflow:hidden; border:1px solid #e3e9ee;}
   figure svg{display:block; width:100%; height:auto;}
-  figcaption{font-size:.7rem; font-style:italic; color:var(--muted); padding:.35rem .2rem 0; border-top:1px dotted var(--muted); margin-top:.35rem;}
+  figcaption{font-size:.72rem; color:var(--muted); font-style:italic; padding:.45rem .8rem; background:#f7fafb; border-top:1px solid #e3e9ee;}
+  article.lead .lead-flex{display:grid; grid-template-columns:300px 1fr; gap:1.3rem; align-items:start;}
+  @media(max-width:760px){article.lead .lead-flex{grid-template-columns:1fr;}}
+  .copy p{margin-bottom:.8rem; font-size:.92rem;}
+  .copy p:last-child{margin-bottom:0;}
 
-  .body-copy{font-size:.96rem;}
-  .body-copy p{margin-bottom:.85rem; text-align:justify; hyphens:auto;}
-  .body-copy p:first-of-type::first-letter{float:left; font-size:3.3rem; line-height:.82; padding:.06em .1em 0 0; font-weight:900;}
-  @media(min-width:701px){
-    .cols{column-count:2; column-gap:2rem; column-rule:1px solid #d9d2c0;}
-    .cols p{break-inside:avoid-column;}
-  }
+  .takeaways{border-radius:12px; padding:.95rem 1.15rem;}
+  .t-teal .takeaways{background:var(--teal-soft);} .t-rose .takeaways{background:var(--rose-soft);} .t-amber .takeaways{background:var(--amber-soft);} .t-navy .takeaways{background:var(--navy-soft);}
+  .takeaways h3, .why h3{font-size:.7rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; margin-bottom:.5rem;}
+  .t-teal .takeaways h3{color:var(--teal);} .t-rose .takeaways h3{color:var(--rose);} .t-amber .takeaways h3{color:var(--amber);} .t-navy .takeaways h3{color:var(--navy);}
+  .takeaways ul{list-style:none;}
+  .takeaways li{padding-left:1.3rem; position:relative; font-size:.86rem; margin-bottom:.35rem; line-height:1.5;}
+  .takeaways li::before{content:"✔"; position:absolute; left:0; font-size:.75rem; top:.12rem;}
+  .t-teal .takeaways li::before{color:var(--teal);} .t-rose .takeaways li::before{color:var(--rose);} .t-amber .takeaways li::before{color:var(--amber);} .t-navy .takeaways li::before{color:var(--navy);}
+  .why{border-left:4px solid; border-radius:6px 12px 12px 6px; padding:.85rem 1.15rem; background:#f7f9fa;}
+  .t-teal .why{border-color:var(--teal);} .t-rose .why{border-color:var(--rose);} .t-amber .why{border-color:var(--amber);} .t-navy .why{border-color:var(--navy);}
+  .why h3{color:var(--ink);}
+  .why p{font-size:.86rem; color:#33424f;}
+  .sources{font-size:.74rem; color:var(--muted); border-top:1px dashed #d8e0e6; padding-top:.7rem;}
+  .sources strong{text-transform:uppercase; letter-spacing:.1em; font-size:.68rem;}
 
-  .infobox{border-top:2.5px solid var(--rule); border-bottom:1px solid var(--rule); padding:.7rem .2rem .55rem; margin:1rem 0; break-inside:avoid;}
-  .infobox h3{font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; margin-bottom:.45rem;}
-  .infobox ul{list-style:none; font-size:.88rem;}
-  .infobox ul li{padding-left:1rem; position:relative; margin-bottom:.3rem; line-height:1.45;}
-  .infobox ul li::before{content:"■"; position:absolute; left:0; top:.18rem; font-size:.55rem; color:var(--accent);}
-  .infobox p{font-size:.88rem; line-height:1.5;}
-  .why h3::before{content:"❧ "; color:var(--accent);}
-
-  .sources{font-size:.76rem; color:var(--muted); margin-top:1rem; text-transform:uppercase; letter-spacing:.06em;}
-  .sources a{text-transform:none; letter-spacing:0;}
-
-  /* ── Footer ───────────────────────────────── */
-  footer{border-top:2.5px solid var(--rule); margin-top:.2rem; padding-top:.9rem; text-align:center; font-size:.78rem; color:var(--muted); font-style:italic;}
-  footer .fin{font-size:1.05rem; color:var(--accent); font-style:normal; letter-spacing:.35em; margin-bottom:.4rem;}
+  /* ── Footer ─────────────────────────────── */
+  footer.card{background:var(--navy); color:#cfdcea; text-align:center; padding:1.5rem 2rem; font-size:.8rem;}
+  footer .flowers{color:var(--amber); letter-spacing:.4em; margin-bottom:.5rem; font-size:1rem;}
+  footer a{color:#9fd3e2;}
 </style>
 </head>
 <body>
 <div class="sheet">
 
-  <div class="topbar"><span>Vol. I · No. 1</span><span>Established MMXXVI</span><span>Complimentary</span></div>
-  <header class="masthead">
+  <!-- ═══ Masthead ═══ -->
+  <header class="card masthead">
+    <div class="brandrow">
+      <span class="mini"><span class="dot"></span>THE MORNING BLOOM</span>
+      <span class="pill">Daily News Briefing</span>
+    </div>
     <h1>The Morning <span class="bloom">Bloom</span></h1>
     <p class="tagline">Technology, publishing &amp; the world of work — pressed fresh each morning</p>
+    <div class="meta">
+      <span class="chip date">Tuesday, July 21, 2026</span>
+      <span class="chip ed">Pune Edition</span>
+      <span class="chip arch"><a href="archive.html">📚 Archive</a></span>
+    </div>
   </header>
-  <div class="dateline">
-    <span>Tuesday, July 21, 2026</span>
-    <span class="ed">Pune Edition</span>
-    <span><a href="archive.html">Archive</a></span>
+
+  <!-- ═══ Inside + editor's note ═══ -->
+  <div class="toprow">
+    <div class="inside">
+      <div class="boxhead"><span class="ico">☰</span>Inside this issue</div>
+      <ol>
+        <li>AI's Wall Street moment: OpenAI &amp; Anthropic eye IPOs</li>
+        <li>The AI chip race widens beyond Nvidia</li>
+        <li>Publishing's labor summer: record union at Hachette</li>
+        <li>KDP tightens quality &amp; AI-disclosure rules</li>
+        <li>India's talent market: growth meets a skills gap</li>
+      </ol>
+    </div>
+    <div class="ednote">
+      <div class="boxhead"><span class="ico">✎</span>A note on sourcing</div>
+      <p>Full article pages could not be opened from this environment today (the network proxy blocked
+      direct fetches), so every fact below traces to web-search results retrieved this morning — the
+      links in each Sources line lead to the full reporting. All stories are from the past week. The
+      Recruitment &amp; HR wire carried more trend analysis than day-of headlines today, which the story
+      notes honestly; the self-publishing story draws on KDP-watcher industry blogs rather than an
+      Amazon announcement, and is flagged as such.</p>
+    </div>
   </div>
 
-  <div class="ednote">
-    <strong>Editor's note on sourcing —</strong> Full article pages could not be opened from this
-    environment today (the network proxy blocked direct fetches), so every fact below traces to
-    web-search results retrieved this morning; the links in each Sources line lead to the full
-    reporting. The Recruitment &amp; HR wire carried more trend analysis than day-of headlines
-    today — that is noted honestly in the story rather than padded over. The self-publishing story
-    draws on KDP-watcher industry blogs rather than an Amazon announcement, and is flagged as such.
-  </div>
+  <!-- ═══ Stories ═══ -->
+  <div class="grid">
 
-  <!-- ═══════════════ LEAD STORY ═══════════════ -->
-  <article>
-    <span class="kicker">AI &amp; Technology</span>
-    <h2>AI's Wall Street Moment: OpenAI and Anthropic Both Move Toward Historic Listings</h2>
-    <p class="deck">A record half-year of venture funding gives way to IPO preparations at the two leading frontier labs — with talent and silicon moving in step with the money.</p>
-    <div class="story-grid">
-      <figure>
-        <svg viewBox="0 0 240 200" role="img" aria-label="Illustration of a stock bell ringing above a rising chart">
-          <rect width="240" height="200" fill="#f1ecdf"/>
-          <path d="M20 170 L60 140 L95 152 L135 105 L175 118 L220 60" fill="none" stroke="#274060" stroke-width="4" stroke-linecap="round"/>
-          <path d="M20 170 L60 140 L95 152 L135 105 L175 118 L220 60 L220 185 L20 185 Z" fill="#274060" opacity=".12"/>
-          <circle cx="220" cy="60" r="5" fill="#7a1f2b"/>
-          <g transform="translate(105,18)">
-            <path d="M15 30 Q15 8 30 8 Q45 8 45 30 L50 38 L10 38 Z" fill="#9c7c2c"/>
-            <rect x="27" y="2" width="6" height="8" rx="2" fill="#9c7c2c"/>
-            <circle cx="30" cy="42" r="4" fill="#7a1f2b"/>
-            <path d="M2 20 Q6 24 4 30 M58 20 Q54 24 56 30" stroke="#9c7c2c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          </g>
-          <text x="30" y="52" font-family="Georgia" font-size="13" font-style="italic" fill="#5f584a">IPO</text>
-        </svg>
-        <figcaption>The opening bell beckons the frontier labs.</figcaption>
-      </figure>
-      <div class="body-copy">
-        <div class="cols">
-          <p>The two leading frontier AI labs are converging on the public markets at once. Reports gathered in this week's AI news roundups say OpenAI is preparing to file confidentially for an initial public offering in the coming weeks, with a listing possible as soon as September 2026 — the company is valued around $730 billion in private markets. Anthropic, meanwhile, is reportedly preparing an S-1 for an IPO as early as October 2026, its case strengthened by locked-in, long-term compute deals that make revenue more predictable.</p>
-          <p>The listings would cap a staggering capital cycle: global venture funding hit a record $510 billion in the first six months of 2026, with OpenAI and Anthropic alone accounting for $217 billion of it. The talent market is moving in step with the money — prominent researcher and educator Andrej Karpathy announced he has joined Anthropic to work on the frontier of large language models, and Anthropic is reportedly in talks with Samsung to build a custom chip tuned to its Claude models.</p>
+    <!-- 01 — LEAD -->
+    <article class="card lead t-teal">
+      <div class="storyhead"><span class="num">01</span><span class="cat">AI &amp; Technology · Lead story</span></div>
+      <div class="storybody">
+        <h2>AI's Wall Street Moment: OpenAI and Anthropic Both Move Toward Historic Listings</h2>
+        <p class="deck">A record half-year of venture funding gives way to IPO preparations at the two leading frontier labs — with talent and silicon moving in step with the money.</p>
+        <div class="lead-flex">
+          <figure>
+            <svg viewBox="0 0 240 200" role="img" aria-label="Illustration of a stock bell ringing above a rising chart">
+              <rect width="240" height="200" fill="#eaf3f6"/>
+              <path d="M20 170 L60 140 L95 152 L135 105 L175 118 L220 60" fill="none" stroke="#0e7490" stroke-width="4" stroke-linecap="round"/>
+              <path d="M20 170 L60 140 L95 152 L135 105 L175 118 L220 60 L220 185 L20 185 Z" fill="#0e7490" opacity=".12"/>
+              <circle cx="220" cy="60" r="5" fill="#c2456b"/>
+              <g transform="translate(105,18)">
+                <path d="M15 30 Q15 8 30 8 Q45 8 45 30 L50 38 L10 38 Z" fill="#d97706"/>
+                <rect x="27" y="2" width="6" height="8" rx="2" fill="#d97706"/>
+                <circle cx="30" cy="42" r="4" fill="#c2456b"/>
+                <path d="M2 20 Q6 24 4 30 M58 20 Q54 24 56 30" stroke="#d97706" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              </g>
+              <text x="30" y="52" font-family="Georgia" font-size="13" font-style="italic" fill="#5b6b7a">IPO</text>
+            </svg>
+            <figcaption>The opening bell beckons the frontier labs.</figcaption>
+          </figure>
+          <div class="copy">
+            <p>The two leading frontier AI labs are converging on the public markets at once. Reports gathered in this week's AI news roundups say OpenAI is preparing to file confidentially for an initial public offering in the coming weeks, with a listing possible as soon as September 2026 — the company is valued around $730 billion in private markets. Anthropic, meanwhile, is reportedly preparing an S-1 for an IPO as early as October 2026, its case strengthened by locked-in, long-term compute deals that make revenue more predictable.</p>
+            <p>The listings would cap a staggering capital cycle: global venture funding hit a record $510 billion in the first six months of 2026, with OpenAI and Anthropic alone accounting for $217 billion of it. The talent market is moving in step with the money — prominent researcher and educator Andrej Karpathy announced he has joined Anthropic to work on the frontier of large language models, and Anthropic is reportedly in talks with Samsung to build a custom chip tuned to its Claude models.</p>
+          </div>
         </div>
-        <div class="infobox">
+        <div class="takeaways">
           <h3>Key takeaways</h3>
           <ul>
             <li>OpenAI: confidential IPO filing expected within weeks; possible September listing at a ~$730B private valuation.</li>
@@ -131,44 +177,42 @@
             <li>H1 2026 global VC funding hit a record $510B — $217B of it went to these two labs.</li>
           </ul>
         </div>
-        <div class="infobox why">
+        <div class="why">
           <h3>Why it matters</h3>
           <p>Public listings would put the economics of frontier AI on open display for the first time — revenues, margins and compute costs that have so far been private guesswork. Quarterly scrutiny tends to discipline pricing and product priorities, which shapes what businesses everywhere pay for AI tools. And when AI firms dominate the financial pages, perceptions shift across the job market: candidates recalibrate what a prestige employer looks like, and every other industry has to make its own case for talent against that backdrop.</p>
         </div>
-        <p class="sources">Sources: <a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026">Build Fast with AI — July 14 roundup</a> · <a href="https://llm-stats.com/ai-news">LLM Stats — AI News (July 2026)</a> · <a href="https://thursdai.news/releases/2026-07">ThursdAI — July 2026 releases</a></p>
+        <p class="sources"><strong>Sources:</strong> <a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026">Build Fast with AI — July 14 roundup</a> · <a href="https://llm-stats.com/ai-news">LLM Stats — AI News (July 2026)</a> · <a href="https://thursdai.news/releases/2026-07">ThursdAI — July 2026 releases</a></p>
       </div>
-    </div>
-  </article>
+    </article>
 
-  <!-- ═══════════════ STORY 2 ═══════════════ -->
-  <article>
-    <span class="kicker">AI &amp; Technology</span>
-    <h2>The Chip Race Widens: AMD Lands Microsoft, Alphabet Designs Leaner Silicon, TSMC Speeds Up Arizona</h2>
-    <p class="deck">Nvidia's dominance faces challengers on three fronts in a single news cycle, as the AI hardware buildout turns into a many-player industrial race.</p>
-    <div class="story-grid flip">
-      <figure>
-        <svg viewBox="0 0 240 200" role="img" aria-label="Illustration of a microchip with radiating circuit traces">
-          <rect width="240" height="200" fill="#f1ecdf"/>
-          <g stroke="#274060" stroke-width="2.5" fill="none">
-            <path d="M60 100 H20 M180 100 H220 M120 40 V15 M120 160 V185 M75 55 L45 25 M165 55 L195 25 M75 145 L45 175 M165 145 L195 175"/>
-          </g>
-          <g fill="#9c7c2c">
-            <circle cx="20" cy="100" r="4"/><circle cx="220" cy="100" r="4"/><circle cx="120" cy="15" r="4"/><circle cx="120" cy="185" r="4"/>
-            <circle cx="45" cy="25" r="4"/><circle cx="195" cy="25" r="4"/><circle cx="45" cy="175" r="4"/><circle cx="195" cy="175" r="4"/>
-          </g>
-          <rect x="65" y="45" width="110" height="110" rx="8" fill="#274060"/>
-          <rect x="80" y="60" width="80" height="80" rx="4" fill="#f1ecdf"/>
-          <text x="120" y="106" text-anchor="middle" font-family="Georgia" font-size="15" font-weight="bold" fill="#7a1f2b">AI</text>
-          <path d="M90 122 H150 M90 78 H150" stroke="#9c7c2c" stroke-width="2"/>
-        </svg>
-        <figcaption>New silicon, new suitors: the accelerator market fragments.</figcaption>
-      </figure>
-      <div class="body-copy">
-        <div class="cols">
+    <!-- 02 -->
+    <article class="card t-navy">
+      <div class="storyhead"><span class="num">02</span><span class="cat">AI &amp; Technology</span></div>
+      <div class="storybody">
+        <h2>The Chip Race Widens: AMD Lands Microsoft, Alphabet Designs Leaner Silicon</h2>
+        <p class="deck">Nvidia's dominance faces challengers on three fronts in a single news cycle.</p>
+        <figure>
+          <svg viewBox="0 0 240 160" role="img" aria-label="Illustration of a microchip with radiating circuit traces">
+            <rect width="240" height="160" fill="#eef1f6"/>
+            <g stroke="#1e3a5f" stroke-width="2.5" fill="none">
+              <path d="M70 80 H25 M170 80 H215 M120 35 V12 M120 125 V148 M85 48 L55 22 M155 48 L185 22 M85 112 L55 138 M155 112 L185 138"/>
+            </g>
+            <g fill="#d97706">
+              <circle cx="25" cy="80" r="4"/><circle cx="215" cy="80" r="4"/><circle cx="120" cy="12" r="4"/><circle cx="120" cy="148" r="4"/>
+              <circle cx="55" cy="22" r="4"/><circle cx="185" cy="22" r="4"/><circle cx="55" cy="138" r="4"/><circle cx="185" cy="138" r="4"/>
+            </g>
+            <rect x="75" y="40" width="90" height="80" rx="8" fill="#1e3a5f"/>
+            <rect x="88" y="52" width="64" height="56" rx="4" fill="#eef1f6"/>
+            <text x="120" y="86" text-anchor="middle" font-family="Georgia" font-size="14" font-weight="bold" fill="#c2456b">AI</text>
+            <path d="M95 98 H145 M95 66 H145" stroke="#d97706" stroke-width="2"/>
+          </svg>
+          <figcaption>New silicon, new suitors: the accelerator market fragments.</figcaption>
+        </figure>
+        <div class="copy">
           <p>Nvidia's grip on AI hardware faced three fresh challenges in the same news cycle. AMD landed Microsoft as a customer for Helios, its first rack-scale AI system built to rival Nvidia's offerings — a milestone, because rack-level systems (not lone chips) are how hyperscalers now buy compute. Alphabet's stock popped on a report that it is developing a more efficient AI chip, extending its long-running in-house silicon strategy.</p>
           <p>Manufacturing capacity is chasing the same demand: TSMC is accelerating its Arizona factory build-out to capitalize on what it calls the AI "megatrend." And the model labs themselves are joining the custom-silicon club — Anthropic is reportedly in talks with Samsung for a chip tuned to Claude, following the path already walked by Google, Amazon, Meta and OpenAI.</p>
         </div>
-        <div class="infobox">
+        <div class="takeaways">
           <h3>Key takeaways</h3>
           <ul>
             <li>AMD's Helios rack system won Microsoft — its most credible strike yet at Nvidia's territory.</li>
@@ -176,89 +220,85 @@
             <li>Anthropic–Samsung custom-chip talks show even model labs going vertical on silicon.</li>
           </ul>
         </div>
-        <div class="infobox why">
+        <div class="why">
           <h3>Why it matters</h3>
-          <p>A broader, more competitive compute supply chain is the main brake on AI prices. Every credible Nvidia alternative pushes the cost of training and serving models down, which accelerates enterprise adoption — and with it, sustained demand for AI infrastructure, cloud and chip-adjacent skills. For students, career-changers and the firms that hire them, the signal is that AI hardware careers are becoming a multi-company field rather than a single-vendor bet.</p>
+          <p>A broader, more competitive compute supply chain is the main brake on AI prices. Every credible Nvidia alternative pushes the cost of training and serving models down, which accelerates enterprise adoption — and with it, sustained demand for AI infrastructure, cloud and chip-adjacent skills across the job market.</p>
         </div>
-        <p class="sources">Sources: <a href="https://www.cnbc.com/technology/">CNBC Technology</a> · <a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026">Build Fast with AI — July 14 roundup</a> · <a href="https://dentro.de/ai/news/">Dentro — AI News July 2026</a></p>
+        <p class="sources"><strong>Sources:</strong> <a href="https://www.cnbc.com/technology/">CNBC Technology</a> · <a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026">Build Fast with AI — July 14 roundup</a> · <a href="https://dentro.de/ai/news/">Dentro — AI News July 2026</a></p>
       </div>
-    </div>
-  </article>
+    </article>
 
-  <!-- ═══════════════ STORY 3 ═══════════════ -->
-  <article>
-    <span class="kicker">Books &amp; Publishing</span>
-    <h2>Publishing's Labor Summer: PRH Lifts Entry Pay as Hachette Workers Form the Largest Union in Trade History</h2>
-    <p class="deck">Wages rise and organizing spreads across trade publishing — on a foundation of flat print sales and thinning margins.</p>
-    <div class="story-grid">
-      <figure>
-        <svg viewBox="0 0 240 200" role="img" aria-label="Illustration of an open book with hands raised from its pages">
-          <rect width="240" height="200" fill="#f1ecdf"/>
-          <path d="M30 160 Q75 140 120 155 Q165 140 210 160 L210 175 Q165 155 120 170 Q75 155 30 175 Z" fill="#7a1f2b"/>
-          <path d="M120 155 V170" stroke="#4e1118" stroke-width="3"/>
-          <g fill="#3d5244">
-            <rect x="62" y="90" width="10" height="55" rx="5"/>
-            <circle cx="67" cy="82" r="8"/>
-            <rect x="115" y="70" width="10" height="75" rx="5"/>
-            <circle cx="120" cy="62" r="8"/>
-            <rect x="168" y="90" width="10" height="55" rx="5"/>
-            <circle cx="173" cy="82" r="8"/>
-          </g>
-          <path d="M40 45 Q45 35 55 38 M195 45 Q190 35 180 38" stroke="#9c7c2c" stroke-width="2" fill="none"/>
-          <text x="120" y="35" text-anchor="middle" font-family="Georgia" font-size="12" font-style="italic" fill="#5f584a">solidarity, bound in print</text>
-        </svg>
-        <figcaption>Six hundred voices rise from the Hachette imprint pages.</figcaption>
-      </figure>
-      <div class="body-copy">
-        <div class="cols">
+    <!-- 03 -->
+    <article class="card t-rose">
+      <div class="storyhead"><span class="num">03</span><span class="cat">Books &amp; Publishing</span></div>
+      <div class="storybody">
+        <h2>Publishing's Labor Summer: PRH Lifts Entry Pay as Hachette Workers Form the Largest Union in Trade History</h2>
+        <p class="deck">Wages rise and organizing spreads — on a foundation of flat print sales.</p>
+        <figure>
+          <svg viewBox="0 0 240 160" role="img" aria-label="Illustration of an open book with hands raised from its pages">
+            <rect width="240" height="160" fill="#f8eef1"/>
+            <path d="M30 128 Q75 110 120 122 Q165 110 210 128 L210 142 Q165 124 120 136 Q75 124 30 142 Z" fill="#c2456b"/>
+            <path d="M120 122 V136" stroke="#8e2f4e" stroke-width="3"/>
+            <g fill="#1e3a5f">
+              <rect x="62" y="70" width="10" height="45" rx="5"/>
+              <circle cx="67" cy="62" r="8"/>
+              <rect x="115" y="52" width="10" height="63" rx="5"/>
+              <circle cx="120" cy="44" r="8"/>
+              <rect x="168" y="70" width="10" height="45" rx="5"/>
+              <circle cx="173" cy="62" r="8"/>
+            </g>
+            <path d="M40 34 Q45 24 55 27 M195 34 Q190 24 180 27" stroke="#d97706" stroke-width="2" fill="none"/>
+            <text x="120" y="26" text-anchor="middle" font-family="Georgia" font-size="11" font-style="italic" fill="#5b6b7a">solidarity, bound in print</text>
+          </svg>
+          <figcaption>Six hundred voices rise from the Hachette imprint pages.</figcaption>
+        </figure>
+        <div class="copy">
           <p>Labor organizing is reshaping trade publishing's economics. As reported by Publishers Weekly, Penguin Random House has raised its entry-level salary from $51,000 to $55,000 amid a wave of organizing across the industry. At Hachette, the newly formed Hachette Workers Coalition — organized with NewsGuild-CWA and roughly 600 members strong — is now the largest union in trade publishing history and will soon begin collective bargaining.</p>
-          <p>The wage push lands on soft ground: print book sales have been flat in the first half of 2026, and in France the Syndicat national de l'édition reported publisher revenues slipped 0.6% to €2.88 billion in 2025, citing the unchecked growth of the secondhand market and unresolved questions over AI as deep structural concerns. Meanwhile the deal flow continues — among the week's notable acquisitions is John Carreyrou's "Satoshi's Secret," an investigation into the true identity of Bitcoin's inventor.</p>
+          <p>The wage push lands on soft ground: print book sales have been flat in the first half of 2026, and in France the Syndicat national de l'édition reported publisher revenues slipped 0.6% to €2.88 billion in 2025, citing the secondhand market's growth and unresolved questions over AI as structural concerns. The deal flow continues meanwhile — among the week's notable acquisitions is John Carreyrou's "Satoshi's Secret," an investigation into the identity of Bitcoin's inventor.</p>
         </div>
-        <div class="infobox">
+        <div class="takeaways">
           <h3>Key takeaways</h3>
           <ul>
             <li>PRH entry-level pay: $51,000 → $55,000, moved by industry-wide organizing pressure.</li>
-            <li>Hachette Workers Coalition (~600 members, NewsGuild-CWA) is trade publishing's largest-ever union; bargaining starts soon.</li>
+            <li>Hachette Workers Coalition (~600 members, NewsGuild-CWA) is trade publishing's largest-ever union.</li>
             <li>The backdrop is fragile: flat H1 2026 print sales and declining French publisher revenues.</li>
           </ul>
         </div>
-        <div class="infobox why">
+        <div class="why">
           <h3>Why it matters</h3>
-          <p>Publishing has long paired cultural prestige with famously low pay; a moving wage floor at the industry's biggest house resets expectations everywhere else, and the Hachette bargaining round will set precedents watched well beyond books. For authors, the squeeze matters too: houses caught between rising labor costs and flat sales have less room on advances and marketing, which keeps strengthening the economic case many writers already see in independent publishing routes.</p>
+          <p>Publishing has long paired cultural prestige with famously low pay; a moving wage floor at the industry's biggest house resets expectations everywhere, and the Hachette bargaining round will set precedents watched well beyond books. For authors, houses squeezed between rising labor costs and flat sales have less room on advances and marketing — strengthening the economic case for independent publishing routes.</p>
         </div>
-        <p class="sources">Sources: <a href="https://www.publishersweekly.com/pw/by-topic/industry-news/index.html">Publishers Weekly — Industry News</a> · <a href="https://www.publishersweekly.com/pw/by-topic/industry-news/book-deals/article/100860-book-deals-week-of-july-20-2026.html">Publishers Weekly — Book Deals, Week of July 20, 2026</a></p>
+        <p class="sources"><strong>Sources:</strong> <a href="https://www.publishersweekly.com/pw/by-topic/industry-news/index.html">Publishers Weekly — Industry News</a> · <a href="https://www.publishersweekly.com/pw/by-topic/industry-news/book-deals/article/100860-book-deals-week-of-july-20-2026.html">Publishers Weekly — Book Deals, Week of July 20, 2026</a></p>
       </div>
-    </div>
-  </article>
+    </article>
 
-  <!-- ═══════════════ STORY 4 ═══════════════ -->
-  <article>
-    <span class="kicker">Books &amp; Publishing</span>
-    <h2>KDP Tightens the Gates: Quality Enforcement and AI Disclosure Rules Favor Careful Authors</h2>
-    <p class="deck">Reports from the self-publishing world describe a store trying to surface fewer, better books — and transparency that appears to sell.</p>
-    <div class="story-grid flip">
-      <figure>
-        <svg viewBox="0 0 240 200" role="img" aria-label="Illustration of a book passing through an ornate gate">
-          <rect width="240" height="200" fill="#f1ecdf"/>
-          <path d="M50 180 V70 Q50 30 120 30 Q190 30 190 70 V180" fill="none" stroke="#3d5244" stroke-width="6"/>
-          <path d="M70 180 V78 Q70 48 120 48 Q170 48 170 78 V180" fill="none" stroke="#3d5244" stroke-width="3"/>
-          <circle cx="120" cy="30" r="6" fill="#9c7c2c"/>
-          <g transform="translate(88,105)">
-            <path d="M0 20 Q16 8 32 20 Q48 8 64 20 L64 55 Q48 43 32 55 Q16 43 0 55 Z" fill="#7a1f2b"/>
-            <path d="M32 20 V55" stroke="#4e1118" stroke-width="2.5"/>
-            <path d="M8 30 Q20 22 28 28 M36 28 Q44 22 56 30" stroke="#f1ecdf" stroke-width="1.5" fill="none"/>
-          </g>
-          <path d="M108 88 L114 96 L130 78" stroke="#3d5244" stroke-width="4" fill="none" stroke-linecap="round"/>
-          <text x="120" y="195" text-anchor="middle" font-family="Georgia" font-size="11" font-style="italic" fill="#5f584a">quality passes through</text>
-        </svg>
-        <figcaption>Amazon's narrower gate rewards the well-made book.</figcaption>
-      </figure>
-      <div class="body-copy">
-        <div class="cols">
-          <p>Reports from KDP-watcher industry blogs (not a formal Amazon announcement — worth noting) describe a platform tightening its standards in 2026. Under stricter enforcement, higher-quality books are outperforming low-effort products, with Amazon signalling it wants fewer titles that clutter the store and more that satisfy readers. The pressure traces to scale: one report on the 2026 KDP AI rule changes cites roughly 1.5 million low-quality AI titles flooding the platform annually, prompting disclosure requirements — and, intriguingly, beta tests cited in that report found disclosed-AI books saw 15% higher conversion, suggesting transparency itself sells.</p>
-          <p>The money in the ecosystem remains substantial — Kindle Unlimited author earnings for June totalled $67.0 million. For romance specifically, the playbook the reports describe is familiar but sharpening: TikTok and short-form trends still drive fast sales spikes, and what sells is clear genre signalling in title and cover, tight editing, and series branding that keeps readers returning.</p>
+    <!-- 04 -->
+    <article class="card t-amber">
+      <div class="storyhead"><span class="num">04</span><span class="cat">Books &amp; Publishing</span></div>
+      <div class="storybody">
+        <h2>KDP Tightens the Gates: Quality Enforcement and AI Disclosure Rules Favor Careful Authors</h2>
+        <p class="deck">A store trying to surface fewer, better books — and transparency that appears to sell.</p>
+        <figure>
+          <svg viewBox="0 0 240 160" role="img" aria-label="Illustration of a book passing through an ornate gate">
+            <rect width="240" height="160" fill="#fbf3e6"/>
+            <path d="M55 150 V60 Q55 26 120 26 Q185 26 185 60 V150" fill="none" stroke="#d97706" stroke-width="6"/>
+            <path d="M73 150 V66 Q73 42 120 42 Q167 42 167 66 V150" fill="none" stroke="#d97706" stroke-width="3"/>
+            <circle cx="120" cy="26" r="6" fill="#c2456b"/>
+            <g transform="translate(90,84)">
+              <path d="M0 16 Q15 6 30 16 Q45 6 60 16 L60 46 Q45 36 30 46 Q15 36 0 46 Z" fill="#0e7490"/>
+              <path d="M30 16 V46" stroke="#0a5568" stroke-width="2.5"/>
+              <path d="M7 25 Q18 18 26 23 M34 23 Q42 18 53 25" stroke="#eaf3f6" stroke-width="1.5" fill="none"/>
+            </g>
+            <path d="M108 70 L114 78 L130 60" stroke="#0e7490" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <text x="120" y="157" text-anchor="middle" font-family="Georgia" font-size="10" font-style="italic" fill="#5b6b7a">quality passes through</text>
+          </svg>
+          <figcaption>Amazon's narrower gate rewards the well-made book.</figcaption>
+        </figure>
+        <div class="copy">
+          <p>Reports from KDP-watcher industry blogs (not a formal Amazon announcement — worth noting) describe a platform tightening its standards in 2026. Under stricter enforcement, higher-quality books are outperforming low-effort products, with Amazon signalling it wants fewer titles that clutter the store and more that satisfy readers. The pressure traces to scale: one report on the 2026 KDP AI rule changes cites roughly 1.5 million low-quality AI titles flooding the platform annually, prompting disclosure requirements — and beta tests cited in that report found disclosed-AI books saw 15% higher conversion, suggesting transparency itself sells.</p>
+          <p>The money in the ecosystem remains substantial — Kindle Unlimited author earnings for June totalled $67.0 million. For romance specifically, the playbook is familiar but sharpening: TikTok and short-form trends still drive fast sales spikes, and what sells is clear genre signalling in title and cover, tight editing, and series branding that keeps readers returning.</p>
         </div>
-        <div class="infobox">
+        <div class="takeaways">
           <h3>Key takeaways</h3>
           <ul>
             <li>Tighter KDP enforcement is rewarding well-edited, higher-quality books over low-effort uploads.</li>
@@ -266,69 +306,70 @@
             <li>June KU author payout: $67.0M; romance still rides short-form video and series branding.</li>
           </ul>
         </div>
-        <div class="infobox why">
+        <div class="why">
           <h3>Why it matters</h3>
-          <p>Discovery is the whole game in self-publishing, and every gate a marketplace adds against low-effort floods raises the relative visibility of carefully made books. If the reported enforcement holds, the winners are authors who invest in editing, honest metadata and clear genre signals — and the disclosure-conversion finding hints that readers reward transparency rather than punish it. For anyone publishing independently, craft and candour are becoming ranking factors, not just virtues.</p>
+          <p>Discovery is the whole game in self-publishing, and every gate a marketplace adds against low-effort floods raises the relative visibility of carefully made books. If the reported enforcement holds, the winners are authors who invest in editing, honest metadata and clear genre signals — craft and candour are becoming ranking factors, not just virtues.</p>
         </div>
-        <p class="sources">Sources: <a href="https://barkerbooks.com/amazon-kdp-news/">Barker Books — Amazon KDP News 2026</a> · <a href="https://blog.bookautoai.com/trending-books-amazon-kdp/">BookAuto — Trending Books on Amazon KDP 2026</a> · <a href="https://theauthorcentral.com/blog/amazon-kdp-self-publishing-guide/">Author Central — KDP Publishing Guide 2026</a></p>
+        <p class="sources"><strong>Sources:</strong> <a href="https://barkerbooks.com/amazon-kdp-news/">Barker Books — Amazon KDP News 2026</a> · <a href="https://blog.bookautoai.com/trending-books-amazon-kdp/">BookAuto — Trending Books on Amazon KDP 2026</a> · <a href="https://theauthorcentral.com/blog/amazon-kdp-self-publishing-guide/">Author Central — KDP Publishing Guide 2026</a></p>
       </div>
-    </div>
-  </article>
+    </article>
 
-  <!-- ═══════════════ STORY 5 ═══════════════ -->
-  <article>
-    <span class="kicker">Recruitment &amp; HR</span>
-    <h2>India's Talent Market: 9% Growth and a 25% Campus-Hiring Jump — Against an 80% Skills Gap</h2>
-    <p class="deck">Fresher hiring roars back after the layoff winter, but employers report a deepening struggle to find the skills they need.</p>
-    <div class="story-grid">
-      <figure>
-        <svg viewBox="0 0 240 200" role="img" aria-label="Illustration of graduates ascending steps with a rising arrow">
-          <rect width="240" height="200" fill="#f1ecdf"/>
-          <g fill="#3d5244" opacity=".9">
-            <rect x="30" y="140" width="55" height="40"/>
-            <rect x="95" y="110" width="55" height="70"/>
-            <rect x="160" y="75" width="55" height="105"/>
-          </g>
-          <g>
-            <circle cx="57" cy="118" r="9" fill="#7a1f2b"/>
-            <rect x="45" y="108" width="24" height="5" fill="#141210" transform="rotate(-8 57 110)"/>
-            <circle cx="122" cy="88" r="9" fill="#7a1f2b"/>
-            <rect x="110" y="78" width="24" height="5" fill="#141210" transform="rotate(-8 122 80)"/>
-            <circle cx="187" cy="53" r="9" fill="#7a1f2b"/>
-            <rect x="175" y="43" width="24" height="5" fill="#141210" transform="rotate(-8 187 45)"/>
-          </g>
-          <path d="M25 95 Q120 20 205 22" fill="none" stroke="#9c7c2c" stroke-width="3" stroke-dasharray="6 5"/>
-          <path d="M195 15 L207 21 L197 30" fill="none" stroke="#9c7c2c" stroke-width="3" stroke-linecap="round"/>
-          <text x="120" y="195" text-anchor="middle" font-family="Georgia" font-size="11" font-style="italic" fill="#5f584a">the class of 2026 climbs back</text>
-        </svg>
-        <figcaption>Campus gates reopen — but the skills bar keeps rising.</figcaption>
-      </figure>
-      <div class="body-copy">
-        <div class="cols">
-          <p>A candid note first: today's HR wire carried more trend analysis than breaking headlines, so this is the state-of-the-market picture rather than a single event. That picture is genuinely consequential. India's job market is expected to grow 9% in 2026, led by IT, retail, telecom and BFSI, and after the layoff winter, IT companies have restarted fresher intake — campus recruitment is reported up 25%, with Infosys having hired 12,000 freshers in the first half against a 20,000 target, and the TCS NQT (July 30 exam) feeding scores to over 4,000 corporates.</p>
-          <p>The friction is on the supply side. Around 80% of Indian employers report struggling to find qualified candidates — worst in AI, cloud and cybersecurity — while AI-linked job postings are projected to grow 32% year-on-year to nearly 3.8 lakh positions. Average time-to-hire has stretched to 35–45 days, 73% of talent-acquisition leaders say roles have become harder to fill, and workforce engagement has slid to just 19%, with employees citing limited flexibility and stalled career growth. The four Labour Codes, in force since November 21, 2025, continue reshaping appointment letters, fixed-term contracts and gig engagements.</p>
+    <!-- 05 -->
+    <article class="card lead t-teal">
+      <div class="storyhead"><span class="num">05</span><span class="cat">Recruitment &amp; HR</span></div>
+      <div class="storybody">
+        <h2>India's Talent Market: 9% Growth and a 25% Campus-Hiring Jump — Against an 80% Skills Gap</h2>
+        <p class="deck">Fresher hiring roars back, but employers report a deepening struggle to find the skills they need.</p>
+        <div class="lead-flex">
+          <figure>
+            <svg viewBox="0 0 240 200" role="img" aria-label="Illustration of graduates ascending steps with a rising arrow">
+              <rect width="240" height="200" fill="#eaf3f6"/>
+              <g fill="#1e3a5f" opacity=".92">
+                <rect x="30" y="140" width="55" height="40"/>
+                <rect x="95" y="110" width="55" height="70"/>
+                <rect x="160" y="75" width="55" height="105"/>
+              </g>
+              <g>
+                <circle cx="57" cy="118" r="9" fill="#c2456b"/>
+                <rect x="45" y="108" width="24" height="5" fill="#1c2733" transform="rotate(-8 57 110)"/>
+                <circle cx="122" cy="88" r="9" fill="#c2456b"/>
+                <rect x="110" y="78" width="24" height="5" fill="#1c2733" transform="rotate(-8 122 80)"/>
+                <circle cx="187" cy="53" r="9" fill="#c2456b"/>
+                <rect x="175" y="43" width="24" height="5" fill="#1c2733" transform="rotate(-8 187 45)"/>
+              </g>
+              <path d="M25 95 Q120 20 205 22" fill="none" stroke="#d97706" stroke-width="3" stroke-dasharray="6 5"/>
+              <path d="M195 15 L207 21 L197 30" fill="none" stroke="#d97706" stroke-width="3" stroke-linecap="round"/>
+              <text x="120" y="195" text-anchor="middle" font-family="Georgia" font-size="11" font-style="italic" fill="#5b6b7a">the class of 2026 climbs back</text>
+            </svg>
+            <figcaption>Campus gates reopen — but the skills bar keeps rising.</figcaption>
+          </figure>
+          <div class="copy">
+            <p>A candid note first: today's HR wire carried more trend analysis than breaking headlines, so this is the state-of-the-market picture rather than a single event. That picture is genuinely consequential. India's job market is expected to grow 9% in 2026, led by IT, retail, telecom and BFSI, and after the layoff winter, IT companies have restarted fresher intake — campus recruitment is reported up 25%, and the TCS NQT (July 30 exam) feeds scores to over 4,000 corporates in one sitting.</p>
+            <p>The friction is on the supply side. Around 80% of Indian employers report struggling to find qualified candidates — worst in AI, cloud and cybersecurity — while AI-linked job postings are projected to grow 32% year-on-year to nearly 3.8 lakh positions. Average time-to-hire has stretched to 35–45 days, 73% of talent-acquisition leaders say roles have become harder to fill, and workforce engagement has slid to just 19%, with employees citing limited flexibility and stalled career growth. The four Labour Codes, in force since November 2025, continue reshaping appointment letters, fixed-term contracts and gig engagements.</p>
+          </div>
         </div>
-        <div class="infobox">
+        <div class="takeaways">
           <h3>Key takeaways</h3>
           <ul>
-            <li>Campus hiring is back: recruitment up ~25%, Infosys at 12,000 freshers in H1 2026, TCS NQT on July 30.</li>
+            <li>Campus hiring is back: recruitment reported up ~25%; the TCS NQT (July 30) reaches 4,000+ corporates.</li>
             <li>Demand outruns supply: 80% of employers can't find qualified candidates; AI postings +32% YoY to ~3.8 lakh.</li>
             <li>Engagement has fallen to 19% — retention, not just attraction, is 2026's real battleground.</li>
           </ul>
         </div>
-        <div class="infobox why">
+        <div class="why">
           <h3>Why it matters</h3>
           <p>These numbers describe both sides of every hiring table in India this year. For employers, a 25% campus rebound means renewed head-to-head competition for the same graduating class, where offer speed and a credible employer story decide outcomes — especially with engagement at just 19%, a figure candidates read as a warning. For graduates and job-seekers, the same data is leverage: demand is growing faster than supply in AI, cloud and cybersecurity, and skills in those areas command the market's attention.</p>
         </div>
-        <p class="sources">Sources: <a href="https://www.qureos.com/hiring-guide/hiring-trends-in-india">Qureos — Top Hiring Trends in India (July 2026)</a> · <a href="https://www.india.com/business/after-layoffs-good-news-for-indias-it-sector-companies-start-hiring-freshers-and-mid-senior-professionals-campus-recruitment-rises-by-25-percent-8142983/">India.com — Campus recruitment rises 25%</a> · <a href="https://freshershunt.in/companies-hiring-freshers/">Freshershunt — Companies hiring freshers (July 2026)</a> · <a href="https://www.business-standard.com/industry/news/freshers-back-in-demand-as-it-companies-revive-campus-hiring-drive-125102200795_1.html">Business Standard — Freshers back in demand</a></p>
+        <p class="sources"><strong>Sources:</strong> <a href="https://www.qureos.com/hiring-guide/hiring-trends-in-india">Qureos — Top Hiring Trends in India (July 2026)</a> · <a href="https://www.india.com/business/after-layoffs-good-news-for-indias-it-sector-companies-start-hiring-freshers-and-mid-senior-professionals-campus-recruitment-rises-by-25-percent-8142983/">India.com — Campus recruitment rises 25%</a> · <a href="https://freshershunt.in/companies-hiring-freshers/">Freshershunt — Companies hiring freshers (July 2026)</a></p>
       </div>
-    </div>
-  </article>
+    </article>
 
-  <footer>
-    <div class="fin">❦ ❦ ❦</div>
-    <p>The summaries above are Claude's own words, paraphrased from the day's reporting — the links in each Sources line carry the full, original reporting.</p>
-    <p>The Morning Bloom · Pune Edition · July 21, 2026</p>
+  </div>
+
+  <footer class="card">
+    <div class="flowers">❦ ❦ ❦</div>
+    <p>The summaries above are Claude's own words, paraphrased from the past week's reporting — the links in each Sources line carry the full, original reporting.</p>
+    <p>The Morning Bloom · Pune Edition · July 21, 2026 · <a href="archive.html">Browse the archive</a></p>
   </footer>
 
 </div>
