@@ -1,0 +1,90 @@
+#!/usr/bin/env python3
+"""Publish The Morning Bloom.
+
+Promotes the newest file in editions/ (named YYYY-MM-DD.html) to index.html
+and rebuilds archive.html with a date-wise list of all editions.
+Run from anywhere: python3 scripts/publish.py
+"""
+from datetime import datetime
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+
+ARCHIVE_TEMPLATE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Morning Bloom — Archive</title>
+<style>
+  :root{{--paper:#f7f3e9; --ink:#1d1a14; --rule:#1d1a14; --muted:#6b6250; --accent:#8a2431; --accent3:#31465e; --card:#fdfbf4;}}
+  *{{box-sizing:border-box; margin:0; padding:0;}}
+  body{{background:var(--paper); color:var(--ink); font-family:Georgia,'Times New Roman',serif; line-height:1.6; padding:2rem 1rem 3rem;}}
+  .sheet{{max-width:720px; margin:0 auto;}}
+  .masthead{{text-align:center; border-bottom:4px double var(--rule); padding-bottom:1rem;}}
+  .masthead h1{{font-size:clamp(2rem,6vw,3.2rem); font-weight:900;}}
+  .masthead h1 .bloom{{color:var(--accent);}}
+  .masthead .tagline{{font-style:italic; color:var(--muted); font-size:.9rem; margin-top:.3rem;}}
+  .dateline{{display:flex; justify-content:space-between; border-bottom:1.5px solid var(--rule); padding:.45rem 0; font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; margin-bottom:1.8rem;}}
+  .dateline a{{color:var(--accent3); text-decoration:none; border-bottom:1px solid var(--accent3);}}
+  h2{{font-size:1rem; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); margin-bottom:1rem; text-align:center;}}
+  ul{{list-style:none;}}
+  li{{background:var(--card); border:1px solid #d8d0bc; margin-bottom:.6rem;}}
+  li a{{display:flex; justify-content:space-between; align-items:center; padding:.8rem 1.1rem; color:var(--ink); text-decoration:none; font-size:1.05rem;}}
+  li a:hover{{background:#f2ecdc;}}
+  li .d{{font-weight:700;}}
+  li .latest{{font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); border:1.5px solid var(--accent); padding:.15rem .5rem;}}
+  footer{{border-top:4px double var(--rule); margin-top:2rem; padding-top:1rem; text-align:center; font-size:.8rem; color:var(--muted); font-style:italic;}}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header class="masthead">
+    <h1>The Morning <span class="bloom">Bloom</span></h1>
+    <p class="tagline">Talent, technology &amp; the writing life — pressed fresh each morning</p>
+  </header>
+  <div class="dateline">
+    <span>The Archive</span>
+    <span><a href="index.html">Today's Edition</a></span>
+  </div>
+  <h2>Past Editions, Date-wise</h2>
+  <ul>
+{rows}
+  </ul>
+  <footer>
+    <p>The Morning Bloom · Pune Edition · Summaries are Claude's own words; source links carry the full reporting.</p>
+  </footer>
+</div>
+</body>
+</html>
+"""
+
+
+def main() -> None:
+    editions = sorted((ROOT / "editions").glob("????-??-??.html"), reverse=True)
+    if not editions:
+        raise SystemExit("No editions found in editions/")
+
+    latest = editions[0]
+    # Edition pages link to ../archive.html etc.; from the root copy those
+    # links must drop the ../ prefix.
+    (ROOT / "index.html").write_text(
+        latest.read_text(encoding="utf-8").replace('href="../', 'href="'),
+        encoding="utf-8",
+    )
+
+    rows = []
+    for e in editions:
+        d = datetime.strptime(e.stem, "%Y-%m-%d")
+        pretty = d.strftime("%A, %B %d, %Y").replace(" 0", " ")
+        badge = '<span class="latest">Latest</span>' if e == latest else ""
+        rows.append(f'    <li><a href="editions/{e.name}"><span class="d">{pretty}</span>{badge}</a></li>')
+
+    (ROOT / "archive.html").write_text(
+        ARCHIVE_TEMPLATE.format(rows="\n".join(rows)), encoding="utf-8"
+    )
+    print(f"Published {latest.name} -> index.html; archive.html lists {len(editions)} edition(s).")
+
+
+if __name__ == "__main__":
+    main()
