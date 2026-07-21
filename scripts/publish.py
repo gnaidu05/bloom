@@ -102,7 +102,7 @@ def main() -> None:
         html = e.read_text(encoding="utf-8")
         m = re.search(r"Inside this issue</div>\s*<ol>(.*?)</ol>", html, re.S)
         heads = re.findall(r"<li>(.*?)</li>", m.group(1), re.S) if m else []
-        heads = [re.sub(r"<[^>]+>", "", h).strip() for h in heads]
+        heads = [re.sub(r"<[^>]+>", "", h).strip().replace("&amp;", "&") for h in heads]
         desc = " · ".join(heads) or "The day's five stories across AI & Technology, Books & Publishing, and Recruitment & HR."
         url = f"{SITE}/editions/{e.name}"
         items.append(
