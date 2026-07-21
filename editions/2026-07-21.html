@@ -4,98 +4,130 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Morning Bloom — July 21, 2026 — Pune Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400;500;600;700&family=Public+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#f2f5f7; --card:#ffffff; --ink:#1c2733; --muted:#5b6b7a;
-    --teal:#0e7490; --teal-soft:#e3f1f5;
-    --rose:#c2456b; --rose-soft:#f9e9ee;
-    --amber:#d97706; --amber-soft:#fdf1e0;
-    --navy:#1e3a5f; --navy-soft:#e8edf4;
-    --radius:16px; --shadow:0 4px 14px rgba(30,42,56,.08);
+    --bg:#fafafa; --card:#ffffff; --ink:#18181b; --body:#3f3f46; --muted:#71717a;
+    --teal:#0d7085; --teal-deep:#09515f; --teal-soft:#e9f3f5;
+    --rose:#c14066; --rose-deep:#93294b; --rose-soft:#faebef;
+    --amber:#c97a10; --amber-deep:#8f5606; --amber-soft:#fdf3e3;
+    --navy:#1d3557; --navy-deep:#14263f; --navy-soft:#eaeef4;
+    --line:#e4e4e7;
+    --radius:18px;
+    --shadow-sm:0 1px 2px rgba(24,24,27,.05), 0 2px 8px rgba(24,24,27,.05);
+    --shadow-md:0 2px 4px rgba(24,24,27,.05), 0 10px 28px rgba(24,24,27,.10);
+    --font-display:'Libre Bodoni',Georgia,'Times New Roman',serif;
+    --font-body:'Public Sans','Segoe UI',Roboto,Arial,sans-serif;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
   body{
-    background:var(--bg); color:var(--ink);
-    font-family:'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
-    line-height:1.6; padding:1.6rem 1rem 3rem; font-size:15.5px;
+    background:var(--bg); color:var(--body);
+    font-family:var(--font-body);
+    line-height:1.6; padding:2rem 1.25rem 3rem; font-size:16px;
+    -webkit-font-smoothing:antialiased;
   }
-  .sheet{max-width:1040px; margin:0 auto; display:flex; flex-direction:column; gap:1.2rem;}
+  .sheet{max-width:1060px; margin:0 auto; display:flex; flex-direction:column; gap:1.4rem;}
   a{color:var(--teal);}
+  a:focus-visible{outline:3px solid var(--teal); outline-offset:2px; border-radius:4px;}
+  h1,h2{font-family:var(--font-display); color:var(--ink);}
 
-  .card{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;}
+  .card{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow-sm); border:1px solid var(--line); overflow:hidden; transition:box-shadow .25s ease, transform .25s ease;}
+  .grid .card:hover{box-shadow:var(--shadow-md); transform:translateY(-2px);}
 
-  /* ── Header ─────────────────────────────── */
-  .masthead{padding:1.8rem 2rem 1.6rem; position:relative;}
-  .masthead::before{content:""; position:absolute; inset:0 0 auto 0; height:8px; background:linear-gradient(90deg,var(--teal) 0 34%,var(--rose) 34% 67%,var(--amber) 67% 100%);}
-  .brandrow{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.6rem; margin-bottom:1rem;}
-  .brandrow .mini{display:flex; align-items:center; gap:.5rem; font-weight:700; font-size:.85rem; color:var(--navy); letter-spacing:.06em;}
-  .brandrow .mini .dot{width:14px; height:14px; border-radius:50%; background:var(--rose); display:inline-block; box-shadow:4px 0 0 -2px var(--amber), 8px 0 0 -4px var(--teal);}
-  .pill{display:inline-block; background:var(--teal); color:#fff; font-size:.68rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; padding:.35rem .9rem; border-radius:999px;}
-  .masthead h1{font-size:clamp(2.4rem,7vw,4rem); font-weight:800; line-height:1.02; letter-spacing:-.02em; margin:.7rem 0 .3rem; text-transform:uppercase;}
-  .masthead h1 .bloom{color:var(--rose);}
-  .masthead .tagline{color:var(--muted); font-size:.95rem;}
-  .meta{display:flex; flex-wrap:wrap; gap:.55rem; margin-top:1.1rem;}
-  .chip{font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:.35rem .85rem; border-radius:999px;}
+  /* ── Masthead ─────────────────────────────── */
+  .masthead{padding:2.1rem 2.4rem 1.9rem; position:relative; background:linear-gradient(180deg,#fff 0%,#fdfcf9 100%);}
+  .masthead::before{content:""; position:absolute; inset:0 0 auto 0; height:7px; background:linear-gradient(90deg,var(--teal),var(--rose) 50%,var(--amber));}
+  .brandrow{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.7rem; margin-bottom:1.2rem;}
+  .brandrow .mini{display:flex; align-items:center; gap:.55rem; font-weight:800; font-size:.8rem; color:var(--navy); letter-spacing:.12em;}
+  .brandrow .mini .dot{width:13px; height:13px; border-radius:50%; background:var(--rose); display:inline-block; box-shadow:5px 0 0 -2px var(--amber), 10px 0 0 -4px var(--teal);}
+  .pill{display:inline-block; background:linear-gradient(135deg,var(--teal),var(--teal-deep)); color:#fff; font-size:.66rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; padding:.42rem 1rem; border-radius:999px;}
+  .masthead h1{font-size:clamp(2.5rem,7vw,4.3rem); font-weight:700; line-height:1.02; letter-spacing:-.01em; margin:.6rem 0 .5rem;}
+  .masthead h1 .bloom{color:var(--rose); font-style:italic;}
+  .masthead .tagline{color:var(--muted); font-size:.98rem; max-width:46ch;}
+  .meta{display:flex; flex-wrap:wrap; gap:.55rem; margin-top:1.25rem;}
+  .chip{font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:.42rem .95rem; border-radius:999px; border:1px solid transparent;}
   .chip.date{background:var(--navy-soft); color:var(--navy);}
-  .chip.ed{background:var(--rose-soft); color:var(--rose);}
-  .chip.arch{background:var(--amber-soft);}
-  .chip.arch a{color:var(--amber); text-decoration:none;}
+  .chip.ed{background:var(--rose-soft); color:var(--rose-deep);}
+  .chip.arch{background:#fff; border-color:var(--line);}
+  .chip.arch a{color:var(--amber-deep); text-decoration:none;}
+  .chip.arch:hover{border-color:var(--amber);}
 
-  /* ── Top row: inside + note ─────────────── */
-  .toprow{display:grid; grid-template-columns:1fr 1.4fr; gap:1.2rem;}
-  @media(max-width:760px){.toprow{grid-template-columns:1fr;}}
-  .boxhead{display:flex; align-items:center; gap:.6rem; font-size:.78rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; margin-bottom:.8rem;}
-  .boxhead .ico{width:26px; height:26px; border-radius:8px; display:grid; place-items:center; color:#fff; font-size:.8rem;}
-  .inside{background:var(--amber-soft); padding:1.3rem 1.5rem; border-radius:var(--radius); box-shadow:var(--shadow);}
-  .inside .boxhead{color:var(--amber);} .inside .ico{background:var(--amber);}
+  /* ── Top row ──────────────────────────────── */
+  .toprow{display:grid; grid-template-columns:1fr 1.45fr; gap:1.4rem;}
+  @media(max-width:780px){.toprow{grid-template-columns:1fr;}}
+  .panel{border-radius:var(--radius); box-shadow:var(--shadow-sm); padding:1.5rem 1.7rem;}
+  .boxhead{display:flex; align-items:center; gap:.65rem; font-size:.72rem; font-weight:800; letter-spacing:.18em; text-transform:uppercase; margin-bottom:.9rem;}
+  .boxhead .ico{width:28px; height:28px; border-radius:9px; display:grid; place-items:center; color:#fff; flex:none;}
+  .boxhead .ico svg{width:14px; height:14px; stroke:currentColor; fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round;}
+  .inside{background:linear-gradient(160deg,#fdf6e8,var(--amber-soft)); border:1px solid #f0dfc0;}
+  .inside .boxhead{color:var(--amber-deep);} .inside .ico{background:linear-gradient(135deg,var(--amber),var(--amber-deep));}
   .inside ol{list-style:none; counter-reset:n;}
-  .inside ol li{counter-increment:n; display:flex; gap:.7rem; align-items:baseline; padding:.4rem 0; border-bottom:1px dashed #e8cfa5; font-size:.86rem; font-weight:600;}
-  .inside ol li:last-child{border-bottom:none;}
-  .inside ol li::before{content:"0" counter(n); font-weight:800; color:var(--amber); font-size:.8rem;}
-  .ednote{background:var(--teal-soft); padding:1.3rem 1.5rem; border-radius:var(--radius); box-shadow:var(--shadow); font-size:.86rem; color:#28505e;}
-  .ednote .boxhead{color:var(--teal);} .ednote .ico{background:var(--teal);}
-  .ednote p{margin-bottom:.5rem;} .ednote p:last-child{margin-bottom:0;}
+  .inside ol li{counter-increment:n; display:flex; gap:.8rem; align-items:baseline; padding:.5rem 0; border-bottom:1px dashed #ecd9b4; font-size:.86rem; font-weight:600; color:#4a3d28;}
+  .inside ol li:last-child{border-bottom:none; padding-bottom:0;}
+  .inside ol li::before{content:"0" counter(n); font-family:var(--font-display); font-weight:800; color:var(--amber); font-size:.95rem; flex:none;}
+  .ednote{background:linear-gradient(160deg,#eef6f8,var(--teal-soft)); border:1px solid #cfe4ea; font-size:.86rem; color:#2b505c;}
+  .ednote .boxhead{color:var(--teal-deep);} .ednote .ico{background:linear-gradient(135deg,var(--teal),var(--teal-deep));}
+  .ednote p{margin-bottom:.55rem;} .ednote p:last-child{margin-bottom:0;}
 
-  /* ── Story grid ─────────────────────────── */
-  .grid{display:grid; grid-template-columns:1fr 1fr; gap:1.2rem;}
-  @media(max-width:820px){.grid{grid-template-columns:1fr;}}
+  /* ── Story grid ───────────────────────────── */
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:1.4rem;}
+  @media(max-width:840px){.grid{grid-template-columns:1fr;}}
   article.card{display:flex; flex-direction:column;}
   article.lead{grid-column:1 / -1;}
-  .storyhead{display:flex; align-items:center; gap:.75rem; padding:1.1rem 1.5rem; color:#fff;}
-  .t-teal .storyhead{background:var(--teal);} .t-rose .storyhead{background:var(--rose);} .t-amber .storyhead{background:var(--amber);} .t-navy .storyhead{background:var(--navy);}
-  .num{width:34px; height:34px; border-radius:10px; background:rgba(255,255,255,.22); display:grid; place-items:center; font-weight:800; font-size:.9rem; flex:none;}
-  .cat{font-size:.7rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; opacity:.95;}
-  .storybody{padding:1.4rem 1.5rem 1.5rem; display:flex; flex-direction:column; gap:.9rem;}
-  h2{font-size:1.35rem; line-height:1.25; font-weight:800; letter-spacing:-.01em;}
-  article.lead h2{font-size:clamp(1.5rem,3.4vw,2rem);}
-  .deck{font-size:.92rem; color:var(--muted); font-style:italic; margin-top:-.3rem;}
-  figure{border-radius:12px; overflow:hidden; border:1px solid #e3e9ee;}
+  .storyhead{display:flex; align-items:center; gap:.85rem; padding:1.05rem 1.7rem;}
+  .t-teal .storyhead{background:linear-gradient(120deg,var(--teal),var(--teal-deep)); color:#fff;}
+  .t-rose .storyhead{background:linear-gradient(120deg,var(--rose),var(--rose-deep)); color:#fff;}
+  .t-amber .storyhead{background:linear-gradient(120deg,var(--amber),var(--amber-deep)); color:#fff;}
+  .t-navy .storyhead{background:linear-gradient(120deg,var(--navy),var(--navy-deep)); color:#fff;}
+  .num{width:36px; height:36px; border-radius:11px; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.35); display:grid; place-items:center; font-family:var(--font-display); font-weight:800; font-size:.95rem; flex:none;}
+  .cat{font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; opacity:.96;}
+  .storybody{padding:1.6rem 1.7rem 1.7rem; display:flex; flex-direction:column; gap:1rem;}
+  h2{font-size:1.45rem; line-height:1.22; font-weight:800; letter-spacing:-.01em;}
+  article.lead h2{font-size:clamp(1.6rem,3.6vw,2.25rem); line-height:1.15;}
+  .deck{font-size:.95rem; color:var(--muted); margin-top:-.35rem; max-width:72ch;}
+  figure{border-radius:14px; overflow:hidden; border:1px solid var(--line);}
   figure svg{display:block; width:100%; height:auto;}
-  figcaption{font-size:.72rem; color:var(--muted); font-style:italic; padding:.45rem .8rem; background:#f7fafb; border-top:1px solid #e3e9ee;}
-  article.lead .lead-flex{display:grid; grid-template-columns:300px 1fr; gap:1.3rem; align-items:start;}
-  @media(max-width:760px){article.lead .lead-flex{grid-template-columns:1fr;}}
-  .copy p{margin-bottom:.8rem; font-size:.92rem;}
+  figcaption{font-size:.72rem; color:var(--muted); font-style:italic; padding:.5rem .9rem; background:#faf9f6; border-top:1px solid var(--line);}
+  article.lead .lead-flex{display:grid; grid-template-columns:310px 1fr; gap:1.5rem; align-items:start;}
+  @media(max-width:780px){article.lead .lead-flex{grid-template-columns:1fr;}}
+  .copy p{margin-bottom:.85rem; font-size:.93rem; max-width:78ch;}
   .copy p:last-child{margin-bottom:0;}
 
-  .takeaways{border-radius:12px; padding:.95rem 1.15rem;}
+  .takeaways{border-radius:14px; padding:1.05rem 1.25rem;}
   .t-teal .takeaways{background:var(--teal-soft);} .t-rose .takeaways{background:var(--rose-soft);} .t-amber .takeaways{background:var(--amber-soft);} .t-navy .takeaways{background:var(--navy-soft);}
-  .takeaways h3, .why h3{font-size:.7rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; margin-bottom:.5rem;}
-  .t-teal .takeaways h3{color:var(--teal);} .t-rose .takeaways h3{color:var(--rose);} .t-amber .takeaways h3{color:var(--amber);} .t-navy .takeaways h3{color:var(--navy);}
+  .takeaways h3, .why h3{font-size:.68rem; font-weight:800; letter-spacing:.2em; text-transform:uppercase; margin-bottom:.55rem;}
+  .t-teal .takeaways h3{color:var(--teal-deep);} .t-rose .takeaways h3{color:var(--rose-deep);} .t-amber .takeaways h3{color:var(--amber-deep);} .t-navy .takeaways h3{color:var(--navy);}
   .takeaways ul{list-style:none;}
-  .takeaways li{padding-left:1.3rem; position:relative; font-size:.86rem; margin-bottom:.35rem; line-height:1.5;}
-  .takeaways li::before{content:"✔"; position:absolute; left:0; font-size:.75rem; top:.12rem;}
-  .t-teal .takeaways li::before{color:var(--teal);} .t-rose .takeaways li::before{color:var(--rose);} .t-amber .takeaways li::before{color:var(--amber);} .t-navy .takeaways li::before{color:var(--navy);}
-  .why{border-left:4px solid; border-radius:6px 12px 12px 6px; padding:.85rem 1.15rem; background:#f7f9fa;}
+  .takeaways li{padding-left:1.5rem; position:relative; font-size:.86rem; margin-bottom:.4rem; line-height:1.55; color:#2c2c31;}
+  .takeaways li:last-child{margin-bottom:0;}
+  .takeaways li::before{content:""; position:absolute; left:0; top:.22rem; width:15px; height:15px;
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;}
+  .t-teal .takeaways li::before{background:var(--teal-deep);} .t-rose .takeaways li::before{background:var(--rose-deep);} .t-amber .takeaways li::before{background:var(--amber-deep);} .t-navy .takeaways li::before{background:var(--navy);}
+  .why{border-left:4px solid; border-radius:8px 14px 14px 8px; padding:1rem 1.25rem; background:#faf9f6;}
   .t-teal .why{border-color:var(--teal);} .t-rose .why{border-color:var(--rose);} .t-amber .why{border-color:var(--amber);} .t-navy .why{border-color:var(--navy);}
   .why h3{color:var(--ink);}
-  .why p{font-size:.86rem; color:#33424f;}
-  .sources{font-size:.74rem; color:var(--muted); border-top:1px dashed #d8e0e6; padding-top:.7rem;}
-  .sources strong{text-transform:uppercase; letter-spacing:.1em; font-size:.68rem;}
+  .why p{font-size:.87rem; color:var(--body); max-width:80ch;}
+  .sources{font-size:.75rem; color:var(--muted); border-top:1px dashed var(--line); padding-top:.8rem; line-height:1.8;}
+  .sources strong{text-transform:uppercase; letter-spacing:.12em; font-size:.66rem; color:#4a5866;}
 
-  /* ── Footer ─────────────────────────────── */
-  footer.card{background:var(--navy); color:#cfdcea; text-align:center; padding:1.5rem 2rem; font-size:.8rem;}
-  footer .flowers{color:var(--amber); letter-spacing:.4em; margin-bottom:.5rem; font-size:1rem;}
-  footer a{color:#9fd3e2;}
+  /* ── Footer ───────────────────────────────── */
+  footer.card{background:linear-gradient(135deg,var(--navy),var(--navy-deep)); color:#c6d4e4; text-align:center; padding:1.8rem 2rem; font-size:.8rem; border:none;}
+  footer .flowers{color:#e2b264; letter-spacing:.45em; margin-bottom:.55rem; font-size:1rem;}
+  footer a{color:#8fd0e2;}
+  footer p{max-width:72ch; margin:0 auto .3rem;}
+
+  /* ── Motion (respects reduced-motion) ─────── */
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .55s ease, transform .55s ease;}
+  .reveal.in{opacity:1; transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+    .grid .card:hover{transform:none;}
+    html{scroll-behavior:auto;}
+  }
 </style>
 </head>
 <body>
@@ -108,18 +140,18 @@
       <span class="pill">Daily News Briefing</span>
     </div>
     <h1>The Morning <span class="bloom">Bloom</span></h1>
-    <p class="tagline">Technology, publishing &amp; the world of work — pressed fresh each morning</p>
+    <p class="tagline">Technology, publishing &amp; the world of work — pressed fresh each morning.</p>
     <div class="meta">
       <span class="chip date">Tuesday, July 21, 2026</span>
       <span class="chip ed">Pune Edition</span>
-      <span class="chip arch"><a href="../archive.html">📚 Archive</a></span>
+      <span class="chip arch"><a href="../archive.html">Archive →</a></span>
     </div>
   </header>
 
   <!-- ═══ Inside + editor's note ═══ -->
   <div class="toprow">
-    <div class="inside">
-      <div class="boxhead"><span class="ico">☰</span>Inside this issue</div>
+    <div class="panel inside reveal">
+      <div class="boxhead"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span>Inside this issue</div>
       <ol>
         <li>AI's Wall Street moment: OpenAI &amp; Anthropic eye IPOs</li>
         <li>AMD's Helios lands Microsoft in strike at Nvidia</li>
@@ -128,8 +160,8 @@
         <li>India's fresher windows open — against a skills gap</li>
       </ol>
     </div>
-    <div class="ednote">
-      <div class="boxhead"><span class="ico">✓</span>Date-checked sourcing</div>
+    <div class="panel ednote reveal">
+      <div class="boxhead"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></span>Date-checked sourcing</div>
       <p>Every story below passed a freshness audit this morning: sources are either articles with
       verifiable July 2026 publication dates (most from July 14–20) or clearly labeled current-month
       trackers, flagged in-story. Two candidate stories were cut in that audit — a KDP quality-rules
@@ -146,7 +178,7 @@
   <div class="grid">
 
     <!-- 01 — LEAD -->
-    <article class="card lead t-teal">
+    <article class="card lead t-teal reveal">
       <div class="storyhead"><span class="num">01</span><span class="cat">AI &amp; Technology · Lead story</span></div>
       <div class="storybody">
         <h2>AI's Wall Street Moment: OpenAI and Anthropic Both Move Toward Historic Listings</h2>
@@ -154,17 +186,17 @@
         <div class="lead-flex">
           <figure>
             <svg viewBox="0 0 240 200" role="img" aria-label="Illustration of a stock bell ringing above a rising chart">
-              <rect width="240" height="200" fill="#eaf3f6"/>
-              <path d="M20 170 L60 140 L95 152 L135 105 L175 118 L220 60" fill="none" stroke="#0e7490" stroke-width="4" stroke-linecap="round"/>
-              <path d="M20 170 L60 140 L95 152 L135 105 L175 118 L220 60 L220 185 L20 185 Z" fill="#0e7490" opacity=".12"/>
-              <circle cx="220" cy="60" r="5" fill="#c2456b"/>
+              <rect width="240" height="200" fill="#e9f2f5"/>
+              <path d="M20 170 L60 140 L95 152 L135 105 L175 118 L220 60" fill="none" stroke="#0d7085" stroke-width="4" stroke-linecap="round"/>
+              <path d="M20 170 L60 140 L95 152 L135 105 L175 118 L220 60 L220 185 L20 185 Z" fill="#0d7085" opacity=".12"/>
+              <circle cx="220" cy="60" r="5" fill="#c14066"/>
               <g transform="translate(105,18)">
-                <path d="M15 30 Q15 8 30 8 Q45 8 45 30 L50 38 L10 38 Z" fill="#d97706"/>
-                <rect x="27" y="2" width="6" height="8" rx="2" fill="#d97706"/>
-                <circle cx="30" cy="42" r="4" fill="#c2456b"/>
-                <path d="M2 20 Q6 24 4 30 M58 20 Q54 24 56 30" stroke="#d97706" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <path d="M15 30 Q15 8 30 8 Q45 8 45 30 L50 38 L10 38 Z" fill="#c97a10"/>
+                <rect x="27" y="2" width="6" height="8" rx="2" fill="#c97a10"/>
+                <circle cx="30" cy="42" r="4" fill="#c14066"/>
+                <path d="M2 20 Q6 24 4 30 M58 20 Q54 24 56 30" stroke="#c97a10" stroke-width="2.5" fill="none" stroke-linecap="round"/>
               </g>
-              <text x="30" y="52" font-family="Georgia" font-size="13" font-style="italic" fill="#5b6b7a">IPO</text>
+              <text x="30" y="52" font-family="Georgia" font-size="13" font-style="italic" fill="#71808f">IPO</text>
             </svg>
             <figcaption>The opening bell beckons the frontier labs.</figcaption>
           </figure>
@@ -190,29 +222,29 @@
     </article>
 
     <!-- 02 -->
-    <article class="card t-navy">
+    <article class="card t-navy reveal">
       <div class="storyhead"><span class="num">02</span><span class="cat">AI &amp; Technology</span></div>
       <div class="storybody">
         <h2>AMD Launches Helios, Its First Rack-Scale AI System — and Microsoft Signs On</h2>
         <p class="deck">July 20: AMD's most competitive move yet against a rival holding over 95% of the data-center GPU market.</p>
         <figure>
           <svg viewBox="0 0 240 160" role="img" aria-label="Illustration of a server rack with GPU modules">
-            <rect width="240" height="160" fill="#eef1f6"/>
-            <rect x="80" y="14" width="80" height="132" rx="8" fill="#1e3a5f"/>
-            <g fill="#eef1f6">
+            <rect width="240" height="160" fill="#ecf0f5"/>
+            <rect x="80" y="14" width="80" height="132" rx="8" fill="#1d3557"/>
+            <g fill="#ecf0f5">
               <rect x="90" y="26" width="60" height="14" rx="3"/>
               <rect x="90" y="46" width="60" height="14" rx="3"/>
               <rect x="90" y="66" width="60" height="14" rx="3"/>
               <rect x="90" y="86" width="60" height="14" rx="3"/>
               <rect x="90" y="106" width="60" height="14" rx="3"/>
             </g>
-            <g fill="#c2456b">
+            <g fill="#c14066">
               <circle cx="97" cy="33" r="3"/><circle cx="97" cy="53" r="3"/><circle cx="97" cy="73" r="3"/><circle cx="97" cy="93" r="3"/><circle cx="97" cy="113" r="3"/>
             </g>
-            <g stroke="#d97706" stroke-width="2.5" fill="none">
+            <g stroke="#c97a10" stroke-width="2.5" fill="none">
               <path d="M80 80 H40 M160 80 H200 M80 40 H55 M160 40 H185 M80 120 H55 M160 120 H185"/>
             </g>
-            <g fill="#0e7490">
+            <g fill="#0d7085">
               <circle cx="40" cy="80" r="4"/><circle cx="200" cy="80" r="4"/><circle cx="55" cy="40" r="4"/><circle cx="185" cy="40" r="4"/><circle cx="55" cy="120" r="4"/><circle cx="185" cy="120" r="4"/>
             </g>
             <text x="120" y="140" text-anchor="middle" font-family="Georgia" font-size="9" font-style="italic" fill="#9fb0c4">72 GPUs to a rack</text>
@@ -239,25 +271,25 @@
     </article>
 
     <!-- 03 -->
-    <article class="card t-amber">
+    <article class="card t-amber reveal">
       <div class="storyhead"><span class="num">03</span><span class="cat">AI &amp; Technology</span></div>
       <div class="storybody">
         <h2>The Silicon Supply Side: Alphabet Designs a Leaner Chip as TSMC Lifts Arizona to $265 Billion</h2>
         <p class="deck">Two July 17–20 reports show the AI buildout's next phase: efficiency at the top, capacity underneath.</p>
         <figure>
           <svg viewBox="0 0 240 160" role="img" aria-label="Illustration of a chip fabrication plant with wafers">
-            <rect width="240" height="160" fill="#fbf3e6"/>
-            <rect x="20" y="80" width="200" height="60" rx="6" fill="#1e3a5f"/>
-            <rect x="45" y="56" width="30" height="24" fill="#1e3a5f"/>
-            <rect x="120" y="48" width="18" height="32" fill="#1e3a5f"/>
-            <path d="M120 48 h18 l10 -14 h-18 Z" fill="#0e7490"/>
-            <circle cx="129" cy="24" r="4" fill="#d97706" opacity=".8"/>
-            <circle cx="140" cy="14" r="3" fill="#d97706" opacity=".5"/>
-            <g fill="#eaf3f6">
+            <rect width="240" height="160" fill="#fbf2e2"/>
+            <rect x="20" y="80" width="200" height="60" rx="6" fill="#1d3557"/>
+            <rect x="45" y="56" width="30" height="24" fill="#1d3557"/>
+            <rect x="120" y="48" width="18" height="32" fill="#1d3557"/>
+            <path d="M120 48 h18 l10 -14 h-18 Z" fill="#0d7085"/>
+            <circle cx="129" cy="24" r="4" fill="#c97a10" opacity=".8"/>
+            <circle cx="140" cy="14" r="3" fill="#c97a10" opacity=".5"/>
+            <g fill="#e9f2f5">
               <rect x="35" y="95" width="22" height="16" rx="2"/><rect x="67" y="95" width="22" height="16" rx="2"/><rect x="99" y="95" width="22" height="16" rx="2"/><rect x="131" y="95" width="22" height="16" rx="2"/><rect x="163" y="95" width="22" height="16" rx="2"/>
             </g>
-            <circle cx="196" cy="118" r="12" fill="#c2456b"/>
-            <path d="M190 118 h12 M196 112 v12" stroke="#fbf3e6" stroke-width="2"/>
+            <circle cx="196" cy="118" r="12" fill="#c14066"/>
+            <path d="M190 118 h12 M196 112 v12" stroke="#fbf2e2" stroke-width="2"/>
             <text x="120" y="152" text-anchor="middle" font-family="Georgia" font-size="9" font-style="italic" fill="#8a6a3a">four fabs against the bottleneck</text>
           </svg>
           <figcaption>Efficiency above, capacity below: the buildout's new phase.</figcaption>
@@ -283,17 +315,17 @@
     </article>
 
     <!-- 04 -->
-    <article class="card t-rose">
+    <article class="card t-rose reveal">
       <div class="storyhead"><span class="num">04</span><span class="cat">Books &amp; Publishing</span></div>
       <div class="storybody">
         <h2>Publishing's Labor Summer: PRH Lifts Entry Pay as Hachette Workers Form the Largest Union in Trade History</h2>
         <p class="deck">Wages rise and organizing spreads — on a foundation of flat print sales.</p>
         <figure>
           <svg viewBox="0 0 240 160" role="img" aria-label="Illustration of an open book with hands raised from its pages">
-            <rect width="240" height="160" fill="#f8eef1"/>
-            <path d="M30 128 Q75 110 120 122 Q165 110 210 128 L210 142 Q165 124 120 136 Q75 124 30 142 Z" fill="#c2456b"/>
+            <rect width="240" height="160" fill="#f9ecf0"/>
+            <path d="M30 128 Q75 110 120 122 Q165 110 210 128 L210 142 Q165 124 120 136 Q75 124 30 142 Z" fill="#c14066"/>
             <path d="M120 122 V136" stroke="#8e2f4e" stroke-width="3"/>
-            <g fill="#1e3a5f">
+            <g fill="#1d3557">
               <rect x="62" y="70" width="10" height="45" rx="5"/>
               <circle cx="67" cy="62" r="8"/>
               <rect x="115" y="52" width="10" height="63" rx="5"/>
@@ -301,8 +333,8 @@
               <rect x="168" y="70" width="10" height="45" rx="5"/>
               <circle cx="173" cy="62" r="8"/>
             </g>
-            <path d="M40 34 Q45 24 55 27 M195 34 Q190 24 180 27" stroke="#d97706" stroke-width="2" fill="none"/>
-            <text x="120" y="26" text-anchor="middle" font-family="Georgia" font-size="11" font-style="italic" fill="#5b6b7a">solidarity, bound in print</text>
+            <path d="M40 34 Q45 24 55 27 M195 34 Q190 24 180 27" stroke="#c97a10" stroke-width="2" fill="none"/>
+            <text x="120" y="26" text-anchor="middle" font-family="Georgia" font-size="11" font-style="italic" fill="#71808f">solidarity, bound in print</text>
           </svg>
           <figcaption>Six hundred voices rise from the Hachette imprint pages.</figcaption>
         </figure>
@@ -327,7 +359,7 @@
     </article>
 
     <!-- 05 -->
-    <article class="card lead t-teal">
+    <article class="card lead t-teal reveal">
       <div class="storyhead"><span class="num">05</span><span class="cat">Recruitment &amp; HR</span></div>
       <div class="storybody">
         <h2>India's Fresher Windows Open This Week — Against a Stubborn Skills Gap</h2>
@@ -335,23 +367,23 @@
         <div class="lead-flex">
           <figure>
             <svg viewBox="0 0 240 200" role="img" aria-label="Illustration of graduates ascending steps with a rising arrow">
-              <rect width="240" height="200" fill="#eaf3f6"/>
-              <g fill="#1e3a5f" opacity=".92">
+              <rect width="240" height="200" fill="#e9f2f5"/>
+              <g fill="#1d3557" opacity=".92">
                 <rect x="30" y="140" width="55" height="40"/>
                 <rect x="95" y="110" width="55" height="70"/>
                 <rect x="160" y="75" width="55" height="105"/>
               </g>
               <g>
-                <circle cx="57" cy="118" r="9" fill="#c2456b"/>
-                <rect x="45" y="108" width="24" height="5" fill="#1c2733" transform="rotate(-8 57 110)"/>
-                <circle cx="122" cy="88" r="9" fill="#c2456b"/>
-                <rect x="110" y="78" width="24" height="5" fill="#1c2733" transform="rotate(-8 122 80)"/>
-                <circle cx="187" cy="53" r="9" fill="#c2456b"/>
-                <rect x="175" y="43" width="24" height="5" fill="#1c2733" transform="rotate(-8 187 45)"/>
+                <circle cx="57" cy="118" r="9" fill="#c14066"/>
+                <rect x="45" y="108" width="24" height="5" fill="#16202b" transform="rotate(-8 57 110)"/>
+                <circle cx="122" cy="88" r="9" fill="#c14066"/>
+                <rect x="110" y="78" width="24" height="5" fill="#16202b" transform="rotate(-8 122 80)"/>
+                <circle cx="187" cy="53" r="9" fill="#c14066"/>
+                <rect x="175" y="43" width="24" height="5" fill="#16202b" transform="rotate(-8 187 45)"/>
               </g>
-              <path d="M25 95 Q120 20 205 22" fill="none" stroke="#d97706" stroke-width="3" stroke-dasharray="6 5"/>
-              <path d="M195 15 L207 21 L197 30" fill="none" stroke="#d97706" stroke-width="3" stroke-linecap="round"/>
-              <text x="120" y="195" text-anchor="middle" font-family="Georgia" font-size="11" font-style="italic" fill="#5b6b7a">the class of 2026 climbs</text>
+              <path d="M25 95 Q120 20 205 22" fill="none" stroke="#c97a10" stroke-width="3" stroke-dasharray="6 5"/>
+              <path d="M195 15 L207 21 L197 30" fill="none" stroke="#c97a10" stroke-width="3" stroke-linecap="round"/>
+              <text x="120" y="195" text-anchor="middle" font-family="Georgia" font-size="11" font-style="italic" fill="#71808f">the class of 2026 climbs</text>
             </svg>
             <figcaption>Campus gates open — but the skills bar keeps rising.</figcaption>
           </figure>
@@ -379,11 +411,26 @@
   </div>
 
   <footer class="card">
-    <div class="flowers">❦ ❦ ❦</div>
+    <div class="flowers" aria-hidden="true">❦ ❦ ❦</div>
     <p>The summaries above are Claude's own words, paraphrased from date-verified reporting of the past week — the links in each Sources line carry the full, original reporting.</p>
     <p>The Morning Bloom · Pune Edition · July 21, 2026 · <a href="../archive.html">Browse the archive</a></p>
   </footer>
 
 </div>
+<script>
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      els.forEach(function(e){ e.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){ io.observe(e); });
+  })();
+</script>
 </body>
 </html>

@@ -4,25 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Morning Bloom — Archive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400;500;600;700&family=Public+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#f2f5f7; --card:#fff; --ink:#1c2733; --muted:#5b6b7a; --teal:#0e7490; --rose:#c2456b; --amber:#d97706; --navy:#1e3a5f; --radius:16px; --shadow:0 4px 14px rgba(30,42,56,.08);}
+  :root{--bg:#fafafa; --card:#fff; --ink:#18181b; --muted:#71717a; --teal:#0d7085; --rose:#c14066; --amber:#c97a10; --navy:#1d3557; --line:#e4e4e7; --radius:18px; --shadow:0 1px 2px rgba(24,24,27,.05), 0 2px 8px rgba(24,24,27,.05);}
   *{box-sizing:border-box; margin:0; padding:0;}
-  body{background:var(--bg); color:var(--ink); font-family:'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; line-height:1.6; padding:1.6rem 1rem 3rem;}
+  body{background:var(--bg); color:var(--ink); font-family:'Public Sans','Segoe UI',Roboto,Arial,sans-serif; line-height:1.6; padding:2rem 1.25rem 3rem;}
   .sheet{max-width:720px; margin:0 auto; display:flex; flex-direction:column; gap:1.2rem;}
   .card{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;}
   .masthead{padding:1.6rem 2rem 1.4rem; position:relative;}
   .masthead::before{content:""; position:absolute; inset:0 0 auto 0; height:8px; background:linear-gradient(90deg,var(--teal) 0 34%,var(--rose) 34% 67%,var(--amber) 67% 100%);}
   .pill{display:inline-block; background:var(--teal); color:#fff; font-size:.68rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; padding:.35rem .9rem; border-radius:999px;}
-  h1{font-size:clamp(1.9rem,6vw,2.8rem); font-weight:800; text-transform:uppercase; letter-spacing:-.02em; margin:.6rem 0 .2rem;}
-  h1 .bloom{color:var(--rose);}
+  h1{font-family:'Libre Bodoni',Georgia,serif; font-size:clamp(1.9rem,6vw,2.8rem); font-weight:700; text-transform:uppercase; letter-spacing:-.01em; margin:.6rem 0 .2rem;}
+  h1 .bloom{color:var(--rose); font-style:italic;}
   .tagline{color:var(--muted); font-size:.9rem;}
   .back{margin-top:.9rem;}
   .back a{font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; background:#fdf1e0; color:var(--amber); padding:.35rem .85rem; border-radius:999px; text-decoration:none;}
   .listcard{padding:1.3rem 1.5rem;}
   .listcard h2{font-size:.78rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--navy); margin-bottom:.9rem;}
   ul{list-style:none;}
-  li a{display:flex; justify-content:space-between; align-items:center; padding:.75rem 1rem; margin-bottom:.55rem; border-radius:12px; background:#f6f9fa; border:1px solid #e3e9ee; color:var(--ink); text-decoration:none; font-weight:600; font-size:.95rem;}
-  li a:hover{background:#eaf3f6;}
+  li a{display:flex; justify-content:space-between; align-items:center; padding:.75rem 1rem; margin-bottom:.55rem; border-radius:12px; background:#fafafa; border:1px solid var(--line); color:var(--ink); text-decoration:none; font-weight:600; font-size:.95rem; transition:background .2s ease, border-color .2s ease;}
+  li a:hover{background:#e9f3f5; border-color:var(--teal);}
+  li a:focus-visible{outline:3px solid var(--teal); outline-offset:2px;}
   li .latest{font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; color:#fff; background:var(--rose); padding:.2rem .6rem; border-radius:999px;}
   footer{background:var(--navy); color:#cfdcea; text-align:center; padding:1.2rem 2rem; font-size:.78rem;}
 </style>
