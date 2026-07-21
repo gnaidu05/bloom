@@ -51,7 +51,7 @@ ARCHIVE_TEMPLATE = """<!DOCTYPE html>
   <header class="card masthead">
     <span class="pill">The Archive</span>
     <h1>The Morning <span class="bloom">Bloom</span></h1>
-    <p class="tagline">Technology, publishing &amp; the world of work — pressed fresh each morning</p>
+    <p class="tagline">Your five-minute edge on AI, technology and the future of work — every morning</p>
     <p class="back"><a href="index.html">→ Today's Edition</a></p>
   </header>
   <div class="card listcard">
@@ -103,7 +103,7 @@ def main() -> None:
         m = re.search(r"Inside this issue</div>\s*<ol>(.*?)</ol>", html, re.S)
         heads = re.findall(r"<li>(.*?)</li>", m.group(1), re.S) if m else []
         heads = [re.sub(r"<[^>]+>", "", h).strip().replace("&amp;", "&") for h in heads]
-        desc = " · ".join(heads) or "The day's five stories across AI & Technology, Books & Publishing, and Recruitment & HR."
+        desc = " · ".join(heads) or "The day's stories across AI & Technology, IT Industry, and Recruitment & HR."
         url = f"{SITE}/editions/{e.name}"
         items.append(
             f"    <item>\n"
@@ -120,7 +120,7 @@ def main() -> None:
         "  <channel>\n"
         "    <title>The Morning Bloom</title>\n"
         f"    <link>{SITE}/</link>\n"
-        "    <description>Daily news briefing — AI &amp; Technology, Books &amp; Publishing, Recruitment &amp; HR. Pune Edition.</description>\n"
+        "    <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>\n"
         "    <language>en</language>\n"
         + "\n".join(items) + "\n"
         "  </channel>\n"

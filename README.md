@@ -1,6 +1,6 @@
 # The Morning Bloom
 
-Gopi's daily news briefing — AI & Technology · Books & Publishing · Recruitment & HR — styled as a morning newspaper. Pune Edition.
+Gopi's daily news briefing — AI & Technology · IT Industry · Recruitment & HR — styled as a morning newspaper. Pune Edition. Your five-minute edge on AI, technology and the future of work.
 
 **Live site:** https://gnaidu05.github.io/bloom/
 
