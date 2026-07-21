@@ -28,7 +28,8 @@ IST = timezone(timedelta(hours=5, minutes=30))
 
 def main() -> None:
     user = os.environ.get("MAIL_USERNAME", "").strip()
-    password = os.environ.get("MAIL_APP_PASSWORD", "").strip()
+    # Google displays App Passwords with spaces ("xxxx xxxx xxxx xxxx"); strip them.
+    password = re.sub(r"\s+", "", os.environ.get("MAIL_APP_PASSWORD", ""))
     raw_subs = os.environ.get("SUBSCRIBERS", "").strip()
     if not (user and password and raw_subs):
         print("NOTICE: MAIL_USERNAME / MAIL_APP_PASSWORD / SUBSCRIBERS secrets not all set; skipping send.")
