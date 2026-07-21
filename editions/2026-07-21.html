@@ -55,6 +55,7 @@
   .chip{font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:.44rem .95rem; border-radius:999px; border:1px solid transparent;}
   .chip.date{background:rgba(255,255,255,.12); color:#e8eef6;}
   .chip.ed{background:rgba(242,169,196,.16); color:#f2a9c4;}
+  .chip.upd{background:rgba(143,208,226,.16); color:#8fd0e2;}
   .chip.arch{background:rgba(255,255,255,.94);}
   .chip.arch a{color:var(--navy); text-decoration:none;}
   .chip.arch:hover{background:#fff;}
@@ -152,6 +153,13 @@
   .tracker-kicker::before{content:"❦"; color:var(--amber); margin-right:.5rem;}
   .tracker-note{font-size:.82rem; color:var(--muted); max-width:64ch;}
 
+  /* ── Section dividers (desks) ─────────────── */
+  .section-head{display:flex; align-items:center; gap:1rem; padding-top:.5rem;}
+  .section-head .sec-label{font-family:var(--font-display); font-weight:700; font-size:clamp(1.15rem,2.4vw,1.55rem); color:var(--ink); white-space:nowrap;}
+  .section-head .sec-rule{flex:1; height:3px; border-radius:2px; background:linear-gradient(90deg,var(--teal),var(--rose) 55%,var(--amber));}
+  .section-head .sec-count{font-size:.68rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); white-space:nowrap;}
+  @media(max-width:560px){.section-head .sec-count{display:none;}}
+
   /* ── Coming-soon toast ────────────────────── */
   .toast{position:fixed; left:50%; bottom:26px; transform:translateX(-50%) translateY(20px); background:var(--navy); color:#eaf1f8; font-size:.85rem; font-weight:600; max-width:min(90vw,420px); text-align:center; padding:.72rem 1.2rem; border-radius:14px; box-shadow:0 8px 24px rgba(0,0,0,.25); opacity:0; transition:opacity .25s ease, transform .25s ease; z-index:50; pointer-events:none;}
   .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
@@ -183,10 +191,11 @@
       <span class="pill">Daily News Briefing</span>
     </div>
     <h1>The Morning <span class="bloom">Bloom</span></h1>
-    <p class="tagline">Technology, publishing &amp; the world of work — pressed fresh each morning.</p>
+    <p class="tagline">Technology, AI &amp; the world of work — pressed fresh each morning.</p>
     <div class="meta">
       <span class="chip date">Tuesday, July 21, 2026</span>
       <span class="chip ed">Pune Edition</span>
+      <span class="chip upd">Last updated 6:30 AM IST</span>
       <span class="chip arch"><a href="../archive.html">Archive →</a></span>
     </div>
     <div class="subscribe" id="subscribe">
@@ -210,26 +219,37 @@
         <li>AI's Wall Street moment: OpenAI &amp; Anthropic eye IPOs</li>
         <li>AMD's Helios lands Microsoft in strike at Nvidia</li>
         <li>Silicon supply side: Alphabet's leaner chip, TSMC's $265B Arizona bet</li>
-        <li>Publishing's labor summer: record union at Hachette</li>
+        <li>Europe's AI Act bares its teeth as GPAI rules take hold</li>
+        <li>Enterprise AI's reality check: everyone deploys, few cash in</li>
+        <li>The open-weight frontier closes the gap — in Chinese</li>
+        <li>IT budgets hit $6.31T as the data-center boom eats the forecast</li>
+        <li>In 2026, attackers don't break in — they log in</li>
+        <li>Tech hiring's great divergence: AI roles soar, market shrinks</li>
+        <li>The machines are reading your résumé — and interviewing you</li>
         <li>India's fresher windows open — against a skills gap</li>
       </ol>
     </div>
     <div class="panel ednote reveal">
       <div class="boxhead"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></span>Date-checked sourcing</div>
-      <p>Every story below passed a freshness audit this morning: sources are either articles with
-      verifiable July 2026 publication dates (most from July 14–20) or clearly labeled current-month
-      trackers, flagged in-story. Two candidate stories were cut in that audit — a KDP quality-rules
-      piece whose sources carried no publication dates, and the UN's Geneva AI-governance dialogue,
-      which took place July 6–7, outside our one-week window.</p>
-      <p>Books &amp; Publishing produced one strongly verified story this week, so an extra AI slot was
-      used per our backfill policy. Each story carries a verification tag: <strong>Full article
-      reviewed</strong> means the underlying reporting was read in full, while <strong>Search-verified</strong>
-      means only search snippets, headlines or trackers were available — as with this week's India
-      hiring item. Every Sources line links the original reporting.</p>
+      <p>Every story below passed a freshness audit this morning: sources are either reporting with
+      verifiable July 2026 publication dates (most from July 14–21) or clearly labeled current-month
+      trackers and market data, flagged in-story. Today's edition is organized into three desks —
+      <strong>AI &amp; Technology</strong>, <strong>IT Industry</strong> and
+      <strong>Recruitment &amp; HR</strong>.</p>
+      <p>Each story carries a verification tag: <strong>Full article reviewed</strong> means the
+      underlying reporting was read in full, while <strong>Search-verified</strong> means the facts
+      trace to search results, headlines, trackers or market data rather than a fully opened article.
+      Most of today's newly added stories are search-verified; every Sources line links the original
+      reporting.</p>
     </div>
   </div>
 
-  <!-- ═══ Stories ═══ -->
+  <!-- ═══ Desk 1 — AI & Technology ═══ -->
+  <div class="section-head reveal">
+    <span class="sec-label">AI &amp; Technology</span>
+    <span class="sec-rule" aria-hidden="true"></span>
+    <span class="sec-count">6 stories</span>
+  </div>
   <div class="grid">
 
     <!-- 01 — LEAD -->
@@ -385,57 +405,364 @@
       </div>
     </article>
 
-    <!-- 04 -->
-    <article class="card t-rose reveal">
-      <div class="storyhead"><span class="num">04</span><span class="cat">Books &amp; Publishing</span><span class="vtag full">Full article reviewed</span></div>
+    <!-- 04 — LEAD -->
+    <article class="card lead t-rose reveal">
+      <div class="storyhead"><span class="num">04</span><span class="cat">AI &amp; Technology · Policy</span><span class="vtag search">Search-verified</span></div>
       <div class="storybody">
-        <h2>Publishing's Labor Summer: PRH Lifts Entry Pay as Hachette Workers Form the Largest Union in Trade History</h2>
-        <p class="deck">Wages rise and organizing spreads — on a foundation of flat print sales.</p>
-        <figure>
-          <svg viewBox="0 0 240 160" role="img" aria-label="Illustration of an open book with hands raised from its pages">
-            <rect width="240" height="160" fill="#f9ecf0"/>
-            <path d="M30 128 Q75 110 120 122 Q165 110 210 128 L210 142 Q165 124 120 136 Q75 124 30 142 Z" fill="#c14066"/>
-            <path d="M120 122 V136" stroke="#8e2f4e" stroke-width="3"/>
-            <g fill="#1d3557">
-              <rect x="62" y="70" width="10" height="45" rx="5"/>
-              <circle cx="67" cy="62" r="8"/>
-              <rect x="115" y="52" width="10" height="63" rx="5"/>
-              <circle cx="120" cy="44" r="8"/>
-              <rect x="168" y="70" width="10" height="45" rx="5"/>
-              <circle cx="173" cy="62" r="8"/>
-            </g>
-            <path d="M40 34 Q45 24 55 27 M195 34 Q190 24 180 27" stroke="#c97a10" stroke-width="2" fill="none"/>
-            <text x="120" y="26" text-anchor="middle" font-family="Georgia" font-size="11" font-style="italic" fill="#71808f">solidarity, bound in print</text>
-          </svg>
-          <figcaption>Six hundred voices rise from the Hachette imprint pages.</figcaption>
-        </figure>
-        <div class="copy">
-          <p>Labor organizing is reshaping trade publishing's economics. As reported in Publishers Weekly's current industry-news coverage, Penguin Random House has raised its entry-level salary from $51,000 to $55,000 amid a wave of organizing across the industry. At Hachette, the newly formed Hachette Workers Coalition — organized with NewsGuild-CWA and roughly 600 members strong — is now the largest union in trade publishing history and will soon begin collective bargaining.</p>
-          <p>The wage push lands on soft ground: print book sales have been flat in the first half of 2026, and in France the Syndicat national de l'édition reported publisher revenues slipped 0.6% to €2.88 billion (~$3.1 billion) in 2025, citing the secondhand market's growth and unresolved questions over AI as structural concerns. Even so, deal-making hasn't paused — Publishers Weekly's Book Deals column for the week of July 20 highlights John Carreyrou's "Satoshi's Secret," an investigation into the identity of Bitcoin's inventor.</p>
+        <h2>Europe's AI Act Bares Its Teeth: Enforcement Arrives as GPAI Rules Take Hold</h2>
+        <p class="deck">The first fines land and the AI Office ramps up — even as Brussels quietly pushes the hardest deadlines to 2027.</p>
+        <div class="lead-flex">
+          <figure>
+            <svg viewBox="0 0 240 200" role="img" aria-label="Illustration of a balance scale beneath a ring of stars">
+              <rect width="240" height="200" fill="#f9ecf0"/>
+              <g fill="#c97a10">
+                <circle cx="92" cy="34" r="2.6"/><circle cx="108" cy="27" r="2.6"/><circle cx="124" cy="25" r="2.6"/><circle cx="140" cy="27" r="2.6"/><circle cx="156" cy="34" r="2.6"/>
+              </g>
+              <rect x="120" y="64" width="8" height="92" fill="#1d3557"/>
+              <rect x="96" y="152" width="56" height="10" rx="3" fill="#1d3557"/>
+              <rect x="74" y="62" width="100" height="6" rx="3" fill="#1d3557"/>
+              <circle cx="124" cy="65" r="6" fill="#c14066"/>
+              <path d="M82 66 L66 98 H98 Z" fill="#c14066" opacity=".85"/>
+              <path d="M82 66 L66 98 M82 66 L98 98" stroke="#1d3557" stroke-width="2"/>
+              <path d="M166 66 L150 98 H182 Z" fill="#0d7085" opacity=".85"/>
+              <path d="M166 66 L150 98 M166 66 L182 98" stroke="#1d3557" stroke-width="2"/>
+              <text x="124" y="186" text-anchor="middle" font-family="Georgia" font-size="11" font-style="italic" fill="#71808f">the Act, weighed</text>
+            </svg>
+            <figcaption>Enforcement, at last, on the scales.</figcaption>
+          </figure>
+          <div class="copy">
+            <p>By mid-2026 the EU AI Act is no longer theoretical. Obligations for general-purpose AI (GPAI) models phase in from August 2, 2026, the European AI Office is issuing guidance at pace, and national market-surveillance authorities have opened their first cases. Reported early enforcement includes a multi-million-euro fine against an EU retail chain for a non-compliant biometric entry system, and a probe into a French bank's AI credit-scoring model over Article 13 transparency duties. Penalties for prohibited-AI violations reach up to €35 million or 7% of global turnover.</p>
+            <p>At the same time, Brussels blinked on timing. Under the "Digital Omnibus" simplification package, the compliance deadline for many high-risk Annex III systems — recruitment, credit scoring, education and law enforcement — slipped from August 2, 2026 to December 2, 2027, giving enterprises breathing room. A July 2026 joint action plan on cybersecurity and AI adds coordinated expectations for the most capable models.</p>
+          </div>
         </div>
         <div class="takeaways">
           <h3>Key takeaways</h3>
           <ul>
-            <li>PRH entry-level pay: $51,000 → $55,000, moved by industry-wide organizing pressure.</li>
-            <li>Hachette Workers Coalition (~600 members, NewsGuild-CWA) is trade publishing's largest-ever union.</li>
-            <li>The backdrop is fragile: flat H1 2026 print sales and declining French publisher revenues.</li>
+            <li>GPAI model obligations phase in from Aug 2, 2026; banned-use fines reach €35M or 7% of global turnover.</li>
+            <li>First enforcement is live: a reported biometric-entry fine and a French bank credit-scoring probe (Article 13).</li>
+            <li>High-risk Annex III deadlines (hiring, credit, education) deferred to Dec 2, 2027 via the Digital Omnibus.</li>
           </ul>
         </div>
         <div class="why">
           <h3>Why it matters</h3>
-          <p>Publishing has long paired cultural prestige with famously low pay; a moving wage floor at the industry's biggest house resets expectations everywhere, and the Hachette bargaining round will set precedents watched well beyond books. For authors, houses squeezed between rising labor costs and flat sales have less room on advances and marketing — strengthening the economic case for independent publishing routes.</p>
+          <p>Regulation is now a line item, not a rumor. Compliance cost — documentation, transparency, human oversight, conformity assessments — is being priced into every EU AI deployment, and the deferral to 2027 resets adoption timelines for exactly the high-risk uses (hiring, lending) that touch the most workers. Expect demand for AI-governance, risk and compliance roles to climb alongside the engineers building the systems.</p>
         </div>
-        <p class="sources"><strong>Sources (week of July 20, 2026):</strong> <a href="https://www.publishersweekly.com/pw/by-topic/industry-news/index.html">Publishers Weekly — Industry News</a> · <a href="https://www.publishersweekly.com/pw/by-topic/industry-news/book-deals/article/100860-book-deals-week-of-july-20-2026.html">Publishers Weekly — Book Deals, Week of July 20, 2026</a></p>
+        <p class="sources"><strong>Sources (2026, current):</strong> <a href="https://www.collibra.com/blog/ai-regulatory-compliance-in-2026-eu-ai-act-us-orders-and-state-laws-and-how-to-operationalize">Collibra — AI regulatory compliance in 2026</a> · <a href="https://www.legalnodes.com/article/eu-ai-act-2026-updates-compliance-requirements-and-business-risks">Legal Nodes — EU AI Act 2026 updates</a> · <a href="https://skycrumbs.com/blog/eu-ai-act-enforcement-2026">Skycrumbs — EU AI Act enforcement in 2026</a></p>
         <div class="topics" aria-label="Topics">
-          <button type="button" class="topic" data-tag="Publishing">#Publishing</button>
-          <button type="button" class="topic" data-tag="LaborUnions">#LaborUnions</button>
-          <button type="button" class="topic" data-tag="Wages">#Wages</button>
+          <button type="button" class="topic" data-tag="AIRegulation">#AIRegulation</button>
+          <button type="button" class="topic" data-tag="EUAIAct">#EUAIAct</button>
+          <button type="button" class="topic" data-tag="Compliance">#Compliance</button>
+          <button type="button" class="topic" data-tag="Governance">#Governance</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05 -->
+    <article class="card t-teal reveal">
+      <div class="storyhead"><span class="num">05</span><span class="cat">AI &amp; Technology</span><span class="vtag search">Search-verified</span></div>
+      <div class="storybody">
+        <h2>Enterprise AI's Reality Check: Everyone's Deploying, Few Are Cashing In</h2>
+        <p class="deck">Agents are everywhere in 2026 — but the ROI gap between super-users and stalled pilots is widening.</p>
+        <figure>
+          <svg viewBox="0 0 240 160" role="img" aria-label="Bar chart contrasting a tall adoption bar with a short ROI bar">
+            <rect width="240" height="160" fill="#e9f2f5"/>
+            <line x1="30" y1="132" x2="210" y2="132" stroke="#9fb8c0" stroke-width="2"/>
+            <rect x="58" y="42" width="46" height="90" rx="4" fill="#0d7085"/>
+            <rect x="138" y="100" width="46" height="32" rx="4" fill="#c14066"/>
+            <text x="81" y="34" text-anchor="middle" font-family="Arial" font-size="12" font-weight="700" fill="#0d7085">79%</text>
+            <text x="161" y="92" text-anchor="middle" font-family="Arial" font-size="12" font-weight="700" fill="#c14066">29%</text>
+            <text x="81" y="148" text-anchor="middle" font-family="Georgia" font-size="9" font-style="italic" fill="#5b6b73">deploy agents</text>
+            <text x="161" y="148" text-anchor="middle" font-family="Georgia" font-size="9" font-style="italic" fill="#5b6b73">see real ROI</text>
+          </svg>
+          <figcaption>Near-universal adoption, far-from-universal payoff.</figcaption>
+        </figure>
+        <div class="copy">
+          <p>Adoption is near-universal and uneven. Surveys this year put AI-agent deployment at roughly 79% of organizations — with one count of 97% of executives having rolled out agents in the past year — yet only about 29% report significant ROI from generative AI (23% from agents). "AI super-users" reportedly deliver up to 5× productivity, and two-thirds of agent adopters cite real gains from automating repetitive work, with 40–70% task-level improvements where deployments stick.</p>
+          <p>The failure modes are now well documented. Around 22% of agent deployments show negative ROI at 12 months — blamed on unclear success criteria (41%), poor tool or data access (33%) and evaluation drift (26%). Governance is the other bruise: 67% of executives believe an unsanctioned "shadow AI" tool has already caused a data leak, and 35% admit they couldn't immediately shut down a rogue agent. Gartner projects 40% of enterprise apps will embed task-specific agents by end-2026, up from under 5% a year earlier.</p>
+        </div>
+        <div class="takeaways">
+          <h3>Key takeaways</h3>
+          <ul>
+            <li>~79% of orgs run AI agents; only ~29% see significant genAI ROI (23% for agents).</li>
+            <li>~22% of agent deployments are ROI-negative at 12 months — mostly unclear goals and data access.</li>
+            <li>67% of execs suspect a shadow-AI data leak; 40% of enterprise apps to embed agents by end-2026.</li>
+          </ul>
+        </div>
+        <div class="why">
+          <h3>Why it matters</h3>
+          <p>The budget question has shifted from "should we?" to "why isn't this paying off?" That reprices IT spend toward integration, evaluation and governance — and reshapes hiring: the scarce, valuable skills are now AI product management, evals and observability, data plumbing and security, not just model-building. Organizations that can operationalize agents, not merely launch them, capture the productivity dividend everyone else is still chasing.</p>
+        </div>
+        <p class="sources"><strong>Sources (2026, current):</strong> <a href="https://writer.com/blog/enterprise-ai-adoption-2026/">WRITER — Enterprise AI adoption in 2026</a> · <a href="https://www.digitalapplied.com/blog/ai-agent-adoption-2026-enterprise-data-points">Digital Applied — AI agent adoption data points</a> · <a href="https://www.accelirate.com/agentic-ai-statistics-2026/">Accelirate — Agentic AI statistics 2026</a></p>
+        <div class="topics" aria-label="Topics">
+          <button type="button" class="topic" data-tag="EnterpriseAI">#EnterpriseAI</button>
+          <button type="button" class="topic" data-tag="AIAgents">#AIAgents</button>
+          <button type="button" class="topic" data-tag="Productivity">#Productivity</button>
+          <button type="button" class="topic" data-tag="ROI">#ROI</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 06 -->
+    <article class="card t-navy reveal">
+      <div class="storyhead"><span class="num">06</span><span class="cat">AI &amp; Technology</span><span class="vtag search">Search-verified</span></div>
+      <div class="storybody">
+        <h2>The Open-Weight Frontier Closes the Gap — and It's Speaking Chinese</h2>
+        <p class="deck">A wave of July releases puts open models within reach of the closed frontier, on permissive licenses.</p>
+        <figure>
+          <svg viewBox="0 0 240 160" role="img" aria-label="Illustration of an open padlock flanked by code brackets">
+            <rect width="240" height="160" fill="#ecf0f5"/>
+            <path d="M96 74 V56 a24 24 0 0 1 48 0" fill="none" stroke="#0d7085" stroke-width="8" stroke-linecap="round"/>
+            <rect x="84" y="74" width="72" height="56" rx="10" fill="#1d3557"/>
+            <circle cx="120" cy="97" r="7" fill="#f2a9c4"/>
+            <rect x="117" y="101" width="6" height="15" rx="3" fill="#f2a9c4"/>
+            <text x="50" y="114" font-family="monospace" font-size="36" fill="#c97a10">{</text>
+            <text x="176" y="114" font-family="monospace" font-size="36" fill="#c97a10">}</text>
+            <text x="120" y="150" text-anchor="middle" font-family="Georgia" font-size="9" font-style="italic" fill="#71808f">weights, unlocked</text>
+          </svg>
+          <figcaption>Frontier-class capability, royalty-free.</figcaption>
+        </figure>
+        <div class="copy">
+          <p>The open-weight leaderboard reshuffled again this month. Zhipu/Z.ai's GLM-5.2 — a 744-billion-parameter mixture-of-experts — leads several open rankings, posting 91.2% on GPQA Diamond and 62.1% on SWE-bench Pro. Moonshot's Kimi K3, a 2.8-trillion-parameter model unveiled July 16, reportedly edges past Claude Opus 4.8 on Artificial Analysis's independent index, though its weights don't ship until July 27. DeepSeek V4, Alibaba's Qwen3.6 and Google DeepMind's single-GPU Gemma 4 round out a crowded field.</p>
+          <p>The strategic story is licensing. Qwen ships under Apache 2.0, DeepSeek under MIT, GLM under MIT — permissive terms that let enterprises fine-tune, self-host and deploy commercially with zero royalties. For many workloads the capability gap with closed frontier models is now small enough that data residency, cost and control tip the decision toward open weights.</p>
+        </div>
+        <div class="takeaways">
+          <h3>Key takeaways</h3>
+          <ul>
+            <li>GLM-5.2 (744B MoE) leads open rankings: 91.2% GPQA Diamond, 62.1% SWE-bench Pro.</li>
+            <li>Kimi K3 (2.8T, unveiled July 16) reportedly tops Claude Opus 4.8 on one independent index; weights July 27.</li>
+            <li>Permissive licenses (Apache 2.0 / MIT) make self-hosting and commercial fine-tuning royalty-free.</li>
+          </ul>
+        </div>
+        <div class="why">
+          <h3>Why it matters</h3>
+          <p>When capable models are free to self-host, the build-vs-buy calculus flips for cost- and privacy-sensitive teams — and so do hiring profiles. Demand rises for engineers who can fine-tune, serve and secure open models on owned infrastructure, rather than just call a closed API. It also hands smaller firms and the public sector frontier-class capability without frontier-class vendor lock-in.</p>
+        </div>
+        <p class="sources"><strong>Sources (July 2026):</strong> <a href="https://llm-stats.com/llm-updates">LLM-Stats — AI updates (July 2026)</a> · <a href="https://www.taskade.com/blog/open-source-llms">Taskade — Best open-source LLMs, July 2026</a> · <a href="https://huggingface.co/blog/daya-shankar/open-source-llms">Hugging Face — Best open-source LLMs 2026</a></p>
+        <div class="topics" aria-label="Topics">
+          <button type="button" class="topic" data-tag="OpenSource">#OpenSource</button>
+          <button type="button" class="topic" data-tag="LLMs">#LLMs</button>
+          <button type="button" class="topic" data-tag="DeepSeek">#DeepSeek</button>
+          <button type="button" class="topic" data-tag="ModelLandscape">#ModelLandscape</button>
         </div>
       </div>
     </article>
 
   </div>
-  <!-- end main briefing grid -->
+  <!-- end AI & Technology grid -->
+
+  <!-- ═══ Desk 2 — IT Industry ═══ -->
+  <div class="section-head reveal">
+    <span class="sec-label">IT Industry</span>
+    <span class="sec-rule" aria-hidden="true"></span>
+    <span class="sec-count">2 stories</span>
+  </div>
+  <div class="grid">
+
+    <!-- 07 -->
+    <article class="card t-amber reveal">
+      <div class="storyhead"><span class="num">07</span><span class="cat">IT Industry</span><span class="vtag search">Search-verified</span></div>
+      <div class="storybody">
+        <h2>IT Budgets Hit $6.31 Trillion as the Data-Center Boom Eats the Forecast</h2>
+        <p class="deck">Gartner's latest sees 13.5% growth in 2026 — and a data-center line growing more than half in a single year.</p>
+        <figure>
+          <svg viewBox="0 0 240 160" role="img" aria-label="Rising coin stacks beside a data-center server">
+            <rect width="240" height="160" fill="#fbf2e2"/>
+            <g fill="#c97a10">
+              <rect x="34" y="112" width="26" height="26" rx="3"/>
+              <rect x="70" y="92" width="26" height="46" rx="3"/>
+              <rect x="106" y="66" width="26" height="72" rx="3"/>
+            </g>
+            <g fill="#e6c079">
+              <rect x="34" y="112" width="26" height="7" rx="2"/>
+              <rect x="70" y="92" width="26" height="7" rx="2"/>
+              <rect x="106" y="66" width="26" height="7" rx="2"/>
+            </g>
+            <rect x="150" y="52" width="56" height="86" rx="6" fill="#1d3557"/>
+            <g fill="#fbf2e2"><rect x="158" y="62" width="40" height="8" rx="2"/><rect x="158" y="78" width="40" height="8" rx="2"/><rect x="158" y="94" width="40" height="8" rx="2"/></g>
+            <g fill="#0d7085"><circle cx="164" cy="114" r="3"/><circle cx="174" cy="114" r="3"/></g>
+            <text x="120" y="152" text-anchor="middle" font-family="Georgia" font-size="9" font-style="italic" fill="#8a6a3a">$6.31T, and climbing</text>
+          </svg>
+          <figcaption>AI compute is crowding the budget.</figcaption>
+        </figure>
+        <div class="copy">
+          <p>Global IT spending will reach $6.31 trillion in 2026, up 13.5% on the year, per Gartner's revised forecast — nearly three points hotter than its late-2025 estimate. The standout is data-center systems: spending there is set to grow 55.8%, surpassing $788 billion, as hyperscalers race to stand up AI compute. IT services remains the largest single category at more than $1.87 trillion.</p>
+          <p>The shape of the market is lopsided. Gartner describes a "multi-speed" IT economy in which hyperscaler hardware and AI-centric software far outrun traditional segments; a rise in cloud demand alone is lifting data-center investment by more than half this year. For CIOs the message is that AI infrastructure is crowding the budget, forcing trade-offs against legacy modernization and discretionary projects.</p>
+        </div>
+        <div class="takeaways">
+          <h3>Key takeaways</h3>
+          <ul>
+            <li>Worldwide IT spend: $6.31T in 2026, +13.5% YoY (Gartner revised up from ~10.8%).</li>
+            <li>Data-center systems: +55.8% to $788B+ — the fastest-growing category, driven by AI compute.</li>
+            <li>IT services lead at $1.87T+; a "multi-speed" market favors hyperscalers and AI software.</li>
+          </ul>
+        </div>
+        <div class="why">
+          <h3>Why it matters</h3>
+          <p>A 55.8% surge in data-center spend is a hiring signal as much as a capex one — for data-center engineers, power-and-cooling specialists, cloud architects and FinOps talent to keep the bill sane. And because AI infrastructure is crowding out traditional projects, IT workers tied to legacy stacks face pressure to reskill toward cloud and AI-adjacent roles.</p>
+        </div>
+        <p class="sources"><strong>Sources (2026):</strong> <a href="https://www.gartner.com/en/newsroom/press-releases/2026-04-22-gartner-forecasts-worldwide-it-spending-to-grow-13-point-5-percent-in-2026-totaling-6-point-31-trillion-dollars">Gartner — Worldwide IT spending to grow 13.5% in 2026</a> · <a href="https://www.ciodive.com/news/global-it-spend-exceed-6T-2026/818356/">CIO Dive — Global IT spend amid data-center rush</a> · <a href="https://www.cio.com/article/4162831/gartner-has-raised-its-forecast-for-global-it-spending-growth-in-2026-by-nearly-three-percentage-points.html">CIO — Gartner raises 2026 growth to 13.5%</a></p>
+        <div class="topics" aria-label="Topics">
+          <button type="button" class="topic" data-tag="ITSpending">#ITSpending</button>
+          <button type="button" class="topic" data-tag="CloudInfrastructure">#CloudInfrastructure</button>
+          <button type="button" class="topic" data-tag="DataCenters">#DataCenters</button>
+          <button type="button" class="topic" data-tag="Gartner">#Gartner</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 08 -->
+    <article class="card t-navy reveal">
+      <div class="storyhead"><span class="num">08</span><span class="cat">IT Industry · Security</span><span class="vtag search">Search-verified</span></div>
+      <div class="storybody">
+        <h2>In 2026, Attackers Don't Break In — They Log In</h2>
+        <p class="deck">A brutal breach year turns on stolen identities, third-party access and AI-assisted social engineering.</p>
+        <figure>
+          <svg viewBox="0 0 240 160" role="img" aria-label="Illustration of a key being inserted into a door">
+            <rect width="240" height="160" fill="#ecf0f5"/>
+            <rect x="80" y="26" width="72" height="112" rx="6" fill="#1d3557"/>
+            <rect x="88" y="34" width="56" height="96" rx="4" fill="#24405f"/>
+            <circle cx="136" cy="84" r="5" fill="#c97a10"/>
+            <line x1="156" y1="84" x2="192" y2="84" stroke="#c14066" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="198" cy="84" r="9" fill="none" stroke="#c14066" stroke-width="5"/>
+            <path d="M162 84 v9 M170 84 v9" stroke="#c14066" stroke-width="5" stroke-linecap="round"/>
+            <text x="120" y="152" text-anchor="middle" font-family="Georgia" font-size="9" font-style="italic" fill="#71808f">the front door is a stolen login</text>
+          </svg>
+          <figcaption>Identity is the new perimeter.</figcaption>
+        </figure>
+        <div class="copy">
+          <p>2026 is on track to be worse than 2025 for breaches, and the common thread is identity, not malware. Analysts note that in nearly every major incident this year "attackers didn't break in; they logged in" — via help-desk manipulation, phished single-sign-on tokens or inherited vendor access. Recent disclosures underline it: Ernst &amp; Young confirmed attackers compromised a third-party IT service-management platform and exfiltrated client tax documents in July 2026, and a June email-platform breach exposed up to 14.22 million addresses and passwords across several ISPs.</p>
+          <p>The threat surface is widening in two directions. AI-enabled tooling is making phishing and social engineering harder to detect, while critical infrastructure — including privately owned US water utilities — remains a soft target for state-linked actors. The defensive response is a continued shift toward zero-trust identity, phishing-resistant authentication and tighter third-party access governance.</p>
+        </div>
+        <div class="takeaways">
+          <h3>Key takeaways</h3>
+          <ul>
+            <li>Most 2026 breaches start with a person, not a flaw — stolen credentials, help-desk and vendor access.</li>
+            <li>Fresh incidents: EY third-party ITSM compromise (July); an ISP email breach exposing ~14.22M records.</li>
+            <li>AI-boosted social engineering plus soft critical-infrastructure targets are accelerating zero-trust adoption.</li>
+          </ul>
+        </div>
+        <div class="why">
+          <h3>Why it matters</h3>
+          <p>When the front door is a stolen login, security spend and hiring pivot from perimeter tools to identity, detection-and-response and third-party risk. Demand is climbing for IAM engineers, security-operations and GRC professionals — and for every IT worker, security awareness is becoming a core competency rather than an annual training checkbox.</p>
+        </div>
+        <p class="sources"><strong>Sources (June–July 2026):</strong> <a href="https://techcrunch.com/2026/07/07/the-worst-hacks-and-breaches-of-2026-so-far/">TechCrunch — Worst breaches of 2026 so far</a> · <a href="https://sharkstriker.com/blog/july-2026-data-breaches/">SharkStriker — July 2026 data breaches</a> · <a href="https://gbhackers.com/weekly-cybersecurity-newsletter-july-13-17-2026/amp/">GBHackers — Weekly cybersecurity (July 13–17, 2026)</a></p>
+        <div class="topics" aria-label="Topics">
+          <button type="button" class="topic" data-tag="Cybersecurity">#Cybersecurity</button>
+          <button type="button" class="topic" data-tag="ZeroTrust">#ZeroTrust</button>
+          <button type="button" class="topic" data-tag="IdentitySecurity">#IdentitySecurity</button>
+          <button type="button" class="topic" data-tag="DataBreach">#DataBreach</button>
+        </div>
+      </div>
+    </article>
+
+  </div>
+  <!-- end IT Industry grid -->
+
+  <!-- ═══ Desk 3 — Recruitment & HR ═══ -->
+  <div class="section-head reveal">
+    <span class="sec-label">Recruitment &amp; HR</span>
+    <span class="sec-rule" aria-hidden="true"></span>
+    <span class="sec-count">3 stories</span>
+  </div>
+  <div class="grid">
+
+    <!-- 09 -->
+    <article class="card t-teal reveal">
+      <div class="storyhead"><span class="num">09</span><span class="cat">Recruitment &amp; HR</span><span class="vtag search">Search-verified</span></div>
+      <div class="storybody">
+        <h2>Tech Hiring's Great Divergence: AI Roles Soar as the Broader Market Shrinks</h2>
+        <p class="deck">The 2026 data shows a bifurcated market — premium pay and scarcity for AI/ML, contraction almost everywhere else.</p>
+        <figure>
+          <svg viewBox="0 0 240 160" role="img" aria-label="A globe with two diverging trend lines">
+            <rect width="240" height="160" fill="#e9f2f5"/>
+            <circle cx="84" cy="82" r="42" fill="#0d7085" opacity=".9"/>
+            <g stroke="#e9f2f5" stroke-width="2" fill="none">
+              <ellipse cx="84" cy="82" rx="42" ry="16"/>
+              <ellipse cx="84" cy="82" rx="20" ry="42"/>
+              <line x1="42" y1="82" x2="126" y2="82"/>
+            </g>
+            <path d="M138 98 L206 50" fill="none" stroke="#c97a10" stroke-width="4" stroke-linecap="round"/>
+            <path d="M198 46 L208 49 L204 59" fill="none" stroke="#c97a10" stroke-width="4" stroke-linecap="round"/>
+            <path d="M138 98 L206 122" fill="none" stroke="#c14066" stroke-width="4" stroke-linecap="round" stroke-dasharray="5 5"/>
+            <text x="120" y="150" text-anchor="middle" font-family="Georgia" font-size="9" font-style="italic" fill="#5b6b73">two markets, one map</text>
+          </svg>
+          <figcaption>One line climbs; the other drifts down.</figcaption>
+        </figure>
+        <div class="copy">
+          <p>The headline numbers describe two different job markets. AI-engineer postings are up roughly 59% even as overall tech postings sit about 36% below their 2020 peak; "AI engineer" tops LinkedIn's Jobs on the Rise for a second straight year. Pay reflects the scarcity: US AI/ML engineers run about $134K–$193K, remote AI-engineer medians sit near $194K, and global mid-level AI salaries are around $182,500 — up roughly 14% since 2024.</p>
+          <p>The friction is time and location. Typical AI/ML time-to-hire sits near 29 days but stretches to as long as 89 days for the hardest specialist roles. Remote hiring is now the norm — around 87% of tech companies hire globally for remote positions, reportedly expanding talent pools about 5× and correlating with higher retention. The result: employers compete globally for a thin band of AI talent while trimming elsewhere.</p>
+        </div>
+        <div class="takeaways">
+          <h3>Key takeaways</h3>
+          <ul>
+            <li>AI-engineer postings +59% while overall tech postings ~36% below 2020; AI engineer = #1 rising role.</li>
+            <li>Pay: US AI/ML ~$134K–$193K; remote median ~$194K; global mid-level ~$182.5K (+14% since 2024).</li>
+            <li>Time-to-hire ~29 days typical, up to ~89 for scarce specialists; ~87% of firms hire remote-globally.</li>
+          </ul>
+        </div>
+        <div class="why">
+          <h3>Why it matters</h3>
+          <p>For employers, an AI hire is now a global bidding contest measured in weeks to months, making offer speed, remote flexibility and a credible technical mission decisive. For job-seekers, the leverage is concentrated: AI, ML and adjacent cloud and data skills command premiums and mobility, while generalist tech roles face a tighter, slower market — a strong signal to reskill toward the scarce specialties.</p>
+        </div>
+        <p class="sources"><strong>Sources (2026, current):</strong> <a href="https://www.pin.com/blog/tech-job-market-report/">Pin — Tech job market 2026</a> · <a href="https://www.recruitingfromscratch.com/blog/ai-engineer-remote-salary-in-2026-real-data-from-1-9-million-job-postings">Recruiting from Scratch — AI engineer remote salary 2026</a> · <a href="https://www.roberthalf.com/us/en/job-details/aiml-engineer">Robert Half — AI/ML engineer salary 2026</a></p>
+        <div class="topics" aria-label="Topics">
+          <button type="button" class="topic" data-tag="TechHiring">#TechHiring</button>
+          <button type="button" class="topic" data-tag="AISalaries">#AISalaries</button>
+          <button type="button" class="topic" data-tag="RemoteWork">#RemoteWork</button>
+          <button type="button" class="topic" data-tag="TalentShortage">#TalentShortage</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 10 -->
+    <article class="card t-rose reveal">
+      <div class="storyhead"><span class="num">10</span><span class="cat">Recruitment &amp; HR</span><span class="vtag search">Search-verified</span></div>
+      <div class="storybody">
+        <h2>The Machines Are Reading Your Résumé — and Interviewing You</h2>
+        <p class="deck">By 2026, AI screens most applications and skills-based hiring is displacing the degree.</p>
+        <figure>
+          <svg viewBox="0 0 240 160" role="img" aria-label="An AI beam and magnifier scanning a resume document">
+            <rect width="240" height="160" fill="#f9ecf0"/>
+            <rect x="78" y="26" width="84" height="108" rx="6" fill="#ffffff" stroke="#d9b9c5" stroke-width="2"/>
+            <circle cx="98" cy="48" r="9" fill="#c14066"/>
+            <g fill="#ccccd6"><rect x="114" y="44" width="36" height="6" rx="3"/><rect x="114" y="56" width="28" height="6" rx="3"/></g>
+            <g fill="#e6dfe2"><rect x="92" y="76" width="56" height="5" rx="2"/><rect x="92" y="88" width="56" height="5" rx="2"/><rect x="92" y="100" width="40" height="5" rx="2"/></g>
+            <rect x="70" y="70" width="100" height="14" fill="#0d7085" opacity=".22"/>
+            <line x1="70" y1="77" x2="170" y2="77" stroke="#0d7085" stroke-width="2" stroke-dasharray="4 3"/>
+            <circle cx="178" cy="106" r="15" fill="none" stroke="#1d3557" stroke-width="5"/>
+            <line x1="188" y1="116" x2="200" y2="128" stroke="#1d3557" stroke-width="5" stroke-linecap="round"/>
+            <text x="120" y="150" text-anchor="middle" font-family="Georgia" font-size="9" font-style="italic" fill="#71808f">screened before seen</text>
+          </svg>
+          <figcaption>Most résumés never reach a human.</figcaption>
+        </figure>
+        <div class="copy">
+          <p>AI now sits at the front of the funnel. Roughly 87% of companies use AI to filter résumés, and by some counts 75% never reach a human. Screening has moved past keyword matching to semantic tools — Workable's Screening Assistant, Recruiterflow, HackerEarth and others — that weigh context, communication and inferred skills. One-way AI video interviews (e.g., HireVue) have become a standard step, transcribing and scoring candidates before any live conversation; one study found candidates preferred AI interviewers 78% of the time and were modestly more likely to receive and keep offers.</p>
+          <p>Credentialism is eroding in parallel. About 43% of employers say they now prioritize skills over academic credentials and 45% have dropped degree requirements entirely, with live problem-solving and job simulations replacing traditional interviews at some 85% of skills-based employers. The upshot: what you can demonstrate increasingly outranks where you studied.</p>
+        </div>
+        <div class="takeaways">
+          <h3>Key takeaways</h3>
+          <ul>
+            <li>~87% of firms use AI résumé screening; up to 75% of résumés never reach a recruiter.</li>
+            <li>AI one-way video interviews are now standard; 78% of candidates reportedly preferred AI interviewers.</li>
+            <li>43% prioritize skills over credentials; 45% dropped degree requirements; ~85% use skills-based hiring.</li>
+          </ul>
+        </div>
+        <div class="why">
+          <h3>Why it matters</h3>
+          <p>For candidates, the practical adaptation is concrete — write for semantic AI screeners, build demonstrable skills and portfolios over credentials, and practice structured and async interview formats. For hiring managers, AI screening scales throughput but imports bias, transparency and (in the EU) Article 13 compliance risk — so human oversight and audited tools are becoming non-negotiable rather than optional.</p>
+        </div>
+        <p class="sources"><strong>Sources (2026, current):</strong> <a href="https://recruiterflow.com/blog/ai-screening-tools/">Recruiterflow — AI screening tools 2026</a> · <a href="https://resumehog.com/blog/posts/mid-2026-hiring-trends-how-ai-is-reshaping-recruitment.html">ResumeHog — Mid-2026 hiring trends</a> · <a href="https://testlify.com/ai-in-recruitment/">Testlify — AI in recruitment 2026</a></p>
+        <div class="topics" aria-label="Topics">
+          <button type="button" class="topic" data-tag="AIRecruiting">#AIRecruiting</button>
+          <button type="button" class="topic" data-tag="SkillsBasedHiring">#SkillsBasedHiring</button>
+          <button type="button" class="topic" data-tag="ATS">#ATS</button>
+          <button type="button" class="topic" data-tag="HiringTrends">#HiringTrends</button>
+        </div>
+      </div>
+    </article>
+
+  </div>
+  <!-- end Recruitment & HR grid -->
 
   <!-- ═══ Tracker Watch (weaker source verification) ═══ -->
   <section class="tracker reveal" aria-labelledby="tracker-kicker">
@@ -446,7 +773,7 @@
 
     <!-- 05 -->
     <article class="card lead t-teal reveal">
-      <div class="storyhead"><span class="num">05</span><span class="cat">Recruitment &amp; HR</span><span class="vtag search">Search-verified</span></div>
+      <div class="storyhead"><span class="num">11</span><span class="cat">Recruitment &amp; HR · Tracker</span><span class="vtag search">Search-verified</span></div>
       <div class="storybody">
         <h2>India's Fresher Windows Open This Week — Against a Stubborn Skills Gap</h2>
         <p class="deck">Live hiring windows at global majors and a July 30 mass test, set against tracker data showing demand outrunning supply.</p>
