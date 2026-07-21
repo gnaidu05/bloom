@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - claude/morning-bloom-gopi-briefing-pg787p
   workflow_dispatch:
 
 permissions:
