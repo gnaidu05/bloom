@@ -27,7 +27,7 @@ jobs:
         run: |
           mkdir -p _site/editions
           cp index.html archive.html _site/
-          cp feed.xml _site/ 2>/dev/null || true
+          cp feed.xml logo.png _site/ 2>/dev/null || true
           cp editions/*.html _site/editions/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

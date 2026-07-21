@@ -109,6 +109,7 @@ def main() -> None:
 <div style="background:#fafafa;padding:28px 14px;">
   <div style="max-width:600px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e4e4e7;">
     <div style="background:#1d3557;padding:26px 28px;">
+      <img src="{SITE}/logo.png" width="46" height="46" alt="The Morning Bloom" style="display:block;border:0;outline:none;margin-bottom:12px;">
       <div style="font:700 13px/1 Arial,sans-serif;color:#a9bacd;letter-spacing:2px;text-transform:uppercase;">Daily News Briefing</div>
       <div style="font:700 30px/1.15 Georgia,serif;color:#ffffff;margin-top:10px;">The Morning <span style="color:#f2a9c4;font-style:italic;">Bloom</span></div>
       <div style="font:400 14px/1.4 Arial,sans-serif;color:#a9bacd;margin-top:8px;">{pretty} &middot; Pune Edition</div>
