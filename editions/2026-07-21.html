@@ -74,22 +74,43 @@
   .sub-thanks{margin-top:.7rem; background:rgba(23,143,111,.2); border:1px solid rgba(94,222,183,.45); color:#b8f0dd; font-size:.84rem; font-weight:600; border-radius:12px; padding:.6rem .95rem;}
   .visually-hidden{position:absolute; width:1px; height:1px; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
 
+  /* ── Desk nav (sticky section jumper) ─────── */
+  .desknav{position:sticky; top:.5rem; z-index:30; display:flex; flex-wrap:wrap; align-items:center; gap:.45rem; background:rgba(255,255,255,.9); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border:1px solid var(--line); border-radius:999px; padding:.45rem .6rem; box-shadow:var(--shadow-sm);}
+  .desknav .dn-label{font-size:.62rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); padding:0 .4rem;}
+  .desknav a{font-size:.76rem; font-weight:700; color:var(--navy); background:var(--navy-soft); text-decoration:none; padding:.36rem .82rem; border-radius:999px; transition:background .18s ease, color .18s ease;}
+  .desknav a:hover{background:var(--navy); color:#fff;}
+  .desknav a:focus-visible{outline:3px solid var(--navy); outline-offset:2px;}
+  @media(max-width:560px){.desknav .dn-label{display:none;} .desknav a{font-size:.72rem; padding:.34rem .7rem;}}
+  article.card, .section-head{scroll-margin-top:4.5rem;}
+
   /* ── Top row ──────────────────────────────── */
-  .toprow{display:grid; grid-template-columns:1fr 1.45fr; gap:1.4rem;}
-  @media(max-width:780px){.toprow{grid-template-columns:1fr;}}
-  .panel{border-radius:var(--radius); box-shadow:var(--shadow-sm); padding:1.5rem 1.7rem;}
+  .toprow{display:flex; flex-direction:column; gap:1.1rem;}
+  .panel{border-radius:var(--radius); box-shadow:var(--shadow-sm); padding:1.25rem 1.6rem;}
   .boxhead{display:flex; align-items:center; gap:.65rem; font-size:.72rem; font-weight:800; letter-spacing:.18em; text-transform:uppercase; margin-bottom:.9rem;}
   .boxhead .ico{width:28px; height:28px; border-radius:9px; display:grid; place-items:center; color:#fff; flex:none;}
   .boxhead .ico svg{width:14px; height:14px; stroke:currentColor; fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round;}
   .inside{background:linear-gradient(160deg,#fdf6e8,var(--amber-soft)); border:1px solid #f0dfc0;}
   .inside .boxhead{color:var(--amber-deep);} .inside .ico{background:linear-gradient(135deg,var(--amber),var(--amber-deep));}
-  .inside ol{list-style:none; counter-reset:n;}
-  .inside ol li{counter-increment:n; display:flex; gap:.8rem; align-items:baseline; padding:.5rem 0; border-bottom:1px dashed #ecd9b4; font-size:.86rem; font-weight:600; color:#4a3d28;}
-  .inside ol li:last-child{border-bottom:none; padding-bottom:0;}
-  .inside ol li::before{content:"0" counter(n); font-family:var(--font-display); font-weight:800; color:var(--amber); font-size:.95rem; flex:none;}
+  .inside ol{list-style:none; counter-reset:n; columns:3; column-gap:1.5rem;}
+  @media(max-width:820px){.inside ol{columns:2;}}
+  @media(max-width:520px){.inside ol{columns:1;}}
+  .inside ol li{counter-increment:n; break-inside:avoid; display:flex; gap:.7rem; align-items:baseline; padding:.42rem 0; border-bottom:1px dashed #ecd9b4; font-size:.84rem; font-weight:600; color:#4a3d28;}
+  .inside ol li::before{content:counter(n,decimal-leading-zero); font-family:var(--font-display); font-weight:800; color:var(--amber); font-size:.92rem; flex:none;}
+  .inside ol li a{color:inherit; text-decoration:none; transition:color .15s ease;}
+  .inside ol li a:hover{color:var(--amber-deep); text-decoration:underline;}
+  .inside ol li a:focus-visible{outline:3px solid var(--amber); outline-offset:2px; border-radius:3px;}
   .ednote{background:linear-gradient(160deg,#eef6f8,var(--teal-soft)); border:1px solid #cfe4ea; font-size:.86rem; color:#2b505c;}
   .ednote .boxhead{color:var(--teal-deep);} .ednote .ico{background:linear-gradient(135deg,var(--teal),var(--teal-deep));}
   .ednote p{margin-bottom:.55rem;} .ednote p:last-child{margin-bottom:0;}
+  /* collapsible variant */
+  details.ednote{padding:0;}
+  details.ednote summary{list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:.9rem; padding:1.1rem 1.6rem;}
+  details.ednote summary::-webkit-details-marker{display:none;}
+  details.ednote summary .boxhead{margin-bottom:0;}
+  details.ednote .ednote-hint{font-size:.72rem; font-weight:700; color:var(--teal-deep); white-space:nowrap;}
+  details.ednote .ednote-hint::after{content:" ▸"; font-size:.7em;}
+  details.ednote[open] .ednote-hint::after{content:" ▾";}
+  details.ednote .ednote-body{padding:0 1.6rem 1.2rem;}
 
   /* ── Story grid ───────────────────────────── */
   .grid{display:grid; grid-template-columns:1fr 1fr; gap:1.4rem;}
@@ -211,41 +232,54 @@
     </div>
   </header>
 
+  <!-- ═══ Desk nav (jump between sections) ═══ -->
+  <nav class="desknav reveal" aria-label="Jump to desk">
+    <span class="dn-label">Desks</span>
+    <a href="#desk-ai">AI &amp; Technology</a>
+    <a href="#desk-it">IT Industry</a>
+    <a href="#desk-rec">Recruitment &amp; HR</a>
+  </nav>
+
   <!-- ═══ Inside + editor's note ═══ -->
   <div class="toprow">
     <div class="panel inside reveal">
       <div class="boxhead"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span>Inside this issue</div>
       <ol>
-        <li>AI's Wall Street moment: OpenAI &amp; Anthropic eye IPOs</li>
-        <li>AMD's Helios lands Microsoft in strike at Nvidia</li>
-        <li>Silicon supply side: Alphabet's leaner chip, TSMC's $265B Arizona bet</li>
-        <li>Europe's AI Act bares its teeth as GPAI rules take hold</li>
-        <li>Enterprise AI's reality check: everyone deploys, few cash in</li>
-        <li>The open-weight frontier closes the gap — in Chinese</li>
-        <li>IT budgets hit $6.31T as the data-center boom eats the forecast</li>
-        <li>In 2026, attackers don't break in — they log in</li>
-        <li>Tech hiring's great divergence: AI roles soar, market shrinks</li>
-        <li>The machines are reading your résumé — and interviewing you</li>
-        <li>India's fresher windows open — against a skills gap</li>
+        <li><a href="#s1">AI's Wall Street moment: OpenAI &amp; Anthropic eye IPOs</a></li>
+        <li><a href="#s2">AMD's Helios lands Microsoft in strike at Nvidia</a></li>
+        <li><a href="#s3">Silicon supply side: Alphabet's leaner chip, TSMC's $265B Arizona bet</a></li>
+        <li><a href="#s4">Europe's AI Act bares its teeth as GPAI rules take hold</a></li>
+        <li><a href="#s5">Enterprise AI's reality check: everyone deploys, few cash in</a></li>
+        <li><a href="#s6">The open-weight frontier closes the gap — in Chinese</a></li>
+        <li><a href="#s7">IT budgets hit $6.31T as the data-center boom eats the forecast</a></li>
+        <li><a href="#s8">In 2026, attackers don't break in — they log in</a></li>
+        <li><a href="#s9">Tech hiring's great divergence: AI roles soar, market shrinks</a></li>
+        <li><a href="#s10">The machines are reading your résumé — and interviewing you</a></li>
+        <li><a href="#s11">India's fresher windows open — against a skills gap</a></li>
       </ol>
     </div>
-    <div class="panel ednote reveal">
-      <div class="boxhead"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></span>Date-checked sourcing</div>
-      <p>Every story below passed a freshness audit this morning: sources are either reporting with
-      verifiable July 2026 publication dates (most from July 14–21) or clearly labeled current-month
-      trackers and market data, flagged in-story. Today's edition is organized into three desks —
-      <strong>AI &amp; Technology</strong>, <strong>IT Industry</strong> and
-      <strong>Recruitment &amp; HR</strong>.</p>
-      <p>Each story carries a verification tag: <strong>Full article reviewed</strong> means the
-      underlying reporting was read in full, while <strong>Search-verified</strong> means the facts
-      trace to search results, headlines, trackers or market data rather than a fully opened article.
-      Most of today's newly added stories are search-verified; every Sources line links the original
-      reporting.</p>
-    </div>
+    <details class="panel ednote reveal">
+      <summary>
+        <span class="boxhead"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></span>Date-checked sourcing</span>
+        <span class="ednote-hint">How we verify</span>
+      </summary>
+      <div class="ednote-body">
+        <p>Every story above passed a freshness audit this morning: sources are either reporting with
+        verifiable July 2026 publication dates (most from July 14–21) or clearly labeled current-month
+        trackers and market data, flagged in-story. Today's edition is organized into three desks —
+        <strong>AI &amp; Technology</strong>, <strong>IT Industry</strong> and
+        <strong>Recruitment &amp; HR</strong>.</p>
+        <p>Each story carries a verification tag: <strong>Full article reviewed</strong> means the
+        underlying reporting was read in full, while <strong>Search-verified</strong> means the facts
+        trace to search results, headlines, trackers or market data rather than a fully opened article.
+        Most of today's newly added stories are search-verified; every Sources line links the original
+        reporting.</p>
+      </div>
+    </details>
   </div>
 
   <!-- ═══ Desk 1 — AI & Technology ═══ -->
-  <div class="section-head reveal">
+  <div class="section-head reveal" id="desk-ai">
     <span class="sec-label">AI &amp; Technology</span>
     <span class="sec-rule" aria-hidden="true"></span>
     <span class="sec-count">6 stories</span>
@@ -253,7 +287,7 @@
   <div class="grid">
 
     <!-- 01 — LEAD -->
-    <article class="card lead t-teal reveal">
+    <article class="card lead t-teal reveal" id="s1">
       <div class="storyhead"><span class="num">01</span><span class="cat">AI &amp; Technology · Lead story</span><span class="vtag full">Full article reviewed</span></div>
       <div class="storybody">
         <h2>AI's Wall Street Moment: OpenAI and Anthropic Both Move Toward Historic Listings</h2>
@@ -302,7 +336,7 @@
     </article>
 
     <!-- 02 -->
-    <article class="card t-navy reveal">
+    <article class="card t-navy reveal" id="s2">
       <div class="storyhead"><span class="num">02</span><span class="cat">AI &amp; Technology</span><span class="vtag full">Full article reviewed</span></div>
       <div class="storybody">
         <h2>AMD Launches Helios, Its First Rack-Scale AI System — and Microsoft Signs On</h2>
@@ -356,7 +390,7 @@
     </article>
 
     <!-- 03 -->
-    <article class="card t-amber reveal">
+    <article class="card t-amber reveal" id="s3">
       <div class="storyhead"><span class="num">03</span><span class="cat">AI &amp; Technology</span><span class="vtag full">Full article reviewed</span></div>
       <div class="storybody">
         <h2>The Silicon Supply Side: Alphabet Designs a Leaner Chip as TSMC Lifts Arizona to $265 Billion</h2>
@@ -406,7 +440,7 @@
     </article>
 
     <!-- 04 — LEAD -->
-    <article class="card lead t-rose reveal">
+    <article class="card lead t-rose reveal" id="s4">
       <div class="storyhead"><span class="num">04</span><span class="cat">AI &amp; Technology · Policy</span><span class="vtag search">Search-verified</span></div>
       <div class="storybody">
         <h2>Europe's AI Act Bares Its Teeth: Enforcement Arrives as GPAI Rules Take Hold</h2>
@@ -458,7 +492,7 @@
     </article>
 
     <!-- 05 -->
-    <article class="card t-teal reveal">
+    <article class="card t-teal reveal" id="s5">
       <div class="storyhead"><span class="num">05</span><span class="cat">AI &amp; Technology</span><span class="vtag search">Search-verified</span></div>
       <div class="storybody">
         <h2>Enterprise AI's Reality Check: Everyone's Deploying, Few Are Cashing In</h2>
@@ -503,7 +537,7 @@
     </article>
 
     <!-- 06 -->
-    <article class="card t-navy reveal">
+    <article class="card t-navy reveal" id="s6">
       <div class="storyhead"><span class="num">06</span><span class="cat">AI &amp; Technology</span><span class="vtag search">Search-verified</span></div>
       <div class="storybody">
         <h2>The Open-Weight Frontier Closes the Gap — and It's Speaking Chinese</h2>
@@ -551,7 +585,7 @@
   <!-- end AI & Technology grid -->
 
   <!-- ═══ Desk 2 — IT Industry ═══ -->
-  <div class="section-head reveal">
+  <div class="section-head reveal" id="desk-it">
     <span class="sec-label">IT Industry</span>
     <span class="sec-rule" aria-hidden="true"></span>
     <span class="sec-count">2 stories</span>
@@ -559,7 +593,7 @@
   <div class="grid">
 
     <!-- 07 -->
-    <article class="card t-amber reveal">
+    <article class="card t-amber reveal" id="s7">
       <div class="storyhead"><span class="num">07</span><span class="cat">IT Industry</span><span class="vtag search">Search-verified</span></div>
       <div class="storybody">
         <h2>IT Budgets Hit $6.31 Trillion as the Data-Center Boom Eats the Forecast</h2>
@@ -611,7 +645,7 @@
     </article>
 
     <!-- 08 -->
-    <article class="card t-navy reveal">
+    <article class="card t-navy reveal" id="s8">
       <div class="storyhead"><span class="num">08</span><span class="cat">IT Industry · Security</span><span class="vtag search">Search-verified</span></div>
       <div class="storybody">
         <h2>In 2026, Attackers Don't Break In — They Log In</h2>
@@ -659,7 +693,7 @@
   <!-- end IT Industry grid -->
 
   <!-- ═══ Desk 3 — Recruitment & HR ═══ -->
-  <div class="section-head reveal">
+  <div class="section-head reveal" id="desk-rec">
     <span class="sec-label">Recruitment &amp; HR</span>
     <span class="sec-rule" aria-hidden="true"></span>
     <span class="sec-count">3 stories</span>
@@ -667,7 +701,7 @@
   <div class="grid">
 
     <!-- 09 -->
-    <article class="card t-teal reveal">
+    <article class="card t-teal reveal" id="s9">
       <div class="storyhead"><span class="num">09</span><span class="cat">Recruitment &amp; HR</span><span class="vtag search">Search-verified</span></div>
       <div class="storybody">
         <h2>Tech Hiring's Great Divergence: AI Roles Soar as the Broader Market Shrinks</h2>
@@ -715,7 +749,7 @@
     </article>
 
     <!-- 10 -->
-    <article class="card t-rose reveal">
+    <article class="card t-rose reveal" id="s10">
       <div class="storyhead"><span class="num">10</span><span class="cat">Recruitment &amp; HR</span><span class="vtag search">Search-verified</span></div>
       <div class="storybody">
         <h2>The Machines Are Reading Your Résumé — and Interviewing You</h2>
@@ -772,7 +806,7 @@
     </div>
 
     <!-- 05 -->
-    <article class="card lead t-teal reveal">
+    <article class="card lead t-teal reveal" id="s11">
       <div class="storyhead"><span class="num">11</span><span class="cat">Recruitment &amp; HR · Tracker</span><span class="vtag search">Search-verified</span></div>
       <div class="storybody">
         <h2>India's Fresher Windows Open This Week — Against a Stubborn Skills Gap</h2>
