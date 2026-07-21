@@ -54,6 +54,7 @@
   .inside ol li::before{content:"0" counter(n); font-weight:800; color:var(--amber); font-size:.8rem;}
   .ednote{background:var(--teal-soft); padding:1.3rem 1.5rem; border-radius:var(--radius); box-shadow:var(--shadow); font-size:.86rem; color:#28505e;}
   .ednote .boxhead{color:var(--teal);} .ednote .ico{background:var(--teal);}
+  .ednote p{margin-bottom:.5rem;} .ednote p:last-child{margin-bottom:0;}
 
   /* ── Story grid ─────────────────────────── */
   .grid{display:grid; grid-template-columns:1fr 1fr; gap:1.2rem;}
@@ -121,20 +122,23 @@
       <div class="boxhead"><span class="ico">☰</span>Inside this issue</div>
       <ol>
         <li>AI's Wall Street moment: OpenAI &amp; Anthropic eye IPOs</li>
-        <li>The AI chip race widens beyond Nvidia</li>
+        <li>AMD's Helios lands Microsoft in strike at Nvidia</li>
+        <li>Silicon supply side: Alphabet's leaner chip, TSMC's $265B Arizona bet</li>
         <li>Publishing's labor summer: record union at Hachette</li>
-        <li>KDP tightens quality &amp; AI-disclosure rules</li>
-        <li>India's talent market: growth meets a skills gap</li>
+        <li>India's fresher windows open — against a skills gap</li>
       </ol>
     </div>
     <div class="ednote">
-      <div class="boxhead"><span class="ico">✎</span>A note on sourcing</div>
-      <p>Full article pages could not be opened from this environment today (the network proxy blocked
-      direct fetches), so every fact below traces to web-search results retrieved this morning — the
-      links in each Sources line lead to the full reporting. All stories are from the past week. The
-      Recruitment &amp; HR wire carried more trend analysis than day-of headlines today, which the story
-      notes honestly; the self-publishing story draws on KDP-watcher industry blogs rather than an
-      Amazon announcement, and is flagged as such.</p>
+      <div class="boxhead"><span class="ico">✓</span>Date-checked sourcing</div>
+      <p>Every story below passed a freshness audit this morning: sources are either articles with
+      verifiable July 2026 publication dates (most from July 14–20) or clearly labeled current-month
+      trackers, flagged in-story. Two candidate stories were cut in that audit — a KDP quality-rules
+      piece whose sources carried no publication dates, and the UN's Geneva AI-governance dialogue,
+      which took place July 6–7, outside our one-week window.</p>
+      <p>Books &amp; Publishing produced one strongly verified story this week, so an extra AI slot was
+      used per our backfill policy. Full article pages could not be opened from this environment (the
+      network proxy blocks direct fetches); facts trace to search results retrieved this morning, and
+      each Sources line links the full reporting.</p>
     </div>
   </div>
 
@@ -165,7 +169,7 @@
             <figcaption>The opening bell beckons the frontier labs.</figcaption>
           </figure>
           <div class="copy">
-            <p>The two leading frontier AI labs are converging on the public markets at once. Reports gathered in this week's AI news roundups say OpenAI is preparing to file confidentially for an initial public offering in the coming weeks, with a listing possible as soon as September 2026 — the company is valued around $730 billion in private markets. Anthropic, meanwhile, is reportedly preparing an S-1 for an IPO as early as October 2026, its case strengthened by locked-in, long-term compute deals that make revenue more predictable.</p>
+            <p>The two leading frontier AI labs are converging on the public markets at once. Reports in the July 14 AI news roundups say OpenAI is preparing to file confidentially for an initial public offering in the coming weeks, with a listing possible as soon as September 2026 — the company is valued around $730 billion in private markets. Anthropic, meanwhile, is reportedly preparing an S-1 for an IPO as early as October 2026, its case strengthened by locked-in, long-term compute deals that make revenue more predictable.</p>
             <p>The listings would cap a staggering capital cycle: global venture funding hit a record $510 billion in the first six months of 2026, with OpenAI and Anthropic alone accounting for $217 billion of it. The talent market is moving in step with the money — prominent researcher and educator Andrej Karpathy announced he has joined Anthropic to work on the frontier of large language models, and Anthropic is reportedly in talks with Samsung to build a custom chip tuned to its Claude models.</p>
           </div>
         </div>
@@ -181,7 +185,7 @@
           <h3>Why it matters</h3>
           <p>Public listings would put the economics of frontier AI on open display for the first time — revenues, margins and compute costs that have so far been private guesswork. Quarterly scrutiny tends to discipline pricing and product priorities, which shapes what businesses everywhere pay for AI tools. And when AI firms dominate the financial pages, perceptions shift across the job market: candidates recalibrate what a prestige employer looks like, and every other industry has to make its own case for talent against that backdrop.</p>
         </div>
-        <p class="sources"><strong>Sources:</strong> <a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026">Build Fast with AI — July 14 roundup</a> · <a href="https://llm-stats.com/ai-news">LLM Stats — AI News (July 2026)</a> · <a href="https://thursdai.news/releases/2026-07">ThursdAI — July 2026 releases</a></p>
+        <p class="sources"><strong>Sources (July 14–21, 2026):</strong> <a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026">Build Fast with AI — July 14, 2026 roundup</a> · <a href="https://llm-stats.com/ai-news">LLM Stats — AI News (July 2026)</a> · <a href="https://thursdai.news/releases/2026-07">ThursdAI — July 2026 releases</a></p>
       </div>
     </article>
 
@@ -189,48 +193,98 @@
     <article class="card t-navy">
       <div class="storyhead"><span class="num">02</span><span class="cat">AI &amp; Technology</span></div>
       <div class="storybody">
-        <h2>The Chip Race Widens: AMD Lands Microsoft, Alphabet Designs Leaner Silicon</h2>
-        <p class="deck">Nvidia's dominance faces challengers on three fronts in a single news cycle.</p>
+        <h2>AMD Launches Helios, Its First Rack-Scale AI System — and Microsoft Signs On</h2>
+        <p class="deck">July 20: AMD's most competitive move yet against a rival holding over 95% of the data-center GPU market.</p>
         <figure>
-          <svg viewBox="0 0 240 160" role="img" aria-label="Illustration of a microchip with radiating circuit traces">
+          <svg viewBox="0 0 240 160" role="img" aria-label="Illustration of a server rack with GPU modules">
             <rect width="240" height="160" fill="#eef1f6"/>
-            <g stroke="#1e3a5f" stroke-width="2.5" fill="none">
-              <path d="M70 80 H25 M170 80 H215 M120 35 V12 M120 125 V148 M85 48 L55 22 M155 48 L185 22 M85 112 L55 138 M155 112 L185 138"/>
+            <rect x="80" y="14" width="80" height="132" rx="8" fill="#1e3a5f"/>
+            <g fill="#eef1f6">
+              <rect x="90" y="26" width="60" height="14" rx="3"/>
+              <rect x="90" y="46" width="60" height="14" rx="3"/>
+              <rect x="90" y="66" width="60" height="14" rx="3"/>
+              <rect x="90" y="86" width="60" height="14" rx="3"/>
+              <rect x="90" y="106" width="60" height="14" rx="3"/>
             </g>
-            <g fill="#d97706">
-              <circle cx="25" cy="80" r="4"/><circle cx="215" cy="80" r="4"/><circle cx="120" cy="12" r="4"/><circle cx="120" cy="148" r="4"/>
-              <circle cx="55" cy="22" r="4"/><circle cx="185" cy="22" r="4"/><circle cx="55" cy="138" r="4"/><circle cx="185" cy="138" r="4"/>
+            <g fill="#c2456b">
+              <circle cx="97" cy="33" r="3"/><circle cx="97" cy="53" r="3"/><circle cx="97" cy="73" r="3"/><circle cx="97" cy="93" r="3"/><circle cx="97" cy="113" r="3"/>
             </g>
-            <rect x="75" y="40" width="90" height="80" rx="8" fill="#1e3a5f"/>
-            <rect x="88" y="52" width="64" height="56" rx="4" fill="#eef1f6"/>
-            <text x="120" y="86" text-anchor="middle" font-family="Georgia" font-size="14" font-weight="bold" fill="#c2456b">AI</text>
-            <path d="M95 98 H145 M95 66 H145" stroke="#d97706" stroke-width="2"/>
+            <g stroke="#d97706" stroke-width="2.5" fill="none">
+              <path d="M80 80 H40 M160 80 H200 M80 40 H55 M160 40 H185 M80 120 H55 M160 120 H185"/>
+            </g>
+            <g fill="#0e7490">
+              <circle cx="40" cy="80" r="4"/><circle cx="200" cy="80" r="4"/><circle cx="55" cy="40" r="4"/><circle cx="185" cy="40" r="4"/><circle cx="55" cy="120" r="4"/><circle cx="185" cy="120" r="4"/>
+            </g>
+            <text x="120" y="140" text-anchor="middle" font-family="Georgia" font-size="9" font-style="italic" fill="#9fb0c4">72 GPUs to a rack</text>
           </svg>
-          <figcaption>New silicon, new suitors: the accelerator market fragments.</figcaption>
+          <figcaption>Racks, not chips, are how hyperscalers buy AI now.</figcaption>
         </figure>
         <div class="copy">
-          <p>Nvidia's grip on AI hardware faced three fresh challenges in the same news cycle. AMD landed Microsoft as a customer for Helios, its first rack-scale AI system built to rival Nvidia's offerings — a milestone, because rack-level systems (not lone chips) are how hyperscalers now buy compute. Alphabet's stock popped on a report that it is developing a more efficient AI chip, extending its long-running in-house silicon strategy.</p>
-          <p>Manufacturing capacity is chasing the same demand: TSMC is accelerating its Arizona factory build-out to capitalize on what it calls the AI "megatrend." And the model labs themselves are joining the custom-silicon club — Anthropic is reportedly in talks with Samsung for a chip tuned to Claude, following the path already walked by Google, Amazon, Meta and OpenAI.</p>
+          <p>On July 20, AMD announced delivery of Helios, its first rack-scale AI system, with Microsoft signing on to deploy the racks in Azure data centers — joining early customers Meta, OpenAI and Oracle. Each Helios rack carries 72 of AMD's upcoming Instinct MI455 GPUs, and systems begin shipping to customers in the second half of 2026. Rack-level systems, not individual chips, are how hyperscalers now buy AI compute, which makes this AMD's most credible strike yet at Nvidia's territory.</p>
+          <p>The scale of the challenge is stark: Nvidia controls more than 95% of the data-center GPU market, while AMD holds roughly 4.5%. But a marquee Azure deployment gives AMD the reference customer it has lacked, and coverage notes new EPYC "Venice" VMs arriving alongside the MI455X hardware in Azure by late 2026.</p>
         </div>
         <div class="takeaways">
           <h3>Key takeaways</h3>
           <ul>
-            <li>AMD's Helios rack system won Microsoft — its most credible strike yet at Nvidia's territory.</li>
-            <li>Alphabet is reportedly designing a more efficient AI chip; TSMC is speeding up its Arizona build-out.</li>
-            <li>Anthropic–Samsung custom-chip talks show even model labs going vertical on silicon.</li>
+            <li>AMD's Helios rack system (72 Instinct MI455 GPUs per rack) ships H2 2026; Microsoft joins Meta, OpenAI and Oracle as customers.</li>
+            <li>Nvidia still holds 95%+ of the data-center GPU market vs AMD's ~4.5% — the gap Helios is built to attack.</li>
           </ul>
         </div>
         <div class="why">
           <h3>Why it matters</h3>
-          <p>A broader, more competitive compute supply chain is the main brake on AI prices. Every credible Nvidia alternative pushes the cost of training and serving models down, which accelerates enterprise adoption — and with it, sustained demand for AI infrastructure, cloud and chip-adjacent skills across the job market.</p>
+          <p>A second credible supplier of rack-scale AI systems is the main brake on AI compute prices. Every hyperscaler win for AMD pressures Nvidia's pricing power, pushes the cost of training and serving models down, and accelerates enterprise adoption — sustaining demand for AI infrastructure and cloud skills across the job market.</p>
         </div>
-        <p class="sources"><strong>Sources:</strong> <a href="https://www.cnbc.com/technology/">CNBC Technology</a> · <a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026">Build Fast with AI — July 14 roundup</a> · <a href="https://dentro.de/ai/news/">Dentro — AI News July 2026</a></p>
+        <p class="sources"><strong>Sources (July 20, 2026):</strong> <a href="https://www.cnbc.com/2026/07/20/amd-helios-microsoft-ai-nvidia.html">CNBC — AMD launches Helios</a> · <a href="https://siliconangle.com/2026/07/20/microsoft-will-use-amds-ai-optimized-helios-racks-azure/">SiliconANGLE — Microsoft to use Helios in Azure</a> · <a href="https://windowsnews.ai/article/microsoft-to-deploy-amds-helios-rack-scale-ai-platform-on-azure-new-mi455x-vms-arrive-late-2026.439720">Windows News — MI455X VMs late 2026</a></p>
       </div>
     </article>
 
     <!-- 03 -->
+    <article class="card t-amber">
+      <div class="storyhead"><span class="num">03</span><span class="cat">AI &amp; Technology</span></div>
+      <div class="storybody">
+        <h2>The Silicon Supply Side: Alphabet Designs a Leaner Chip as TSMC Lifts Arizona to $265 Billion</h2>
+        <p class="deck">Two July 17–20 reports show the AI buildout's next phase: efficiency at the top, capacity underneath.</p>
+        <figure>
+          <svg viewBox="0 0 240 160" role="img" aria-label="Illustration of a chip fabrication plant with wafers">
+            <rect width="240" height="160" fill="#fbf3e6"/>
+            <rect x="20" y="80" width="200" height="60" rx="6" fill="#1e3a5f"/>
+            <rect x="45" y="56" width="30" height="24" fill="#1e3a5f"/>
+            <rect x="120" y="48" width="18" height="32" fill="#1e3a5f"/>
+            <path d="M120 48 h18 l10 -14 h-18 Z" fill="#0e7490"/>
+            <circle cx="129" cy="24" r="4" fill="#d97706" opacity=".8"/>
+            <circle cx="140" cy="14" r="3" fill="#d97706" opacity=".5"/>
+            <g fill="#eaf3f6">
+              <rect x="35" y="95" width="22" height="16" rx="2"/><rect x="67" y="95" width="22" height="16" rx="2"/><rect x="99" y="95" width="22" height="16" rx="2"/><rect x="131" y="95" width="22" height="16" rx="2"/><rect x="163" y="95" width="22" height="16" rx="2"/>
+            </g>
+            <circle cx="196" cy="118" r="12" fill="#c2456b"/>
+            <path d="M190 118 h12 M196 112 v12" stroke="#fbf3e6" stroke-width="2"/>
+            <text x="120" y="152" text-anchor="middle" font-family="Georgia" font-size="9" font-style="italic" fill="#8a6a3a">four fabs against the bottleneck</text>
+          </svg>
+          <figcaption>Efficiency above, capacity below: the buildout's new phase.</figcaption>
+        </figure>
+        <div class="copy">
+          <p>Alphabet's stock popped on a July 20 report that it is developing a more efficient AI chip targeting deployment around 2028. The project aims to ease an internal compute shortage severe enough, per the report, to have forced Google Cloud to turn away outside business — and the new silicon would serve future Gemini models only if Google keeps its current underlying architecture.</p>
+          <p>Beneath the chip designers, the manufacturer is racing to keep up. TSMC is accelerating its Arizona factory build-out, with its CFO calling AI a "multi-year demand mega trend" in July 20 remarks after a record quarter. A July 17 report puts the numbers on it: an additional $100 billion committed, lifting TSMC's total Arizona investment pipeline to $265 billion across four fabs targeting the AI packaging bottleneck.</p>
+        </div>
+        <div class="takeaways">
+          <h3>Key takeaways</h3>
+          <ul>
+            <li>Alphabet is reportedly designing a more efficient AI chip for ~2028, driven by an internal compute crunch.</li>
+            <li>TSMC committed an additional $100B to Arizona — a $265B total pipeline across four fabs.</li>
+            <li>Both moves respond to the same constraint: AI demand outrunning compute supply.</li>
+          </ul>
+        </div>
+        <div class="why">
+          <h3>Why it matters</h3>
+          <p>Compute scarcity is now the binding constraint on AI — severe enough that even Google reportedly turns away cloud customers. Custom efficiency chips and hundred-billion-dollar fab commitments are the two levers the industry has, and both take years to pay off. Until they do, expect AI capacity to stay rationed and priced accordingly — a planning reality for any organization budgeting AI adoption, and a durable demand signal for semiconductor and infrastructure careers.</p>
+        </div>
+        <p class="sources"><strong>Sources (July 17–20, 2026):</strong> <a href="https://www.cnbc.com/2026/07/20/alphabet-googl-stock-ai-chip-report.html">CNBC — Alphabet's efficient AI chip</a> · <a href="https://www.cnbc.com/2026/07/20/tsmc-arizona-fab-capacity-ai-chip-demand.html">CNBC — TSMC accelerates Arizona</a> · <a href="https://www.techtimes.com/articles/320841/20260717/tsmc-lifts-arizona-265-billion-after-record-quarter-four-fabs-target-ai-packaging-bottleneck.htm">TechTimes (July 17) — $265B Arizona pipeline</a></p>
+      </div>
+    </article>
+
+    <!-- 04 -->
     <article class="card t-rose">
-      <div class="storyhead"><span class="num">03</span><span class="cat">Books &amp; Publishing</span></div>
+      <div class="storyhead"><span class="num">04</span><span class="cat">Books &amp; Publishing</span></div>
       <div class="storybody">
         <h2>Publishing's Labor Summer: PRH Lifts Entry Pay as Hachette Workers Form the Largest Union in Trade History</h2>
         <p class="deck">Wages rise and organizing spreads — on a foundation of flat print sales.</p>
@@ -253,8 +307,8 @@
           <figcaption>Six hundred voices rise from the Hachette imprint pages.</figcaption>
         </figure>
         <div class="copy">
-          <p>Labor organizing is reshaping trade publishing's economics. As reported by Publishers Weekly, Penguin Random House has raised its entry-level salary from $51,000 to $55,000 amid a wave of organizing across the industry. At Hachette, the newly formed Hachette Workers Coalition — organized with NewsGuild-CWA and roughly 600 members strong — is now the largest union in trade publishing history and will soon begin collective bargaining.</p>
-          <p>The wage push lands on soft ground: print book sales have been flat in the first half of 2026, and in France the Syndicat national de l'édition reported publisher revenues slipped 0.6% to €2.88 billion in 2025, citing the secondhand market's growth and unresolved questions over AI as structural concerns. The deal flow continues meanwhile — among the week's notable acquisitions is John Carreyrou's "Satoshi's Secret," an investigation into the identity of Bitcoin's inventor.</p>
+          <p>Labor organizing is reshaping trade publishing's economics. As reported in Publishers Weekly's current industry-news coverage, Penguin Random House has raised its entry-level salary from $51,000 to $55,000 amid a wave of organizing across the industry. At Hachette, the newly formed Hachette Workers Coalition — organized with NewsGuild-CWA and roughly 600 members strong — is now the largest union in trade publishing history and will soon begin collective bargaining.</p>
+          <p>The wage push lands on soft ground: print book sales have been flat in the first half of 2026, and in France the Syndicat national de l'édition reported publisher revenues slipped 0.6% to €2.88 billion in 2025, citing the secondhand market's growth and unresolved questions over AI as structural concerns. The deal flow continues meanwhile — Publishers Weekly's Book Deals column for the week of July 20 highlights John Carreyrou's "Satoshi's Secret," an investigation into the identity of Bitcoin's inventor.</p>
         </div>
         <div class="takeaways">
           <h3>Key takeaways</h3>
@@ -268,49 +322,7 @@
           <h3>Why it matters</h3>
           <p>Publishing has long paired cultural prestige with famously low pay; a moving wage floor at the industry's biggest house resets expectations everywhere, and the Hachette bargaining round will set precedents watched well beyond books. For authors, houses squeezed between rising labor costs and flat sales have less room on advances and marketing — strengthening the economic case for independent publishing routes.</p>
         </div>
-        <p class="sources"><strong>Sources:</strong> <a href="https://www.publishersweekly.com/pw/by-topic/industry-news/index.html">Publishers Weekly — Industry News</a> · <a href="https://www.publishersweekly.com/pw/by-topic/industry-news/book-deals/article/100860-book-deals-week-of-july-20-2026.html">Publishers Weekly — Book Deals, Week of July 20, 2026</a></p>
-      </div>
-    </article>
-
-    <!-- 04 -->
-    <article class="card t-amber">
-      <div class="storyhead"><span class="num">04</span><span class="cat">Books &amp; Publishing</span></div>
-      <div class="storybody">
-        <h2>KDP Tightens the Gates: Quality Enforcement and AI Disclosure Rules Favor Careful Authors</h2>
-        <p class="deck">A store trying to surface fewer, better books — and transparency that appears to sell.</p>
-        <figure>
-          <svg viewBox="0 0 240 160" role="img" aria-label="Illustration of a book passing through an ornate gate">
-            <rect width="240" height="160" fill="#fbf3e6"/>
-            <path d="M55 150 V60 Q55 26 120 26 Q185 26 185 60 V150" fill="none" stroke="#d97706" stroke-width="6"/>
-            <path d="M73 150 V66 Q73 42 120 42 Q167 42 167 66 V150" fill="none" stroke="#d97706" stroke-width="3"/>
-            <circle cx="120" cy="26" r="6" fill="#c2456b"/>
-            <g transform="translate(90,84)">
-              <path d="M0 16 Q15 6 30 16 Q45 6 60 16 L60 46 Q45 36 30 46 Q15 36 0 46 Z" fill="#0e7490"/>
-              <path d="M30 16 V46" stroke="#0a5568" stroke-width="2.5"/>
-              <path d="M7 25 Q18 18 26 23 M34 23 Q42 18 53 25" stroke="#eaf3f6" stroke-width="1.5" fill="none"/>
-            </g>
-            <path d="M108 70 L114 78 L130 60" stroke="#0e7490" stroke-width="4" fill="none" stroke-linecap="round"/>
-            <text x="120" y="157" text-anchor="middle" font-family="Georgia" font-size="10" font-style="italic" fill="#5b6b7a">quality passes through</text>
-          </svg>
-          <figcaption>Amazon's narrower gate rewards the well-made book.</figcaption>
-        </figure>
-        <div class="copy">
-          <p>Reports from KDP-watcher industry blogs (not a formal Amazon announcement — worth noting) describe a platform tightening its standards in 2026. Under stricter enforcement, higher-quality books are outperforming low-effort products, with Amazon signalling it wants fewer titles that clutter the store and more that satisfy readers. The pressure traces to scale: one report on the 2026 KDP AI rule changes cites roughly 1.5 million low-quality AI titles flooding the platform annually, prompting disclosure requirements — and beta tests cited in that report found disclosed-AI books saw 15% higher conversion, suggesting transparency itself sells.</p>
-          <p>The money in the ecosystem remains substantial — Kindle Unlimited author earnings for June totalled $67.0 million. For romance specifically, the playbook is familiar but sharpening: TikTok and short-form trends still drive fast sales spikes, and what sells is clear genre signalling in title and cover, tight editing, and series branding that keeps readers returning.</p>
-        </div>
-        <div class="takeaways">
-          <h3>Key takeaways</h3>
-          <ul>
-            <li>Tighter KDP enforcement is rewarding well-edited, higher-quality books over low-effort uploads.</li>
-            <li>AI-disclosure rules follow a reported ~1.5M low-quality AI titles per year; disclosed books reportedly converted 15% better in beta tests.</li>
-            <li>June KU author payout: $67.0M; romance still rides short-form video and series branding.</li>
-          </ul>
-        </div>
-        <div class="why">
-          <h3>Why it matters</h3>
-          <p>Discovery is the whole game in self-publishing, and every gate a marketplace adds against low-effort floods raises the relative visibility of carefully made books. If the reported enforcement holds, the winners are authors who invest in editing, honest metadata and clear genre signals — craft and candour are becoming ranking factors, not just virtues.</p>
-        </div>
-        <p class="sources"><strong>Sources:</strong> <a href="https://barkerbooks.com/amazon-kdp-news/">Barker Books — Amazon KDP News 2026</a> · <a href="https://blog.bookautoai.com/trending-books-amazon-kdp/">BookAuto — Trending Books on Amazon KDP 2026</a> · <a href="https://theauthorcentral.com/blog/amazon-kdp-self-publishing-guide/">Author Central — KDP Publishing Guide 2026</a></p>
+        <p class="sources"><strong>Sources (week of July 20, 2026):</strong> <a href="https://www.publishersweekly.com/pw/by-topic/industry-news/index.html">Publishers Weekly — Industry News</a> · <a href="https://www.publishersweekly.com/pw/by-topic/industry-news/book-deals/article/100860-book-deals-week-of-july-20-2026.html">Publishers Weekly — Book Deals, Week of July 20, 2026</a></p>
       </div>
     </article>
 
@@ -318,8 +330,8 @@
     <article class="card lead t-teal">
       <div class="storyhead"><span class="num">05</span><span class="cat">Recruitment &amp; HR</span></div>
       <div class="storybody">
-        <h2>India's Talent Market: 9% Growth and a 25% Campus-Hiring Jump — Against an 80% Skills Gap</h2>
-        <p class="deck">Fresher hiring roars back, but employers report a deepening struggle to find the skills they need.</p>
+        <h2>India's Fresher Windows Open This Week — Against a Stubborn Skills Gap</h2>
+        <p class="deck">Live hiring windows at global majors and a July 30 mass test, set against tracker data showing demand outrunning supply.</p>
         <div class="lead-flex">
           <figure>
             <svg viewBox="0 0 240 200" role="img" aria-label="Illustration of graduates ascending steps with a rising arrow">
@@ -339,28 +351,28 @@
               </g>
               <path d="M25 95 Q120 20 205 22" fill="none" stroke="#d97706" stroke-width="3" stroke-dasharray="6 5"/>
               <path d="M195 15 L207 21 L197 30" fill="none" stroke="#d97706" stroke-width="3" stroke-linecap="round"/>
-              <text x="120" y="195" text-anchor="middle" font-family="Georgia" font-size="11" font-style="italic" fill="#5b6b7a">the class of 2026 climbs back</text>
+              <text x="120" y="195" text-anchor="middle" font-family="Georgia" font-size="11" font-style="italic" fill="#5b6b7a">the class of 2026 climbs</text>
             </svg>
-            <figcaption>Campus gates reopen — but the skills bar keeps rising.</figcaption>
+            <figcaption>Campus gates open — but the skills bar keeps rising.</figcaption>
           </figure>
           <div class="copy">
-            <p>A candid note first: today's HR wire carried more trend analysis than breaking headlines, so this is the state-of-the-market picture rather than a single event. That picture is genuinely consequential. India's job market is expected to grow 9% in 2026, led by IT, retail, telecom and BFSI, and after the layoff winter, IT companies have restarted fresher intake — campus recruitment is reported up 25%, and the TCS NQT (July 30 exam) feeds scores to over 4,000 corporates in one sitting.</p>
-            <p>The friction is on the supply side. Around 80% of Indian employers report struggling to find qualified candidates — worst in AI, cloud and cybersecurity — while AI-linked job postings are projected to grow 32% year-on-year to nearly 3.8 lakh positions. Average time-to-hire has stretched to 35–45 days, 73% of talent-acquisition leaders say roles have become harder to fill, and workforce engagement has slid to just 19%, with employees citing limited flexibility and stalled career growth. The four Labour Codes, in force since November 2025, continue reshaping appointment letters, fixed-term contracts and gig engagements.</p>
+            <p>An honest label first: no dated wire story in this category survived today's freshness audit, so this briefing uses only clearly current sources — weekly-updated hiring trackers and this week's live openings. Those show real movement: Google, Microsoft, NVIDIA and Cisco are all running fresher or new-graduate openings in India this week, per Freshershunt's weekly-updated July 2026 tracker, alongside engineering employers like GE Healthcare, Volvo and Quest Global for non-software graduates. The TCS NQT's July 30 exam offers one test whose score reaches more than 4,000 corporates.</p>
+            <p>The demand backdrop, from Qureos's July 2026 India hiring-trends tracker: the job market is expected to grow 9% in 2026 led by IT, retail, telecom and BFSI, yet around 80% of employers report struggling to find qualified candidates — worst in AI, cloud and cybersecurity. AI-linked postings are projected to grow 32% year-on-year to nearly 3.8 lakh positions, average time-to-hire has stretched to 35–45 days, 73% of talent-acquisition leaders say roles are harder to fill, and workforce engagement has slid to 19%.</p>
           </div>
         </div>
         <div class="takeaways">
           <h3>Key takeaways</h3>
           <ul>
-            <li>Campus hiring is back: recruitment reported up ~25%; the TCS NQT (July 30) reaches 4,000+ corporates.</li>
-            <li>Demand outruns supply: 80% of employers can't find qualified candidates; AI postings +32% YoY to ~3.8 lakh.</li>
-            <li>Engagement has fallen to 19% — retention, not just attraction, is 2026's real battleground.</li>
+            <li>Rare same-week fresher windows: Google, Microsoft, NVIDIA and Cisco all have live India openings; TCS NQT exam lands July 30, reaching 4,000+ corporates.</li>
+            <li>Tracker data: market growth ~9% in 2026, but 80% of employers can't find qualified candidates; AI postings +32% YoY to ~3.8 lakh.</li>
+            <li>Engagement at 19% and time-to-hire at 35–45 days — retention and offer speed are 2026's battlegrounds.</li>
           </ul>
         </div>
         <div class="why">
           <h3>Why it matters</h3>
-          <p>These numbers describe both sides of every hiring table in India this year. For employers, a 25% campus rebound means renewed head-to-head competition for the same graduating class, where offer speed and a credible employer story decide outcomes — especially with engagement at just 19%, a figure candidates read as a warning. For graduates and job-seekers, the same data is leverage: demand is growing faster than supply in AI, cloud and cybersecurity, and skills in those areas command the market's attention.</p>
+          <p>These numbers describe both sides of every hiring table in India this year. For employers, simultaneous fresher windows at global majors mean head-to-head competition for the same graduating class, where offer speed and a credible employer story decide outcomes — especially with engagement at just 19%, a figure candidates read as a warning. For graduates and job-seekers, the same data is leverage: demand is growing faster than supply in AI, cloud and cybersecurity, and this week's open windows are unusually rich.</p>
         </div>
-        <p class="sources"><strong>Sources:</strong> <a href="https://www.qureos.com/hiring-guide/hiring-trends-in-india">Qureos — Top Hiring Trends in India (July 2026)</a> · <a href="https://www.india.com/business/after-layoffs-good-news-for-indias-it-sector-companies-start-hiring-freshers-and-mid-senior-professionals-campus-recruitment-rises-by-25-percent-8142983/">India.com — Campus recruitment rises 25%</a> · <a href="https://freshershunt.in/companies-hiring-freshers/">Freshershunt — Companies hiring freshers (July 2026)</a></p>
+        <p class="sources"><strong>Sources (current-month trackers, July 2026):</strong> <a href="https://freshershunt.in/companies-hiring-freshers/">Freshershunt — Companies hiring freshers (updated weekly, July 2026)</a> · <a href="https://www.qureos.com/hiring-guide/hiring-trends-in-india">Qureos — Top Hiring Trends in India (July 2026)</a></p>
       </div>
     </article>
 
@@ -368,7 +380,7 @@
 
   <footer class="card">
     <div class="flowers">❦ ❦ ❦</div>
-    <p>The summaries above are Claude's own words, paraphrased from the past week's reporting — the links in each Sources line carry the full, original reporting.</p>
+    <p>The summaries above are Claude's own words, paraphrased from date-verified reporting of the past week — the links in each Sources line carry the full, original reporting.</p>
     <p>The Morning Bloom · Pune Edition · July 21, 2026 · <a href="archive.html">Browse the archive</a></p>
   </footer>
 
