@@ -5,10 +5,13 @@ Promotes the newest file in editions/ (named YYYY-MM-DD.html) to index.html
 and rebuilds archive.html with a date-wise list of all editions.
 Run from anywhere: python3 scripts/publish.py
 """
+import re
 from datetime import datetime
 from pathlib import Path
+from xml.sax.saxutils import escape
 
 ROOT = Path(__file__).resolve().parent.parent
+SITE = "https://gnaidu05.github.io/bloom"
 
 ARCHIVE_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
@@ -89,7 +92,42 @@ def main() -> None:
     (ROOT / "archive.html").write_text(
         ARCHIVE_TEMPLATE.format(rows="\n".join(rows)), encoding="utf-8"
     )
-    print(f"Published {latest.name} -> index.html; archive.html lists {len(editions)} edition(s).")
+
+    # RSS feed — consumed by the newsletter service (RSS-to-email) and feed readers.
+    items = []
+    for e in editions[:20]:
+        d = datetime.strptime(e.stem, "%Y-%m-%d")
+        pretty = d.strftime("%A, %B %d, %Y").replace(" 0", " ")
+        pub = d.strftime("%a, %d %b %Y") + " 01:00:00 GMT"
+        html = e.read_text(encoding="utf-8")
+        m = re.search(r"Inside this issue</div>\s*<ol>(.*?)</ol>", html, re.S)
+        heads = re.findall(r"<li>(.*?)</li>", m.group(1), re.S) if m else []
+        heads = [re.sub(r"<[^>]+>", "", h).strip() for h in heads]
+        desc = " · ".join(heads) or "The day's five stories across AI & Technology, Books & Publishing, and Recruitment & HR."
+        url = f"{SITE}/editions/{e.name}"
+        items.append(
+            f"    <item>\n"
+            f"      <title>The Morning Bloom — {escape(pretty)}</title>\n"
+            f"      <link>{url}</link>\n"
+            f"      <guid>{url}</guid>\n"
+            f"      <pubDate>{pub}</pubDate>\n"
+            f"      <description>{escape(desc)}</description>\n"
+            f"    </item>"
+        )
+    feed = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<rss version="2.0">\n'
+        "  <channel>\n"
+        "    <title>The Morning Bloom</title>\n"
+        f"    <link>{SITE}/</link>\n"
+        "    <description>Daily news briefing — AI &amp; Technology, Books &amp; Publishing, Recruitment &amp; HR. Pune Edition.</description>\n"
+        "    <language>en</language>\n"
+        + "\n".join(items) + "\n"
+        "  </channel>\n"
+        "</rss>\n"
+    )
+    (ROOT / "feed.xml").write_text(feed, encoding="utf-8")
+    print(f"Published {latest.name} -> index.html; archive.html lists {len(editions)} edition(s); feed.xml has {len(items)} item(s).")
 
 
 if __name__ == "__main__":
