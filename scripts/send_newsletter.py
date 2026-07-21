@@ -84,7 +84,8 @@ def main() -> None:
     <div style="background:#14263f;padding:16px 28px;font:400 12px/1.6 Arial,sans-serif;color:#8298af;text-align:center;">
       Summaries are Claude's own words; links carry the full reporting.<br>
       <a href="{SITE}/archive.html" style="color:#8fd0e2;">Archive</a> &middot;
-      To unsubscribe, reply to this email with "unsubscribe".
+      To unsubscribe, reply to this email with "unsubscribe".<br>
+      <span style="color:#6c7f95;">You received this email because you signed up on our website or made a purchase from us.</span>
     </div>
   </div>
 </div>"""
@@ -92,7 +93,8 @@ def main() -> None:
         f"The Morning Bloom — {pretty} (Pune Edition)\n\nInside this issue:\n"
         + "\n".join(f"  {i + 1:02d}. {h}" for i, h in enumerate(heads))
         + f"\n\nRead today's edition: {url}\nArchive: {SITE}/archive.html\n"
-        "To unsubscribe, reply with \"unsubscribe\"."
+        "To unsubscribe, reply with \"unsubscribe\".\n\n"
+        "You received this email because you signed up on our website or made a purchase from us."
     )
 
     msg = MIMEMultipart("alternative")
