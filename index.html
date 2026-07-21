@@ -81,7 +81,16 @@
   .desknav a:hover{background:var(--navy); color:#fff;}
   .desknav a:focus-visible{outline:3px solid var(--navy); outline-offset:2px;}
   @media(max-width:560px){.desknav .dn-label{display:none;} .desknav a{font-size:.72rem; padding:.34rem .7rem;}}
-  article.card, .section-head{scroll-margin-top:4.5rem;}
+  article.card, .section-head, #contents{scroll-margin-top:4.5rem;}
+
+  /* ── Floating "back to contents" button ───── */
+  .totop{position:fixed; right:20px; bottom:24px; z-index:40; display:inline-flex; align-items:center; gap:.4rem; border:none; cursor:pointer; font:inherit; font-size:.8rem; font-weight:700; color:#fff; background:linear-gradient(135deg,var(--navy),var(--navy-deep)); padding:.62rem 1rem; border-radius:999px; box-shadow:0 6px 20px rgba(20,38,63,.32); opacity:0; transform:translateY(14px); pointer-events:none; transition:opacity .25s ease, transform .25s ease, filter .2s ease;}
+  .totop.show{opacity:1; transform:none; pointer-events:auto;}
+  .totop:hover{filter:brightness(1.14);}
+  .totop:focus-visible{outline:3px solid var(--navy); outline-offset:2px;}
+  .totop svg{width:14px; height:14px; stroke:currentColor; fill:none; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round;}
+  @media(max-width:560px){.totop span{display:none;} .totop{padding:.7rem; right:16px; bottom:18px;}}
+  @media (prefers-reduced-motion: reduce){.totop{transition:opacity .25s ease;} .totop.show{transform:none;}}
 
   /* ── Top row ──────────────────────────────── */
   .toprow{display:flex; flex-direction:column; gap:1.1rem;}
@@ -242,7 +251,7 @@
 
   <!-- ═══ Inside + editor's note ═══ -->
   <div class="toprow">
-    <div class="panel inside reveal">
+    <div class="panel inside reveal" id="contents">
       <div class="boxhead"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span>Inside this issue</div>
       <ol>
         <li><a href="#s1">AI's Wall Street moment: OpenAI &amp; Anthropic eye IPOs</a></li>
@@ -871,6 +880,9 @@
   </footer>
 
 </div>
+<button class="totop" id="toTop" type="button" aria-label="Back to contents">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span>Contents</span>
+</button>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
   // Subscribe endpoint: Supabase REST insert into the `subscribers` table using the
@@ -923,6 +935,22 @@
         showToast('Filtering by #' + tag + ' is coming soon — browse the archive for now.');
       });
     });
+
+    // Floating "back to contents" button — appears once past the TOC.
+    var toTop = document.getElementById('toTop');
+    var contents = document.getElementById('contents');
+    if (toTop){
+      toTop.addEventListener('click', function(){
+        if (contents && contents.scrollIntoView){ contents.scrollIntoView({behavior:'smooth', block:'start'}); }
+        else { window.scrollTo({top:0, behavior:'smooth'}); }
+      });
+      var onScroll = function(){
+        var trigger = contents ? (contents.offsetTop + contents.offsetHeight) : 600;
+        toTop.classList.toggle('show', window.scrollY > trigger);
+      };
+      window.addEventListener('scroll', onScroll, {passive:true});
+      onScroll();
+    }
 
     var els = document.querySelectorAll('.reveal');
     if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
