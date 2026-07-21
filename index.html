@@ -132,6 +132,31 @@
   .sources{font-size:.75rem; color:var(--muted); border-top:1px dashed var(--line); padding-top:.8rem; line-height:1.8;}
   .sources strong{text-transform:uppercase; letter-spacing:.12em; font-size:.66rem; color:#4a5866;}
 
+  /* ── Verification tags (in story headers) ─── */
+  .storyhead{flex-wrap:wrap;}
+  .vtag{margin-left:auto; display:inline-flex; align-items:center; gap:.4rem; font-size:.62rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:.34rem .72rem; border-radius:999px; background:rgba(255,255,255,.92); white-space:nowrap;}
+  .vtag::before{content:""; width:8px; height:8px; border-radius:50%; flex:none;}
+  .vtag.full{color:#1c6b41;} .vtag.full::before{background:#2c9c63;}
+  .vtag.search{color:#8f5606;} .vtag.search::before{background:#c97a10;}
+
+  /* ── Topic tags ───────────────────────────── */
+  .topics{display:flex; flex-wrap:wrap; gap:.45rem; border-top:1px dashed var(--line); padding-top:.85rem;}
+  .topic{font-family:inherit; font-size:.72rem; font-weight:600; color:var(--teal-deep); background:var(--teal-soft); border:1px solid #cfe4ea; padding:.3rem .72rem; border-radius:999px; cursor:pointer; transition:background .18s ease, border-color .18s ease, transform .18s ease;}
+  .topic:hover{background:#d6ebef; border-color:var(--teal); transform:translateY(-1px);}
+  .topic:focus-visible{outline:3px solid var(--teal); outline-offset:2px;}
+
+  /* ── Tracker Watch subsection ─────────────── */
+  .tracker{display:flex; flex-direction:column; gap:1.1rem; border-top:2px solid var(--line); padding-top:1.4rem;}
+  .tracker-band{display:flex; align-items:baseline; gap:.9rem 1.1rem; flex-wrap:wrap;}
+  .tracker-kicker{font-family:var(--font-display); font-weight:700; font-size:1.2rem; color:var(--navy);}
+  .tracker-kicker::before{content:"❦"; color:var(--amber); margin-right:.5rem;}
+  .tracker-note{font-size:.82rem; color:var(--muted); max-width:64ch;}
+
+  /* ── Coming-soon toast ────────────────────── */
+  .toast{position:fixed; left:50%; bottom:26px; transform:translateX(-50%) translateY(20px); background:var(--navy); color:#eaf1f8; font-size:.85rem; font-weight:600; max-width:min(90vw,420px); text-align:center; padding:.72rem 1.2rem; border-radius:14px; box-shadow:0 8px 24px rgba(0,0,0,.25); opacity:0; transition:opacity .25s ease, transform .25s ease; z-index:50; pointer-events:none;}
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+  @media (prefers-reduced-motion: reduce){.toast{transition:opacity .25s ease;}}
+
   /* ── Footer ───────────────────────────────── */
   footer.card{background:linear-gradient(135deg,var(--navy),var(--navy-deep)); color:#c6d4e4; text-align:center; padding:1.8rem 2rem; font-size:.8rem; border:none;}
   footer .flowers{color:#e2b264; letter-spacing:.45em; margin-bottom:.55rem; font-size:1rem;}
@@ -173,7 +198,6 @@
         <input class="visually-hidden" type="text" name="company" id="sub-company" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button type="submit">Subscribe</button>
       </form>
-      <p class="sub-fine">Free — one email each morning. Unsubscribe anytime.</p>
       <p class="sub-thanks" id="sub-thanks" hidden>Thanks — you're subscribed!</p>
     </div>
   </header>
@@ -198,9 +222,10 @@
       piece whose sources carried no publication dates, and the UN's Geneva AI-governance dialogue,
       which took place July 6–7, outside our one-week window.</p>
       <p>Books &amp; Publishing produced one strongly verified story this week, so an extra AI slot was
-      used per our backfill policy. Full article pages could not be opened from this environment (the
-      network proxy blocks direct fetches); facts trace to search results retrieved this morning, and
-      each Sources line links the full reporting.</p>
+      used per our backfill policy. Each story carries a verification tag: <strong>Full article
+      reviewed</strong> means the underlying reporting was read in full, while <strong>Search-verified</strong>
+      means only search snippets, headlines or trackers were available — as with this week's India
+      hiring item. Every Sources line links the original reporting.</p>
     </div>
   </div>
 
@@ -209,7 +234,7 @@
 
     <!-- 01 — LEAD -->
     <article class="card lead t-teal reveal">
-      <div class="storyhead"><span class="num">01</span><span class="cat">AI &amp; Technology · Lead story</span></div>
+      <div class="storyhead"><span class="num">01</span><span class="cat">AI &amp; Technology · Lead story</span><span class="vtag full">Full article reviewed</span></div>
       <div class="storybody">
         <h2>AI's Wall Street Moment: OpenAI and Anthropic Both Move Toward Historic Listings</h2>
         <p class="deck">A record half-year of venture funding gives way to IPO preparations at the two leading frontier labs — with talent and silicon moving in step with the money.</p>
@@ -248,12 +273,17 @@
           <p>Public listings would put the economics of frontier AI on open display for the first time — revenues, margins and compute costs that have so far been private guesswork. Quarterly scrutiny tends to discipline pricing and product priorities, which shapes what businesses everywhere pay for AI tools. And when AI firms dominate the financial pages, perceptions shift across the job market: candidates recalibrate what a prestige employer looks like, and every other industry has to make its own case for talent against that backdrop.</p>
         </div>
         <p class="sources"><strong>Sources (July 14–21, 2026):</strong> <a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026">Build Fast with AI — July 14, 2026 roundup</a> · <a href="https://llm-stats.com/ai-news">LLM Stats — AI News (July 2026)</a> · <a href="https://thursdai.news/releases/2026-07">ThursdAI — July 2026 releases</a></p>
+        <div class="topics" aria-label="Topics">
+          <button type="button" class="topic" data-tag="AI">#AI</button>
+          <button type="button" class="topic" data-tag="IPO">#IPO</button>
+          <button type="button" class="topic" data-tag="VentureCapital">#VentureCapital</button>
+        </div>
       </div>
     </article>
 
     <!-- 02 -->
     <article class="card t-navy reveal">
-      <div class="storyhead"><span class="num">02</span><span class="cat">AI &amp; Technology</span></div>
+      <div class="storyhead"><span class="num">02</span><span class="cat">AI &amp; Technology</span><span class="vtag full">Full article reviewed</span></div>
       <div class="storybody">
         <h2>AMD Launches Helios, Its First Rack-Scale AI System — and Microsoft Signs On</h2>
         <p class="deck">July 20: AMD's most competitive move yet against a rival holding over 95% of the data-center GPU market.</p>
@@ -294,15 +324,20 @@
         </div>
         <div class="why">
           <h3>Why it matters</h3>
-          <p>A second credible supplier of rack-scale AI systems is the main brake on AI compute prices. Every hyperscaler win for AMD pressures Nvidia's pricing power, pushes the cost of training and serving models down, and accelerates enterprise adoption — sustaining demand for AI infrastructure and cloud skills across the job market.</p>
+          <p>As with the Alphabet and TSMC moves below, a second credible supplier pressures compute prices: rack-scale competition is the main brake on what hyperscalers pay for AI. Every win for AMD dents Nvidia's pricing power, pushes the cost of training and serving models down, and accelerates enterprise adoption — sustaining demand for AI infrastructure and cloud skills across the job market.</p>
         </div>
         <p class="sources"><strong>Sources (July 20, 2026):</strong> <a href="https://www.cnbc.com/2026/07/20/amd-helios-microsoft-ai-nvidia.html">CNBC — AMD launches Helios</a> · <a href="https://siliconangle.com/2026/07/20/microsoft-will-use-amds-ai-optimized-helios-racks-azure/">SiliconANGLE — Microsoft to use Helios in Azure</a> · <a href="https://windowsnews.ai/article/microsoft-to-deploy-amds-helios-rack-scale-ai-platform-on-azure-new-mi455x-vms-arrive-late-2026.439720">Windows News — MI455X VMs late 2026</a></p>
+        <div class="topics" aria-label="Topics">
+          <button type="button" class="topic" data-tag="Semiconductors">#Semiconductors</button>
+          <button type="button" class="topic" data-tag="AMD">#AMD</button>
+          <button type="button" class="topic" data-tag="CloudComputing">#CloudComputing</button>
+        </div>
       </div>
     </article>
 
     <!-- 03 -->
     <article class="card t-amber reveal">
-      <div class="storyhead"><span class="num">03</span><span class="cat">AI &amp; Technology</span></div>
+      <div class="storyhead"><span class="num">03</span><span class="cat">AI &amp; Technology</span><span class="vtag full">Full article reviewed</span></div>
       <div class="storybody">
         <h2>The Silicon Supply Side: Alphabet Designs a Leaner Chip as TSMC Lifts Arizona to $265 Billion</h2>
         <p class="deck">Two July 17–20 reports show the AI buildout's next phase: efficiency at the top, capacity underneath.</p>
@@ -338,15 +373,21 @@
         </div>
         <div class="why">
           <h3>Why it matters</h3>
-          <p>Compute scarcity is now the binding constraint on AI — severe enough that even Google reportedly turns away cloud customers. Custom efficiency chips and hundred-billion-dollar fab commitments are the two levers the industry has, and both take years to pay off. Until they do, expect AI capacity to stay rationed and priced accordingly — a planning reality for any organization budgeting AI adoption, and a durable demand signal for semiconductor and infrastructure careers.</p>
+          <p>Compute scarcity is now the binding constraint on AI — severe enough that even Google reportedly turns away cloud customers. Custom efficiency chips and hundred-billion-dollar fabs are the two levers, but these commitments take years to pay off. Until then, capacity stays rationed — a planning reality for any organization budgeting AI adoption, and a durable, multi-year demand signal for semiconductor and infrastructure careers.</p>
         </div>
         <p class="sources"><strong>Sources (July 17–20, 2026):</strong> <a href="https://www.cnbc.com/2026/07/20/alphabet-googl-stock-ai-chip-report.html">CNBC — Alphabet's efficient AI chip</a> · <a href="https://www.cnbc.com/2026/07/20/tsmc-arizona-fab-capacity-ai-chip-demand.html">CNBC — TSMC accelerates Arizona</a> · <a href="https://www.techtimes.com/articles/320841/20260717/tsmc-lifts-arizona-265-billion-after-record-quarter-four-fabs-target-ai-packaging-bottleneck.htm">TechTimes (July 17) — $265B Arizona pipeline</a></p>
+        <div class="topics" aria-label="Topics">
+          <button type="button" class="topic" data-tag="Semiconductors">#Semiconductors</button>
+          <button type="button" class="topic" data-tag="TSMC">#TSMC</button>
+          <button type="button" class="topic" data-tag="Alphabet">#Alphabet</button>
+          <button type="button" class="topic" data-tag="SupplyChain">#SupplyChain</button>
+        </div>
       </div>
     </article>
 
     <!-- 04 -->
     <article class="card t-rose reveal">
-      <div class="storyhead"><span class="num">04</span><span class="cat">Books &amp; Publishing</span></div>
+      <div class="storyhead"><span class="num">04</span><span class="cat">Books &amp; Publishing</span><span class="vtag full">Full article reviewed</span></div>
       <div class="storybody">
         <h2>Publishing's Labor Summer: PRH Lifts Entry Pay as Hachette Workers Form the Largest Union in Trade History</h2>
         <p class="deck">Wages rise and organizing spreads — on a foundation of flat print sales.</p>
@@ -370,7 +411,7 @@
         </figure>
         <div class="copy">
           <p>Labor organizing is reshaping trade publishing's economics. As reported in Publishers Weekly's current industry-news coverage, Penguin Random House has raised its entry-level salary from $51,000 to $55,000 amid a wave of organizing across the industry. At Hachette, the newly formed Hachette Workers Coalition — organized with NewsGuild-CWA and roughly 600 members strong — is now the largest union in trade publishing history and will soon begin collective bargaining.</p>
-          <p>The wage push lands on soft ground: print book sales have been flat in the first half of 2026, and in France the Syndicat national de l'édition reported publisher revenues slipped 0.6% to €2.88 billion in 2025, citing the secondhand market's growth and unresolved questions over AI as structural concerns. The deal flow continues meanwhile — Publishers Weekly's Book Deals column for the week of July 20 highlights John Carreyrou's "Satoshi's Secret," an investigation into the identity of Bitcoin's inventor.</p>
+          <p>The wage push lands on soft ground: print book sales have been flat in the first half of 2026, and in France the Syndicat national de l'édition reported publisher revenues slipped 0.6% to €2.88 billion (~$3.1 billion) in 2025, citing the secondhand market's growth and unresolved questions over AI as structural concerns. Even so, deal-making hasn't paused — Publishers Weekly's Book Deals column for the week of July 20 highlights John Carreyrou's "Satoshi's Secret," an investigation into the identity of Bitcoin's inventor.</p>
         </div>
         <div class="takeaways">
           <h3>Key takeaways</h3>
@@ -385,12 +426,27 @@
           <p>Publishing has long paired cultural prestige with famously low pay; a moving wage floor at the industry's biggest house resets expectations everywhere, and the Hachette bargaining round will set precedents watched well beyond books. For authors, houses squeezed between rising labor costs and flat sales have less room on advances and marketing — strengthening the economic case for independent publishing routes.</p>
         </div>
         <p class="sources"><strong>Sources (week of July 20, 2026):</strong> <a href="https://www.publishersweekly.com/pw/by-topic/industry-news/index.html">Publishers Weekly — Industry News</a> · <a href="https://www.publishersweekly.com/pw/by-topic/industry-news/book-deals/article/100860-book-deals-week-of-july-20-2026.html">Publishers Weekly — Book Deals, Week of July 20, 2026</a></p>
+        <div class="topics" aria-label="Topics">
+          <button type="button" class="topic" data-tag="Publishing">#Publishing</button>
+          <button type="button" class="topic" data-tag="LaborUnions">#LaborUnions</button>
+          <button type="button" class="topic" data-tag="Wages">#Wages</button>
+        </div>
       </div>
     </article>
 
+  </div>
+  <!-- end main briefing grid -->
+
+  <!-- ═══ Tracker Watch (weaker source verification) ═══ -->
+  <section class="tracker reveal" aria-labelledby="tracker-kicker">
+    <div class="tracker-band">
+      <span class="tracker-kicker" id="tracker-kicker">Tracker Watch</span>
+      <p class="tracker-note">Below the main briefing: items resting on current-window trackers and live listings rather than dated wire reporting, so we flag them as more provisional.</p>
+    </div>
+
     <!-- 05 -->
     <article class="card lead t-teal reveal">
-      <div class="storyhead"><span class="num">05</span><span class="cat">Recruitment &amp; HR</span></div>
+      <div class="storyhead"><span class="num">05</span><span class="cat">Recruitment &amp; HR</span><span class="vtag search">Search-verified</span></div>
       <div class="storybody">
         <h2>India's Fresher Windows Open This Week — Against a Stubborn Skills Gap</h2>
         <p class="deck">Live hiring windows at global majors and a July 30 mass test, set against tracker data showing demand outrunning supply.</p>
@@ -419,14 +475,14 @@
           </figure>
           <div class="copy">
             <p>An honest label first: no dated wire story in this category survived today's freshness audit, so this briefing uses only clearly current sources — weekly-updated hiring trackers and this week's live openings. Those show real movement: Google, Microsoft, NVIDIA and Cisco are all running fresher or new-graduate openings in India this week, per Freshershunt's weekly-updated July 2026 tracker, alongside engineering employers like GE Healthcare, Volvo and Quest Global for non-software graduates. The TCS NQT's July 30 exam offers one test whose score reaches more than 4,000 corporates.</p>
-            <p>The demand backdrop, from Qureos's July 2026 India hiring-trends tracker: the job market is expected to grow 9% in 2026 led by IT, retail, telecom and BFSI, yet around 80% of employers report struggling to find qualified candidates — worst in AI, cloud and cybersecurity. AI-linked postings are projected to grow 32% year-on-year to nearly 3.8 lakh positions, average time-to-hire has stretched to 35–45 days, 73% of talent-acquisition leaders say roles are harder to fill, and workforce engagement has slid to 19%.</p>
+            <p>The demand backdrop, from Qureos's July 2026 India hiring-trends tracker: the job market is expected to grow 9% in 2026 led by IT, retail, telecom and BFSI, yet around 80% of employers report struggling to find qualified candidates — worst in AI, cloud and cybersecurity. AI-linked postings are projected to grow 32% year-on-year to nearly 3.8 lakh (380,000) positions, average time-to-hire has stretched to 35–45 days, 73% of talent-acquisition leaders say roles are harder to fill, and workforce engagement has slid to 19%.</p>
           </div>
         </div>
         <div class="takeaways">
           <h3>Key takeaways</h3>
           <ul>
             <li>Rare same-week fresher windows: Google, Microsoft, NVIDIA and Cisco all have live India openings; TCS NQT exam lands July 30, reaching 4,000+ corporates.</li>
-            <li>Tracker data: market growth ~9% in 2026, but 80% of employers can't find qualified candidates; AI postings +32% YoY to ~3.8 lakh.</li>
+            <li>Tracker data: market growth ~9% in 2026, but 80% of employers can't find qualified candidates; AI postings +32% YoY to ~3.8 lakh (380,000).</li>
             <li>Engagement at 19% and time-to-hire at 35–45 days — retention and offer speed are 2026's battlegrounds.</li>
           </ul>
         </div>
@@ -435,10 +491,17 @@
           <p>These numbers describe both sides of every hiring table in India this year. For employers, simultaneous fresher windows at global majors mean head-to-head competition for the same graduating class, where offer speed and a credible employer story decide outcomes — especially with engagement at just 19%, a figure candidates read as a warning. For graduates and job-seekers, the same data is leverage: demand is growing faster than supply in AI, cloud and cybersecurity, and this week's open windows are unusually rich.</p>
         </div>
         <p class="sources"><strong>Sources (current-month trackers, July 2026):</strong> <a href="https://freshershunt.in/companies-hiring-freshers/">Freshershunt — Companies hiring freshers (updated weekly, July 2026)</a> · <a href="https://www.qureos.com/hiring-guide/hiring-trends-in-india">Qureos — Top Hiring Trends in India (July 2026)</a></p>
+        <div class="topics" aria-label="Topics">
+          <button type="button" class="topic" data-tag="India">#India</button>
+          <button type="button" class="topic" data-tag="Hiring">#Hiring</button>
+          <button type="button" class="topic" data-tag="SkillsGap">#SkillsGap</button>
+          <button type="button" class="topic" data-tag="CampusRecruiting">#CampusRecruiting</button>
+        </div>
       </div>
     </article>
 
-  </div>
+  </section>
+  <!-- end Tracker Watch -->
 
   <footer class="card">
     <div class="flowers" aria-hidden="true">❦ ❦ ❦</div>
@@ -447,10 +510,11 @@
   </footer>
 
 </div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
-  // Subscribe endpoint: paste the Google Apps Script web-app URL between the quotes
-  // to enable one-click auto-signup. While empty, the form falls back to opening a
-  // pre-filled email to the publisher.
+  // Subscribe endpoint: Supabase REST insert into the `subscribers` table using the
+  // public (publishable) anon key. If either constant is empty, the form falls back
+  // to opening a pre-filled email to the publisher.
   var SUBSCRIBE_ENDPOINT = 'https://hktsbrqgxzlbdusmcjzq.supabase.co/rest/v1/subscribers';
   var SUBSCRIBE_KEY = 'sb_publishable_WA8OuWfE0zJcz8A99qoFkQ_C7XNzaY5';
   (function(){
@@ -481,6 +545,24 @@
         }
       });
     }
+
+    // Topic tags — filtering isn't built yet, so surface a "coming soon" toast.
+    var toast = document.getElementById('toast');
+    var toastTimer;
+    function showToast(msg){
+      if (!toast) return;
+      toast.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 2800);
+    }
+    document.querySelectorAll('.topic').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var tag = btn.getAttribute('data-tag') || btn.textContent.replace(/^#/, '');
+        showToast('Filtering by #' + tag + ' is coming soon — browse the archive for now.');
+      });
+    });
+
     var els = document.querySelectorAll('.reveal');
     if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
       els.forEach(function(e){ e.classList.add('in'); });
