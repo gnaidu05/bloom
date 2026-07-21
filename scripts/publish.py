@@ -58,7 +58,7 @@ ARCHIVE_TEMPLATE = """<!DOCTYPE html>
     </ul>
   </div>
   <footer class="card">
-    <p>The Morning Bloom · Pune Edition · Summaries are Claude's own words; source links carry the full reporting.</p>
+    <p>The Morning Bloom · Pune Edition · <a href="index.html#subscribe" style="color:#8fd0e2">Subscribe</a> · Summaries are Claude's own words; source links carry the full reporting.</p>
   </footer>
 </div>
 </body>

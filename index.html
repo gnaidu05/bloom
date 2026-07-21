@@ -37,23 +37,40 @@
   .card{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow-sm); border:1px solid var(--line); overflow:hidden; transition:box-shadow .25s ease, transform .25s ease;}
   .grid .card:hover{box-shadow:var(--shadow-md); transform:translateY(-2px);}
 
-  /* ── Masthead ─────────────────────────────── */
-  .masthead{padding:2.1rem 2.4rem 1.9rem; position:relative; background:linear-gradient(180deg,#fff 0%,#fdfcf9 100%);}
+  /* ── Masthead hero ────────────────────────── */
+  .masthead{padding:2.4rem 2.5rem 2.3rem; position:relative; border:none;
+    background:linear-gradient(140deg,#0e1929 0%,var(--navy) 52%,#0b3a49 100%);}
   .masthead::before{content:""; position:absolute; inset:0 0 auto 0; height:7px; background:linear-gradient(90deg,var(--teal),var(--rose) 50%,var(--amber));}
-  .brandrow{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.7rem; margin-bottom:1.2rem;}
-  .brandrow .mini{display:flex; align-items:center; gap:.55rem; font-weight:800; font-size:.8rem; color:var(--navy); letter-spacing:.12em;}
+  .masthead::after{content:""; position:absolute; right:-90px; top:-90px; width:320px; height:320px; border-radius:50%;
+    background:radial-gradient(circle, rgba(193,64,102,.28), transparent 65%); pointer-events:none;}
+  .brandrow{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.7rem; margin-bottom:1.3rem; position:relative;}
+  .brandrow .mini{display:flex; align-items:center; gap:.55rem; font-weight:800; font-size:.78rem; color:#d7e2ef; letter-spacing:.14em;}
   .brandrow .mini .dot{width:13px; height:13px; border-radius:50%; background:var(--rose); display:inline-block; box-shadow:5px 0 0 -2px var(--amber), 10px 0 0 -4px var(--teal);}
-  .pill{display:inline-block; background:linear-gradient(135deg,var(--teal),var(--teal-deep)); color:#fff; font-size:.66rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; padding:.42rem 1rem; border-radius:999px;}
-  .masthead h1{font-size:clamp(2.5rem,7vw,4.3rem); font-weight:700; line-height:1.02; letter-spacing:-.01em; margin:.6rem 0 .5rem;}
-  .masthead h1 .bloom{color:var(--rose); font-style:italic;}
-  .masthead .tagline{color:var(--muted); font-size:.98rem; max-width:46ch;}
-  .meta{display:flex; flex-wrap:wrap; gap:.55rem; margin-top:1.25rem;}
-  .chip{font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:.42rem .95rem; border-radius:999px; border:1px solid transparent;}
-  .chip.date{background:var(--navy-soft); color:var(--navy);}
-  .chip.ed{background:var(--rose-soft); color:var(--rose-deep);}
-  .chip.arch{background:#fff; border-color:var(--line);}
-  .chip.arch a{color:var(--amber-deep); text-decoration:none;}
-  .chip.arch:hover{border-color:var(--amber);}
+  .pill{display:inline-block; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.28); color:#eaf1f8; font-size:.64rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; padding:.42rem 1rem; border-radius:999px;}
+  .masthead h1{font-size:clamp(2.6rem,7.5vw,4.6rem); font-weight:700; line-height:1.02; letter-spacing:-.01em; margin:.6rem 0 .55rem; color:#fff; position:relative;}
+  .masthead h1 .bloom{color:#f2a9c4; font-style:italic;}
+  .masthead .tagline{color:#a9bacd; font-size:1rem; max-width:52ch; position:relative;}
+  .meta{display:flex; flex-wrap:wrap; gap:.55rem; margin-top:1.3rem; position:relative;}
+  .chip{font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:.44rem .95rem; border-radius:999px; border:1px solid transparent;}
+  .chip.date{background:rgba(255,255,255,.12); color:#e8eef6;}
+  .chip.ed{background:rgba(242,169,196,.16); color:#f2a9c4;}
+  .chip.arch{background:rgba(255,255,255,.94);}
+  .chip.arch a{color:var(--navy); text-decoration:none;}
+  .chip.arch:hover{background:#fff;}
+
+  /* ── Subscribe (hero inline form) ─────────── */
+  .subscribe{margin-top:1.7rem; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.18); border-radius:16px; padding:1.25rem 1.4rem; position:relative; max-width:640px;}
+  .sub-title{font-family:var(--font-display); color:#fff; font-weight:600; font-size:1.15rem; margin-bottom:.2rem;}
+  .sub-note{color:#a9bacd; font-size:.82rem; margin-bottom:.85rem;}
+  .sub-form{display:flex; gap:.6rem; flex-wrap:wrap;}
+  .sub-form input[type=email]{flex:1 1 230px; min-height:47px; border-radius:999px; border:1px solid rgba(255,255,255,.35); background:#fff; padding:0 1.15rem; font:inherit; font-size:.92rem; color:var(--ink);}
+  .sub-form input[type=email]:focus-visible{outline:3px solid #8fd0e2; outline-offset:2px;}
+  .sub-form button{min-height:47px; border-radius:999px; border:none; cursor:pointer; padding:0 1.5rem; font:inherit; font-weight:700; font-size:.92rem; color:#fff; background:linear-gradient(135deg,var(--rose),var(--rose-deep)); transition:filter .2s ease, transform .2s ease;}
+  .sub-form button:hover{filter:brightness(1.12); transform:translateY(-1px);}
+  .sub-form button:focus-visible{outline:3px solid #f2a9c4; outline-offset:2px;}
+  .sub-fine{color:#8298af; font-size:.73rem; margin-top:.6rem;}
+  .sub-thanks{margin-top:.7rem; background:rgba(23,143,111,.2); border:1px solid rgba(94,222,183,.45); color:#b8f0dd; font-size:.84rem; font-weight:600; border-radius:12px; padding:.6rem .95rem;}
+  .visually-hidden{position:absolute; width:1px; height:1px; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
 
   /* ── Top row ──────────────────────────────── */
   .toprow{display:grid; grid-template-columns:1fr 1.45fr; gap:1.4rem;}
@@ -145,6 +162,21 @@
       <span class="chip date">Tuesday, July 21, 2026</span>
       <span class="chip ed">Pune Edition</span>
       <span class="chip arch"><a href="archive.html">Archive →</a></span>
+    </div>
+    <div class="subscribe" id="subscribe">
+      <div class="sub-title">Get each edition in your inbox</div>
+      <p class="sub-note">One email each morning with the day's briefing — free, unsubscribe anytime.</p>
+      <form class="sub-form" action="https://formsubmit.co/gnaidu05@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New subscriber — The Morning Bloom">
+        <input type="hidden" name="_next" value="https://gnaidu05.github.io/bloom/index.html?subscribed=1">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="visually-hidden" for="sub-email">Email address</label>
+        <input id="sub-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="sub-fine">Your request goes to the publisher's inbox; editions start arriving once you're added to the list.</p>
+      <p class="sub-thanks" id="sub-thanks" hidden>Thanks — your subscription request has been sent!</p>
     </div>
   </header>
 
@@ -413,12 +445,16 @@
   <footer class="card">
     <div class="flowers" aria-hidden="true">❦ ❦ ❦</div>
     <p>The summaries above are Claude's own words, paraphrased from date-verified reporting of the past week — the links in each Sources line carry the full, original reporting.</p>
-    <p>The Morning Bloom · Pune Edition · July 21, 2026 · <a href="archive.html">Browse the archive</a></p>
+    <p>The Morning Bloom · Pune Edition · July 21, 2026 · <a href="archive.html">Browse the archive</a> · <a href="#subscribe">Subscribe</a></p>
   </footer>
 
 </div>
 <script>
   (function(){
+    if (new URLSearchParams(location.search).has('subscribed')){
+      var t = document.getElementById('sub-thanks');
+      if (t){ t.removeAttribute('hidden'); t.scrollIntoView({block:'center'}); }
+    }
     var els = document.querySelectorAll('.reveal');
     if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
       els.forEach(function(e){ e.classList.add('in'); });
