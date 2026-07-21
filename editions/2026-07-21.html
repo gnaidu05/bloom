@@ -45,7 +45,7 @@
   .masthead::before{content:""; position:absolute; inset:0 0 auto 0; height:7px; background:linear-gradient(90deg,var(--teal),var(--rose) 50%,var(--amber));}
   .masthead::after{content:""; position:absolute; right:-90px; top:-90px; width:320px; height:320px; border-radius:50%;
     background:radial-gradient(circle, rgba(193,64,102,.28), transparent 65%); pointer-events:none;}
-  .brandrow{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.7rem; margin-bottom:1.3rem; position:relative;}
+  .brandrow{display:flex; justify-content:flex-end; align-items:center; flex-wrap:wrap; gap:.7rem; margin-bottom:1.3rem; position:relative;}
   .brandrow .mini{display:flex; align-items:center; gap:.55rem; font-weight:800; font-size:.78rem; color:#d7e2ef; letter-spacing:.14em;}
   .brandrow .mini .dot{width:13px; height:13px; border-radius:50%; background:var(--rose); display:inline-block; box-shadow:5px 0 0 -2px var(--amber), 10px 0 0 -4px var(--teal);}
   .pill{display:inline-block; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.28); color:#eaf1f8; font-size:.64rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; padding:.42rem 1rem; border-radius:999px;}
@@ -224,7 +224,6 @@
   <!-- ═══ Masthead ═══ -->
   <header class="card masthead">
     <div class="brandrow">
-      <span class="mini"><span class="dot"></span>THE MORNING BLOOM</span>
       <span class="pill">Daily News Briefing</span>
     </div>
     <div class="titlelock">
