@@ -11,17 +11,19 @@ Requires repo Actions secrets:
 
 Subscriber list — either or both of:
   SUBSCRIBERS        Recipient emails, separated by commas/spaces/newlines (manual)
-  SUBSCRIBE_ENDPOINT + SUBSCRIBE_TOKEN
-                     Google Apps Script web-app URL + token; the live list of
-                     web signups is fetched from it and merged with SUBSCRIBERS.
+  SUPABASE_URL + SUPABASE_SERVICE_KEY
+                     Supabase project URL + service_role key; the live list of
+                     web signups is read from the `subscribers` table and merged
+                     with SUBSCRIBERS. The service key bypasses RLS (full read);
+                     it is secret and must never appear in the website.
 
 If mail creds or all subscriber sources are missing, exits 0 with a notice.
 """
+import json
 import os
 import re
 import smtplib
 import sys
-import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from email.mime.multipart import MIMEMultipart
@@ -33,24 +35,27 @@ SITE = "https://gnaidu05.github.io/bloom"
 IST = timezone(timedelta(hours=5, minutes=30))
 
 
-def endpoint_subscribers() -> list:
-    """Fetch the live signup list from the Apps Script web app (if configured)."""
-    endpoint = os.environ.get("SUBSCRIBE_ENDPOINT", "").strip()
-    token = os.environ.get("SUBSCRIBE_TOKEN", "").strip()
-    if not (endpoint and token):
+def supabase_subscribers() -> list:
+    """Fetch the live signup list from the Supabase `subscribers` table (if configured)."""
+    url = os.environ.get("SUPABASE_URL", "").strip().rstrip("/")
+    key = os.environ.get("SUPABASE_SERVICE_KEY", "").strip()
+    if not (url and key):
         return []
-    sep = "&" if "?" in endpoint else "?"
-    url = endpoint + sep + urllib.parse.urlencode({"token": token})
+    req = urllib.request.Request(
+        url + "/rest/v1/subscribers?select=email&order=created_at.asc",
+        headers={"apikey": key, "Authorization": "Bearer " + key},
+    )
     try:
-        with urllib.request.urlopen(url, timeout=30) as resp:
-            body = resp.read().decode("utf-8", "replace")
-    except Exception as ex:  # network/deploy hiccup shouldn't break the send
-        print(f"NOTICE: could not read subscribe endpoint ({ex}); using SUBSCRIBERS secret only.")
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            rows = json.loads(resp.read().decode("utf-8", "replace"))
+    except Exception as ex:  # network/config hiccup shouldn't break the send
+        print(f"NOTICE: could not read Supabase subscribers ({ex}); using SUBSCRIBERS secret only.")
         return []
-    if body.strip().lower() in ("forbidden", "invalid", "error"):
-        print("NOTICE: subscribe endpoint rejected the request; using SUBSCRIBERS secret only.")
+    if not isinstance(rows, list):
+        print(f"NOTICE: unexpected Supabase response ({rows}); using SUBSCRIBERS secret only.")
         return []
-    return [s for s in re.split(r"[,\s;]+", body) if "@" in s]
+    return [r["email"].strip() for r in rows
+            if isinstance(r, dict) and "@" in str(r.get("email", ""))]
 
 
 def main() -> None:
@@ -65,13 +70,13 @@ def main() -> None:
     manual = [s for s in re.split(r"[,\s;]+", raw_subs) if "@" in s]
     # Merge manual list + live web signups, de-duplicated case-insensitively.
     seen, subscribers = set(), []
-    for addr in manual + endpoint_subscribers():
+    for addr in manual + supabase_subscribers():
         key = addr.lower()
         if key not in seen:
             seen.add(key)
             subscribers.append(addr)
     if not subscribers:
-        print("NOTICE: no subscribers (SUBSCRIBERS secret empty and endpoint returned none); skipping send.")
+        print("NOTICE: no subscribers (SUBSCRIBERS secret empty and Supabase returned none); skipping send.")
         return
 
     editions = sorted((ROOT / "editions").glob("????-??-??.html"), reverse=True)

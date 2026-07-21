@@ -451,7 +451,8 @@
   // Subscribe endpoint: paste the Google Apps Script web-app URL between the quotes
   // to enable one-click auto-signup. While empty, the form falls back to opening a
   // pre-filled email to the publisher.
-  var SUBSCRIBE_ENDPOINT = '';
+  var SUBSCRIBE_ENDPOINT = 'https://hktsbrqgxzlbdusmcjzq.supabase.co/rest/v1/subscribers';
+  var SUBSCRIBE_KEY = 'sb_publishable_WA8OuWfE0zJcz8A99qoFkQ_C7XNzaY5';
   (function(){
     var form = document.getElementById('sub-form');
     if (form){
@@ -460,12 +461,14 @@
         var email = document.getElementById('sub-email').value.trim();
         var company = (document.getElementById('sub-company') || {}).value || '';
         var t = document.getElementById('sub-thanks');
-        if (SUBSCRIBE_ENDPOINT){
+        if (SUBSCRIBE_ENDPOINT && SUBSCRIBE_KEY){
           fetch(SUBSCRIBE_ENDPOINT, {
             method: 'POST',
-            mode: 'no-cors',
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            body: 'email=' + encodeURIComponent(email) + '&company=' + encodeURIComponent(company)
+            headers: {
+              'Content-Type': 'application/json',
+              'apikey': SUBSCRIBE_KEY
+            },
+            body: JSON.stringify({email: email})
           }).catch(function(){});
           if (t) t.removeAttribute('hidden');
           form.reset();
