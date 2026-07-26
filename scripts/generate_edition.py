@@ -344,6 +344,35 @@ def publish_edition() -> bool:
         return False
 
 
+def load_story_data() -> Optional[List[Dict]]:
+    """Load story data from JSON file or environment variable."""
+    import os
+
+    # Try environment variable first
+    stories_json = os.environ.get("BLOOM_STORIES")
+    if stories_json:
+        try:
+            stories = json.loads(stories_json)
+            log(f"Loaded {len(stories)} stories from BLOOM_STORIES env var")
+            return stories
+        except json.JSONDecodeError as e:
+            log(f"ERROR: Invalid JSON in BLOOM_STORIES: {e}", "ERROR")
+            return None
+
+    # Try file
+    stories_file = ROOT / ".stories.json"
+    if stories_file.exists():
+        try:
+            stories = json.loads(stories_file.read_text())
+            log(f"Loaded {len(stories)} stories from {stories_file}")
+            return stories
+        except json.JSONDecodeError as e:
+            log(f"ERROR: Invalid JSON in .stories.json: {e}", "ERROR")
+            return None
+
+    return None
+
+
 def main():
     """Main entry point."""
     log("Starting automated edition generation")
@@ -369,27 +398,54 @@ def main():
         log("ERROR: Could not load template", "ERROR")
         return 2
 
-    # For now: generate placeholder edition
-    # In production, this would do WebSearch and populate with real stories
-    log("NOTICE: Placeholder mode - generating minimal edition structure")
+    # Load story data
+    story_data = load_story_data()
+    if story_data is None or (isinstance(story_data, list) and len(story_data) < 6):
+        log(f"NOTICE: No story data available ({len(story_data) or 0} stories found). Generating placeholder edition.", "WARN")
+        stories = []
+        headlines = []
+        desks = [
+            ("t-teal", "AI &amp; Technology"),
+            ("t-teal", "AI &amp; Technology"),
+            ("t-amber", "IT Industry"),
+            ("t-amber", "IT Industry"),
+            ("t-navy", "Recruitment &amp; HR"),
+            ("t-navy", "Recruitment &amp; HR"),
+        ]
 
-    stories = []
-    headlines = []
-    desks = [
-        ("t-teal", "AI &amp; Technology"),
-        ("t-teal", "AI &amp; Technology"),
-        ("t-amber", "IT Industry"),
-        ("t-amber", "IT Industry"),
-        ("t-navy", "Recruitment &amp; HR"),
-        ("t-navy", "Recruitment &amp; HR"),
-    ]
+        for i, (theme, desk) in enumerate(desks, 1):
+            num = f"{i:02d}"
+            cid = f"s{i}"
+            placeholder = create_placeholder_story(num, cid, theme, desk)
+            stories.append(placeholder)
+            headlines.append(f"Story {num} [Pending Details]")
+    else:
+        log(f"Generating edition with {len(story_data)} stories")
+        stories = []
+        headlines = []
 
-    for i, (theme, desk) in enumerate(desks, 1):
-        num = f"{i:02d}"
-        cid = f"s{i}"
-        placeholder = create_placeholder_story(num, cid, theme, desk)
-        stories.append(placeholder)
-        headlines.append(f"Story {num} [Pending Details]")
+        for i, story in enumerate(story_data[:6], 1):
+            num = f"{i:02d}"
+            cid = f"s{i}"
+            theme = story.get("theme", "t-teal")
+            category = story.get("category", "AI &amp; Technology")
+            headline = story.get("headline", f"Story {num}")
+            deck = story.get("deck", "Story details pending.")
+            svg = story.get("svg", """          <svg viewBox="0 0 240 160" role="img" aria-label="News"><rect width="240" height="160" fill="#f0f0f0"/></svg>""")
+            figcap = story.get("figcap", "Illustration")
+            para1 = story.get("para1", "Story details pending.")
+            para2 = story.get("para2", "Please check back shortly.")
+            takeaways = story.get("takeaways", ["Story pending"])
+            why = story.get("why", "Updates coming soon.")
+            sources = story.get("sources", '<a href="#">Source</a>')
+            topics = story.get("topics", ["pending"])
+
+            card_html = generate_story_card(
+                num, cid, theme, category, headline, deck, svg, figcap,
+                para1, para2, takeaways, why, sources, topics
+            )
+            stories.append(card_html)
+            headlines.append(headline)
 
     # Generate edition with placeholders
     html = generate_edition(old_date, new_date, stories, headlines)
