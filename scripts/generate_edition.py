@@ -78,6 +78,82 @@ def load_template() -> tuple[str, str]:
         return None, None
 
 
+def generate_story_svg(theme: str, story_num: int) -> str:
+    """Generate a simple themed SVG illustration for a story."""
+    # Color palette by theme
+    colors = {
+        "t-teal": ("#0d7085", "#8fd0e2", "#e9f3f5"),
+        "t-amber": ("#c97a10", "#e8c68f", "#fdf3e3"),
+        "t-navy": ("#1d3557", "#6b95bd", "#eaeef4"),
+        "t-rose": ("#c14066", "#e6a5b8", "#faebef"),
+    }
+    primary, accent, light = colors.get(theme, ("#0d7085", "#8fd0e2", "#e9f3f5"))
+
+    # Different patterns based on story number (1-6)
+    if story_num % 6 == 1:
+        # Upward trend chart
+        return f"""          <svg viewBox="0 0 240 160" role="img" aria-label="Illustration of an upward trending graph">
+            <rect width="240" height="160" fill="{light}"/>
+            <line x1="30" y1="125" x2="220" y2="125" stroke="{accent}" stroke-width="2"/>
+            <g fill="{primary}">
+              <rect x="40" y="95" width="16" height="30" rx="2"/>
+              <rect x="65" y="75" width="16" height="50" rx="2"/>
+              <rect x="90" y="50" width="16" height="75" rx="2"/>
+              <rect x="115" y="65" width="16" height="60" rx="2"/>
+              <rect x="140" y="45" width="16" height="80" rx="2"/>
+              <rect x="165" y="60" width="16" height="65" rx="2"/>
+              <rect x="190" y="35" width="16" height="90" rx="2"/>
+            </g>
+            <path d="M200 30 L215 15" stroke="{primary}" stroke-width="4" stroke-linecap="round" fill="none"/>
+          </svg>"""
+    elif story_num % 6 == 2:
+        # Network/connections
+        return f"""          <svg viewBox="0 0 240 160" role="img" aria-label="Illustration of network connections">
+            <rect width="240" height="160" fill="{light}"/>
+            <circle cx="60" cy="50" r="20" fill="{primary}"/>
+            <circle cx="180" cy="50" r="20" fill="{primary}"/>
+            <circle cx="120" cy="120" r="20" fill="{primary}"/>
+            <line x1="75" y1="58" x2="105" y2="112" stroke="{accent}" stroke-width="2"/>
+            <line x1="165" y1="58" x2="135" y2="112" stroke="{accent}" stroke-width="2"/>
+            <line x1="75" y1="58" x2="165" y2="58" stroke="{accent}" stroke-width="2"/>
+          </svg>"""
+    elif story_num % 6 == 3:
+        # Security/shield
+        return f"""          <svg viewBox="0 0 240 160" role="img" aria-label="Illustration of security shield">
+            <rect width="240" height="160" fill="{light}"/>
+            <path d="M120 30 L170 50 L170 90 Q120 120 120 130 Q120 120 70 90 L70 50 Z" fill="{primary}" stroke="{accent}" stroke-width="2"/>
+            <path d="M105 80 L120 95 L140 75" fill="none" stroke="{accent}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>"""
+    elif story_num % 6 == 4:
+        # Alert/warning
+        return f"""          <svg viewBox="0 0 240 160" role="img" aria-label="Illustration of alert">
+            <rect width="240" height="160" fill="{light}"/>
+            <circle cx="120" cy="80" r="40" fill="none" stroke="{primary}" stroke-width="3"/>
+            <circle cx="120" cy="80" r="30" fill="none" stroke="{accent}" stroke-width="2"/>
+            <text x="120" y="90" text-anchor="middle" font-size="32" font-weight="bold" fill="{primary}">!</text>
+          </svg>"""
+    elif story_num % 6 == 5:
+        # Growth/expansion
+        return f"""          <svg viewBox="0 0 240 160" role="img" aria-label="Illustration of growth">
+            <rect width="240" height="160" fill="{light}"/>
+            <rect x="40" y="90" width="50" height="60" fill="{primary}" opacity="0.4"/>
+            <rect x="95" y="70" width="50" height="80" fill="{primary}" opacity="0.7"/>
+            <rect x="150" y="50" width="50" height="100" fill="{primary}"/>
+            <path d="M35 95 Q80 50 200 30" fill="none" stroke="{accent}" stroke-width="3" stroke-linecap="round"/>
+          </svg>"""
+    else:
+        # People/employment
+        return f"""          <svg viewBox="0 0 240 160" role="img" aria-label="Illustration of people">
+            <rect width="240" height="160" fill="{light}"/>
+            <circle cx="60" cy="45" r="12" fill="{primary}"/>
+            <path d="M60 60 L60 85 M45 70 L75 70 M60 85 L50 110 M60 85 L70 110" stroke="{primary}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="140" cy="45" r="12" fill="{accent}"/>
+            <path d="M140 60 L140 85 M125 70 L155 70 M140 85 L130 110 M140 85 L150 110" stroke="{accent}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="200" cy="45" r="12" fill="{primary}"/>
+            <path d="M200 60 L200 85 M185 70 L215 70 M200 85 L190 110 M200 85 L210 110" stroke="{primary}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>"""
+
+
 def parse_date_parts(date_str: str) -> tuple[int, int, int]:
     """Parse YYYY-MM-DD to (year, month, day)."""
     parts = date_str.split("-")
@@ -162,16 +238,14 @@ def generate_story_card(
 
 def create_placeholder_story(num: str, cid: str, theme: str, category: str) -> str:
     """Create a placeholder card when story data is unavailable."""
-    svg = """          <svg viewBox="0 0 240 160" role="img" aria-label="Placeholder">
-            <rect width="240" height="160" fill="#f0f0f0"/>
-            <text x="120" y="80" text-anchor="middle" font-size="14" fill="#999">Story {}</text>
-          </svg>""".format(num)
+    story_idx = int(num)
+    svg = generate_story_svg(theme, story_idx)
 
     return generate_story_card(
         num, cid, theme, category,
         f"Story {num}: [Loading...]",
         "Story details pending.",
-        svg, "Placeholder",
+        svg, "Placeholder illustration",
         "Story data is loading.",
         "Please check back shortly.",
         ["Updates pending"],
@@ -431,8 +505,11 @@ def main():
             category = story.get("category", "AI &amp; Technology")
             headline = story.get("headline", f"Story {num}")
             deck = story.get("deck", "Story details pending.")
-            svg = story.get("svg", """          <svg viewBox="0 0 240 160" role="img" aria-label="News"><rect width="240" height="160" fill="#f0f0f0"/></svg>""")
-            figcap = story.get("figcap", "Illustration")
+            # Use provided SVG or generate one
+            svg = story.get("svg")
+            if not svg:
+                svg = generate_story_svg(theme, i)
+            figcap = story.get("figcap", "News illustration")
             para1 = story.get("para1", "Story details pending.")
             para2 = story.get("para2", "Please check back shortly.")
             takeaways = story.get("takeaways", ["Story pending"])
