@@ -35,9 +35,10 @@ SEARCHES = [
 
 
 def log(msg: str, level: str = "INFO"):
-    """Print timestamped log message."""
+    """Print timestamped log message to stderr."""
+    import sys
     ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    print(f"[{ts}] [{level}] {msg}", flush=True)
+    print(f"[{ts}] [{level}] {msg}", file=sys.stderr, flush=True)
 
 
 def web_search(query: str, num_results: int = 5) -> List[Dict]:
@@ -201,11 +202,13 @@ def main():
     # Take first 6
     stories = stories[:6]
 
-    # Output as JSON to stdout
-    json_str = json.dumps(stories, ensure_ascii=False, indent=2)
+    # Output as JSON to stdout (no logging on stdout)
+    json_str = json.dumps(stories, ensure_ascii=False)
     print(json_str)
 
-    log(f"✓ Found {len(stories)} stories")
+    # Log success to stderr
+    import sys
+    print(f"Found {len(stories)} stories", file=sys.stderr)
     return 0
 
 
