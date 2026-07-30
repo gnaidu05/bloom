@@ -202,13 +202,13 @@ def main():
     # Take first 6
     stories = stories[:6]
 
-    # Output as JSON to stdout (no logging on stdout)
-    json_str = json.dumps(stories, ensure_ascii=False)
-    print(json_str)
-
-    # Log success to stderr
+    # Log success to stderr BEFORE outputting JSON
     import sys
     print(f"Found {len(stories)} stories", file=sys.stderr)
+
+    # Output ONLY JSON to stdout (exactly one line, nothing else)
+    json_str = json.dumps(stories, ensure_ascii=False)
+    print(json_str)
     return 0
 
 
