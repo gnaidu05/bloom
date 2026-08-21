@@ -444,6 +444,30 @@ def load_story_data() -> Optional[List[Dict]]:
             log(f"ERROR: Invalid JSON in .stories.json: {e}", "ERROR")
             return None
 
+    # Nothing supplied — fetch live stories ourselves via find_stories.py.
+    # This makes the whole pipeline a single command with no fragile
+    # stdout-into-env-var handoff.
+    import subprocess
+    finder = ROOT / "scripts" / "find_stories.py"
+    if finder.exists():
+        log("No story data supplied; running find_stories.py to fetch live news")
+        try:
+            result = subprocess.run(
+                ["python3", str(finder)],
+                cwd=ROOT, capture_output=True, text=True, timeout=120
+            )
+            if result.returncode != 0:
+                log(f"find_stories.py failed (exit {result.returncode})", "ERROR")
+                if result.stderr:
+                    log(result.stderr.strip().splitlines()[-1], "ERROR")
+                return None
+            stories = json.loads(result.stdout.strip().splitlines()[-1])
+            log(f"Fetched {len(stories)} live stories via find_stories.py")
+            return stories
+        except Exception as e:
+            log(f"ERROR: could not fetch stories: {e}", "ERROR")
+            return None
+
     return None
 
 
@@ -472,31 +496,20 @@ def main():
         log("ERROR: Could not load template", "ERROR")
         return 2
 
-    # Load story data
+    # Load story data. NEVER publish placeholders — abort instead so a broken
+    # run leaves the last good edition live rather than pushing "[Loading...]".
     story_data = load_story_data()
-    if story_data is None or (isinstance(story_data, list) and len(story_data) < 6):
-        log(f"NOTICE: No story data available ({len(story_data) or 0} stories found). Generating placeholder edition.", "WARN")
-        stories = []
-        headlines = []
-        desks = [
-            ("t-teal", "AI &amp; Technology"),
-            ("t-teal", "AI &amp; Technology"),
-            ("t-amber", "IT Industry"),
-            ("t-amber", "IT Industry"),
-            ("t-navy", "Recruitment &amp; HR"),
-            ("t-navy", "Recruitment &amp; HR"),
-        ]
+    n = len(story_data) if isinstance(story_data, list) else 0
+    if n < 6:
+        log(f"ERROR: Need 6 stories, got {n}. Aborting (no placeholder editions).", "ERROR")
+        log("Run scripts/find_stories.py and pass its JSON via BLOOM_STORIES "
+            "or write it to .stories.json.", "ERROR")
+        return 2
 
-        for i, (theme, desk) in enumerate(desks, 1):
-            num = f"{i:02d}"
-            cid = f"s{i}"
-            placeholder = create_placeholder_story(num, cid, theme, desk)
-            stories.append(placeholder)
-            headlines.append(f"Story {num} [Pending Details]")
-    else:
-        log(f"Generating edition with {len(story_data)} stories")
-        stories = []
-        headlines = []
+    log(f"Generating edition with {len(story_data)} stories")
+    stories = []
+    headlines = []
+    if True:
 
         for i, story in enumerate(story_data[:6], 1):
             num = f"{i:02d}"

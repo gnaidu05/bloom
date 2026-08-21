@@ -1,214 +1,247 @@
 #!/usr/bin/env python3
 """
-Find recent stories via WebSearch and format as JSON for edition generation.
+Find real, recent news via live RSS feeds and emit JSON for edition generation.
 
-Searches for 6 stories (2 per desk) from the last 7 days, validates dates,
-and outputs JSON that generate_edition.py can consume.
+This is FULLY DETERMINISTIC — no LLM, no search API, no hardcoded stories.
+It pulls live headlines from public RSS/Atom feeds grouped by desk, keeps items
+published within the recency window, dedupes, and prints a JSON array of 6
+stories (2 per desk) to stdout. All logging goes to stderr so stdout is pure JSON.
+
+Story links are REAL (straight from the feed), so "Sources" always resolves.
 
 Exit codes:
-  0 = success, JSON output
-  1 = search failed (couldn't find enough dated stories)
+  0 = success, JSON printed to stdout
+  1 = could not assemble 6 stories (feeds down / too little recent news)
 """
 
 import sys
-import json
 import re
-import subprocess
-from datetime import datetime, timedelta
-from typing import List, Dict, Optional
+import json
+import html
+import urllib.request
+import xml.etree.ElementTree as ET
+from datetime import datetime, timezone, timedelta
+from email.utils import parsedate_to_datetime
 
-# Search queries per desk (2 searches per desk = 6 searches total)
-SEARCHES = [
-    ("AI & Technology", "t-teal", [
-        "AI machine learning breakthrough news 2026",
-        "Claude Anthropic OpenAI release announcement July 2026"
+RECENCY_DAYS = 7          # prefer items this fresh
+FALLBACK_DAYS = 14        # widen to this if a desk is short
+PER_DESK = 2
+UA = {"User-Agent": "Mozilla/5.0 (Morning Bloom feed reader)"}
+
+# desk -> (theme, category, [feed urls, best first])
+DESKS = [
+    ("t-teal", "AI & Technology", [
+        "https://techcrunch.com/tag/artificial-intelligence/feed/",
+        "https://feeds.arstechnica.com/arstechnica/technology-lab",
+        "https://venturebeat.com/category/ai/feed/",
     ]),
-    ("IT Industry", "t-amber", [
-        "cybersecurity ransomware breach news July 2026",
-        "data breach security incident latest 2026"
+    ("t-amber", "IT Industry", [
+        "https://www.bleepingcomputer.com/feed/",
+        "https://www.theregister.com/security/headlines.atom",
     ]),
-    ("Recruitment & HR", "t-navy", [
-        "tech layoffs jobs hiring salary news July 2026",
-        "employment market technology recruitment trends 2026"
-    ])
+    ("t-navy", "Recruitment & HR", [
+        "https://techcrunch.com/tag/layoffs/feed/",
+        "https://www.hrdive.com/feeds/news/",
+    ]),
 ]
 
+WHY = {
+    "AI & Technology": "Shifts in AI capability and tooling shape how every team builds, ships, and competes.",
+    "IT Industry": "Security and infrastructure incidents set the risk backdrop that IT teams plan and budget against.",
+    "Recruitment & HR": "Hiring, layoff, and pay signals map where tech talent is moving and what skills now command a premium.",
+}
+FIGCAP = {
+    "AI & Technology": "AI & technology desk",
+    "IT Industry": "IT industry & security desk",
+    "Recruitment & HR": "Recruitment & HR desk",
+}
 
-def log(msg: str, level: str = "INFO"):
-    """Print timestamped log message to stderr."""
-    import sys
+
+def log(msg, level="INFO"):
     ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(f"[{ts}] [{level}] {msg}", file=sys.stderr, flush=True)
 
 
-def web_search(query: str, num_results: int = 5) -> List[Dict]:
-    """Perform a web search and return results as structured data.
+def strip_html(s: str) -> str:
+    s = re.sub(r"(?is)<(script|style).*?</\1>", " ", s or "")
+    s = re.sub(r"(?s)<[^>]+>", " ", s)
+    s = html.unescape(s)
+    return re.sub(r"\s+", " ", s).strip()
 
-    Returns list of dicts with keys: title, snippet, url, date_found
-    Date extraction is best-effort from snippet/title.
-    """
+
+def parse_date(raw: str):
+    if not raw:
+        return None
+    raw = raw.strip()
     try:
-        # Use subprocess to call a simple curl + parsing approach
-        # For now, simulate with a more reliable method
-        import urllib.request
-        import urllib.parse
-
-        # Google search via DuckDuckGo or similar (simulated)
-        # In real deployment, could use Brave Search API or similar
-        # For this prototype, we'll use a simplified approach
-
-        log(f"Searching: {query}")
-
-        # Return empty for now - we'll handle this differently
-        return []
-    except Exception as e:
-        log(f"ERROR: Search failed: {e}", "ERROR")
-        return []
-
-
-def extract_story_details(title: str, snippet: str, date_str: Optional[str] = None) -> Optional[Dict]:
-    """Extract story details from search result title and snippet.
-
-    Returns structured story dict or None if validation fails.
-    """
-    if not title or not snippet:
+        d = parsedate_to_datetime(raw)          # RFC 822 (RSS)
+        if d.tzinfo is None:
+            d = d.replace(tzinfo=timezone.utc)
+        return d
+    except Exception:
+        pass
+    try:
+        iso = raw.replace("Z", "+00:00")         # ISO 8601 (Atom)
+        d = datetime.fromisoformat(iso)
+        if d.tzinfo is None:
+            d = d.replace(tzinfo=timezone.utc)
+        return d
+    except Exception:
         return None
 
-    # Validate date is recent (within 7 days)
-    if date_str:
-        try:
-            story_date = datetime.strptime(date_str, "%Y-%m-%d")
-            days_old = (datetime.now() - story_date).days
-            if days_old > 7:
-                log(f"Skipping {title[:50]}... (dated {date_str}, {days_old}d old)", "WARN")
-                return None
-        except:
-            pass
 
-    # Generate a deck (2-3 sentence summary from snippet)
-    deck = snippet[:150].strip()
-    if len(snippet) > 150:
-        deck += "..."
+def fetch(url: str) -> bytes:
+    req = urllib.request.Request(url, headers=UA)
+    with urllib.request.urlopen(req, timeout=25) as r:
+        return r.read()
 
+
+def source_name(url: str) -> str:
+    host = re.sub(r"^https?://(www\.)?", "", url).split("/")[0]
+    names = {
+        "techcrunch.com": "TechCrunch",
+        "feeds.arstechnica.com": "Ars Technica",
+        "arstechnica.com": "Ars Technica",
+        "venturebeat.com": "VentureBeat",
+        "bleepingcomputer.com": "BleepingComputer",
+        "theregister.com": "The Register",
+        "hrdive.com": "HR Dive",
+    }
+    return names.get(host, host)
+
+
+def parse_feed(xml_bytes: bytes):
+    """Return list of dicts: title, link, desc, date (datetime)."""
+    root = ET.fromstring(xml_bytes)
+    for e in root.iter():                         # strip namespaces
+        if isinstance(e.tag, str) and "}" in e.tag:
+            e.tag = e.tag.split("}", 1)[1]
+    out = []
+    for it in root.iter("item"):                  # RSS
+        link = (it.findtext("link") or "").strip()
+        out.append({
+            "title": strip_html(it.findtext("title") or ""),
+            "link": link,
+            "desc": strip_html(it.findtext("description") or ""),
+            "date": parse_date(it.findtext("pubDate") or ""),
+        })
+    for it in root.iter("entry"):                 # Atom
+        link = ""
+        for l in it.iter("link"):
+            href = l.get("href")
+            if href and (l.get("rel") in (None, "alternate")):
+                link = href
+                break
+        body = it.findtext("summary") or it.findtext("content") or ""
+        out.append({
+            "title": strip_html(it.findtext("title") or ""),
+            "link": link.strip(),
+            "desc": strip_html(body),
+            "date": parse_date(it.findtext("updated") or it.findtext("published") or ""),
+        })
+    return [i for i in out if i["title"] and i["link"]]
+
+
+def sentences(text: str):
+    parts = re.split(r"(?<=[.!?])\s+", text)
+    return [p.strip() for p in parts if len(p.strip()) > 20]
+
+
+def trim(text: str, limit: int) -> str:
+    """Trim to <= limit on a word boundary, adding an ellipsis if cut."""
+    text = text.strip()
+    if len(text) <= limit:
+        return text
+    cut = text[:limit].rsplit(" ", 1)[0].rstrip(" ,;:—-")
+    if not cut.endswith((".", "!", "?", "…")):
+        cut += "…"
+    return cut
+
+
+def build_story(item, theme, category, feed_url):
+    desc = item["desc"]
+    sents = sentences(desc)
+    deck = trim(sents[0] if sents else desc, 180)
+    para1 = " ".join(sents[:2]) if sents else trim(desc, 300)
+    para2 = " ".join(sents[2:4]) if len(sents) > 2 else \
+        f"Full reporting is available from {source_name(feed_url)} at the source link below."
+    takeaways = [trim(s, 140) for s in (sents[:3] if sents else [item["title"]])]
+    if not takeaways:
+        takeaways = ["See the linked source for full details."]
+    d = item["date"]
+    datestr = d.strftime("%b %d, %Y") if d else "recent"
+    src = source_name(feed_url)
+    sources = (f'<strong>Sources ({datestr}):</strong> '
+               f'<a href="{item["link"]}">{html.escape(item["title"][:70])} — {src}</a>')
+    topics = [t for t in re.findall(r"[A-Z][a-zA-Z]{3,}", item["title"])][:3] or [src]
     return {
-        "headline": title[:80],
-        "deck": deck,
-        "para1": snippet[:250],
-        "para2": "This development impacts the tech industry and market dynamics.",
-        "figcap": "News illustration",
-        "takeaways": [
-            "Major industry development",
-            "Market implications",
-            "Follow-up monitoring advised"
-        ],
-        "why": "Understanding sector trends helps contextualize competitive positioning and talent movement.",
-        "sources": f'<a href="#">{title[:40]}</a>',
-        "topics": ["news", "tech", "industry"]
+        "theme": theme,
+        "category": category,
+        "headline": item["title"][:110],
+        "deck": deck or item["title"],
+        "figcap": FIGCAP.get(category, "News"),
+        "para1": para1 or deck or item["title"],
+        "para2": para2,
+        "takeaways": takeaways,
+        "why": WHY.get(category, "A notable development for people tracking this sector."),
+        "sources": sources,
+        "topics": topics,
     }
 
 
-def generate_stories_from_queries() -> List[Dict]:
-    """Run searches and extract 6 stories (2 per desk)."""
-    stories = []
-
-    for category, theme, queries in SEARCHES:
-        desk_stories = 0
-
-        for query in queries:
-            if desk_stories >= 2:
-                break
-
-            log(f"Searching for {category}: {query}")
-
-            # For prototype: generate realistic example stories
-            # In production, this would call real WebSearch API
-            example_stories = {
-                ("AI & Technology", "AI machine learning breakthrough news 2026"): {
-                    "headline": "Anthropic Releases Claude 4 with Extended Reasoning",
-                    "snippet": "Anthropic announced Claude 4 with advanced reasoning capabilities and expanded context window, enabling more complex problem-solving.",
-                    "date": "2026-07-25"
-                },
-                ("AI & Technology", "Claude Anthropic OpenAI release announcement July 2026"): {
-                    "headline": "OpenAI Launches GPT-5 Preview with Real-time Knowledge",
-                    "snippet": "OpenAI previewed GPT-5 with real-time internet access and multi-modal reasoning, available to enterprise customers.",
-                    "date": "2026-07-24"
-                },
-                ("IT Industry", "cybersecurity ransomware breach news July 2026"): {
-                    "headline": "Fortune 500 Company Suffers Major Ransomware Attack",
-                    "snippet": "A major financial services firm disclosed a ransomware attack affecting customer data, prompting immediate incident response.",
-                    "date": "2026-07-25"
-                },
-                ("IT Industry", "data breach security incident latest 2026"): {
-                    "headline": "Healthcare Provider Reports 10M Patient Records Exposed",
-                    "snippet": "A major healthcare provider notified regulators of a data breach exposing patient personal health information.",
-                    "date": "2026-07-24"
-                },
-                ("Recruitment & HR", "tech layoffs jobs hiring salary news July 2026"): {
-                    "headline": "Tech Layoffs Continue as Companies Adjust Headcount",
-                    "snippet": "Tech companies continue workforce adjustments, with over 50K roles eliminated this quarter as AI automation impacts hiring.",
-                    "date": "2026-07-25"
-                },
-                ("Recruitment & HR", "employment market technology recruitment trends 2026"): {
-                    "headline": "AI Engineering Roles Command Premium Salaries",
-                    "snippet": "Machine learning engineer positions now average $400K+ in compensation, reflecting severe talent shortage.",
-                    "date": "2026-07-23"
-                }
-            }
-
-            key = (category, query)
-            if key in example_stories:
-                data = example_stories[key]
-                story = extract_story_details(
-                    data["headline"],
-                    data["snippet"],
-                    data["date"]
-                )
-                if story:
-                    story["theme"] = theme
-                    story["category"] = category
-                    stories.append(story)
-                    desk_stories += 1
-                    log(f"Found: {data['headline'][:50]}...")
-
-    return stories
+def norm(t: str) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", t.lower()).strip()
 
 
-def validate_stories(stories: List[Dict]) -> bool:
-    """Validate we have at least 6 stories with required fields."""
-    if len(stories) < 6:
-        log(f"ERROR: Only found {len(stories)} stories; need 6", "ERROR")
-        return False
-
-    required = ["theme", "category", "headline", "deck", "para1", "para2", "why", "sources", "topics"]
-    for i, story in enumerate(stories[:6]):
-        for field in required:
-            if field not in story or not story[field]:
-                log(f"ERROR: Story {i+1} missing field: {field}", "ERROR")
-                return False
-
-    return True
+def collect_desk(theme, category, feeds, cutoff, seen_titles):
+    """Gather candidate items across a desk's feeds, freshest first."""
+    cand = []
+    for url in feeds:
+        try:
+            items = parse_feed(fetch(url))
+            log(f"{category}: {len(items)} items from {source_name(url)}")
+        except Exception as e:
+            log(f"{category}: FAILED {url} -> {type(e).__name__}: {e}", "WARN")
+            continue
+        for it in items:
+            if it["date"] and it["date"] >= cutoff:
+                cand.append((it, url))
+    # newest first
+    cand.sort(key=lambda x: x[0]["date"], reverse=True)
+    chosen = []
+    for it, url in cand:
+        n = norm(it["title"])
+        if not n or n in seen_titles:
+            continue
+        seen_titles.add(n)
+        chosen.append(build_story(it, theme, category, url))
+        if len(chosen) >= PER_DESK:
+            break
+    return chosen
 
 
 def main():
-    log("Starting story discovery")
+    log("Starting RSS story discovery")
+    now = datetime.now(timezone.utc)
+    stories = []
+    seen = set()
 
-    # Find stories
-    stories = generate_stories_from_queries()
+    # First pass at 7 days, widen per-desk to 14 if short.
+    for theme, category, feeds in DESKS:
+        got = collect_desk(theme, category, feeds,
+                           now - timedelta(days=RECENCY_DAYS), seen)
+        if len(got) < PER_DESK:
+            log(f"{category}: only {len(got)} in {RECENCY_DAYS}d, widening to {FALLBACK_DAYS}d", "WARN")
+            got = collect_desk(theme, category, feeds,
+                               now - timedelta(days=FALLBACK_DAYS), seen) or got
+        stories.extend(got[:PER_DESK])
 
-    if not validate_stories(stories):
-        log("ERROR: Story validation failed", "ERROR")
+    if len(stories) < 6:
+        log(f"Only assembled {len(stories)} stories; need 6. Aborting.", "ERROR")
         return 1
 
-    # Take first 6
-    stories = stories[:6]
-
-    # Log success to stderr BEFORE outputting JSON
-    import sys
-    print(f"Found {len(stories)} stories", file=sys.stderr)
-
-    # Output ONLY JSON to stdout (exactly one line, nothing else)
-    json_str = json.dumps(stories, ensure_ascii=False)
-    print(json_str)
+    log(f"Assembled {len(stories)} stories")
+    print(json.dumps(stories[:6], ensure_ascii=False))
     return 0
 
 
