@@ -22,11 +22,16 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
+from pathlib import Path
 
 RECENCY_DAYS = 7          # prefer items this fresh
 FALLBACK_DAYS = 14        # widen to this if a desk is short
 PER_DESK = 2
 UA = {"User-Agent": "Mozilla/5.0 (Morning Bloom feed reader)"}
+
+ROOT = Path(__file__).resolve().parent.parent
+EDITIONS_DIR = ROOT / "editions"
+REPUBLISH_LOOKBACK_DAYS = 10   # don't re-pick a story used in an edition this recent
 
 # desk -> (theme, category, [feed urls, best first])
 DESKS = [
@@ -193,7 +198,34 @@ def norm(t: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", t.lower()).strip()
 
 
-def collect_desk(theme, category, feeds, cutoff, seen_titles):
+def load_recently_published(days=REPUBLISH_LOOKBACK_DAYS):
+    """Scan editions/*.html from the last N days and return (titles, links)
+    already used, so today's picks don't repeat a story a recent edition ran."""
+    titles, links = set(), set()
+    if not EDITIONS_DIR.is_dir():
+        return titles, links
+    cutoff = datetime.now(timezone.utc).date() - timedelta(days=days)
+    for f in EDITIONS_DIR.glob("????-??-??.html"):
+        try:
+            d = datetime.strptime(f.stem, "%Y-%m-%d").date()
+        except ValueError:
+            continue
+        if d < cutoff:
+            continue
+        try:
+            text = f.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+        for m in re.finditer(r"<h2>(.*?)</h2>", text, re.S):
+            n = norm(strip_html(m.group(1)))
+            if n:
+                titles.add(n)
+        for m in re.finditer(r'class="sources"[^>]*>.*?<a href="([^"]+)"', text, re.S):
+            links.add(m.group(1).strip())
+    return titles, links
+
+
+def collect_desk(theme, category, feeds, cutoff, seen_titles, seen_links=frozenset()):
     """Gather candidate items across a desk's feeds, freshest first."""
     cand = []
     for url in feeds:
@@ -211,7 +243,7 @@ def collect_desk(theme, category, feeds, cutoff, seen_titles):
     chosen = []
     for it, url in cand:
         n = norm(it["title"])
-        if not n or n in seen_titles:
+        if not n or n in seen_titles or it["link"].strip() in seen_links:
             continue
         seen_titles.add(n)
         chosen.append(build_story(it, theme, category, url))
@@ -226,14 +258,26 @@ def main():
     stories = []
     seen = set()
 
-    # First pass at 7 days, widen per-desk to 14 if short.
+    pub_titles, pub_links = load_recently_published()
+    log(f"Excluding {len(pub_titles)} story title(s) from editions in the last "
+        f"{REPUBLISH_LOOKBACK_DAYS} days")
+
+    # First pass at 7 days, widen per-desk to 14 if short. Recently-published
+    # stories are excluded so the feed's still-top item doesn't repeat verbatim.
     for theme, category, feeds in DESKS:
+        seen_titles = seen | pub_titles
         got = collect_desk(theme, category, feeds,
-                           now - timedelta(days=RECENCY_DAYS), seen)
+                           now - timedelta(days=RECENCY_DAYS), seen_titles, pub_links)
         if len(got) < PER_DESK:
             log(f"{category}: only {len(got)} in {RECENCY_DAYS}d, widening to {FALLBACK_DAYS}d", "WARN")
             got = collect_desk(theme, category, feeds,
+                               now - timedelta(days=FALLBACK_DAYS), seen_titles, pub_links) or got
+        if len(got) < PER_DESK:
+            log(f"{category}: still only {len(got)} after widening; allowing repeats "
+                f"of recently-published stories to fill the desk", "WARN")
+            got = collect_desk(theme, category, feeds,
                                now - timedelta(days=FALLBACK_DAYS), seen) or got
+        seen |= {norm(s["headline"]) for s in got}
         stories.extend(got[:PER_DESK])
 
     if len(stories) < 6:
