@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Friday, September 4, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-09-04.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-04.html</guid>
+      <pubDate>Fri, 04 Sep 2026 01:00:00 GMT</pubDate>
+      <description>Confused about which VPN is right, US senator asks the NSA for guidance · VMware migration reduces Tottenham Hotspur's licensing fees by 85 percent · OpenAI commits $1B in AI credits to frontline cyber defenders · French hospital fined €500,000 after breach exposes data of 727,000 · Finance is ‘leaning in’ to manage healthcare costs, WTW exec says · Company’s inability to explain one manager’s firing over another keeps FMLA claim alive</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Thursday, September 3, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-09-03.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-03.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-07-23.html</guid>
       <pubDate>Thu, 23 Jul 2026 01:00:00 GMT</pubDate>
       <description>Google Releases Gemini 3.6 Flash with 17% Fewer Tokens · Microsoft and Mistral Expand Partnership with Multibillion-Dollar GPU Deal · AWS CloudFront Outage Takes Down Canvas, Blackboard, Hugging Face · Ransomware Groups Target Higher Ed and Government in July Wave · Tech Layoffs Surge—205,832 Cut Across 322 Events in 2026 · AI Skills Now Essential in 75% of Tech Job Postings</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Wednesday, July 22, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-07-22.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-07-22.html</guid>
-      <pubDate>Wed, 22 Jul 2026 01:00:00 GMT</pubDate>
-      <description>Anduril &amp; Archer unveil 'Thunder,' an autonomous attack aircraft · Washington weighs an independent referee for frontier AI · A stolen login wipes Romania's entire land registry · Cloud outages become 2026's 'new normal' · Tech layoffs pass 205,000 as AI rewrites the org chart · AI skills now sit in 75% of tech job postings</description>
     </item>
   </channel>
 </rss>
