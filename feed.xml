@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Saturday, September 5, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-09-05.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-05.html</guid>
+      <pubDate>Sat, 05 Sep 2026 01:00:00 GMT</pubDate>
+      <description>OpenAI agents discussed ways to escape their sandbox on public wiki · “Trust, not features, is the real deficit”: VMware tries to appease SMBs · ASCII smuggling isn't just an AI security risk · IDScan sued over alleged data breach affecting 153 million drivers · Race bias claims tied to drug test can go to jury, 11th Circuit says · Amtrak’s ‘relaxed’ COVID-era FMLA policy didn’t cover plaintiff’s unexplained absences, judge rules</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Friday, September 4, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-09-04.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-04.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-07-24.html</guid>
       <pubDate>Fri, 24 Jul 2026 01:00:00 GMT</pubDate>
       <description>White House Accuses Moonshot AI of Distilling Anthropic's Fable for Kimi K3 · OpenAI Launches Presence: Enterprise Platform for AI Agents · Hugging Face Hit by Autonomous AI-Driven Security Breach · Accenture Confirms 35GB Data Theft; Source Code, Keys Exposed · Tech Job Market Stays Hot: 280K+ Openings, Diverse Hiring Events · AI Skills Premium Widening as Hiring Managers Demand Specialized Talent</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Thursday, July 23, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-07-23.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-07-23.html</guid>
-      <pubDate>Thu, 23 Jul 2026 01:00:00 GMT</pubDate>
-      <description>Google Releases Gemini 3.6 Flash with 17% Fewer Tokens · Microsoft and Mistral Expand Partnership with Multibillion-Dollar GPU Deal · AWS CloudFront Outage Takes Down Canvas, Blackboard, Hugging Face · Ransomware Groups Target Higher Ed and Government in July Wave · Tech Layoffs Surge—205,832 Cut Across 322 Events in 2026 · AI Skills Now Essential in 75% of Tech Job Postings</description>
     </item>
   </channel>
 </rss>
