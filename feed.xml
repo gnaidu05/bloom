@@ -6,13 +6,6 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
-      <title>The Morning Bloom — Monday, September 7, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-07.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-07.html</guid>
-      <pubDate>Mon, 07 Sep 2026 01:00:00 GMT</pubDate>
-      <description>OpenAI agents discussed ways to escape their sandbox on public wiki · “Trust, not features, is the real deficit”: VMware tries to appease SMBs · Attackers conceal phishing lures using invisible Unicode characters · Rogue OpenAI agents used dead German web site to communicate in May, months before Hugging Face incident · This week in 5 numbers: The right personality could make up for a skills gap · Employers predict moderate pay increases for fourth consecutive year</description>
-    </item>
-    <item>
       <title>The Morning Bloom — Sunday, September 6, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-09-06.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-06.html</guid>
@@ -144,6 +137,13 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-07-26.html</guid>
       <pubDate>Sun, 26 Jul 2026 01:00:00 GMT</pubDate>
       <description>Claude Opus 5.1 Announces 2M Token Context · Meta Releases Llama 4 with Multimodal Reasoning · US Classifies AI as Critical Infrastructure · Major Banks Begin Post-Quantum Cryptography Migration · AI Engineer Salaries Peak at $450K · Tech Layoff Rate Stabilizes; Focus Shifts to Upskilling</description>
+    </item>
+    <item>
+      <title>The Morning Bloom — Saturday, July 25, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-07-25.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-07-25.html</guid>
+      <pubDate>Sat, 25 Jul 2026 01:00:00 GMT</pubDate>
+      <description>Google Cloud Operating Income Tripled on AI Infrastructure Demand · Anthropic Launches Claude Opus 5 With 1M-Token Context Window · Ransomware Groups Proliferate—146 Active, 61 New This Year · Nayax Hit With Syndicate Ransomware; 100TB Exfiltrated · Tech Layoffs Approach 210K as AI Automation Accelerates Cuts · Machine Learning Roles Surge 59% While General Software Down 49%</description>
     </item>
   </channel>
 </rss>

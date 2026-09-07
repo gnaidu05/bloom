@@ -36,7 +36,7 @@ REPUBLISH_LOOKBACK_DAYS = 10   # don't re-pick a story used in an edition this r
 # desk -> (theme, category, [feed urls, best first])
 DESKS = [
     ("t-teal", "AI & Technology", [
-        "https://techcrunch.com/tag/artificial-intelligence/feed/",
+        "https://techcrunch.com/category/artificial-intelligence/feed/",
         "https://feeds.arstechnica.com/arstechnica/technology-lab",
         "https://venturebeat.com/category/ai/feed/",
     ]),
