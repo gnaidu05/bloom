@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Wednesday, September 9, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-09-09.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-09.html</guid>
+      <pubDate>Wed, 09 Sep 2026 01:00:00 GMT</pubDate>
+      <description>Why this month's Microsoft patch release is a doozy · Hackers are stealing Claude tokens from subscribers · Microsoft breaks Patch Tuesday record with 974-CVE deluge · OpenAI's Artifactory opened covert data-stealing channel alongside Hugging Face attack · Rodeo tickets and nude dancers: DOL details alleged policy violations under former secretary · Fact or fiction? Deepfakes complicate harassment investigations</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Tuesday, September 8, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-09-08.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-08.html</guid>
@@ -136,13 +143,6 @@
       <link>https://gnaidu05.github.io/bloom/editions/2026-07-30.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-07-30.html</guid>
       <pubDate>Thu, 30 Jul 2026 01:00:00 GMT</pubDate>
-      <description>Anthropic Releases Claude 4 with Extended Reasoning · OpenAI Launches GPT-5 Preview with Real-time Knowledge · Fortune 500 Company Suffers Major Ransomware Attack · Healthcare Provider Reports 10M Patient Records Exposed · Tech Layoffs Continue as Companies Adjust Headcount · AI Engineering Roles Command Premium Salaries</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Monday, July 27, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-07-27.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-07-27.html</guid>
-      <pubDate>Mon, 27 Jul 2026 01:00:00 GMT</pubDate>
       <description>Anthropic Releases Claude 4 with Extended Reasoning · OpenAI Launches GPT-5 Preview with Real-time Knowledge · Fortune 500 Company Suffers Major Ransomware Attack · Healthcare Provider Reports 10M Patient Records Exposed · Tech Layoffs Continue as Companies Adjust Headcount · AI Engineering Roles Command Premium Salaries</description>
     </item>
   </channel>
