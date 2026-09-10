@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Thursday, September 10, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-09-10.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-10.html</guid>
+      <pubDate>Thu, 10 Sep 2026 01:00:00 GMT</pubDate>
+      <description>AI research startup Listen Labs scrubbed a $1.5B funding round for Salesforce talks · OpenAI adds a prominent AI doomer to its board of directors · Anthropic reveals fourth likely crime committed by its AI · Novel Blue Moon kit targeting Chrome and Windows reflects new reality of AI-driven exploits · EEOC asks judge to assist in probe of San Francisco government’s DEI trainings · Schedule changes, transfers may be retaliation under USERRA, feds caution</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Wednesday, September 9, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-09-09.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-09.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-08-21.html</guid>
       <pubDate>Fri, 21 Aug 2026 01:00:00 GMT</pubDate>
       <description>Grok exfiltrates user data when malicious instructions are encrypted · VentureBeat names Rob Strechay as its first Lead Analyst, expanding its enterprise AI research push · Russian snoops add OAuth abuse to targeted phishing campaigns · Hackers poison arrayref Rust crate to push infostealer malware · This week in 5 numbers: Employees struggle to find time for upskilling · Feds propose ‘Trump Account’ regulations as older workers’ retirement hopes dwindle</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Thursday, July 30, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-07-30.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-07-30.html</guid>
-      <pubDate>Thu, 30 Jul 2026 01:00:00 GMT</pubDate>
-      <description>Anthropic Releases Claude 4 with Extended Reasoning · OpenAI Launches GPT-5 Preview with Real-time Knowledge · Fortune 500 Company Suffers Major Ransomware Attack · Healthcare Provider Reports 10M Patient Records Exposed · Tech Layoffs Continue as Companies Adjust Headcount · AI Engineering Roles Command Premium Salaries</description>
     </item>
   </channel>
 </rss>
