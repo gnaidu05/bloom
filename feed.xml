@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Friday, September 11, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-09-11.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-11.html</guid>
+      <pubDate>Fri, 11 Sep 2026 01:00:00 GMT</pubDate>
+      <description>Jensen Huang explains why Nvidia will grow an astounding 70% next year · Mark Wahlberg is coming to TechCrunch Disrupt 2026, and he wants to talk about your work, not his · Latest Anthropic horror story chills with tales of kamikaze drone swarms and bioweapons research · New Android malware encrypts files, steals data, and harasses victims · Korn Ferry: Leaders have to rethink how work gets done · Work in the age of AI: ‘We’re all getting in the Waymo for the first time’</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Thursday, September 10, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-09-10.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-10.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-08-22.html</guid>
       <pubDate>Sat, 22 Aug 2026 01:00:00 GMT</pubDate>
       <description>Waymo doubles spending on lobbying in robotaxi battle with Uber · Grok exfiltrates user data when malicious instructions are encrypted · If you're not using AI to attack your own systems, your adversaries will · Hackers infect Android car head units with proxy botnet malware · Apple is reportedly cutting hundreds of jobs from Siri, Vision Pro teams · Amazon worker fired shortly after disclosing pregnancy has discrimination claim, court rules</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Friday, August 21, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-08-21.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-08-21.html</guid>
-      <pubDate>Fri, 21 Aug 2026 01:00:00 GMT</pubDate>
-      <description>Grok exfiltrates user data when malicious instructions are encrypted · VentureBeat names Rob Strechay as its first Lead Analyst, expanding its enterprise AI research push · Russian snoops add OAuth abuse to targeted phishing campaigns · Hackers poison arrayref Rust crate to push infostealer malware · This week in 5 numbers: Employees struggle to find time for upskilling · Feds propose ‘Trump Account’ regulations as older workers’ retirement hopes dwindle</description>
     </item>
   </channel>
 </rss>
