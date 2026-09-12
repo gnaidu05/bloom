@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Saturday, September 12, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-09-12.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-12.html</guid>
+      <pubDate>Sat, 12 Sep 2026 01:00:00 GMT</pubDate>
+      <description>Mecka AI nears $500M valuation in Sequoia-led deal amid rush for robot training data · Y Combinator’s Garry Tan wants US open-weight AI labs to ‘distill’ frontier models, too · Hackers abused Claude to extract secrets from 1.8M Android apps · Florida confirms DMV database breached via stolen police account · Hemorrhoid pain can be a disability, EEOC argues to court · Jury should decide if university’s hiring process was tainted by diversity goals, court rules</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Friday, September 11, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-09-11.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-11.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-08-23.html</guid>
       <pubDate>Sun, 23 Aug 2026 01:00:00 GMT</pubDate>
       <description>Microsoft Copilot reveals secret input that allowed it to be hacked · Nvidia discloses $21B stake in SpaceX · ToxicPanda Android malware uses VPN permissions to block Google Play · Named Pipes Under Attack: Securing Windows Interprocess Communication · Feds axe contractor affirmative action requirements in trio of final rules · Skilled labor demand is exploding. AI may be both a cause and a solution</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Saturday, August 22, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-08-22.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-08-22.html</guid>
-      <pubDate>Sat, 22 Aug 2026 01:00:00 GMT</pubDate>
-      <description>Waymo doubles spending on lobbying in robotaxi battle with Uber · Grok exfiltrates user data when malicious instructions are encrypted · If you're not using AI to attack your own systems, your adversaries will · Hackers infect Android car head units with proxy botnet malware · Apple is reportedly cutting hundreds of jobs from Siri, Vision Pro teams · Amazon worker fired shortly after disclosing pregnancy has discrimination claim, court rules</description>
     </item>
   </channel>
 </rss>
