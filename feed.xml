@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Sunday, September 13, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-09-13.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-13.html</guid>
+      <pubDate>Sun, 13 Sep 2026 01:00:00 GMT</pubDate>
+      <description>OpenAI’s Sam Altman says it would be ‘ill-advised’ to go public in 2026 · Anthropic CEO outlines plan to slow AI development · Dutch NCSC: Critical Check Point VPN flaws exploitation is imminent · More JFrog Artifactory bugs under attack, and all 3 have patches · DHS proposes end to 60-day H-1B grace period, calling it a ‘burden’ · Poor talent retention continues to throttle company growth</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Saturday, September 12, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-09-12.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-12.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-08-25.html</guid>
       <pubDate>Tue, 25 Aug 2026 01:00:00 GMT</pubDate>
       <description>Vulnerability giving attackers full control of Macs is under active exploitation · PBS station fears losing 50TB of data after being ghosted by cloud storage provider · You don't want this Sleepwalker backdoor on your Windows machine · Unpatched Calix flaw lets hackers bypass NAT to expose internal devices · United’s retention of harassing pilot may have been criminally negligent, judge finds · Feds to propose H-1B fee that would stack with controversial $100K payment</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Sunday, August 23, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-08-23.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-08-23.html</guid>
-      <pubDate>Sun, 23 Aug 2026 01:00:00 GMT</pubDate>
-      <description>Microsoft Copilot reveals secret input that allowed it to be hacked · Nvidia discloses $21B stake in SpaceX · ToxicPanda Android malware uses VPN permissions to block Google Play · Named Pipes Under Attack: Securing Windows Interprocess Communication · Feds axe contractor affirmative action requirements in trio of final rules · Skilled labor demand is exploding. AI may be both a cause and a solution</description>
     </item>
   </channel>
 </rss>
