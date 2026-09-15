@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Tuesday, September 15, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-09-15.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-15.html</guid>
+      <pubDate>Tue, 15 Sep 2026 01:00:00 GMT</pubDate>
+      <description>Nvidia CEO Jensen Huang tells Trump ‘we’re not going to let [an AI slowdown] happen’ · AI bots "Timmy," "Ren," and "Jackie" are flooding social media with slop · HBO Max Reddit account compromised to serve ClickFix attacks · Microsoft releases emergency Windows updates to fix RDS failures · Postal worker removed from office argument by police fails to reopen bias case · SHRM rebrands annual conference as ‘credentialing academy’</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Monday, September 14, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-09-14.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-14.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-08-27.html</guid>
       <pubDate>Thu, 27 Aug 2026 01:00:00 GMT</pubDate>
       <description>AI agents meant to replace Meta workers made “large-scale, disruptive actions” · Orchestration is the new challenge for CX in the age of AI agents · FBI seizes hacking tools it says China used to attack NASA, DOE, US Senate and other critical networks · OpenAI explains how its naughty AI agents attacked Hugging Face · SHRM tentatively backs end of EEO-1 reports, but investor group calls them ‘vital’ · Deloitte to pay $21.5M to settle claims its DEI programs violated federal civil rights law</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Wednesday, August 26, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-08-26.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-08-26.html</guid>
-      <pubDate>Wed, 26 Aug 2026 01:00:00 GMT</pubDate>
-      <description>OpenAI and Anthropic in price war as Chinese AI rivals gain ground · Private security firms will soon be allowed to hack overseas cybercriminals · LACMA data breach last year exposed social security and medical data · Hackers abuse npm mirrors to host phishing redirect pages · 4th Circuit dismisses some charges against Wells Fargo after jury’s $22.1M fee · New York Times presses EEOC for White bias records in FOIA lawsuit</description>
     </item>
   </channel>
 </rss>
