@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Friday, September 18, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-09-18.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-18.html</guid>
+      <pubDate>Fri, 18 Sep 2026 01:00:00 GMT</pubDate>
+      <description>Crusoe raises $3.9B to build massive data centers and small modular ‘AI factories’ · Google DeepMind launches institute to widen the AGI debate · AI coding agents' 0-click RCE flaw could hand attackers keys to the kingdom · New RatHat Android malware uses AI to automate device control · Activision Blizzard hit with new sexual assault, harassment claims in lawsuit · Ignoring a doctor’s note can be costly, EEOC reminds employers</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Thursday, September 17, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-09-17.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-17.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-08-30.html</guid>
       <pubDate>Sun, 30 Aug 2026 01:00:00 GMT</pubDate>
       <description>Enterprise AI's real risk isn't autonomous agents. It's the complexity between them. · When agents act on their own, governance has to live in the data layer · Anthropic is cutting Claude Code's current weekly limits by 17% · Brave browser adds email aliases to help users evade tracking · Biotech companies bring on new HR talent in August · There are three skilled trade job openings for every qualified worker</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Saturday, August 29, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-08-29.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-08-29.html</guid>
-      <pubDate>Sat, 29 Aug 2026 01:00:00 GMT</pubDate>
-      <description>Authorities arrest 2 alleged members of prolific hacking group TeamPCP · Inaudible sounds used to fingerprint browsers catch AliExpress red-handed · McKesson discloses breach after ShinyHunters claims patient data theft · Researcher shows how Claude Code can be tricked simply by asking it to summarize a website · Employers offer loan repayment, ‘re-recruiting’ to attract skilled labor · White HR worker gets partial win in reverse bias lawsuit against polling firm</description>
     </item>
   </channel>
 </rss>
