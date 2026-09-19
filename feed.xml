@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Saturday, September 19, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-09-19.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-19.html</guid>
+      <pubDate>Sat, 19 Sep 2026 01:00:00 GMT</pubDate>
+      <description>India forces caller-ID apps to feed spam reports to telcos · A startup that builds other startups raised $100M, and is all-in on physical AI · Researchers used Claude to hack OpenAI employees' ChatGPT accounts · North Korea's fake job interviews infected 30,000 devices · Starbucks, Florida AG ink deal to end lawsuit over alleged illegal DEI practices · Butterball settles EEOC allegation it was liable for vendor’s failure to process ADA leave request</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Friday, September 18, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-09-18.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-18.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-08-31.html</guid>
       <pubDate>Mon, 31 Aug 2026 01:00:00 GMT</pubDate>
       <description>Inside Meta’s push to put robots to work in data centers · Authorities arrest 2 alleged members of prolific hacking group TeamPCP · FulcrumSec claims Manchester Airports hack, theft of 86 GB of data · Anthropic warns infostealer malware is hijacking Claude sessions to drain usage · Why HR departments run with AI agents will still require humans · Employers at an ‘inflection point’ as health costs near double-digit increases</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Sunday, August 30, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-08-30.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-08-30.html</guid>
-      <pubDate>Sun, 30 Aug 2026 01:00:00 GMT</pubDate>
-      <description>Enterprise AI's real risk isn't autonomous agents. It's the complexity between them. · When agents act on their own, governance has to live in the data layer · Anthropic is cutting Claude Code's current weekly limits by 17% · Brave browser adds email aliases to help users evade tracking · Biotech companies bring on new HR talent in August · There are three skilled trade job openings for every qualified worker</description>
     </item>
   </channel>
 </rss>
