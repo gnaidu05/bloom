@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Sunday, September 20, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-09-20.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-20.html</guid>
+      <pubDate>Sun, 20 Sep 2026 01:00:00 GMT</pubDate>
+      <description>Flock reportedly tries to shrink workforce with employee buyouts · Trump says it’s time to rebrand AI with a new name — and he’s also creating an AI Force · BragJack attacks hijack AI browser agents through malicious extensions · Agentic security is the billion-dollar challenge for some clever startup to solve · ‘Rampant pay cynicism’ threatens companies, report finds · AI summaries leave a paper trail recruiters might not be ready for</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Saturday, September 19, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-09-19.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-19.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-01.html</guid>
       <pubDate>Tue, 01 Sep 2026 01:00:00 GMT</pubDate>
       <description>Think twice before installing this device promising free movies · Inside Meta’s push to put robots to work in data centers · Healthcare cyberattacks hit pacemakers and millions of patient records · Cronos blockchain restarts after $74 million Tectonic exploit · US firms plan to increase employee base salary budgets by an average 3.3% in 2027 · California ban on workplace AI emotion surveillance heads to Newsom’s desk</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Monday, August 31, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-08-31.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-08-31.html</guid>
-      <pubDate>Mon, 31 Aug 2026 01:00:00 GMT</pubDate>
-      <description>Inside Meta’s push to put robots to work in data centers · Authorities arrest 2 alleged members of prolific hacking group TeamPCP · FulcrumSec claims Manchester Airports hack, theft of 86 GB of data · Anthropic warns infostealer malware is hijacking Claude sessions to drain usage · Why HR departments run with AI agents will still require humans · Employers at an ‘inflection point’ as health costs near double-digit increases</description>
     </item>
   </channel>
 </rss>
