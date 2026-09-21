@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Monday, September 21, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-09-21.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-21.html</guid>
+      <pubDate>Mon, 21 Sep 2026 01:00:00 GMT</pubDate>
+      <description>6 days left to save up to $200 to TechCrunch Disrupt 2026 · World model companies are keeping a lot of secrets · Malicious npm packages evade install-script defenses at runtime · Researchers escape OpenAI Codex sandbox to run commands on host · This week in 5 numbers: Amazon will give grocery benefits to workers · How can employers boost workers’ 401(k)s? Student loan matching.</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Sunday, September 20, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-09-20.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-20.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-02.html</guid>
       <pubDate>Wed, 02 Sep 2026 01:00:00 GMT</pubDate>
       <description>Waymo doubles spending on lobbying in robotaxi battle with Uber · Grok exfiltrates user data when malicious instructions are encrypted · Cops, CrowdStrike disrupt Sality botnet by poisoning the network and diverting into sinkholes · Another Artifactory CVE under attack by AI agents or humans · Worker fired shortly after turning 60 sues for age bias · Manager who demanded doctor’s note on New Year’s Eve was not reasonable, EEOC says</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Tuesday, September 1, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-01.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-01.html</guid>
-      <pubDate>Tue, 01 Sep 2026 01:00:00 GMT</pubDate>
-      <description>Think twice before installing this device promising free movies · Inside Meta’s push to put robots to work in data centers · Healthcare cyberattacks hit pacemakers and millions of patient records · Cronos blockchain restarts after $74 million Tectonic exploit · US firms plan to increase employee base salary budgets by an average 3.3% in 2027 · California ban on workplace AI emotion surveillance heads to Newsom’s desk</description>
     </item>
   </channel>
 </rss>
