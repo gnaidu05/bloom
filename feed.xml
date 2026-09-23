@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Wednesday, September 23, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-09-23.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-23.html</guid>
+      <pubDate>Wed, 23 Sep 2026 01:00:00 GMT</pubDate>
+      <description>TechCrunch Founder Summit’s agenda revealed: Unlock fundraising, hiring, and AI insights in Boston on November · Snorkel AI triples valuation to $3.5B as demand for AI training data booms · Rogue external MFA providers can steal passwords during logins · Sweden fines Miljödata $183,000 over breach affecting 2.2 million · Maryland governor’s AI framework focuses on regulation and reskilling · Judge tosses former Purdue diversity chief’s race bias and retaliation claims</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Tuesday, September 22, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-09-22.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-22.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-04.html</guid>
       <pubDate>Fri, 04 Sep 2026 01:00:00 GMT</pubDate>
       <description>Confused about which VPN is right, US senator asks the NSA for guidance · VMware migration reduces Tottenham Hotspur's licensing fees by 85 percent · OpenAI commits $1B in AI credits to frontline cyber defenders · French hospital fined €500,000 after breach exposes data of 727,000 · Finance is ‘leaning in’ to manage healthcare costs, WTW exec says · Company’s inability to explain one manager’s firing over another keeps FMLA claim alive</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Thursday, September 3, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-03.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-03.html</guid>
-      <pubDate>Thu, 03 Sep 2026 01:00:00 GMT</pubDate>
-      <description>I rented a car, and within hours, my driver's license was for sale · BGP hijack infecting networks caused by a comedy of errors that’s not funny at all · Claude Mythos only model to complete full cyber kill chain, experts say · Hackers exploit Sangoma Switchvox flaw to deploy reverse shells · 4th Circuit backs worker who cited the Bible in abstaining from COVID vaccine policy · Cotopaxi repays workers at Taiwan mills for predatory recruitment fees</description>
     </item>
   </channel>
 </rss>
