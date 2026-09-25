@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Friday, September 25, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-09-25.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-25.html</guid>
+      <pubDate>Fri, 25 Sep 2026 01:00:00 GMT</pubDate>
+      <description>Bring your co-founder, partner, or colleague and get 50% off a second TechCrunch Disrupt 2026 pass · PrismML brings its tiny LLMs to Qualcomm-powered smart glasses · Crook used three open source agents to break into a Fortune 500 hospitality company, a major US airline and 25 · MacSync malware uses public iCloud calendars to deliver new payloads · Ollie’s Bargain Discount allegedly refused to hire deaf worker, required ‘ability to hear regularly’ · This week in 5 numbers: CHROs say AI creates ‘invisible’ work</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Thursday, September 24, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-09-24.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-24.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-06.html</guid>
       <pubDate>Sun, 06 Sep 2026 01:00:00 GMT</pubDate>
       <description>OpenAI agents discussed ways to escape their sandbox on public wiki · “Trust, not features, is the real deficit”: VMware tries to appease SMBs · Over 5,400 hacked sites serve ClickFix payloads stored on the blockchain · OpenAI admits it didn't disclose rogue AI wiki hijacking incident · Another ‘whiplash’ month for the labor market as August beats expectations · Lowe’s Foundation launches skilled trades coalition to train 1M workers by 2035</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Saturday, September 5, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-05.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-05.html</guid>
-      <pubDate>Sat, 05 Sep 2026 01:00:00 GMT</pubDate>
-      <description>OpenAI agents discussed ways to escape their sandbox on public wiki · “Trust, not features, is the real deficit”: VMware tries to appease SMBs · ASCII smuggling isn't just an AI security risk · IDScan sued over alleged data breach affecting 153 million drivers · Race bias claims tied to drug test can go to jury, 11th Circuit says · Amtrak’s ‘relaxed’ COVID-era FMLA policy didn’t cover plaintiff’s unexplained absences, judge rules</description>
     </item>
   </channel>
 </rss>
