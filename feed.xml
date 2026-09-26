@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Saturday, September 26, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-09-26.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-26.html</guid>
+      <pubDate>Sat, 26 Sep 2026 01:00:00 GMT</pubDate>
+      <description>Crusoe abandons $1.25B plan to use Boom turbines at AI data centers · Unsecured OpenAI agents posted 53 user images on the internet without the lab’s knowledge · Kiteworks urges 6-hour server shutdown over potential zero-day attacks · ShinyHunters hacked Clop leak site using Grav CMS path traversal flaw · DOL provides guidance to employers on responding to opioid overdoses · 4 stories on the power of personality at work</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Friday, September 25, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-09-25.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-25.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-07.html</guid>
       <pubDate>Mon, 07 Sep 2026 01:00:00 GMT</pubDate>
       <description>Authors push back as publishers and agents make claims on Anthropic settlement · Travis Kalanick’s Atoms might be getting into the robotaxi business · ChatGPT Astra is now rolling out to $20 Plus subscription · Attackers conceal phishing lures using invisible Unicode characters · This week in 5 numbers: The right personality could make up for a skills gap · Employers predict moderate pay increases for fourth consecutive year</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Sunday, September 6, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-06.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-06.html</guid>
-      <pubDate>Sun, 06 Sep 2026 01:00:00 GMT</pubDate>
-      <description>OpenAI agents discussed ways to escape their sandbox on public wiki · “Trust, not features, is the real deficit”: VMware tries to appease SMBs · Over 5,400 hacked sites serve ClickFix payloads stored on the blockchain · OpenAI admits it didn't disclose rogue AI wiki hijacking incident · Another ‘whiplash’ month for the labor market as August beats expectations · Lowe’s Foundation launches skilled trades coalition to train 1M workers by 2035</description>
     </item>
   </channel>
 </rss>
