@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Sunday, September 27, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-09-27.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-27.html</guid>
+      <pubDate>Sun, 27 Sep 2026 01:00:00 GMT</pubDate>
+      <description>Insurers claim AI is already increasing healthcare costs · I created an interactive digital avatar of myself — and you can talk to it · ShinyHunters uses WAF bypass trick in Oracle PeopleSoft attacks · Claude Opus 5.5 uses 95% fewer em dashes, but its answers are getting longer · What to do when a team says it’s short-staffed · Should workers be paid for AI skills?</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Saturday, September 26, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-09-26.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-26.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-08.html</guid>
       <pubDate>Tue, 08 Sep 2026 01:00:00 GMT</pubDate>
       <description>Opaque recurrence, and other AI terms that you should probably know · Seattle Times and Newsday are the latest publications to sue OpenAI and Microsoft · Magento StyleSmuggler zero-day exploited to deploy Linux backdoor · BigBear Microsoft 365 phishing service bypassed MFA at 258 organizations · Data center employers face acute shortage of skilled workers, report finds · Employees say only 60% of onboarding materials are necessary</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Monday, September 7, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-07.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-07.html</guid>
-      <pubDate>Mon, 07 Sep 2026 01:00:00 GMT</pubDate>
-      <description>Authors push back as publishers and agents make claims on Anthropic settlement · Travis Kalanick’s Atoms might be getting into the robotaxi business · ChatGPT Astra is now rolling out to $20 Plus subscription · Attackers conceal phishing lures using invisible Unicode characters · This week in 5 numbers: The right personality could make up for a skills gap · Employers predict moderate pay increases for fourth consecutive year</description>
     </item>
   </channel>
 </rss>
