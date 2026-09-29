@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Tuesday, September 29, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-09-29.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-29.html</guid>
+      <pubDate>Tue, 29 Sep 2026 01:00:00 GMT</pubDate>
+      <description>Peak XV ups Surge seed investment ceiling to $5M, unveils 18-startup cohort · OpenAI reportedly ditches model over safety concerns · Japan's Keio confirms ransomware attack disrupted business systems · Times Car confirms data breach affecting 6.6 million user accounts · Insurers say AI could add billions in health costs. Billing companies disagree. · NLRB returns to first Trump-era employee misconduct framework</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Monday, September 28, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-09-28.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-28.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-10.html</guid>
       <pubDate>Thu, 10 Sep 2026 01:00:00 GMT</pubDate>
       <description>AI research startup Listen Labs scrubbed a $1.5B funding round for Salesforce talks · OpenAI adds a prominent AI doomer to its board of directors · Anthropic reveals fourth likely crime committed by its AI · Novel Blue Moon kit targeting Chrome and Windows reflects new reality of AI-driven exploits · EEOC asks judge to assist in probe of San Francisco government’s DEI trainings · Schedule changes, transfers may be retaliation under USERRA, feds caution</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Wednesday, September 9, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-09.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-09.html</guid>
-      <pubDate>Wed, 09 Sep 2026 01:00:00 GMT</pubDate>
-      <description>Why this month's Microsoft patch release is a doozy · Hackers are stealing Claude tokens from subscribers · Microsoft breaks Patch Tuesday record with 974-CVE deluge · OpenAI's Artifactory opened covert data-stealing channel alongside Hugging Face attack · Rodeo tickets and nude dancers: DOL details alleged policy violations under former secretary · Fact or fiction? Deepfakes complicate harassment investigations</description>
     </item>
   </channel>
 </rss>
