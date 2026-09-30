@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Wednesday, September 30, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-09-30.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-30.html</guid>
+      <pubDate>Wed, 30 Sep 2026 01:00:00 GMT</pubDate>
+      <description>America.gov gets really weird when you ask it about Minecraft, but it’s not a glitch · The internet is convinced Elon Musk’s xAI trolled OpenAI’s ‘Dots’ launch · Microsoft is rolling out Linux container support to WSL · Add one more AI worry to the nightmare scenario: self-replicating prompt injections · Seattle’s DEI initiative may have created hostile work environment, 9th Circuit finds · Major players in the health, wellness and luxury spaces bring on new HR talent in September</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Tuesday, September 29, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-09-29.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-29.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-11.html</guid>
       <pubDate>Fri, 11 Sep 2026 01:00:00 GMT</pubDate>
       <description>Jensen Huang explains why Nvidia will grow an astounding 70% next year · Mark Wahlberg is coming to TechCrunch Disrupt 2026, and he wants to talk about your work, not his · Latest Anthropic horror story chills with tales of kamikaze drone swarms and bioweapons research · New Android malware encrypts files, steals data, and harasses victims · Korn Ferry: Leaders have to rethink how work gets done · Work in the age of AI: ‘We’re all getting in the Waymo for the first time’</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Thursday, September 10, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-10.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-10.html</guid>
-      <pubDate>Thu, 10 Sep 2026 01:00:00 GMT</pubDate>
-      <description>AI research startup Listen Labs scrubbed a $1.5B funding round for Salesforce talks · OpenAI adds a prominent AI doomer to its board of directors · Anthropic reveals fourth likely crime committed by its AI · Novel Blue Moon kit targeting Chrome and Windows reflects new reality of AI-driven exploits · EEOC asks judge to assist in probe of San Francisco government’s DEI trainings · Schedule changes, transfers may be retaliation under USERRA, feds caution</description>
     </item>
   </channel>
 </rss>
