@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Friday, October 2, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-02.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-02.html</guid>
+      <pubDate>Fri, 02 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Musk’s AI chatbot Grok reportedly encouraged Trump to capture Venezuela’s president · Hacks of 2 federal agencies in a month have spilled a bonanza of sensitive data · Fortinet warns of critical FortiMail flaw exploited in zero-day attacks · AI agents hacked the hackers, stealing email addresses from security research org · Ban on Suboxone use for ‘safety-sensitive’ roles draws EEOC lawsuit · AI might be making women sound less sophisticated</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Thursday, October 1, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-01.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-01.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-13.html</guid>
       <pubDate>Sun, 13 Sep 2026 01:00:00 GMT</pubDate>
       <description>OpenAI’s Sam Altman says it would be ‘ill-advised’ to go public in 2026 · Anthropic CEO outlines plan to slow AI development · Dutch NCSC: Critical Check Point VPN flaws exploitation is imminent · More JFrog Artifactory bugs under attack, and all 3 have patches · DHS proposes end to 60-day H-1B grace period, calling it a ‘burden’ · Poor talent retention continues to throttle company growth</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Saturday, September 12, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-12.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-12.html</guid>
-      <pubDate>Sat, 12 Sep 2026 01:00:00 GMT</pubDate>
-      <description>Mecka AI nears $500M valuation in Sequoia-led deal amid rush for robot training data · Y Combinator’s Garry Tan wants US open-weight AI labs to ‘distill’ frontier models, too · Hackers abused Claude to extract secrets from 1.8M Android apps · Florida confirms DMV database breached via stolen police account · Hemorrhoid pain can be a disability, EEOC argues to court · Jury should decide if university’s hiring process was tainted by diversity goals, court rules</description>
     </item>
   </channel>
 </rss>
