@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Saturday, October 3, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-03.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-03.html</guid>
+      <pubDate>Sat, 03 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Meta wants your next gadget to be Muse-infused · Sean Parker is rebuilding Stability AI around music · Frontline Education breach exposes school district employee data · Warlock ransomware breach SharePoint in water, telecom operator attacks · EEOC sues Harvard to obtain hundreds of documents in DEI-related investigation · EEOC takes aim at trans rights in investigations involving ‘biological’ pronouns, single-sex spaces</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Friday, October 2, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-02.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-02.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-14.html</guid>
       <pubDate>Mon, 14 Sep 2026 01:00:00 GMT</pubDate>
       <description>What’s behind the AI industry’s latest warnings of doom? · Obama urges Democrats to have a ‘clear plan’ for AI safeguards · Hackers exploit Tencent app flaw to deploy GrayRabbit malware · Security through obscurity is dead, and AI delivered the fatal blow · This week in 5 numbers: Tech employment grew in August, despite layoffs · 8 stories on the healthcare affordability crunch</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Sunday, September 13, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-13.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-13.html</guid>
-      <pubDate>Sun, 13 Sep 2026 01:00:00 GMT</pubDate>
-      <description>OpenAI’s Sam Altman says it would be ‘ill-advised’ to go public in 2026 · Anthropic CEO outlines plan to slow AI development · Dutch NCSC: Critical Check Point VPN flaws exploitation is imminent · More JFrog Artifactory bugs under attack, and all 3 have patches · DHS proposes end to 60-day H-1B grace period, calling it a ‘burden’ · Poor talent retention continues to throttle company growth</description>
     </item>
   </channel>
 </rss>
