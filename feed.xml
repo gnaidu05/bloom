@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Sunday, October 4, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-04.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-04.html</guid>
+      <pubDate>Sun, 04 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Amazon responds to data center backlash, says it no longer uses NDAs · OpenAI safety employee resigns, claiming the company’s ‘culture is broken’ · Google Gemini could soon get full access to your Mac’s files, apps and the web · ShinyHunters hacker reportedly detained in Jordan, aiding FBI · Firm settles EEOC charge that it let Indian staff work remotely, but not US employees · Hiring caution persists as inflation holds on, BLS report shows</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Saturday, October 3, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-03.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-03.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-15.html</guid>
       <pubDate>Tue, 15 Sep 2026 01:00:00 GMT</pubDate>
       <description>Nvidia CEO Jensen Huang tells Trump ‘we’re not going to let [an AI slowdown] happen’ · AI bots "Timmy," "Ren," and "Jackie" are flooding social media with slop · HBO Max Reddit account compromised to serve ClickFix attacks · Microsoft releases emergency Windows updates to fix RDS failures · Postal worker removed from office argument by police fails to reopen bias case · SHRM rebrands annual conference as ‘credentialing academy’</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Monday, September 14, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-14.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-14.html</guid>
-      <pubDate>Mon, 14 Sep 2026 01:00:00 GMT</pubDate>
-      <description>What’s behind the AI industry’s latest warnings of doom? · Obama urges Democrats to have a ‘clear plan’ for AI safeguards · Hackers exploit Tencent app flaw to deploy GrayRabbit malware · Security through obscurity is dead, and AI delivered the fatal blow · This week in 5 numbers: Tech employment grew in August, despite layoffs · 8 stories on the healthcare affordability crunch</description>
     </item>
   </channel>
 </rss>
