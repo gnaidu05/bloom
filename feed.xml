@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Tuesday, October 6, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-06.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-06.html</guid>
+      <pubDate>Tue, 06 Oct 2026 01:00:00 GMT</pubDate>
+      <description>MCP for agent-to-agent comms may be the riskiest protocol you've never heard of · OpenAI will start watermarking ChatGPT’s text in the EU · OpenAI is adding invisible watermarks to ChatGPT and Codex text in the EU · Citrix NetScaler security snafus get even worse amid more 0-day reports · Transgender former EEOC employee may proceed with bias lawsuit, judge says · Trump administration revamps insurer price transparency reporting</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Monday, October 5, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-05.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-05.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-17.html</guid>
       <pubDate>Thu, 17 Sep 2026 01:00:00 GMT</pubDate>
       <description>Nonprofit that tracks meteors taken down by "critical blow" from a cyberattack · Anthropic and OpenAI want to embed safety evaluators. Will they really be independent? · Anthropic wants Claude to analyze your bank account and financial data · AI agents can modify themselves without humans telling them to do so · More than half of young workers want to switch jobs soon for better pay, benefits · Veterans caught in the middle on anti-DEI efforts, research says</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Wednesday, September 16, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-16.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-16.html</guid>
-      <pubDate>Wed, 16 Sep 2026 01:00:00 GMT</pubDate>
-      <description>We don’t need AI regulation — leave safety to us, Nvidia’s Jensen Huang says · The AI data center boom is colliding with cities scarred by big industry · The vulnpocalypse rains iBugs down on Apple with record-setting number of patches · Acronis warns of actively exploited flaw in its cPanel backup plugin · Safety risk insufficient to show religious accommodation posed undue hardship, court rules · Alleged DEI-motivated hirings and promotions cost Accenture $25M in DOJ settlement</description>
     </item>
   </channel>
 </rss>
