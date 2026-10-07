@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Wednesday, October 7, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-07.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-07.html</guid>
+      <pubDate>Wed, 07 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Ex-Ramp engineers raise $20M for platform Melius after scrapping their first product · How AI decision models could change content moderation · Anthropic reconfigures its cool kids security program · Ninja Forms plugin flaw exploited to hack WordPress sites · SHRM service dog trial begins — with plaintiff’s dog by her side · The ADA’s interactive process: Key principles for HR professionals</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Tuesday, October 6, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-06.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-06.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-18.html</guid>
       <pubDate>Fri, 18 Sep 2026 01:00:00 GMT</pubDate>
       <description>Crusoe raises $3.9B to build massive data centers and small modular ‘AI factories’ · Google DeepMind launches institute to widen the AGI debate · AI coding agents' 0-click RCE flaw could hand attackers keys to the kingdom · New RatHat Android malware uses AI to automate device control · Activision Blizzard hit with new sexual assault, harassment claims in lawsuit · Ignoring a doctor’s note can be costly, EEOC reminds employers</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Thursday, September 17, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-17.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-17.html</guid>
-      <pubDate>Thu, 17 Sep 2026 01:00:00 GMT</pubDate>
-      <description>Nonprofit that tracks meteors taken down by "critical blow" from a cyberattack · Anthropic and OpenAI want to embed safety evaluators. Will they really be independent? · Anthropic wants Claude to analyze your bank account and financial data · AI agents can modify themselves without humans telling them to do so · More than half of young workers want to switch jobs soon for better pay, benefits · Veterans caught in the middle on anti-DEI efforts, research says</description>
     </item>
   </channel>
 </rss>
