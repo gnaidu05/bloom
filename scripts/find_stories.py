@@ -16,9 +16,11 @@ Exit codes:
 
 import os
 import sys
+import time
 import re
 import json
 import html
+import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
@@ -227,7 +229,12 @@ def build_story(item, theme, category, feed_url):
 
 
 LLM_URL = "https://openrouter.ai/api/v1/chat/completions"
-LLM_MODEL = os.environ.get("OPENROUTER_MODEL", "anthropic/claude-sonnet-4.5")
+# Free open-weight models by default, tried in order; override with
+# OPENROUTER_MODEL (comma-separated) to use a paid model.
+LLM_MODELS = [m.strip() for m in os.environ.get(
+    "OPENROUTER_MODEL",
+    "nvidia/nemotron-3-super-120b-a12b:free,google/gemma-4-31b-it:free").split(",") if m.strip()]
+LLM_MODEL = LLM_MODELS[0]
 LLM_PROMPT = """You are the editor of a daily tech-news brief. Using ONLY the headline and
 excerpt below (never add facts, numbers or names that are not in them), write:
 - "deck": one sentence (max 25 words) summarising the story
@@ -248,30 +255,35 @@ def llm_enrich(story):
     key = os.environ.get("OPENROUTER_API_KEY")
     if not key:
         return False
-    body = json.dumps({
-        "model": LLM_MODEL,
-        "temperature": 0.2,
-        "messages": [{"role": "user", "content": LLM_PROMPT.format(
-            category=story["category"], src=story["_src"],
-            headline=story["headline"], desc=story["_desc"] or story["deck"])}],
-    }).encode()
-    req = urllib.request.Request(LLM_URL, data=body, headers={
-        "Authorization": f"Bearer {key}", "Content-Type": "application/json"})
-    try:
-        with urllib.request.urlopen(req, timeout=60) as r:
-            text = json.load(r)["choices"][0]["message"]["content"]
-        m = re.search(r"\{.*\}", text, re.S)
-        out = json.loads(m.group(0))
-        happened = [html.escape(str(b).strip()) for b in out["happened"] if str(b).strip()]
-        deck, changes, unp = (html.escape(str(out[k]).strip())
-                              for k in ("deck", "changes", "unproven"))
-        if not (happened and deck and changes and unp):
-            raise ValueError("empty field")
-    except Exception as e:
-        log(f"LLM enrich failed for '{story['headline'][:50]}': {type(e).__name__}: {e}", "WARN")
-        return False
-    story.update(deck=deck, takeaways=happened[:3], why=changes, unproven=unp)
-    return True
+    prompt = LLM_PROMPT.format(
+        category=story["category"], src=story["_src"],
+        headline=story["headline"], desc=story["_desc"] or story["deck"])
+    clean = lambda t: html.escape(re.sub(r"^[\s\-*•]+", "", str(t)).strip(), quote=False)
+    last = None
+    for model in LLM_MODELS:
+        body = json.dumps({"model": model, "temperature": 0.2,
+                           "messages": [{"role": "user", "content": prompt}]}).encode()
+        req = urllib.request.Request(LLM_URL, data=body, headers={
+            "Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+        for attempt in range(3):
+            try:
+                with urllib.request.urlopen(req, timeout=90) as r:
+                    text = json.load(r)["choices"][0]["message"]["content"]
+                out = json.loads(re.search(r"\{.*\}", text, re.S).group(0))
+                happened = [clean(b) for b in out["happened"] if clean(b)]
+                deck, changes, unp = (clean(out[k]) for k in ("deck", "changes", "unproven"))
+                if not (happened and deck and changes and unp):
+                    raise ValueError("empty field")
+                story.update(deck=deck, takeaways=happened[:3], why=changes, unproven=unp)
+                return True
+            except Exception as e:
+                last = e
+                if isinstance(e, urllib.error.HTTPError) and e.code == 429 and attempt < 2:
+                    time.sleep(5 * (attempt + 1))
+                    continue
+                break
+    log(f"LLM enrich failed for '{story['headline'][:50]}': {type(last).__name__}: {last}", "WARN")
+    return False
 
 
 def norm(t: str) -> str:
