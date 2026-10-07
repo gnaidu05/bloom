@@ -195,7 +195,8 @@ def generate_story_card(
     takeaways: List[str],
     why: str,
     sources: str,
-    topics: List[str]
+    topics: List[str],
+    unproven: str = ""
 ) -> str:
     """Generate HTML for a single story card."""
     tk = "\n".join(f"            <li>{t}</li>" for t in takeaways)
@@ -203,6 +204,12 @@ def generate_story_card(
         f'          <button type="button" class="topic" data-tag="{t}">#{t}</button>'
         for t in topics
     )
+
+    unproven_html = (f"""
+        <div class="why">
+          <h3>What&rsquo;s unproven</h3>
+          <p>{unproven}</p>
+        </div>""" if unproven else "")
 
     return f"""    <!-- {num} -->
     <article class="card {theme} reveal" id="{cid}">
@@ -219,15 +226,15 @@ def generate_story_card(
           <p>{para2}</p>
         </div>
         <div class="takeaways">
-          <h3>Key takeaways</h3>
+          <h3>What happened</h3>
           <ul>
 {tk}
           </ul>
         </div>
         <div class="why">
-          <h3>Why it matters</h3>
+          <h3>What it changes</h3>
           <p>{why}</p>
-        </div>
+        </div>{unproven_html}
         <p class="sources">{sources}</p>
         <div class="topics" aria-label="Topics">
 {tp}
@@ -321,7 +328,7 @@ def update_editor_note(html: str, new_date: str) -> str:
     day_before_formatted = day_before.strftime("%B %d")
     note = f"""      <div class="ednote-body">
         <p>Every story below passed this morning's freshness audit — sourced to reporting dated
-        {start_formatted}–{end_formatted} (most from {start_formatted}–{day_before_formatted}). Today's brief runs leaner: two stories on each of
+        {start_formatted}–{end_formatted} (most from {start_formatted}–{day_before_formatted}). Today's brief carries up to three stories on each of
         our three desks — <strong>AI &amp; Technology</strong>, <strong>IT Industry</strong> and
         <strong>Recruitment &amp; HR</strong>.</p>
         <p>All of today's items are <strong>Search-verified</strong> — traced to search results and
@@ -511,7 +518,7 @@ def main():
     headlines = []
     if True:
 
-        for i, story in enumerate(story_data[:6], 1):
+        for i, story in enumerate(story_data[:9], 1):
             num = f"{i:02d}"
             cid = f"s{i}"
             theme = story.get("theme", "t-teal")
@@ -529,10 +536,11 @@ def main():
             why = story.get("why", "Updates coming soon.")
             sources = story.get("sources", '<a href="#">Source</a>')
             topics = story.get("topics", ["pending"])
+            unproven = story.get("unproven", "")
 
             card_html = generate_story_card(
                 num, cid, theme, category, headline, deck, svg, figcap,
-                para1, para2, takeaways, why, sources, topics
+                para1, para2, takeaways, why, sources, topics, unproven
             )
             stories.append(card_html)
             headlines.append(headline)

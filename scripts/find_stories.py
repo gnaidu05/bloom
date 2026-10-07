@@ -11,7 +11,7 @@ Story links are REAL (straight from the feed), so "Sources" always resolves.
 
 Exit codes:
   0 = success, JSON printed to stdout
-  1 = could not assemble 6 stories (feeds down / too little recent news)
+  1 = could not assemble 9 stories (feeds down / too little recent news)
 """
 
 import sys
@@ -26,7 +26,7 @@ from pathlib import Path
 
 RECENCY_DAYS = 7          # prefer items this fresh
 FALLBACK_DAYS = 14        # widen to this if a desk is short
-PER_DESK = 2
+PER_DESK = 3
 UA = {"User-Agent": "Mozilla/5.0 (Morning Bloom feed reader)"}
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -39,10 +39,12 @@ DESKS = [
         "https://techcrunch.com/category/artificial-intelligence/feed/",
         "https://feeds.arstechnica.com/arstechnica/technology-lab",
         "https://venturebeat.com/category/ai/feed/",
+        "https://www.technologyreview.com/topic/artificial-intelligence/feed",
     ]),
     ("t-amber", "IT Industry", [
         "https://www.bleepingcomputer.com/feed/",
         "https://www.theregister.com/security/headlines.atom",
+        "https://krebsonsecurity.com/feed/",
     ]),
     ("t-navy", "Recruitment & HR", [
         "https://techcrunch.com/tag/layoffs/feed/",
@@ -111,6 +113,9 @@ def source_name(url: str) -> str:
         "bleepingcomputer.com": "BleepingComputer",
         "theregister.com": "The Register",
         "hrdive.com": "HR Dive",
+        "technologyreview.com": "MIT Technology Review",
+        "krebsonsecurity.com": "Krebs on Security",
+        "shrm.org": "SHRM",
     }
     return names.get(host, host)
 
@@ -163,6 +168,29 @@ def trim(text: str, limit: int) -> str:
     return cut
 
 
+HEDGES = re.compile(
+    r"\b(reportedly|allegedly|alleged|according to|sources? (?:say|said|familiar)|"
+    r"claims?|claimed|could|may|might|plans? to|expected to|set to|suspected|"
+    r"unconfirmed|rumou?rs?|preliminary|early|beta|preview)\b", re.I)
+
+
+def unproven(item, src):
+    """Deterministic 'what's unproven' line: flag hedged language in the feed
+    text, otherwise state plainly that it rests on a single outlet's report."""
+    text = f'{item["title"]}. {item["desc"]}'
+    hits = []
+    for m in HEDGES.finditer(text):
+        w = m.group(1).lower()
+        if w not in hits:
+            hits.append(w)
+    if hits:
+        return (f"The reporting leans on hedged language (\u201c{hits[0]}\u201d"
+                + (f", \u201c{hits[1]}\u201d" if len(hits) > 1 else "")
+                + f"), so treat specifics as unconfirmed until {src} or the company follows up.")
+    return (f"Rests on a single outlet\u2019s report ({src}); the figures and claims "
+            "have not been independently checked here.")
+
+
 def build_story(item, theme, category, feed_url):
     desc = item["desc"]
     sents = sentences(desc)
@@ -188,6 +216,7 @@ def build_story(item, theme, category, feed_url):
         "para1": para1 or deck or item["title"],
         "para2": para2,
         "takeaways": takeaways,
+        "unproven": unproven(item, src),
         "why": WHY.get(category, "A notable development for people tracking this sector."),
         "sources": sources,
         "topics": topics,
@@ -281,11 +310,11 @@ def main():
         stories.extend(got[:PER_DESK])
 
     if len(stories) < 6:
-        log(f"Only assembled {len(stories)} stories; need 6. Aborting.", "ERROR")
+        log(f"Only assembled {len(stories)} stories; need at least 6. Aborting.", "ERROR")
         return 1
 
     log(f"Assembled {len(stories)} stories")
-    print(json.dumps(stories[:6], ensure_ascii=False))
+    print(json.dumps(stories, ensure_ascii=False))
     return 0
 
 
