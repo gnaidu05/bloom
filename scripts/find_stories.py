@@ -14,6 +14,7 @@ Exit codes:
   1 = could not assemble 9 stories (feeds down / too little recent news)
 """
 
+import os
 import sys
 import re
 import json
@@ -217,10 +218,60 @@ def build_story(item, theme, category, feed_url):
         "para2": para2,
         "takeaways": takeaways,
         "unproven": unproven(item, src),
+        "_src": src,
+        "_desc": trim(item["desc"], 1500),
         "why": WHY.get(category, "A notable development for people tracking this sector."),
         "sources": sources,
         "topics": topics,
     }
+
+
+LLM_URL = "https://openrouter.ai/api/v1/chat/completions"
+LLM_MODEL = os.environ.get("OPENROUTER_MODEL", "anthropic/claude-sonnet-4.5")
+LLM_PROMPT = """You are the editor of a daily tech-news brief. Using ONLY the headline and
+excerpt below (never add facts, numbers or names that are not in them), write:
+- "deck": one sentence (max 25 words) summarising the story
+- "happened": 2-3 short bullets with the concrete specifics (who, what, numbers, dates)
+- "changes": 1-2 sentences on what this changes for tech, IT or HR professionals
+- "unproven": 1-2 sentences on what is still unconfirmed, single-sourced, or unclear
+Reply with a single JSON object with exactly those four keys and nothing else.
+
+Desk: {category}
+Source: {src}
+Headline: {headline}
+Excerpt: {desc}"""
+
+
+def llm_enrich(story):
+    """Rewrite one story's analysis via OpenRouter. Returns True on success;
+    on any failure the deterministic text already on the story is kept."""
+    key = os.environ.get("OPENROUTER_API_KEY")
+    if not key:
+        return False
+    body = json.dumps({
+        "model": LLM_MODEL,
+        "temperature": 0.2,
+        "messages": [{"role": "user", "content": LLM_PROMPT.format(
+            category=story["category"], src=story["_src"],
+            headline=story["headline"], desc=story["_desc"] or story["deck"])}],
+    }).encode()
+    req = urllib.request.Request(LLM_URL, data=body, headers={
+        "Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r:
+            text = json.load(r)["choices"][0]["message"]["content"]
+        m = re.search(r"\{.*\}", text, re.S)
+        out = json.loads(m.group(0))
+        happened = [html.escape(str(b).strip()) for b in out["happened"] if str(b).strip()]
+        deck, changes, unp = (html.escape(str(out[k]).strip())
+                              for k in ("deck", "changes", "unproven"))
+        if not (happened and deck and changes and unp):
+            raise ValueError("empty field")
+    except Exception as e:
+        log(f"LLM enrich failed for '{story['headline'][:50]}': {type(e).__name__}: {e}", "WARN")
+        return False
+    story.update(deck=deck, takeaways=happened[:3], why=changes, unproven=unp)
+    return True
 
 
 def norm(t: str) -> str:
@@ -314,6 +365,13 @@ def main():
         return 1
 
     log(f"Assembled {len(stories)} stories")
+    if os.environ.get("OPENROUTER_API_KEY"):
+        ok = sum(llm_enrich(st) for st in stories)
+        log(f"LLM analysis applied to {ok}/{len(stories)} stories ({LLM_MODEL})")
+    else:
+        log("OPENROUTER_API_KEY not set; using deterministic summaries", "WARN")
+    for st in stories:
+        st.pop("_src", None); st.pop("_desc", None)
     print(json.dumps(stories, ensure_ascii=False))
     return 0
 
