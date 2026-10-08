@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Thursday, October 8, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-08.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-08.html</guid>
+      <pubDate>Thu, 08 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Nous Research confirms it hit $1.5B valuation, launches AI agents for business users · Microsoft releases new Nvidia-chip AI PCs with revamped Windows 11 · Meta’s Muse launches on iPad just a month after its mobile debut · Ransomware recovery CEO charged over secret ransom payments · FBI: Ongoing FortiBleed attacks lock out FortiGate VPN admins · Hackers hijack Google domains after breaching ccTLD registries · Supreme Court sidesteps employment law cases on disability bias, vaccines · DOL to up minimum wage to $14 per hour for federal contractors · Gallup finds both parties more bullish on DEI. What’s this mean for HR?</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Wednesday, October 7, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-07.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-07.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-19.html</guid>
       <pubDate>Sat, 19 Sep 2026 01:00:00 GMT</pubDate>
       <description>India forces caller-ID apps to feed spam reports to telcos · A startup that builds other startups raised $100M, and is all-in on physical AI · Researchers used Claude to hack OpenAI employees' ChatGPT accounts · North Korea's fake job interviews infected 30,000 devices · Starbucks, Florida AG ink deal to end lawsuit over alleged illegal DEI practices · Butterball settles EEOC allegation it was liable for vendor’s failure to process ADA leave request</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Friday, September 18, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-18.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-18.html</guid>
-      <pubDate>Fri, 18 Sep 2026 01:00:00 GMT</pubDate>
-      <description>Crusoe raises $3.9B to build massive data centers and small modular ‘AI factories’ · Google DeepMind launches institute to widen the AGI debate · AI coding agents' 0-click RCE flaw could hand attackers keys to the kingdom · New RatHat Android malware uses AI to automate device control · Activision Blizzard hit with new sexual assault, harassment claims in lawsuit · Ignoring a doctor’s note can be costly, EEOC reminds employers</description>
     </item>
   </channel>
 </rss>
