@@ -42,9 +42,11 @@ REPUBLISH_LOOKBACK_DAYS = 10   # don't re-pick a story used in an edition this r
 DESKS = [
     ("t-teal", "AI & Technology", [
         "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "https://feeds.arstechnica.com/arstechnica/technology-lab",
+        "https://openai.com/news/rss.xml",
+        "https://deepmind.google/blog/rss.xml",
         "https://venturebeat.com/category/ai/feed/",
         "https://www.technologyreview.com/topic/artificial-intelligence/feed",
+        "https://www.marktechpost.com/feed/",
     ]),
     ("t-amber", "IT Industry", [
         "https://www.bleepingcomputer.com/feed/",
@@ -119,6 +121,12 @@ def source_name(url: str) -> str:
         "theregister.com": "The Register",
         "hrdive.com": "HR Dive",
         "technologyreview.com": "MIT Technology Review",
+        "openai.com": "OpenAI",
+        "deepmind.google": "Google DeepMind",
+        "wired.com": "WIRED",
+        "marktechpost.com": "MarkTechPost",
+        "simonwillison.net": "Simon Willison's Weblog",
+        "huggingface.co": "Hugging Face",
         "krebsonsecurity.com": "Krebs on Security",
         "shrm.org": "SHRM",
     }
