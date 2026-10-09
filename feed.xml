@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Friday, October 9, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-09.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-09.html</guid>
+      <pubDate>Fri, 09 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Roundtables: A Conversation With the Creator of AI-Designed Viruses · Pretend you’re sitting at Elizabeth Holmes’ desk on this weirdly detailed website · Fired OpenAI safety researchers dispute misconduct claims, warn of chilling effect · US disrupts Chinese hacking tools as 7 govts warn of PRC spies stealing sensitive data worldwide · FBI disrupts Chinese hacking tools used to breach critical infrastructure · Ransomware attack disrupts Japan's IDCF Cloud used by govt clients · AAUP gets order over Jewish employee records at Penn ‘off the books’ · EEOC moves to rescind conviction and arrest record guidance from 2012 · This week in 5 numbers: Manager-led development can aid retention</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Thursday, October 8, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-08.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-08.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-20.html</guid>
       <pubDate>Sun, 20 Sep 2026 01:00:00 GMT</pubDate>
       <description>Flock reportedly tries to shrink workforce with employee buyouts · Trump says it’s time to rebrand AI with a new name — and he’s also creating an AI Force · BragJack attacks hijack AI browser agents through malicious extensions · Agentic security is the billion-dollar challenge for some clever startup to solve · ‘Rampant pay cynicism’ threatens companies, report finds · AI summaries leave a paper trail recruiters might not be ready for</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Saturday, September 19, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-19.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-19.html</guid>
-      <pubDate>Sat, 19 Sep 2026 01:00:00 GMT</pubDate>
-      <description>India forces caller-ID apps to feed spam reports to telcos · A startup that builds other startups raised $100M, and is all-in on physical AI · Researchers used Claude to hack OpenAI employees' ChatGPT accounts · North Korea's fake job interviews infected 30,000 devices · Starbucks, Florida AG ink deal to end lawsuit over alleged illegal DEI practices · Butterball settles EEOC allegation it was liable for vendor’s failure to process ADA leave request</description>
     </item>
   </channel>
 </rss>
