@@ -461,7 +461,7 @@ def load_story_data() -> Optional[List[Dict]]:
         try:
             result = subprocess.run(
                 ["python3", str(finder)],
-                cwd=ROOT, capture_output=True, text=True, timeout=120
+                cwd=ROOT, capture_output=True, text=True, timeout=600
             )
             if result.returncode != 0:
                 log(f"find_stories.py failed (exit {result.returncode})", "ERROR")

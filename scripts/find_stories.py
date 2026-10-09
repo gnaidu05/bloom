@@ -29,7 +29,9 @@ from pathlib import Path
 
 RECENCY_DAYS = 7          # prefer items this fresh
 FALLBACK_DAYS = 14        # widen to this if a desk is short
-PER_DESK = 3
+# AI is the edition's primary focus: it gets the lead slots (5 of 9); the
+# other desks fill the rest. Total stays 9 (generate_edition caps at 9 cards).
+PER_DESK = {"AI & Technology": 5, "IT Industry": 2, "Recruitment & HR": 2}
 UA = {"User-Agent": "Mozilla/5.0 (Morning Bloom feed reader)"}
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -339,7 +341,7 @@ def collect_desk(theme, category, feeds, cutoff, seen_titles, seen_links=frozens
             continue
         seen_titles.add(n)
         chosen.append(build_story(it, theme, category, url))
-        if len(chosen) >= PER_DESK:
+        if len(chosen) >= PER_DESK[category]:
             break
     return chosen
 
@@ -360,17 +362,17 @@ def main():
         seen_titles = seen | pub_titles
         got = collect_desk(theme, category, feeds,
                            now - timedelta(days=RECENCY_DAYS), seen_titles, pub_links)
-        if len(got) < PER_DESK:
+        if len(got) < PER_DESK[category]:
             log(f"{category}: only {len(got)} in {RECENCY_DAYS}d, widening to {FALLBACK_DAYS}d", "WARN")
             got = collect_desk(theme, category, feeds,
                                now - timedelta(days=FALLBACK_DAYS), seen_titles, pub_links) or got
-        if len(got) < PER_DESK:
+        if len(got) < PER_DESK[category]:
             log(f"{category}: still only {len(got)} after widening; allowing repeats "
                 f"of recently-published stories to fill the desk", "WARN")
             got = collect_desk(theme, category, feeds,
                                now - timedelta(days=FALLBACK_DAYS), seen) or got
         seen |= {norm(s["headline"]) for s in got}
-        stories.extend(got[:PER_DESK])
+        stories.extend(got[:PER_DESK[category]])
 
     if len(stories) < 6:
         log(f"Only assembled {len(stories)} stories; need at least 6. Aborting.", "ERROR")
