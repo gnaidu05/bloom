@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Saturday, October 10, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-10.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-10.html</guid>
+      <pubDate>Sat, 10 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Anthropic can’t reliably control its AI agents. It’s cutting off its internal evals from the live internet ins · The maker of non-text AI model Jev valued at $7.5B just weeks after launch · Alibaba Qwen Releases Qwen-Image-2.1-Turbo, an 8-Step 7B Image Model · OpenAI Decisions API Hits Public Beta With 10x Faster Typed Answers · An Anthropic AI model sent a false homicide tip to Philadelphia police · FBI Arrests Founder of Ransomware Negotiation Firm · Hackers abuse Google Ads, Bing redirects to push Claude ClickFix attacks · EEOC obtains $23K for Muslim barista denied accommodation for Ramadan · EEOC’s FY 2026 was ‘historically anemic,’ but big on messaging</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Friday, October 9, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-09.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-09.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-21.html</guid>
       <pubDate>Mon, 21 Sep 2026 01:00:00 GMT</pubDate>
       <description>6 days left to save up to $200 to TechCrunch Disrupt 2026 · World model companies are keeping a lot of secrets · Malicious npm packages evade install-script defenses at runtime · Researchers escape OpenAI Codex sandbox to run commands on host · This week in 5 numbers: Amazon will give grocery benefits to workers · How can employers boost workers’ 401(k)s? Student loan matching.</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Sunday, September 20, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-20.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-20.html</guid>
-      <pubDate>Sun, 20 Sep 2026 01:00:00 GMT</pubDate>
-      <description>Flock reportedly tries to shrink workforce with employee buyouts · Trump says it’s time to rebrand AI with a new name — and he’s also creating an AI Force · BragJack attacks hijack AI browser agents through malicious extensions · Agentic security is the billion-dollar challenge for some clever startup to solve · ‘Rampant pay cynicism’ threatens companies, report finds · AI summaries leave a paper trail recruiters might not be ready for</description>
     </item>
   </channel>
 </rss>
