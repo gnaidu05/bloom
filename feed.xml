@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Sunday, October 11, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-11.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-11.html</guid>
+      <pubDate>Sun, 11 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Sakana AI’s LLM Peer Review System Catches 73% of Core-Claim Errors · Microsoft’s Satya Nadella says AI models need an ‘emergency brake’ · When the Safety Test Became the Threat: The Machine That Found Its Own Way Out · Apple discloses deal to hire team and license tech from personalized podcast startup Huxe · 3 days to TechCrunch Disrupt 2026: Meet the startups before they hit mainstream · Cyber exec arrested in case allegedly tied to ShinyHunters hackers · ARTEX AI, Claude agents used in cyberattacks on South Korean banks · DHS proposes $70K fee for initial Optional Practical Training participation · Many young working parents may struggle to find high-quality jobs</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Saturday, October 10, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-10.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-10.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-22.html</guid>
       <pubDate>Tue, 22 Sep 2026 01:00:00 GMT</pubDate>
       <description>The man who built Apple’s stores doesn’t buy Silicon Valley’s bet on AI shopping · Muse, Meta's extraordinarily privileged AI assistant, has a serious 0-day · Anthropic-linked CVEs pile up, attackers mostly shrug · BigCommerce alerts merchants of data breach linked to Ribon apps · Teen’s ‘therapeutic’ DJ classes did not entitle mother to FMLA leave, court finds · Colorado judge: Doctor’s burnout wasn’t a disability</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Monday, September 21, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-21.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-21.html</guid>
-      <pubDate>Mon, 21 Sep 2026 01:00:00 GMT</pubDate>
-      <description>6 days left to save up to $200 to TechCrunch Disrupt 2026 · World model companies are keeping a lot of secrets · Malicious npm packages evade install-script defenses at runtime · Researchers escape OpenAI Codex sandbox to run commands on host · This week in 5 numbers: Amazon will give grocery benefits to workers · How can employers boost workers’ 401(k)s? Student loan matching.</description>
     </item>
   </channel>
 </rss>
