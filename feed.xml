@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Monday, October 12, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-12.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-12.html</guid>
+      <pubDate>Mon, 12 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Meet Cloudflare Clef-omni: A 30B-A3B Multimodal Decision Model for Audio, Video, Image and Text · What is Decision 3.0? vLLM Semantic Router’s New Open Decision Models · Will the HomeView be Apple’s first smart home success? · 48 hours to TechCrunch Disrupt 2026 — hear directly from the people building what’s next · Can the AI industry persuade data center opponents by getting rid of NDAs? · Nippon Columbia malware incident exposes 8.6 million karaoke fan records · AI systems are fully capable of carrying out nightmare attacks against infrastructure and nobody's ready · US authorities crack down on IT outsourcing · ACLU files California complaint over Emotify hiring assessment tool</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Sunday, October 11, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-11.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-11.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-23.html</guid>
       <pubDate>Wed, 23 Sep 2026 01:00:00 GMT</pubDate>
       <description>TechCrunch Founder Summit’s agenda revealed: Unlock fundraising, hiring, and AI insights in Boston on November · Snorkel AI triples valuation to $3.5B as demand for AI training data booms · Rogue external MFA providers can steal passwords during logins · Sweden fines Miljödata $183,000 over breach affecting 2.2 million · Maryland governor’s AI framework focuses on regulation and reskilling · Judge tosses former Purdue diversity chief’s race bias and retaliation claims</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Tuesday, September 22, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-22.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-22.html</guid>
-      <pubDate>Tue, 22 Sep 2026 01:00:00 GMT</pubDate>
-      <description>The man who built Apple’s stores doesn’t buy Silicon Valley’s bet on AI shopping · Muse, Meta's extraordinarily privileged AI assistant, has a serious 0-day · Anthropic-linked CVEs pile up, attackers mostly shrug · BigCommerce alerts merchants of data breach linked to Ribon apps · Teen’s ‘therapeutic’ DJ classes did not entitle mother to FMLA leave, court finds · Colorado judge: Doctor’s burnout wasn’t a disability</description>
     </item>
   </channel>
 </rss>
