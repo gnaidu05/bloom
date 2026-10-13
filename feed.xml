@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Tuesday, October 13, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-13.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-13.html</guid>
+      <pubDate>Tue, 13 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Alibaba Qwen Introduces QwenGyre: Elastic Reinforcement Learning RL for XLong-Horizon Agents · Meta releases its first frontier model, Muse Wonder · WindBorne wins a hefty US Air Force contract for its balloon data · Honeyjar offers AI tools to improve PR and comms at every company · Microsoft president says UK is best placed to drive AI regulation · Norway fines Microsoft ad firm $9.6 million over Grindr data sharing · Yandex confirms service outage as users lose access to cloud files · FedEx worker’s 6 harassment reports not protected by Title VII, 5th Circuit says · Whole Foods defeats bias suit after catching plaintiff faking time records</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Monday, October 12, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-12.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-12.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-24.html</guid>
       <pubDate>Thu, 24 Sep 2026 01:00:00 GMT</pubDate>
       <description>Everything new coming to Meta’s AI agent Muse · Meta made a Tamagotchi-like wearable for its Muse AI agent · OpenAI agents ‘infiltrated Australian government website’ · Placeholder domain used in dev docs now serves ClickFix attacks · Nearly half of CFOs say they’d go with AI over a gut feeling · Language that evoked slavery keeps front desk worker’s hostile work environment claim alive</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Wednesday, September 23, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-23.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-23.html</guid>
-      <pubDate>Wed, 23 Sep 2026 01:00:00 GMT</pubDate>
-      <description>TechCrunch Founder Summit’s agenda revealed: Unlock fundraising, hiring, and AI insights in Boston on November · Snorkel AI triples valuation to $3.5B as demand for AI training data booms · Rogue external MFA providers can steal passwords during logins · Sweden fines Miljödata $183,000 over breach affecting 2.2 million · Maryland governor’s AI framework focuses on regulation and reskilling · Judge tosses former Purdue diversity chief’s race bias and retaliation claims</description>
     </item>
   </channel>
 </rss>
