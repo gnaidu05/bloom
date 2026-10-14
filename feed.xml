@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Wednesday, October 14, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-14.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-14.html</guid>
+      <pubDate>Wed, 14 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Science Corporation implants its vision-restoring chip in its first Stargardt disease patient · Cerebras CEO says we’re nearing a future where everyone has a personal AI assistant at home · Industrial Next wants factory robots to switch tasks in minutes, not weeks · Meta Launches Muse Wonder and Muse Wonder Full: Benchmarks, Pricing and How to Use It · Cerebras CEO pushes back on AI doomsday warnings · Microsoft Patches More Than 1,400 Security Flaws · OpenAI engineer arrested for allegedly planting spy device in office · Workday brings autopilots to hiring, payroll in autonomous AI bet · Roofer sues after allegedly being told ‘no one pays overtime in construction work’</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Tuesday, October 13, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-13.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-13.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-25.html</guid>
       <pubDate>Fri, 25 Sep 2026 01:00:00 GMT</pubDate>
       <description>Bring your co-founder, partner, or colleague and get 50% off a second TechCrunch Disrupt 2026 pass · PrismML brings its tiny LLMs to Qualcomm-powered smart glasses · Crook used three open source agents to break into a Fortune 500 hospitality company, a major US airline and 25 · MacSync malware uses public iCloud calendars to deliver new payloads · Ollie’s Bargain Discount allegedly refused to hire deaf worker, required ‘ability to hear regularly’ · This week in 5 numbers: CHROs say AI creates ‘invisible’ work</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Thursday, September 24, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-24.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-24.html</guid>
-      <pubDate>Thu, 24 Sep 2026 01:00:00 GMT</pubDate>
-      <description>Everything new coming to Meta’s AI agent Muse · Meta made a Tamagotchi-like wearable for its Muse AI agent · OpenAI agents ‘infiltrated Australian government website’ · Placeholder domain used in dev docs now serves ClickFix attacks · Nearly half of CFOs say they’d go with AI over a gut feeling · Language that evoked slavery keeps front desk worker’s hostile work environment claim alive</description>
     </item>
   </channel>
 </rss>
