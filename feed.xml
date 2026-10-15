@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Thursday, October 15, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-15.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-15.html</guid>
+      <pubDate>Thu, 15 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Ricursive Intelligence is betting on AI-designed chips to help solve the compute crisis · Gudea leverages AI to help organizations prevent social media crises before they erupt · Datalab Releases OmniParseBench: An Open OCR Benchmark With 16,288 Pass/Fail Tests to Audit OCR Parsers · Fish Audio Releases Drama 3, a 35B Open-Weight MoE Text-to-Speech Model · Flock CEO says its microphones detect ‘just gunshots’ — its website says different · Palo Alto Networks warns of PAN-OS RCE flaw exploited in attacks · Cisco make-me-root email bug exploited as a 0-day by unknown crims · Robots can handle a third of physical jobs — but not yet cost-effectively, Anthropic says · Time spent waiting to work is compensable if required, appeals court rules</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Wednesday, October 14, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-14.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-14.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-26.html</guid>
       <pubDate>Sat, 26 Sep 2026 01:00:00 GMT</pubDate>
       <description>Crusoe abandons $1.25B plan to use Boom turbines at AI data centers · Unsecured OpenAI agents posted 53 user images on the internet without the lab’s knowledge · Kiteworks urges 6-hour server shutdown over potential zero-day attacks · ShinyHunters hacked Clop leak site using Grav CMS path traversal flaw · DOL provides guidance to employers on responding to opioid overdoses · 4 stories on the power of personality at work</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Friday, September 25, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-25.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-25.html</guid>
-      <pubDate>Fri, 25 Sep 2026 01:00:00 GMT</pubDate>
-      <description>Bring your co-founder, partner, or colleague and get 50% off a second TechCrunch Disrupt 2026 pass · PrismML brings its tiny LLMs to Qualcomm-powered smart glasses · Crook used three open source agents to break into a Fortune 500 hospitality company, a major US airline and 25 · MacSync malware uses public iCloud calendars to deliver new payloads · Ollie’s Bargain Discount allegedly refused to hire deaf worker, required ‘ability to hear regularly’ · This week in 5 numbers: CHROs say AI creates ‘invisible’ work</description>
     </item>
   </channel>
 </rss>
