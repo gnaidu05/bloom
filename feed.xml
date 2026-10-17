@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Saturday, October 17, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-17.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-17.html</guid>
+      <pubDate>Sat, 17 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Replit is no longer working with Anthropic, CEO says · How Itaú is building generative AI for its entire customer base · India becomes the latest country to report rogue AI agent activity · An Nvidia insider-turned-VC on why robotics hasn’t hit its ChatGPT moment, yet · Physical AI is more than robots, says the Nvidia veteran now investing in it · Critical BlockStrap flaw lets hackers run code on Magento servers · Targeted ads installed Candiru spyware in zero-click attacks · ‘Why haven’t you retired?’: Railroader gets $1.6M in age bias win · Judge declines to block Trump’s March anti-DEI order for federal contractors</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Thursday, October 15, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-15.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-15.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-27.html</guid>
       <pubDate>Sun, 27 Sep 2026 01:00:00 GMT</pubDate>
       <description>Insurers claim AI is already increasing healthcare costs · I created an interactive digital avatar of myself — and you can talk to it · ShinyHunters uses WAF bypass trick in Oracle PeopleSoft attacks · Claude Opus 5.5 uses 95% fewer em dashes, but its answers are getting longer · What to do when a team says it’s short-staffed · Should workers be paid for AI skills?</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Saturday, September 26, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-26.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-26.html</guid>
-      <pubDate>Sat, 26 Sep 2026 01:00:00 GMT</pubDate>
-      <description>Crusoe abandons $1.25B plan to use Boom turbines at AI data centers · Unsecured OpenAI agents posted 53 user images on the internet without the lab’s knowledge · Kiteworks urges 6-hour server shutdown over potential zero-day attacks · ShinyHunters hacked Clop leak site using Grav CMS path traversal flaw · DOL provides guidance to employers on responding to opioid overdoses · 4 stories on the power of personality at work</description>
     </item>
   </channel>
 </rss>
