@@ -54,20 +54,46 @@ DESKS = [
         "https://krebsonsecurity.com/feed/",
     ]),
     ("t-navy", "Recruitment & HR", [
-        "https://techcrunch.com/tag/layoffs/feed/",
-        "https://www.hrdive.com/feeds/news/",
+        "https://hr.economictimes.indiatimes.com/rss/topstories",
+        "https://www.thehindu.com/education/careers/feeder/default.rss",
+        "https://indianexpress.com/section/education/feed/",
+        "https://www.livemint.com/rss/education",
     ]),
 ]
 
 WHY = {
     "AI & Technology": "Shifts in AI capability and tooling shape how every team builds, ships, and competes.",
     "IT Industry": "Security and infrastructure incidents set the risk backdrop that IT teams plan and budget against.",
-    "Recruitment & HR": "Hiring, layoff, and pay signals map where tech talent is moving and what skills now command a premium.",
+    "Recruitment & HR": "Hiring, campus placements and pay signals across India map where talent is moving and what skills now command a premium.",
 }
 FIGCAP = {
     "AI & Technology": "AI & technology desk",
     "IT Industry": "IT industry & security desk",
-    "Recruitment & HR": "Recruitment & HR desk",
+    "Recruitment & HR": "India recruitment & campus placements desk",
+}
+
+# Per-desk relevance ranking. Items are scored on title+description and the
+# highest scorers rank first (newest-first within a score), so India
+# recruitment and campus-placement stories beat the exam-schedule / admit-card
+# / general-education noise these feeds also carry. "strong" terms (actual
+# hiring & placement news) weigh 3; "weak" terms (institutions, generic job
+# words that also appear in non-recruitment stories) weigh 1. Other desks have
+# no filter and stay pure newest-first.
+DESK_KEYWORDS = {
+    "Recruitment & HR": {
+        "strong": [
+            "placement", "campus hiring", "recruit", "hiring", "layoff",
+            "fresher", "freshers", "ctc", "lpa", "attrition", "workforce",
+            "headcount", "hike", "appraisal", "offer letter", "offers",
+            "jobs gap", "job cuts", "mass hiring", "net hiring", "gcc",
+            "apprentice", "internship", "upskill", "wage", "stipend",
+        ],
+        "weak": [
+            "iit", "iim", "nit", "iiit", "mba", "salary", "package", "job",
+            "career", "intern", "talent", "graduate", "employee", "employer",
+            "tcs", "infosys", "wipro", "cognizant", "hcl", "accenture",
+        ],
+    },
 }
 
 
@@ -340,8 +366,18 @@ def collect_desk(theme, category, feeds, cutoff, seen_titles, seen_links=frozens
         for it in items:
             if it["date"] and it["date"] >= cutoff:
                 cand.append((it, url))
-    # newest first
-    cand.sort(key=lambda x: x[0]["date"], reverse=True)
+    # Rank: highest relevance first (by weighted DESK_KEYWORDS), newest-first
+    # within each score. Desks without keywords fall back to newest-first.
+    kw = DESK_KEYWORDS.get(category)
+
+    def relevance(it):
+        if not kw:
+            return 0
+        text = (it["title"] + " " + it.get("desc", "")).lower()
+        return (3 * sum(1 for k in kw["strong"] if k in text)
+                + sum(1 for k in kw["weak"] if k in text))
+
+    cand.sort(key=lambda x: (relevance(x[0]), x[0]["date"]), reverse=True)
     chosen = []
     for it, url in cand:
         n = norm(it["title"])
