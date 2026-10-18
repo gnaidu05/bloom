@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Sunday, October 18, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-18.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-18.html</guid>
+      <pubDate>Sun, 18 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Meta removes language that raised scraping and AI training concerns · Meet Kyutai REKI: The 2.4B VLA Model Bringing Efficient Memory to Robot Manipulation · Anthropic says its workforce has become less junior and is spending more time in meetings · Replit makes OpenAI its default over Anthropic, CEO says · DeepSeek Just Released V4.1-Flash-1017, Scores 77.0 on DeepSWE, Opens Search API · Hackers breach Microsoft 365 tenants via ConnectWise supply-chain attack · Drupal patches critical RCE flaws, warns exploits may emerge soon · Restaurant chain to pay $3M to settle EEOC allegations of rampant sexual harassment · Recruiters find people faster with AI — but confidence in candidates hasn’t followed</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Saturday, October 17, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-17.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-17.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-28.html</guid>
       <pubDate>Mon, 28 Sep 2026 01:00:00 GMT</pubDate>
       <description>Anthropic’s CEO is about to have dinner with President Trump · Can Muse overcome Meta’s trust issues? · OpenAI is preparing “o,” an always-on ChatGPT assistant that could handle email · Citrix confirms two NetScaler RCE zero-days exploited in attacks · In the AI era, organizations must redesign work in real time, Gartner says · Employees report performative AI use amid role changes</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Sunday, September 27, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-27.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-27.html</guid>
-      <pubDate>Sun, 27 Sep 2026 01:00:00 GMT</pubDate>
-      <description>Insurers claim AI is already increasing healthcare costs · I created an interactive digital avatar of myself — and you can talk to it · ShinyHunters uses WAF bypass trick in Oracle PeopleSoft attacks · Claude Opus 5.5 uses 95% fewer em dashes, but its answers are getting longer · What to do when a team says it’s short-staffed · Should workers be paid for AI skills?</description>
     </item>
   </channel>
 </rss>
