@@ -27,8 +27,8 @@ from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 
-RECENCY_DAYS = 7          # prefer items this fresh
-FALLBACK_DAYS = 14        # widen to this if a desk is short
+RECENCY_DAYS = 4          # "latest": prefer items from the last few days
+FALLBACK_DAYS = 8         # widen to this only if a desk is short
 # AI is the edition's primary focus: it gets the lead slots (5 of 9); the
 # other desks fill the rest. Total stays 9 (generate_edition caps at 9 cards).
 PER_DESK = {"AI & Technology": 5, "IT Industry": 2, "Recruitment & HR": 2}
@@ -42,16 +42,17 @@ REPUBLISH_LOOKBACK_DAYS = 10   # don't re-pick a story used in an edition this r
 DESKS = [
     ("t-teal", "AI & Technology", [
         "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "https://openai.com/news/rss.xml",
-        "https://deepmind.google/blog/rss.xml",
         "https://venturebeat.com/category/ai/feed/",
         "https://www.technologyreview.com/topic/artificial-intelligence/feed",
-        "https://www.marktechpost.com/feed/",
+        "https://openai.com/news/rss.xml",
+        "https://deepmind.google/blog/rss.xml",
     ]),
     ("t-amber", "IT Industry", [
+        "https://techcrunch.com/category/enterprise/feed/",
+        "https://www.zdnet.com/news/rss.xml",
+        "https://feeds.arstechnica.com/arstechnica/index",
+        "https://www.theregister.com/headlines.atom",
         "https://www.bleepingcomputer.com/feed/",
-        "https://www.theregister.com/security/headlines.atom",
-        "https://krebsonsecurity.com/feed/",
     ]),
     ("t-navy", "Recruitment & HR", [
         "https://hr.economictimes.indiatimes.com/rss/topstories",
@@ -62,38 +63,88 @@ DESKS = [
 ]
 
 WHY = {
-    "AI & Technology": "Shifts in AI capability and tooling shape how every team builds, ships, and competes.",
-    "IT Industry": "Security and infrastructure incidents set the risk backdrop that IT teams plan and budget against.",
-    "Recruitment & HR": "Hiring, campus placements and pay signals across India map where talent is moving and what skills now command a premium.",
+    "AI & Technology": "What's new and trending in AI, and how each shift moves the global market.",
+    "IT Industry": "The global tech-industry moves — launches, deals, outages and market shifts — that set how the sector competes.",
+    "Recruitment & HR": "How AI is reshaping Indian recruitment — campus and lateral — and the hiring, pay and skills trends that follow.",
 }
 FIGCAP = {
     "AI & Technology": "AI & technology desk",
-    "IT Industry": "IT industry & security desk",
-    "Recruitment & HR": "India recruitment & campus placements desk",
+    "IT Industry": "Global IT industry desk",
+    "Recruitment & HR": "India recruitment — campus & lateral desk",
 }
 
 # Per-desk relevance ranking. Items are scored on title+description and the
-# highest scorers rank first (newest-first within a score), so India
-# recruitment and campus-placement stories beat the exam-schedule / admit-card
-# / general-education noise these feeds also carry. "strong" terms (actual
-# hiring & placement news) weigh 3; "weak" terms (institutions, generic job
-# words that also appear in non-recruitment stories) weigh 1. Other desks have
-# no filter and stay pure newest-first.
+# highest scorers rank first (newest-first within a score). "strong" terms
+# weigh 3, "weak" terms weigh 1. Matching is word-boundary (so "ai" matches
+# "AI" / "AI-powered" but not "email" or "chain"); multi-word terms allow any
+# whitespace. Desks absent here stay pure newest-first.
+#
+#   AI & Technology / IT Industry: surface what's NEW, TRENDING and
+#   MARKET-MOVING (launches, funding, deals, adoption, regulation) over
+#   incremental/internal items.
+#   Recruitment & HR: prioritise AI's impact on INDIAN recruitment and new
+#   hiring trends across BOTH campus and lateral.
+_TREND_STRONG = [
+    "launch", "launches", "launched", "unveil", "unveils", "release",
+    "releases", "released", "rolls out", "rollout", "general availability",
+    "raises", "funding", "funding round", "valuation", "billion", "ipo",
+    "acquire", "acquires", "acquisition", "merger", "partnership", "partners",
+    "deal", "market", "markets", "enterprise", "adoption", "revenue",
+    "earnings", "profit", "demand", "surge", "record", "breakthrough",
+    "regulation", "regulator", "lawsuit", "ban", "bans", "outage", "shares",
+    "stock", "layoffs",
+]
 DESK_KEYWORDS = {
+    "AI & Technology": {
+        "strong": _TREND_STRONG + ["model", "models", "agent", "agents", "frontier"],
+        "weak": ["ai", "artificial intelligence", "genai", "gen ai", "llm",
+                 "gpt", "chip", "chips", "gpu", "open source", "openai",
+                 "anthropic", "google", "nvidia", "microsoft", "meta"],
+    },
+    "IT Industry": {
+        "strong": _TREND_STRONG + ["cloud", "datacenter", "data center",
+                 "chip", "semiconductor", "saas", "breach", "ransomware"],
+        "weak": ["software", "hardware", "data", "platform", "startup",
+                 "google", "microsoft", "amazon", "aws", "oracle", "ibm",
+                 "security", "enterprise"],
+    },
     "Recruitment & HR": {
         "strong": [
-            "placement", "campus hiring", "recruit", "hiring", "layoff",
+            "ai", "artificial intelligence", "genai", "gen ai",
+            "generative ai", "automation", "placement", "placements",
+            "campus hiring", "campus placement", "lateral", "lateral hiring",
+            "recruit", "recruitment", "hiring", "hire", "layoff", "layoffs",
             "fresher", "freshers", "ctc", "lpa", "attrition", "workforce",
             "headcount", "hike", "appraisal", "offer letter", "offers",
-            "jobs gap", "job cuts", "mass hiring", "net hiring", "gcc",
-            "apprentice", "internship", "upskill", "wage", "stipend",
+            "job cuts", "mass hiring", "net hiring", "gcc", "apprentice",
+            "internship", "upskill", "reskill", "stipend",
         ],
         "weak": [
             "iit", "iim", "nit", "iiit", "mba", "salary", "package", "job",
-            "career", "intern", "talent", "graduate", "employee", "employer",
-            "tcs", "infosys", "wipro", "cognizant", "hcl", "accenture",
+            "jobs", "career", "intern", "talent", "graduate", "employee",
+            "employer", "skills", "tcs", "infosys", "wipro", "cognizant",
+            "hcl", "accenture", "hr",
         ],
     },
+}
+
+
+def _compile_terms(terms):
+    """One case-insensitive, word-boundary regex matching any of the terms.
+    Multi-word terms match across any run of whitespace."""
+    parts = []
+    for t in terms:
+        t = t.strip().lower()
+        if t:
+            words = [re.escape(w) for w in t.split()]
+            parts.append(r"\b" + r"\s+".join(words) + r"\b")
+    return re.compile("|".join(parts), re.I) if parts else None
+
+
+DESK_PATTERNS = {
+    cat: {"strong": _compile_terms(kw["strong"]),
+          "weak": _compile_terms(kw["weak"])}
+    for cat, kw in DESK_KEYWORDS.items()
 }
 
 
@@ -366,16 +417,17 @@ def collect_desk(theme, category, feeds, cutoff, seen_titles, seen_links=frozens
         for it in items:
             if it["date"] and it["date"] >= cutoff:
                 cand.append((it, url))
-    # Rank: highest relevance first (by weighted DESK_KEYWORDS), newest-first
-    # within each score. Desks without keywords fall back to newest-first.
-    kw = DESK_KEYWORDS.get(category)
+    # Rank: highest relevance first (weighted, word-boundary DESK_PATTERNS),
+    # newest-first within each score. Desks without patterns stay newest-first.
+    pats = DESK_PATTERNS.get(category)
 
     def relevance(it):
-        if not kw:
+        if not pats:
             return 0
         text = (it["title"] + " " + it.get("desc", "")).lower()
-        return (3 * sum(1 for k in kw["strong"] if k in text)
-                + sum(1 for k in kw["weak"] if k in text))
+        strong = len(set(pats["strong"].findall(text))) if pats["strong"] else 0
+        weak = len(set(pats["weak"].findall(text))) if pats["weak"] else 0
+        return 3 * strong + weak
 
     cand.sort(key=lambda x: (relevance(x[0]), x[0]["date"]), reverse=True)
     chosen = []
