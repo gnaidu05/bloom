@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Monday, October 19, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-19.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-19.html</guid>
+      <pubDate>Mon, 19 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Meta launches an open-weight AI model that runs on Macs · Anthropic is letting METR researchers look under the hood with employee-level access · Stack Overflow for Agents triples signups with ChatGPT plugin · Elorian’s first AI model wants to reason with images, not just about them · Anthropic says it’s committing 5% of its shares to a ‘public benefit fund’ · Employees using personal ChatGPT at work? Here's what IT admins need to do · British watchdog seeks tougher terms around Microsoft's dominance of business software · Low-cost jobs will be taken over by AI, most worry about outsourced ones, says Workday chief · Only 6% of companies see significant financial gains from AI: McKinsey survey</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Sunday, October 18, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-18.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-18.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-29.html</guid>
       <pubDate>Tue, 29 Sep 2026 01:00:00 GMT</pubDate>
       <description>Peak XV ups Surge seed investment ceiling to $5M, unveils 18-startup cohort · OpenAI reportedly ditches model over safety concerns · Japan's Keio confirms ransomware attack disrupted business systems · Times Car confirms data breach affecting 6.6 million user accounts · Insurers say AI could add billions in health costs. Billing companies disagree. · NLRB returns to first Trump-era employee misconduct framework</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Monday, September 28, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-28.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-28.html</guid>
-      <pubDate>Mon, 28 Sep 2026 01:00:00 GMT</pubDate>
-      <description>Anthropic’s CEO is about to have dinner with President Trump · Can Muse overcome Meta’s trust issues? · OpenAI is preparing “o,” an always-on ChatGPT assistant that could handle email · Citrix confirms two NetScaler RCE zero-days exploited in attacks · In the AI era, organizations must redesign work in real time, Gartner says · Employees report performative AI use amid role changes</description>
     </item>
   </channel>
 </rss>
