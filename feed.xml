@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Tuesday, October 20, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-20.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-20.html</guid>
+      <pubDate>Tue, 20 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Nvidia launches new open models to run agents in the enterprise and on PCs · Microsoft says AI agents are like insider threats as ‘frontier models can’t be trusted’ · Tenstorrent hits $6.2B valuation to scale open-weight AI chips · Nscale and Anthropic are reportedly in talks for yet another $45 billion compute deal · Hackers hit AI coding tool OpenCode, running up charges on users’ AI accounts · F5 releases out-of-band patches for critical NGINX vulnerabilities · Uber dodges £340M cabbie lawsuit after drivers miss legal deadline · India’s tech workforce wants practical AI skills, clearer career paths at work · Anthropic sees junior tech hires' share fall from 27% to 9%</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Monday, October 19, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-19.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-19.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-09-30.html</guid>
       <pubDate>Wed, 30 Sep 2026 01:00:00 GMT</pubDate>
       <description>America.gov gets really weird when you ask it about Minecraft, but it’s not a glitch · The internet is convinced Elon Musk’s xAI trolled OpenAI’s ‘Dots’ launch · Microsoft is rolling out Linux container support to WSL · Add one more AI worry to the nightmare scenario: self-replicating prompt injections · Seattle’s DEI initiative may have created hostile work environment, 9th Circuit finds · Major players in the health, wellness and luxury spaces bring on new HR talent in September</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Tuesday, September 29, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-29.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-29.html</guid>
-      <pubDate>Tue, 29 Sep 2026 01:00:00 GMT</pubDate>
-      <description>Peak XV ups Surge seed investment ceiling to $5M, unveils 18-startup cohort · OpenAI reportedly ditches model over safety concerns · Japan's Keio confirms ransomware attack disrupted business systems · Times Car confirms data breach affecting 6.6 million user accounts · Insurers say AI could add billions in health costs. Billing companies disagree. · NLRB returns to first Trump-era employee misconduct framework</description>
     </item>
   </channel>
 </rss>
