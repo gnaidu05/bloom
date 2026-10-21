@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Wednesday, October 21, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-21.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-21.html</guid>
+      <pubDate>Wed, 21 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Otter.ai raises $320 million from General Catalyst’s growth fund for its meeting tool · Anthropic pitches AI safety bill that may block a model if 50+ people could be killed · OpenAI acquires startup Orchestra Bio⁠ to beef up its biotech business · A visit to Samsung’s massive new semiconductor hub · AI adoption by industry shows what other sectors can learn · 'Password1' and a forgotten test account land Welsh outfits in hot water · Google Cloud says a 'power event' caused today's outage · The Employer Files: Infosys and the widening gap between business and workforce growth · DRDO offers 6-month paid internship opportunities for undergraduate, graduate students</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Tuesday, October 20, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-20.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-20.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-01.html</guid>
       <pubDate>Thu, 01 Oct 2026 01:00:00 GMT</pubDate>
       <description>Google releases Gemini 4 Argon, called its most powerful model yet · Valor, Atreides, and Sequoia back AI startup Flow Engineering at $750M valuation · Irony alert: OpenAI whines that Chinese model stole its special IP that it stole from everybody else · Russian state hackers use new RedFlick technique to push malware · Christian worker allegedly fired for religious social media posts gets $20K · JPMorgan Chase names next HR chief</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Wednesday, September 30, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-09-30.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-09-30.html</guid>
-      <pubDate>Wed, 30 Sep 2026 01:00:00 GMT</pubDate>
-      <description>America.gov gets really weird when you ask it about Minecraft, but it’s not a glitch · The internet is convinced Elon Musk’s xAI trolled OpenAI’s ‘Dots’ launch · Microsoft is rolling out Linux container support to WSL · Add one more AI worry to the nightmare scenario: self-replicating prompt injections · Seattle’s DEI initiative may have created hostile work environment, 9th Circuit finds · Major players in the health, wellness and luxury spaces bring on new HR talent in September</description>
     </item>
   </channel>
 </rss>
