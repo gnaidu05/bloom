@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Friday, October 23, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-23.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-23.html</guid>
+      <pubDate>Fri, 23 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Designing an AI serving harness built to last · DeepSeek reportedly raises $15B days after US restrictions · Meta wants to pay for its broad AI buildout with a newly created class of stock · OpenAI working on new $30B raise at $1.25T valuation ahead of IPO · 1Password launches a way for AI agents to log in on your behalf without seeing your password · Railway warns devs to rotate secrets after potential breach · Microsoft says ConnectWise breach let Chinese spies loose on 2,250 cloud tenants · Xbox CEO is reportedly planning three more rounds of job cuts · 42 days after written assurance, J&amp;K medical interns resume strike over unfulfilled stipend hike</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Thursday, October 22, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-22.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-22.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-03.html</guid>
       <pubDate>Sat, 03 Oct 2026 01:00:00 GMT</pubDate>
       <description>Meta wants your next gadget to be Muse-infused · Sean Parker is rebuilding Stability AI around music · Frontline Education breach exposes school district employee data · Warlock ransomware breach SharePoint in water, telecom operator attacks · EEOC sues Harvard to obtain hundreds of documents in DEI-related investigation · EEOC takes aim at trans rights in investigations involving ‘biological’ pronouns, single-sex spaces</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Friday, October 2, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-10-02.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-02.html</guid>
-      <pubDate>Fri, 02 Oct 2026 01:00:00 GMT</pubDate>
-      <description>Musk’s AI chatbot Grok reportedly encouraged Trump to capture Venezuela’s president · Hacks of 2 federal agencies in a month have spilled a bonanza of sensitive data · Fortinet warns of critical FortiMail flaw exploited in zero-day attacks · AI agents hacked the hackers, stealing email addresses from security research org · Ban on Suboxone use for ‘safety-sensitive’ roles draws EEOC lawsuit · AI might be making women sound less sophisticated</description>
     </item>
   </channel>
 </rss>
