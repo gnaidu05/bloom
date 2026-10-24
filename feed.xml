@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Saturday, October 24, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-24.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-24.html</guid>
+      <pubDate>Sat, 24 Oct 2026 01:00:00 GMT</pubDate>
+      <description>OpenAI says it will no longer train its AI models on the live internet, citing “significant risks” · From Toast to Bessemer: Who founders will hear from at TechCrunch Founder Summit 2026 · Securing our frontier model training environment · Making the case for context-aware AI · Canva releases its first image generation model · HPE patches eight max severity RCE and auth bypass AOS flaws · Intel gets waiver after worries fuzzy US ban on foreign-made robots may hit fabs · India’s GCCs to add 1–1.4 million jobs by 2031: Report · SBI Recruitment 2026: Notification for chief AI officer, other AI-specific posts released</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Friday, October 23, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-23.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-23.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-04.html</guid>
       <pubDate>Sun, 04 Oct 2026 01:00:00 GMT</pubDate>
       <description>Amazon responds to data center backlash, says it no longer uses NDAs · OpenAI safety employee resigns, claiming the company’s ‘culture is broken’ · Google Gemini could soon get full access to your Mac’s files, apps and the web · ShinyHunters hacker reportedly detained in Jordan, aiding FBI · Firm settles EEOC charge that it let Indian staff work remotely, but not US employees · Hiring caution persists as inflation holds on, BLS report shows</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Saturday, October 3, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-10-03.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-03.html</guid>
-      <pubDate>Sat, 03 Oct 2026 01:00:00 GMT</pubDate>
-      <description>Meta wants your next gadget to be Muse-infused · Sean Parker is rebuilding Stability AI around music · Frontline Education breach exposes school district employee data · Warlock ransomware breach SharePoint in water, telecom operator attacks · EEOC sues Harvard to obtain hundreds of documents in DEI-related investigation · EEOC takes aim at trans rights in investigations involving ‘biological’ pronouns, single-sex spaces</description>
     </item>
   </channel>
 </rss>
