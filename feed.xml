@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Monday, October 26, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-26.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-26.html</guid>
+      <pubDate>Mon, 26 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Grok releases the first seven minutes of its AI-generated ‘Odyssey’ · Here are the top AI agents that can live in your text messages · Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II) · Left alone with nothing to do, AI agents started playing · OpenAI makes its Jev competitor widely available as decision model competition heats up · Quest Diagnostics confirms data breach exposed patient records · PHP shares mitigation for new RCE vulnerability with no patch · Infosys adds 4,480 employees in Q2 FY27; attrition falls to 12.7% · IIM Ahmedabad summer placements 2026-27: Over 85 roles offered in first cluster</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Sunday, October 25, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-25.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-25.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-06.html</guid>
       <pubDate>Tue, 06 Oct 2026 01:00:00 GMT</pubDate>
       <description>MCP for agent-to-agent comms may be the riskiest protocol you've never heard of · OpenAI will start watermarking ChatGPT’s text in the EU · OpenAI is adding invisible watermarks to ChatGPT and Codex text in the EU · Citrix NetScaler security snafus get even worse amid more 0-day reports · Transgender former EEOC employee may proceed with bias lawsuit, judge says · Trump administration revamps insurer price transparency reporting</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Monday, October 5, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-10-05.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-05.html</guid>
-      <pubDate>Mon, 05 Oct 2026 01:00:00 GMT</pubDate>
-      <description>Google froze its open source bug bounty program due to a ‘significant rise’ in AI submissions · Can ‘super intelligence’ and a non-binding safety pact solve AI’s image problem? · Citrix patches NetScaler SAML zero-day exploited in attacks · Anthropic asks Claude users to share voice data for AI model training · Sociable: LinkedIn updates its AI-powered hiring bot · California revamps AI protections for workers in flurry of bill signings</description>
     </item>
   </channel>
 </rss>
