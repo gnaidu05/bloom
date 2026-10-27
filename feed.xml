@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Tuesday, October 27, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-27.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-27.html</guid>
+      <pubDate>Tue, 27 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Anthropic officially files for its public debut · SpaceX locks in $40B GPU financing deal with Apollo · Anthropic’s IPO filing reveals its strategy for keeping enterprise customers hooked · Working with academic communities to build scientific understanding · Block’s new voice model sounds eerily human · After threatening AI export bans, China allows DeepSeek to keep selling · Microsoft releases emergency .NET patches for critical Brotli flaw · Mid-career professionals drive healthcare GCC hiring in 2026: Report · AI isn’t killing entry-level jobs, it’s breaking the ladder to senior roles: IIT Madras study</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Monday, October 26, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-26.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-26.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-07.html</guid>
       <pubDate>Wed, 07 Oct 2026 01:00:00 GMT</pubDate>
       <description>Ex-Ramp engineers raise $20M for platform Melius after scrapping their first product · How AI decision models could change content moderation · Anthropic reconfigures its cool kids security program · Ninja Forms plugin flaw exploited to hack WordPress sites · SHRM service dog trial begins — with plaintiff’s dog by her side · The ADA’s interactive process: Key principles for HR professionals</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Tuesday, October 6, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-10-06.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-06.html</guid>
-      <pubDate>Tue, 06 Oct 2026 01:00:00 GMT</pubDate>
-      <description>MCP for agent-to-agent comms may be the riskiest protocol you've never heard of · OpenAI will start watermarking ChatGPT’s text in the EU · OpenAI is adding invisible watermarks to ChatGPT and Codex text in the EU · Citrix NetScaler security snafus get even worse amid more 0-day reports · Transgender former EEOC employee may proceed with bias lawsuit, judge says · Trump administration revamps insurer price transparency reporting</description>
     </item>
   </channel>
 </rss>
