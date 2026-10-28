@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Wednesday, October 28, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-28.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-28.html</guid>
+      <pubDate>Wed, 28 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Retell uses OpenAI models to help power 100M monthly calls · Frontier AI labs say their models refuted the Exponential Time Hypothesis. What does that mean? · Nvidia backs Indian startup helping companies run AI models with fewer GPUs · OpenAI expands partnership with Oracle to bring its apps to ChatGPT · Disruptive raises $10B fund to make big bets on at least 10 companies · Take it on the chin SatNad: Microsoft chief exec's pay slips 6% in record year · Japan's GMO urges customers to shut down PCs amid ransomware threat · IIM Calcutta records 100% summer placements, highest-ever average stipend of Rs 1.93 lakh · Nearly 44% of India's GCCs now own platforms, AI outcomes</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Tuesday, October 27, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-27.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-27.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-08.html</guid>
       <pubDate>Thu, 08 Oct 2026 01:00:00 GMT</pubDate>
       <description>Nous Research confirms it hit $1.5B valuation, launches AI agents for business users · Microsoft releases new Nvidia-chip AI PCs with revamped Windows 11 · Meta’s Muse launches on iPad just a month after its mobile debut · Ransomware recovery CEO charged over secret ransom payments · FBI: Ongoing FortiBleed attacks lock out FortiGate VPN admins · Hackers hijack Google domains after breaching ccTLD registries · Supreme Court sidesteps employment law cases on disability bias, vaccines · DOL to up minimum wage to $14 per hour for federal contractors · Gallup finds both parties more bullish on DEI. What’s this mean for HR?</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Wednesday, October 7, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-10-07.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-07.html</guid>
-      <pubDate>Wed, 07 Oct 2026 01:00:00 GMT</pubDate>
-      <description>Ex-Ramp engineers raise $20M for platform Melius after scrapping their first product · How AI decision models could change content moderation · Anthropic reconfigures its cool kids security program · Ninja Forms plugin flaw exploited to hack WordPress sites · SHRM service dog trial begins — with plaintiff’s dog by her side · The ADA’s interactive process: Key principles for HR professionals</description>
     </item>
   </channel>
 </rss>
