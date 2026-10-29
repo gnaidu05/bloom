@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Thursday, October 29, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-29.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-29.html</guid>
+      <pubDate>Thu, 29 Oct 2026 01:00:00 GMT</pubDate>
+      <description>Anthropic just launched tools to show companies what their AI spending is buying · OpenAI and ServiceNow expand partnership across enterprise workflows · Google expands AI Search ads globally as core ad growth slows · Microsoft recorded $10 billion in revenue from OpenAI · Microsoft hits 10 quarters of record-breaking revenue in a row · Jio shares surge 21% in market debut after blockbuster India IPO · Microsoft just shared Azure’s actual revenue in dollars: $33.2 billion · IIM Calcutta summer placements see 475 students secure 546 offers from 156 companies · Himachal CM hints at MBBS internship stipend hike, promises budgetary support</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Wednesday, October 28, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-28.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-28.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-09.html</guid>
       <pubDate>Fri, 09 Oct 2026 01:00:00 GMT</pubDate>
       <description>Roundtables: A Conversation With the Creator of AI-Designed Viruses · Pretend you’re sitting at Elizabeth Holmes’ desk on this weirdly detailed website · Fired OpenAI safety researchers dispute misconduct claims, warn of chilling effect · US disrupts Chinese hacking tools as 7 govts warn of PRC spies stealing sensitive data worldwide · FBI disrupts Chinese hacking tools used to breach critical infrastructure · Ransomware attack disrupts Japan's IDCF Cloud used by govt clients · AAUP gets order over Jewish employee records at Penn ‘off the books’ · EEOC moves to rescind conviction and arrest record guidance from 2012 · This week in 5 numbers: Manager-led development can aid retention</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Thursday, October 8, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-10-08.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-08.html</guid>
-      <pubDate>Thu, 08 Oct 2026 01:00:00 GMT</pubDate>
-      <description>Nous Research confirms it hit $1.5B valuation, launches AI agents for business users · Microsoft releases new Nvidia-chip AI PCs with revamped Windows 11 · Meta’s Muse launches on iPad just a month after its mobile debut · Ransomware recovery CEO charged over secret ransom payments · FBI: Ongoing FortiBleed attacks lock out FortiGate VPN admins · Hackers hijack Google domains after breaching ccTLD registries · Supreme Court sidesteps employment law cases on disability bias, vaccines · DOL to up minimum wage to $14 per hour for federal contractors · Gallup finds both parties more bullish on DEI. What’s this mean for HR?</description>
     </item>
   </channel>
 </rss>
