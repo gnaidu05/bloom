@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Friday, October 30, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-10-30.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-30.html</guid>
+      <pubDate>Fri, 30 Oct 2026 01:00:00 GMT</pubDate>
+      <description>OpenAI-backed Thrive Holdings acquires ADT · Mistral releases weights for its trillion-parameter AI model, targeting cybersecurity · Ex-Palantir execs launch Dream with $17M from a16z to build AI world models for construction · Wabi, the AI agent that builds mini apps, now valued at $1.25B after latest round · How we detect frontier model misalignment · Amazon reported booming cloud revenue but otherwise missed expectations · Google admits AI search makes less money, but it's fixing that with more ads · India Inc wants AI talent to transform manufacturing space · Talent leaders flag a blind spot in HR Analytics</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Thursday, October 29, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-29.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-29.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-10.html</guid>
       <pubDate>Sat, 10 Oct 2026 01:00:00 GMT</pubDate>
       <description>Anthropic can’t reliably control its AI agents. It’s cutting off its internal evals from the live internet ins · The maker of non-text AI model Jev valued at $7.5B just weeks after launch · Alibaba Qwen Releases Qwen-Image-2.1-Turbo, an 8-Step 7B Image Model · OpenAI Decisions API Hits Public Beta With 10x Faster Typed Answers · An Anthropic AI model sent a false homicide tip to Philadelphia police · FBI Arrests Founder of Ransomware Negotiation Firm · Hackers abuse Google Ads, Bing redirects to push Claude ClickFix attacks · EEOC obtains $23K for Muslim barista denied accommodation for Ramadan · EEOC’s FY 2026 was ‘historically anemic,’ but big on messaging</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Friday, October 9, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-10-09.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-09.html</guid>
-      <pubDate>Fri, 09 Oct 2026 01:00:00 GMT</pubDate>
-      <description>Roundtables: A Conversation With the Creator of AI-Designed Viruses · Pretend you’re sitting at Elizabeth Holmes’ desk on this weirdly detailed website · Fired OpenAI safety researchers dispute misconduct claims, warn of chilling effect · US disrupts Chinese hacking tools as 7 govts warn of PRC spies stealing sensitive data worldwide · FBI disrupts Chinese hacking tools used to breach critical infrastructure · Ransomware attack disrupts Japan's IDCF Cloud used by govt clients · AAUP gets order over Jewish employee records at Penn ‘off the books’ · EEOC moves to rescind conviction and arrest record guidance from 2012 · This week in 5 numbers: Manager-led development can aid retention</description>
     </item>
   </channel>
 </rss>
