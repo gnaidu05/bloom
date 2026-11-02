@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Monday, November 2, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-11-02.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-11-02.html</guid>
+      <pubDate>Mon, 02 Nov 2026 01:00:00 GMT</pubDate>
+      <description>Fair use benefits everyone · An updated Model Spec for more capable and beneficial AI · Judge allows NAACP lawsuit over xAI data center pollution to move forward · OpenAI reportedly lowers funding target for new round · Ollie, a privacy-focused AI assistant, is shutting down · Northflank security breach leads to abuse of customers' AI API keys · FBI links $6.3 billion Binance crypto heist to North Korean hackers · IIM Bangalore records 100% summer placements; consulting accounts for half of offers · From AI Startups to Fashion, here’s a look at IIM Ahmedabad’s Summer Placements 2028</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Saturday, October 31, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-10-31.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-31.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-12.html</guid>
       <pubDate>Mon, 12 Oct 2026 01:00:00 GMT</pubDate>
       <description>Meet Cloudflare Clef-omni: A 30B-A3B Multimodal Decision Model for Audio, Video, Image and Text · What is Decision 3.0? vLLM Semantic Router’s New Open Decision Models · Will the HomeView be Apple’s first smart home success? · 48 hours to TechCrunch Disrupt 2026 — hear directly from the people building what’s next · Can the AI industry persuade data center opponents by getting rid of NDAs? · Nippon Columbia malware incident exposes 8.6 million karaoke fan records · AI systems are fully capable of carrying out nightmare attacks against infrastructure and nobody's ready · US authorities crack down on IT outsourcing · ACLU files California complaint over Emotify hiring assessment tool</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Sunday, October 11, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-10-11.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-11.html</guid>
-      <pubDate>Sun, 11 Oct 2026 01:00:00 GMT</pubDate>
-      <description>Sakana AI’s LLM Peer Review System Catches 73% of Core-Claim Errors · Microsoft’s Satya Nadella says AI models need an ‘emergency brake’ · When the Safety Test Became the Threat: The Machine That Found Its Own Way Out · Apple discloses deal to hire team and license tech from personalized podcast startup Huxe · 3 days to TechCrunch Disrupt 2026: Meet the startups before they hit mainstream · Cyber exec arrested in case allegedly tied to ShinyHunters hackers · ARTEX AI, Claude agents used in cyberattacks on South Korean banks · DHS proposes $70K fee for initial Optional Practical Training participation · Many young working parents may struggle to find high-quality jobs</description>
     </item>
   </channel>
 </rss>
