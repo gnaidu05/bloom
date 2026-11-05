@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Thursday, November 5, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-11-05.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-11-05.html</guid>
+      <pubDate>Thu, 05 Nov 2026 01:00:00 GMT</pubDate>
+      <description>Meta acquires AI coding startup Conductor · Almost no one uses AI agents to book their Uber, company says · Securing the agentic enterprise with data lineage · Open source AI is booming. Hugging Face explains who profits. · Building on open source AI? Hugging Face’s policy chief on the costs, risks, and trade-offs · AMD's record quarter: Data center business doubles, while gaming craters · AMD on track to overtake Intel as biggest x86 outfit · Festive hiring rush exposes a deeper risk: Who is really joining the workforce? · AI is changing the IT career ladder: How to move from routine tasks to higher-value roles</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Wednesday, November 4, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-11-04.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-11-04.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-15.html</guid>
       <pubDate>Thu, 15 Oct 2026 01:00:00 GMT</pubDate>
       <description>Ricursive Intelligence is betting on AI-designed chips to help solve the compute crisis · Gudea leverages AI to help organizations prevent social media crises before they erupt · Datalab Releases OmniParseBench: An Open OCR Benchmark With 16,288 Pass/Fail Tests to Audit OCR Parsers · Fish Audio Releases Drama 3, a 35B Open-Weight MoE Text-to-Speech Model · Flock CEO says its microphones detect ‘just gunshots’ — its website says different · Palo Alto Networks warns of PAN-OS RCE flaw exploited in attacks · Cisco make-me-root email bug exploited as a 0-day by unknown crims · Robots can handle a third of physical jobs — but not yet cost-effectively, Anthropic says · Time spent waiting to work is compensable if required, appeals court rules</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Wednesday, October 14, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-10-14.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-14.html</guid>
-      <pubDate>Wed, 14 Oct 2026 01:00:00 GMT</pubDate>
-      <description>Science Corporation implants its vision-restoring chip in its first Stargardt disease patient · Cerebras CEO says we’re nearing a future where everyone has a personal AI assistant at home · Industrial Next wants factory robots to switch tasks in minutes, not weeks · Meta Launches Muse Wonder and Muse Wonder Full: Benchmarks, Pricing and How to Use It · Cerebras CEO pushes back on AI doomsday warnings · Microsoft Patches More Than 1,400 Security Flaws · OpenAI engineer arrested for allegedly planting spy device in office · Workday brings autopilots to hiring, payroll in autonomous AI bet · Roofer sues after allegedly being told ‘no one pays overtime in construction work’</description>
     </item>
   </channel>
 </rss>
