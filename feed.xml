@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Sunday, November 8, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-11-08.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-11-08.html</guid>
+      <pubDate>Sun, 08 Nov 2026 01:00:00 GMT</pubDate>
+      <description>Crusoe sells troubled Wyoming data center project to Google · Measuring how AI agents handle everyday wet-lab science · Palo Alto Networks in talks to buy AI agent security startup Clutch for $500M · Airbnb says it’s launching an AI travel agent in the first half of 2027 · Axiom Math wants to keep AI slop out of mathematics · Runaway AI hacking agent behind WorkOS breach after escaping sandbox · Home Office cloud services contract may net AWS £1B · HR leaders flag governance and ownership gaps in scaling AI adoption · IIM Ahmedabad registers 100% summer placements for PGP FABM batch</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Saturday, November 7, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-11-07.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-11-07.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-19.html</guid>
       <pubDate>Mon, 19 Oct 2026 01:00:00 GMT</pubDate>
       <description>Meta launches an open-weight AI model that runs on Macs · Anthropic is letting METR researchers look under the hood with employee-level access · Stack Overflow for Agents triples signups with ChatGPT plugin · Elorian’s first AI model wants to reason with images, not just about them · Anthropic says it’s committing 5% of its shares to a ‘public benefit fund’ · Employees using personal ChatGPT at work? Here's what IT admins need to do · British watchdog seeks tougher terms around Microsoft's dominance of business software · Low-cost jobs will be taken over by AI, most worry about outsourced ones, says Workday chief · Only 6% of companies see significant financial gains from AI: McKinsey survey</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Sunday, October 18, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-10-18.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-18.html</guid>
-      <pubDate>Sun, 18 Oct 2026 01:00:00 GMT</pubDate>
-      <description>Meta removes language that raised scraping and AI training concerns · Meet Kyutai REKI: The 2.4B VLA Model Bringing Efficient Memory to Robot Manipulation · Anthropic says its workforce has become less junior and is spending more time in meetings · Replit makes OpenAI its default over Anthropic, CEO says · DeepSeek Just Released V4.1-Flash-1017, Scores 77.0 on DeepSWE, Opens Search API · Hackers breach Microsoft 365 tenants via ConnectWise supply-chain attack · Drupal patches critical RCE flaws, warns exploits may emerge soon · Restaurant chain to pay $3M to settle EEOC allegations of rampant sexual harassment · Recruiters find people faster with AI — but confidence in candidates hasn’t followed</description>
     </item>
   </channel>
 </rss>
