@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Monday, November 9, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-11-09.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-11-09.html</guid>
+      <pubDate>Mon, 09 Nov 2026 01:00:00 GMT</pubDate>
+      <description>Underdog shows off a 32MB speech model in new demo · Merge builds product and business tools with OpenAI technology · Meta warns that election backlash against data centers could make AI expansion harder · Setting a new standard for responsible AI infrastructure · Nvidia will investigate CEO Jensen Huang’s relationship with possible Chinese spy · Iris Ohyama data cloud breach exposes info of 7.7 million customers · AWS Kiro aims to solve identity crisis by adding another identity: bot orchestrator · Companies must prioritise Kannadigas during recruitment: Shivakumar · Life in an IIT | When campus becomes home: spending Diwali at IIT Hyderabad</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Sunday, November 8, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-11-08.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-11-08.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-20.html</guid>
       <pubDate>Tue, 20 Oct 2026 01:00:00 GMT</pubDate>
       <description>Nvidia launches new open models to run agents in the enterprise and on PCs · Microsoft says AI agents are like insider threats as ‘frontier models can’t be trusted’ · Tenstorrent hits $6.2B valuation to scale open-weight AI chips · Nscale and Anthropic are reportedly in talks for yet another $45 billion compute deal · Hackers hit AI coding tool OpenCode, running up charges on users’ AI accounts · F5 releases out-of-band patches for critical NGINX vulnerabilities · Uber dodges £340M cabbie lawsuit after drivers miss legal deadline · India’s tech workforce wants practical AI skills, clearer career paths at work · Anthropic sees junior tech hires' share fall from 27% to 9%</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Monday, October 19, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-10-19.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-19.html</guid>
-      <pubDate>Mon, 19 Oct 2026 01:00:00 GMT</pubDate>
-      <description>Meta launches an open-weight AI model that runs on Macs · Anthropic is letting METR researchers look under the hood with employee-level access · Stack Overflow for Agents triples signups with ChatGPT plugin · Elorian’s first AI model wants to reason with images, not just about them · Anthropic says it’s committing 5% of its shares to a ‘public benefit fund’ · Employees using personal ChatGPT at work? Here's what IT admins need to do · British watchdog seeks tougher terms around Microsoft's dominance of business software · Low-cost jobs will be taken over by AI, most worry about outsourced ones, says Workday chief · Only 6% of companies see significant financial gains from AI: McKinsey survey</description>
     </item>
   </channel>
 </rss>
