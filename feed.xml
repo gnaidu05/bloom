@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Wednesday, November 11, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-11-11.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-11-11.html</guid>
+      <pubDate>Wed, 11 Nov 2026 01:00:00 GMT</pubDate>
+      <description>Oura to acquire AI-native primary care startup Counsel Health for $625M · After challenging Google’s Android with Cyanogen, its co-founder takes aim at Windows for AI era · Anthropic sets IPO price range of $70 to $78 per share to reach an implied valuation of $1.404 trillion · Ring, known for its doorbell cameras, launches a home security drone and an enterprise security robot · Work at the Frontier: AI’s effect on freelance work · Hackers exploit trusted AWS access to breach multiple cloud environments · Cisco to link all future products to its SaaS-y Cloud Control management tool · IIT Roorkee offers winter training and internship in these 5 AI courses · Zoho founder Vembu warns India on AI-driven jobs crisis</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Tuesday, November 10, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-11-10.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-11-10.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-22.html</guid>
       <pubDate>Thu, 22 Oct 2026 01:00:00 GMT</pubDate>
       <description>OpenAI models are coming to Google Cloud · Recursive launches Flint, a laptop coding model it says was largely built by AI · While Amazon blocks AI agents, Walmart rolls out the welcome mat · Blacksmith hits unicorn valuation after Sequoia leads Series C · Meta says Muse has over 10M users, with shopping a top activity · ServiceNow and Nvidia launch Arc, a new AI agent for enterprise · Judge rejects Trump’s wild claim EPA can dismiss data center pollution lawsuits · Hunar.AI raises Rs 40 crore to expand AI-powered hiring · Amazon to recruit over 300,000 workers for holiday season</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Wednesday, October 21, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-10-21.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-21.html</guid>
-      <pubDate>Wed, 21 Oct 2026 01:00:00 GMT</pubDate>
-      <description>Otter.ai raises $320 million from General Catalyst’s growth fund for its meeting tool · Anthropic pitches AI safety bill that may block a model if 50+ people could be killed · OpenAI acquires startup Orchestra Bio⁠ to beef up its biotech business · A visit to Samsung’s massive new semiconductor hub · AI adoption by industry shows what other sectors can learn · 'Password1' and a forgotten test account land Welsh outfits in hot water · Google Cloud says a 'power event' caused today's outage · The Employer Files: Infosys and the widening gap between business and workforce growth · DRDO offers 6-month paid internship opportunities for undergraduate, graduate students</description>
     </item>
   </channel>
 </rss>
