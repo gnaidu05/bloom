@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Saturday, November 14, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-11-14.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-11-14.html</guid>
+      <pubDate>Sat, 14 Nov 2026 01:00:00 GMT</pubDate>
+      <description>AI agent startup LangChain hits $3B valuation · ChatGPT’s new Wallet lets AI agents shop and check out for you · SoftBank’s billion-dollar loss may have put a cap on AI’s natural gas ambitions · Export-banned Nvidia chips are behind China’s most powerful AI models — uh-oh, Jensen! · Jensen Huang’s departure blasts big hole in AI startup funding, VCs and founders say · How one AI agent exposed five critical enterprise security gaps · Microsoft doesn’t ‘have an ETA for full recovery’ on outage yet · AI to create more jobs than it kills by 2030, net gain of 1.7 million globally: Report · Qualcomm begins India layoffs amid global workforce restructuring</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Friday, November 13, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-11-13.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-11-13.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-25.html</guid>
       <pubDate>Sun, 25 Oct 2026 01:00:00 GMT</pubDate>
       <description>Forced to pick, Grok’s AI model chooses Republicans. OpenAI’s picks Democrats. · Uber puts all 30,000 employees on ChatGPT Work · The AI graveyard: a running list of projects and startups that didn’t make it · Microsoft’s Mustafa Suleyman says its AI outperforms doctors on hard cases as he chases ‘medical superintellig · Chinese hackers spied on thousands of companies after breaching IT giant ConnectWise · OneDrive gives Macs a million things to keep in sync · Amazon says PHP2Shell exploitation began 4 days before patches · IT workforce diverges in Q2: TCS, HCLTech, Tech M, Infosys add employees as Wipro shrinks · Tata Elxsi to restructure workforce, expand role of junior talent</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Saturday, October 24, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-10-24.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-24.html</guid>
-      <pubDate>Sat, 24 Oct 2026 01:00:00 GMT</pubDate>
-      <description>OpenAI says it will no longer train its AI models on the live internet, citing “significant risks” · From Toast to Bessemer: Who founders will hear from at TechCrunch Founder Summit 2026 · Securing our frontier model training environment · Making the case for context-aware AI · Canva releases its first image generation model · HPE patches eight max severity RCE and auth bypass AOS flaws · Intel gets waiver after worries fuzzy US ban on foreign-made robots may hit fabs · India’s GCCs to add 1–1.4 million jobs by 2031: Report · SBI Recruitment 2026: Notification for chief AI officer, other AI-specific posts released</description>
     </item>
   </channel>
 </rss>
