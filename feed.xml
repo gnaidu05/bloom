@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Sunday, November 15, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-11-15.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-11-15.html</guid>
+      <pubDate>Sun, 15 Nov 2026 01:00:00 GMT</pubDate>
+      <description>The AI graveyard: a running list of projects and startups that didn’t make it · Shield helps technicians hand off legacy portal work with OpenAI · Democrats launch Nvidia investigation, write scathing letter on Huang’s ‘scheme’ with Trump · Introducing ChatGPT Wallet · Nvidia privately confirmed it could track chips to fight smuggling, even as industry publicly questioned feasi · Lego marketplace BrickLink in pieces after 'unusual activity' takes it offline for almost a week · Microsoft’s global outage may be worse than Amazon's or CrowdStrike's, expert says · What's redefining India's employment landscape? AI, talent gaps and labour reforms and what it means · Omnicom Global Solutions appoints Acquelia Colaco as Chief People Officer</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Saturday, November 14, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-11-14.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-11-14.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-26.html</guid>
       <pubDate>Mon, 26 Oct 2026 01:00:00 GMT</pubDate>
       <description>Grok releases the first seven minutes of its AI-generated ‘Odyssey’ · Here are the top AI agents that can live in your text messages · Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II) · Left alone with nothing to do, AI agents started playing · OpenAI makes its Jev competitor widely available as decision model competition heats up · Quest Diagnostics confirms data breach exposed patient records · PHP shares mitigation for new RCE vulnerability with no patch · Infosys adds 4,480 employees in Q2 FY27; attrition falls to 12.7% · IIM Ahmedabad summer placements 2026-27: Over 85 roles offered in first cluster</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Sunday, October 25, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-10-25.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-25.html</guid>
-      <pubDate>Sun, 25 Oct 2026 01:00:00 GMT</pubDate>
-      <description>Forced to pick, Grok’s AI model chooses Republicans. OpenAI’s picks Democrats. · Uber puts all 30,000 employees on ChatGPT Work · The AI graveyard: a running list of projects and startups that didn’t make it · Microsoft’s Mustafa Suleyman says its AI outperforms doctors on hard cases as he chases ‘medical superintellig · Chinese hackers spied on thousands of companies after breaching IT giant ConnectWise · OneDrive gives Macs a million things to keep in sync · Amazon says PHP2Shell exploitation began 4 days before patches · IT workforce diverges in Q2: TCS, HCLTech, Tech M, Infosys add employees as Wipro shrinks · Tata Elxsi to restructure workforce, expand role of junior talent</description>
     </item>
   </channel>
 </rss>
