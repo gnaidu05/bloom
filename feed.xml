@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Monday, November 16, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-11-16.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-11-16.html</guid>
+      <pubDate>Mon, 16 Nov 2026 01:00:00 GMT</pubDate>
+      <description>Indian chip startup Bharat Semi lands $24M seed round as it eyes global AI sensor market · Our new blog for science · A step toward defining the Standard Model on a lattice · Gondola doubles revenue as its team builds more with Codex · Is bad news for Jensen Huang also bad news for the AI industry? · TSMC employee data breach linked to cloud provider · FBI warns ARTEX AI hacking tool is powering global cyberattacks · How cold messages and networking work better than AI-polished resumes in landing jobs · India's universities face GPU crunch as AI research drives demand for computing power</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Sunday, November 15, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-11-15.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-11-15.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-27.html</guid>
       <pubDate>Tue, 27 Oct 2026 01:00:00 GMT</pubDate>
       <description>Anthropic officially files for its public debut · SpaceX locks in $40B GPU financing deal with Apollo · Anthropic’s IPO filing reveals its strategy for keeping enterprise customers hooked · Working with academic communities to build scientific understanding · Block’s new voice model sounds eerily human · After threatening AI export bans, China allows DeepSeek to keep selling · Microsoft releases emergency .NET patches for critical Brotli flaw · Mid-career professionals drive healthcare GCC hiring in 2026: Report · AI isn’t killing entry-level jobs, it’s breaking the ladder to senior roles: IIT Madras study</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Monday, October 26, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-10-26.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-26.html</guid>
-      <pubDate>Mon, 26 Oct 2026 01:00:00 GMT</pubDate>
-      <description>Grok releases the first seven minutes of its AI-generated ‘Odyssey’ · Here are the top AI agents that can live in your text messages · Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II) · Left alone with nothing to do, AI agents started playing · OpenAI makes its Jev competitor widely available as decision model competition heats up · Quest Diagnostics confirms data breach exposed patient records · PHP shares mitigation for new RCE vulnerability with no patch · Infosys adds 4,480 employees in Q2 FY27; attrition falls to 12.7% · IIM Ahmedabad summer placements 2026-27: Over 85 roles offered in first cluster</description>
     </item>
   </channel>
 </rss>
