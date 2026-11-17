@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Tuesday, November 17, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-11-17.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-11-17.html</guid>
+      <pubDate>Tue, 17 Nov 2026 01:00:00 GMT</pubDate>
+      <description>Building AI that can work across the enterprise · California state AG sues OpenAI over rogue agent incidents · The King’s Trust and OpenAI launch £1m partnership · Cybersecurity AI startup Corma reaches $1B valuation in about 3 months · OpenAI releases a new image classifier and ChatGPT warnings to combat CSAM · Microsoft lifts Indian cloud prices by 15 percent, cuts costs in China · Barracuda links cloud breach to ARTEX AI-powered cyberattack · Layoffs and retrenchment: why 15 days’ wages is not enough for employee reskilling · India’s semiconductor boom may create 1 lakh jobs in 3 years</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Monday, November 16, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-11-16.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-11-16.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-28.html</guid>
       <pubDate>Wed, 28 Oct 2026 01:00:00 GMT</pubDate>
       <description>Retell uses OpenAI models to help power 100M monthly calls · Frontier AI labs say their models refuted the Exponential Time Hypothesis. What does that mean? · Nvidia backs Indian startup helping companies run AI models with fewer GPUs · OpenAI expands partnership with Oracle to bring its apps to ChatGPT · Disruptive raises $10B fund to make big bets on at least 10 companies · Take it on the chin SatNad: Microsoft chief exec's pay slips 6% in record year · Japan's GMO urges customers to shut down PCs amid ransomware threat · IIM Calcutta records 100% summer placements, highest-ever average stipend of Rs 1.93 lakh · Nearly 44% of India's GCCs now own platforms, AI outcomes</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Tuesday, October 27, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-10-27.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-27.html</guid>
-      <pubDate>Tue, 27 Oct 2026 01:00:00 GMT</pubDate>
-      <description>Anthropic officially files for its public debut · SpaceX locks in $40B GPU financing deal with Apollo · Anthropic’s IPO filing reveals its strategy for keeping enterprise customers hooked · Working with academic communities to build scientific understanding · Block’s new voice model sounds eerily human · After threatening AI export bans, China allows DeepSeek to keep selling · Microsoft releases emergency .NET patches for critical Brotli flaw · Mid-career professionals drive healthcare GCC hiring in 2026: Report · AI isn’t killing entry-level jobs, it’s breaking the ladder to senior roles: IIT Madras study</description>
     </item>
   </channel>
 </rss>
