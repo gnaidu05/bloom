@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Wednesday, November 18, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-11-18.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-11-18.html</guid>
+      <pubDate>Wed, 18 Nov 2026 01:00:00 GMT</pubDate>
+      <description>Model ML raises $250M to automate investment banking grunt work · Isomorphic Labs raises $5B as it looks to take drug candidates to clinical trials · Nvidia promises that revenue will keep soaring — for now · Broadening access to AI for scientists · How Revolut raises ambition without lowering the bar · Tor releases emergency update amid ongoing DDoS attack · Flipper Devices launches $399 ‘Flipper One’ Linux-based multi-tool · UpGrad launches advisory arm 'upGrad Next' to help enterprises navigate AI-led transformation · UPSC pushes AI-driven exam security, seeks uniform recruitment standards across states</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Tuesday, November 17, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-11-17.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-11-17.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-29.html</guid>
       <pubDate>Thu, 29 Oct 2026 01:00:00 GMT</pubDate>
       <description>Anthropic just launched tools to show companies what their AI spending is buying · OpenAI and ServiceNow expand partnership across enterprise workflows · Google expands AI Search ads globally as core ad growth slows · Microsoft recorded $10 billion in revenue from OpenAI · Microsoft hits 10 quarters of record-breaking revenue in a row · Jio shares surge 21% in market debut after blockbuster India IPO · Microsoft just shared Azure’s actual revenue in dollars: $33.2 billion · IIM Calcutta summer placements see 475 students secure 546 offers from 156 companies · Himachal CM hints at MBBS internship stipend hike, promises budgetary support</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Wednesday, October 28, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-10-28.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-28.html</guid>
-      <pubDate>Wed, 28 Oct 2026 01:00:00 GMT</pubDate>
-      <description>Retell uses OpenAI models to help power 100M monthly calls · Frontier AI labs say their models refuted the Exponential Time Hypothesis. What does that mean? · Nvidia backs Indian startup helping companies run AI models with fewer GPUs · OpenAI expands partnership with Oracle to bring its apps to ChatGPT · Disruptive raises $10B fund to make big bets on at least 10 companies · Take it on the chin SatNad: Microsoft chief exec's pay slips 6% in record year · Japan's GMO urges customers to shut down PCs amid ransomware threat · IIM Calcutta records 100% summer placements, highest-ever average stipend of Rs 1.93 lakh · Nearly 44% of India's GCCs now own platforms, AI outcomes</description>
     </item>
   </channel>
 </rss>
