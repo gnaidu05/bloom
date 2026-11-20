@@ -6,6 +6,13 @@
     <description>Daily news briefing — AI &amp; Technology, IT Industry, Recruitment &amp; HR. Pune Edition.</description>
     <language>en</language>
     <item>
+      <title>The Morning Bloom — Friday, November 20, 2026</title>
+      <link>https://gnaidu05.github.io/bloom/editions/2026-11-20.html</link>
+      <guid>https://gnaidu05.github.io/bloom/editions/2026-11-20.html</guid>
+      <pubDate>Fri, 20 Nov 2026 01:00:00 GMT</pubDate>
+      <description>Anthropic’s IPO could deliver $156B to charity · Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO · Apple may be developing its own AI agent that runs your Mac · Anthropic’s IPO puts AI’s circular financing boom to the test · Anthropic hits Nasdaq exchanges at $111, 33% above IPO price · Five warning signs of ransomware breach before encryption or data theft · NVIDIA investigating Gentlemen ransomware breach claims · IIM Calcutta introduces AI-powered product management course for working professionals · Anthropic IPO to mint thousands of millionaires</description>
+    </item>
+    <item>
       <title>The Morning Bloom — Thursday, November 19, 2026</title>
       <link>https://gnaidu05.github.io/bloom/editions/2026-11-19.html</link>
       <guid>https://gnaidu05.github.io/bloom/editions/2026-11-19.html</guid>
@@ -137,13 +144,6 @@
       <guid>https://gnaidu05.github.io/bloom/editions/2026-10-31.html</guid>
       <pubDate>Sat, 31 Oct 2026 01:00:00 GMT</pubDate>
       <description>We urgently need to monitor AI agents’ actions in real time · Anthropic expected to receive high ‘junk’ rating from credit agencies following IPO, FT report says · DoorDash said it’s only received ‘several hundred’ orders from AI agents · Credit Saison achieves 954% ROI in a ChatGPT Enterprise pilot · Gemini 4 Carbon: Our next frontier model · AWS will be a $1T business, Jassy says — but first, it will spend big · AWS installs an AI accelerator every 14 seconds and eyes $1 trillion annual revenue · From Bengaluru to Boston: How ShiftToTech Helps Professionals Switch to AI, DevOps and Data Jobs · These companies are cutting jobs globally</description>
-    </item>
-    <item>
-      <title>The Morning Bloom — Friday, October 30, 2026</title>
-      <link>https://gnaidu05.github.io/bloom/editions/2026-10-30.html</link>
-      <guid>https://gnaidu05.github.io/bloom/editions/2026-10-30.html</guid>
-      <pubDate>Fri, 30 Oct 2026 01:00:00 GMT</pubDate>
-      <description>OpenAI-backed Thrive Holdings acquires ADT · Mistral releases weights for its trillion-parameter AI model, targeting cybersecurity · Ex-Palantir execs launch Dream with $17M from a16z to build AI world models for construction · Wabi, the AI agent that builds mini apps, now valued at $1.25B after latest round · How we detect frontier model misalignment · Amazon reported booming cloud revenue but otherwise missed expectations · Google admits AI search makes less money, but it's fixing that with more ads · India Inc wants AI talent to transform manufacturing space · Talent leaders flag a blind spot in HR Analytics</description>
     </item>
   </channel>
 </rss>
